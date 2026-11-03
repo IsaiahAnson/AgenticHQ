@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "updatedAt": "2026-10-28T16:00:00.000Z",
+  "advisoryOnly": true,
+  "agents": [
+    {
+      "id": "claude",
+      "name": "Claude Code",
+      "capabilities": ["multi-file features", "refactors", "debugging with an unknown cause", "skills and routines"],
+      "privacyBoundary": "May work with local workspace content within the task's permissions.",
+      "costClass": "usage-window",
+      "launchPath": "claude (terminal) or a Skills deck card",
+      "knownQuirks": ["Long sessions compact; keep a checkpoint note for multi-step plans."],
+      "fallbacks": ["codex", "opencode"]
+    },
+    {
+      "id": "codex",
+      "name": "Codex",
+      "capabilities": ["PR review", "test fixes", "small features in their own worktree"],
+      "privacyBoundary": "May work with local workspace content within the task's permissions.",
+      "costClass": "usage-window",
+      "launchPath": "codex (terminal)",
+      "knownQuirks": ["Give it one worktree per task; two runs in one checkout collide."],
+      "fallbacks": ["claude", "copilot"]
+    },
+    {
+      "id": "copilot",
+      "name": "Copilot",
+      "capabilities": ["small fixes", "PR summaries", "issue triage on the code host"],
+      "privacyBoundary": "May work with local workspace content within the task's permissions.",
+      "costClass": "request-count",
+      "launchPath": "copilot (terminal)",
+      "knownQuirks": ["Summaries skip bot PRs unless asked."],
+      "fallbacks": ["codex", "opencode"]
+    },
+    {
+      "id": "claude-api",
+      "name": "Claude API",
+      "capabilities": ["radar scoring", "weekly review", "short structured summaries"],
+      "privacyBoundary": "Only the inputs HQ sends for that call.",
+      "costClass": "tracked-calls",
+      "launchPath": "HQ routines (tools/claude-api-task.mjs)",
+      "knownQuirks": ["Calls are logged by HQ; keep prompts short and structured."],
+      "fallbacks": ["claude"]
+    },
+    {
+      "id": "deepseek",
+      "name": "DeepSeek web",
+      "capabilities": ["public questions", "second opinions on algorithms"],
+      "privacyBoundary": "Public or sanitized inputs only; never private workspace contents or unpublished code.",
+      "costClass": "web-chat",
+      "launchPath": "browser tab",
+      "knownQuirks": ["Paste in only what can be public."],
+      "fallbacks": ["opencode"]
+    },
+    {
+      "id": "opencode",
+      "name": "OpenCode",
+      "capabilities": ["inbox triage", "standup drafts", "dependency notes", "first drafts"],
+      "privacyBoundary": "May work with local workspace content within the task's permissions.",
+      "costClass": "free-models",
+      "launchPath": "opencode (terminal)",
+      "knownQuirks": ["Free models vary day to day; check the draft before it leaves the lane."],
+      "fallbacks": ["claude"]
+    }
+  ]
+}

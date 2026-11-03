@@ -1,0 +1,1302 @@
+{
+  "board": "learned",
+  "updatedAt": "@iso:-14h",
+  "lastRunId": "@iso:-14h",
+  "runs": [
+    {
+      "id": "@iso:-14h",
+      "at": "@iso:-14h",
+      "candidates": 11,
+      "added": 3,
+      "merged": 5,
+      "report": "skill-review-proposals.html"
+    },
+    {
+      "id": "@iso:-1d@19:00",
+      "at": "@iso:-1d@19:00",
+      "candidates": 9,
+      "added": 2,
+      "merged": 4,
+      "report": "skill-review-proposals.html"
+    },
+    {
+      "id": "@iso:-2d@19:00",
+      "at": "@iso:-2d@19:00",
+      "candidates": 12,
+      "added": 4,
+      "merged": 6,
+      "report": "skill-review-proposals.html"
+    }
+  ],
+  "counts": {
+    "open": 14,
+    "approved": 2,
+    "done": 5,
+    "trashed": 3,
+    "total": 24
+  },
+  "tiers": [
+    {
+      "tier": "S",
+      "count": 3
+    },
+    {
+      "tier": "A",
+      "count": 7
+    },
+    {
+      "tier": "B",
+      "count": 4
+    },
+    {
+      "tier": "C",
+      "count": 0
+    },
+    {
+      "tier": "D",
+      "count": 0
+    }
+  ],
+  "total": 14,
+  "items": [
+    {
+      "id": "lea-d391c70ab5",
+      "rank": 1,
+      "prevRank": 1,
+      "delta": 0,
+      "bestRank": 1,
+      "tier": "S",
+      "movement": "same",
+      "title": "Run the migration dry-run before touching the sync schema",
+      "summary": "/ship · sync-engine",
+      "category": "ship · sync-engine",
+      "reason": "A schema change without the dry-run broke offline edits twice; the rule catches it first. Scored 84 on the rubric.",
+      "score": 84,
+      "baseScore": 84,
+      "seenCount": 3,
+      "firstSeen": "@iso:-2d@19:00",
+      "lastSeen": "@iso:-14h",
+      "missedRuns": 0,
+      "status": "open",
+      "statusAt": null,
+      "note": "",
+      "aliases": [],
+      "refs": [
+        "memory/lessons/sync-engine.md"
+      ],
+      "evidence": [
+        {
+          "text": "A schema change without the dry-run broke offline edits twice; the rule catches it first.",
+          "source": "memory/lessons/sync-engine.md",
+          "run": "@iso:-14h",
+          "at": "@iso:-14h"
+        }
+      ],
+      "data": {
+        "proposalId": "91794d93ee3ae627",
+        "skill": "ship",
+        "file": "skills/ship/SKILL.md",
+        "section": "Gotchas",
+        "text": "Run the migration dry-run before touching the sync schema",
+        "source": [
+          "memory/lessons/sync-engine.md"
+        ],
+        "recurrence": 3,
+        "sourceAt": "@iso:-1d@17:20",
+        "targets": [
+          {
+            "skill": "ship",
+            "file": "skills/ship/SKILL.md",
+            "proposalId": "91794d93ee3ae627",
+            "status": "proposed"
+          }
+        ],
+        "skills": [
+          "ship"
+        ],
+        "assessment": {
+          "why": "A schema change without the dry-run broke offline edits twice; the rule catches it first.",
+          "timeSaved": "weekly",
+          "effort": "approve",
+          "timeReason": "Estimated from 3 recurrences per month.",
+          "effortReason": "A one-line gotcha in the skill file.",
+          "by": "claude-opus-5-5 · gotcha-assess",
+          "at": "@iso:-14h",
+          "timeLabel": "~2h/mo saved",
+          "effortLabel": "Approve only"
+        },
+        "judgment": {
+          "scores": {
+            "pain": 9,
+            "frequency": 7,
+            "specificity": 9,
+            "fit": 9,
+            "durability": 8
+          },
+          "score": 84,
+          "reason": "A schema change without the dry-run broke offline edits twice; the rule catches it first. Scored 84 on the rubric.",
+          "critique": "Narrow and checkable; only bites on schema work.",
+          "evidenceChecked": [
+            "memory/lessons/sync-engine.md",
+            "skills/ship/SKILL.md"
+          ],
+          "judgedAt": "@iso:-14h",
+          "by": "claude-opus-5-5 · gotcha-assess",
+          "recurrence": 3,
+          "sourceAt": "@iso:-1d@17:20"
+        }
+      }
+    },
+    {
+      "id": "lea-30086681d9",
+      "rank": 2,
+      "prevRank": 4,
+      "delta": 2,
+      "bestRank": 2,
+      "tier": "S",
+      "movement": "up",
+      "title": "Pin Node 22 in CI to match local",
+      "summary": "/test-fixer · ci",
+      "category": "test-fixer · ci",
+      "reason": "CI ran a newer Node than local and three test runs failed for no code reason. Scored 83 on the rubric.",
+      "score": 83,
+      "baseScore": 83,
+      "seenCount": 3,
+      "firstSeen": "@iso:-2d@19:00",
+      "lastSeen": "@iso:-14h",
+      "missedRuns": 0,
+      "status": "open",
+      "statusAt": null,
+      "note": "",
+      "aliases": [],
+      "refs": [
+        "memory/lessons/ci.md"
+      ],
+      "evidence": [
+        {
+          "text": "CI ran a newer Node than local and three test runs failed for no code reason.",
+          "source": "memory/lessons/ci.md",
+          "run": "@iso:-14h",
+          "at": "@iso:-14h"
+        }
+      ],
+      "data": {
+        "proposalId": "e53181f56e7b5b89",
+        "skill": "test-fixer",
+        "file": "skills/test-fixer/SKILL.md",
+        "section": "Gotchas",
+        "text": "Pin Node 22 in CI to match local",
+        "source": [
+          "memory/lessons/ci.md"
+        ],
+        "recurrence": 3,
+        "sourceAt": "@iso:-1d@17:20",
+        "targets": [
+          {
+            "skill": "test-fixer",
+            "file": "skills/test-fixer/SKILL.md",
+            "proposalId": "e53181f56e7b5b89",
+            "status": "proposed"
+          }
+        ],
+        "skills": [
+          "test-fixer"
+        ],
+        "assessment": {
+          "why": "CI ran a newer Node than local and three test runs failed for no code reason.",
+          "timeSaved": "weekly",
+          "effort": "small",
+          "timeReason": "Estimated from 3 recurrences per month.",
+          "effortReason": "A short script or config change.",
+          "by": "claude-opus-5-5 · gotcha-assess",
+          "at": "@iso:-14h",
+          "timeLabel": "~2h/mo saved",
+          "effortLabel": "Small build"
+        },
+        "judgment": {
+          "scores": {
+            "pain": 8,
+            "frequency": 8,
+            "specificity": 9,
+            "fit": 8,
+            "durability": 9
+          },
+          "score": 83,
+          "reason": "CI ran a newer Node than local and three test runs failed for no code reason. Scored 83 on the rubric.",
+          "critique": "A one-line fix with a long tail of saved reruns.",
+          "evidenceChecked": [
+            "memory/lessons/ci.md",
+            "skills/test-fixer/SKILL.md"
+          ],
+          "judgedAt": "@iso:-14h",
+          "by": "claude-opus-5-5 · gotcha-assess",
+          "recurrence": 3,
+          "sourceAt": "@iso:-1d@17:20"
+        }
+      }
+    },
+    {
+      "id": "lea-0e00131fd2",
+      "rank": 3,
+      "prevRank": null,
+      "delta": null,
+      "bestRank": 3,
+      "tier": "S",
+      "movement": "new",
+      "title": "Quarantine a test that fails twice in a row and file an issue",
+      "summary": "/test-fixer /pr-review · ci",
+      "category": "test-fixer · ci",
+      "reason": "Agents kept retrying the same flaky ingest test instead of moving on. Scored 79 on the rubric.",
+      "score": 79,
+      "baseScore": 79,
+      "seenCount": 1,
+      "firstSeen": "@iso:-14h",
+      "lastSeen": "@iso:-14h",
+      "missedRuns": 0,
+      "status": "open",
+      "statusAt": null,
+      "note": "",
+      "aliases": [],
+      "refs": [
+        "memory/lessons/ci.md"
+      ],
+      "evidence": [
+        {
+          "text": "Agents kept retrying the same flaky ingest test instead of moving on.",
+          "source": "memory/lessons/ci.md",
+          "run": "@iso:-14h",
+          "at": "@iso:-14h"
+        }
+      ],
+      "data": {
+        "proposalId": "dac006fb94413636",
+        "skill": "test-fixer",
+        "file": "skills/test-fixer/SKILL.md",
+        "section": "Gotchas",
+        "text": "Quarantine a test that fails twice in a row and file an issue",
+        "source": [
+          "memory/lessons/ci.md"
+        ],
+        "recurrence": 4,
+        "sourceAt": "@iso:-1d@17:20",
+        "targets": [
+          {
+            "skill": "test-fixer",
+            "file": "skills/test-fixer/SKILL.md",
+            "proposalId": "dac006fb94413636",
+            "status": "proposed"
+          },
+          {
+            "skill": "pr-review",
+            "file": "skills/pr-review/SKILL.md",
+            "proposalId": "af0bcbbadda91eff",
+            "status": "proposed"
+          }
+        ],
+        "skills": [
+          "test-fixer",
+          "pr-review"
+        ],
+        "assessment": {
+          "why": "Agents kept retrying the same flaky ingest test instead of moving on.",
+          "timeSaved": "weekly",
+          "effort": "approve",
+          "timeReason": "Estimated from 4 recurrences per month.",
+          "effortReason": "A one-line gotcha in the skill file.",
+          "by": "claude-opus-5-5 · gotcha-assess",
+          "at": "@iso:-14h",
+          "timeLabel": "~2h/mo saved",
+          "effortLabel": "Approve only"
+        },
+        "judgment": {
+          "scores": {
+            "pain": 8,
+            "frequency": 8,
+            "specificity": 8,
+            "fit": 8,
+            "durability": 7
+          },
+          "score": 79,
+          "reason": "Agents kept retrying the same flaky ingest test instead of moving on. Scored 79 on the rubric.",
+          "critique": "Needs a clear quarantine label so it is not forgotten.",
+          "evidenceChecked": [
+            "memory/lessons/ci.md",
+            "skills/test-fixer/SKILL.md"
+          ],
+          "judgedAt": "@iso:-14h",
+          "by": "claude-opus-5-5 · gotcha-assess",
+          "recurrence": 4,
+          "sourceAt": "@iso:-1d@17:20"
+        }
+      }
+    },
+    {
+      "id": "lea-2992532ba7",
+      "rank": 4,
+      "prevRank": 4,
+      "delta": 0,
+      "bestRank": 4,
+      "tier": "A",
+      "movement": "same",
+      "title": "Give each parallel worker its own git worktree",
+      "summary": "/ship · agents-parallel",
+      "category": "ship · agents-parallel",
+      "reason": "Two workers edited one checkout and one lost its changes. Scored 76.5 on the rubric.",
+      "score": 76.5,
+      "baseScore": 76.5,
+      "seenCount": 3,
+      "firstSeen": "@iso:-2d@19:00",
+      "lastSeen": "@iso:-14h",
+      "missedRuns": 0,
+      "status": "open",
+      "statusAt": null,
+      "note": "",
+      "aliases": [],
+      "refs": [
+        "memory/lessons/agents-parallel.md"
+      ],
+      "evidence": [
+        {
+          "text": "Two workers edited one checkout and one lost its changes.",
+          "source": "memory/lessons/agents-parallel.md",
+          "run": "@iso:-14h",
+          "at": "@iso:-14h"
+        }
+      ],
+      "data": {
+        "proposalId": "92affff49ecf8b98",
+        "skill": "ship",
+        "file": "skills/ship/SKILL.md",
+        "section": "Gotchas",
+        "text": "Give each parallel worker its own git worktree",
+        "source": [
+          "memory/lessons/agents-parallel.md"
+        ],
+        "recurrence": 2,
+        "sourceAt": "@iso:-1d@17:20",
+        "targets": [
+          {
+            "skill": "ship",
+            "file": "skills/ship/SKILL.md",
+            "proposalId": "92affff49ecf8b98",
+            "status": "proposed"
+          }
+        ],
+        "skills": [
+          "ship"
+        ],
+        "assessment": {
+          "why": "Two workers edited one checkout and one lost its changes.",
+          "timeSaved": "monthly",
+          "effort": "approve",
+          "timeReason": "Estimated from 2 recurrences per month.",
+          "effortReason": "A one-line gotcha in the skill file.",
+          "by": "claude-opus-5-5 · gotcha-assess",
+          "at": "@iso:-14h",
+          "timeLabel": "~30m/mo saved",
+          "effortLabel": "Approve only"
+        },
+        "judgment": {
+          "scores": {
+            "pain": 8,
+            "frequency": 6,
+            "specificity": 8,
+            "fit": 9,
+            "durability": 8
+          },
+          "score": 76.5,
+          "reason": "Two workers edited one checkout and one lost its changes. Scored 76.5 on the rubric.",
+          "critique": "Already common practice; the rule makes it the default.",
+          "evidenceChecked": [
+            "memory/lessons/agents-parallel.md",
+            "skills/ship/SKILL.md"
+          ],
+          "judgedAt": "@iso:-14h",
+          "by": "claude-opus-5-5 · gotcha-assess",
+          "recurrence": 2,
+          "sourceAt": "@iso:-1d@17:20"
+        }
+      }
+    },
+    {
+      "id": "lea-87310b6792",
+      "rank": 5,
+      "prevRank": 3,
+      "delta": -2,
+      "bestRank": 3,
+      "tier": "A",
+      "movement": "down",
+      "title": "Check the lockfile diff before merging a dependency bump",
+      "summary": "/dep-watch · dependencies",
+      "category": "dep-watch · dependencies",
+      "reason": "A minor bump pulled in a new transitive package nobody reviewed. Scored 74.5 on the rubric.",
+      "score": 74.5,
+      "baseScore": 74.5,
+      "seenCount": 3,
+      "firstSeen": "@iso:-2d@19:00",
+      "lastSeen": "@iso:-14h",
+      "missedRuns": 0,
+      "status": "open",
+      "statusAt": null,
+      "note": "",
+      "aliases": [],
+      "refs": [
+        "memory/lessons/dependencies.md"
+      ],
+      "evidence": [
+        {
+          "text": "A minor bump pulled in a new transitive package nobody reviewed.",
+          "source": "memory/lessons/dependencies.md",
+          "run": "@iso:-14h",
+          "at": "@iso:-14h"
+        }
+      ],
+      "data": {
+        "proposalId": "fb556fef9871764e",
+        "skill": "dep-watch",
+        "file": "skills/dep-watch/SKILL.md",
+        "section": "Gotchas",
+        "text": "Check the lockfile diff before merging a dependency bump",
+        "source": [
+          "memory/lessons/dependencies.md"
+        ],
+        "recurrence": 2,
+        "sourceAt": "@iso:-1d@17:20",
+        "targets": [
+          {
+            "skill": "dep-watch",
+            "file": "skills/dep-watch/SKILL.md",
+            "proposalId": "fb556fef9871764e",
+            "status": "proposed"
+          }
+        ],
+        "skills": [
+          "dep-watch"
+        ],
+        "assessment": {
+          "why": "A minor bump pulled in a new transitive package nobody reviewed.",
+          "timeSaved": "weekly",
+          "effort": "approve",
+          "timeReason": "Estimated from 2 recurrences per month.",
+          "effortReason": "A one-line gotcha in the skill file.",
+          "by": "claude-opus-5-5 · gotcha-assess",
+          "at": "@iso:-14h",
+          "timeLabel": "~2h/mo saved",
+          "effortLabel": "Approve only"
+        },
+        "judgment": {
+          "scores": {
+            "pain": 7,
+            "frequency": 7,
+            "specificity": 8,
+            "fit": 8,
+            "durability": 8
+          },
+          "score": 74.5,
+          "reason": "A minor bump pulled in a new transitive package nobody reviewed. Scored 74.5 on the rubric.",
+          "critique": "Cheap to do; the diff can be long on big bumps.",
+          "evidenceChecked": [
+            "memory/lessons/dependencies.md",
+            "skills/dep-watch/SKILL.md"
+          ],
+          "judgedAt": "@iso:-14h",
+          "by": "claude-opus-5-5 · gotcha-assess",
+          "recurrence": 2,
+          "sourceAt": "@iso:-1d@17:20"
+        }
+      }
+    },
+    {
+      "id": "lea-e532999dbc",
+      "rank": 6,
+      "prevRank": 8,
+      "delta": 2,
+      "bestRank": 6,
+      "tier": "A",
+      "movement": "up",
+      "title": "Label beta crash reports before drafting a reply",
+      "summary": "/triage · inbox",
+      "category": "triage · inbox",
+      "reason": "Crash reports got generic replies when they were not labelled first. Scored 72.5 on the rubric.",
+      "score": 72.5,
+      "baseScore": 72.5,
+      "seenCount": 3,
+      "firstSeen": "@iso:-2d@19:00",
+      "lastSeen": "@iso:-14h",
+      "missedRuns": 0,
+      "status": "open",
+      "statusAt": null,
+      "note": "",
+      "aliases": [],
+      "refs": [
+        "memory/lessons/inbox.md"
+      ],
+      "evidence": [
+        {
+          "text": "Crash reports got generic replies when they were not labelled first.",
+          "source": "memory/lessons/inbox.md",
+          "run": "@iso:-14h",
+          "at": "@iso:-14h"
+        }
+      ],
+      "data": {
+        "proposalId": "bcc9adaca46a2f5d",
+        "skill": "triage",
+        "file": "skills/triage/SKILL.md",
+        "section": "Gotchas",
+        "text": "Label beta crash reports before drafting a reply",
+        "source": [
+          "memory/lessons/inbox.md"
+        ],
+        "recurrence": 3,
+        "sourceAt": "@iso:-1d@17:20",
+        "targets": [
+          {
+            "skill": "triage",
+            "file": "skills/triage/SKILL.md",
+            "proposalId": "bcc9adaca46a2f5d",
+            "status": "proposed"
+          }
+        ],
+        "skills": [
+          "triage"
+        ],
+        "assessment": {
+          "why": "Crash reports got generic replies when they were not labelled first.",
+          "timeSaved": "daily",
+          "effort": "approve",
+          "timeReason": "Estimated from 3 recurrences per month.",
+          "effortReason": "A one-line gotcha in the skill file.",
+          "by": "claude-opus-5-5 · gotcha-assess",
+          "at": "@iso:-14h",
+          "timeLabel": "5h+/mo saved",
+          "effortLabel": "Approve only"
+        },
+        "judgment": {
+          "scores": {
+            "pain": 7,
+            "frequency": 8,
+            "specificity": 7,
+            "fit": 7,
+            "durability": 7
+          },
+          "score": 72.5,
+          "reason": "Crash reports got generic replies when they were not labelled first. Scored 72.5 on the rubric.",
+          "critique": "Fits the triage flow; depends on good labels.",
+          "evidenceChecked": [
+            "memory/lessons/inbox.md",
+            "skills/triage/SKILL.md"
+          ],
+          "judgedAt": "@iso:-14h",
+          "by": "claude-opus-5-5 · gotcha-assess",
+          "recurrence": 3,
+          "sourceAt": "@iso:-1d@17:20"
+        }
+      }
+    },
+    {
+      "id": "lea-80e5838bf2",
+      "rank": 7,
+      "prevRank": null,
+      "delta": null,
+      "bestRank": 7,
+      "tier": "A",
+      "movement": "new",
+      "title": "Build release notes from PR titles, not commit messages",
+      "summary": "/release-notes · releases",
+      "category": "release-notes · releases",
+      "reason": "Commit messages made the 2.3 notes noisy and hard to read. Scored 68 on the rubric.",
+      "score": 68,
+      "baseScore": 68,
+      "seenCount": 1,
+      "firstSeen": "@iso:-14h",
+      "lastSeen": "@iso:-14h",
+      "missedRuns": 0,
+      "status": "open",
+      "statusAt": null,
+      "note": "",
+      "aliases": [],
+      "refs": [
+        "memory/lessons/releases.md"
+      ],
+      "evidence": [
+        {
+          "text": "Commit messages made the 2.3 notes noisy and hard to read.",
+          "source": "memory/lessons/releases.md",
+          "run": "@iso:-14h",
+          "at": "@iso:-14h"
+        }
+      ],
+      "data": {
+        "proposalId": "b6a6664cdf521acb",
+        "skill": "release-notes",
+        "file": "skills/release-notes/SKILL.md",
+        "section": "Gotchas",
+        "text": "Build release notes from PR titles, not commit messages",
+        "source": [
+          "memory/lessons/releases.md"
+        ],
+        "recurrence": 2,
+        "sourceAt": "@iso:-1d@17:20",
+        "targets": [
+          {
+            "skill": "release-notes",
+            "file": "skills/release-notes/SKILL.md",
+            "proposalId": "b6a6664cdf521acb",
+            "status": "proposed"
+          }
+        ],
+        "skills": [
+          "release-notes"
+        ],
+        "assessment": {
+          "why": "Commit messages made the 2.3 notes noisy and hard to read.",
+          "timeSaved": "monthly",
+          "effort": "small",
+          "timeReason": "Estimated from 2 recurrences per month.",
+          "effortReason": "A short script or config change.",
+          "by": "claude-opus-5-5 · gotcha-assess",
+          "at": "@iso:-14h",
+          "timeLabel": "~30m/mo saved",
+          "effortLabel": "Small build"
+        },
+        "judgment": {
+          "scores": {
+            "pain": 6,
+            "frequency": 6,
+            "specificity": 8,
+            "fit": 8,
+            "durability": 7
+          },
+          "score": 68,
+          "reason": "Commit messages made the 2.3 notes noisy and hard to read. Scored 68 on the rubric.",
+          "critique": "Works only if PR titles stay tidy.",
+          "evidenceChecked": [
+            "memory/lessons/releases.md",
+            "skills/release-notes/SKILL.md"
+          ],
+          "judgedAt": "@iso:-14h",
+          "by": "claude-opus-5-5 · gotcha-assess",
+          "recurrence": 2,
+          "sourceAt": "@iso:-1d@17:20"
+        }
+      }
+    },
+    {
+      "id": "lea-a3b938f289",
+      "rank": 8,
+      "prevRank": 8,
+      "delta": 0,
+      "bestRank": 8,
+      "tier": "A",
+      "movement": "same",
+      "title": "Skip the brain rebuild when no file changed",
+      "summary": "/brain-refresh · hq-operations",
+      "category": "brain-refresh · hq-operations",
+      "reason": "Most overnight rebuilds found nothing new and still took a few minutes. Scored 67 on the rubric.",
+      "score": 67,
+      "baseScore": 67,
+      "seenCount": 3,
+      "firstSeen": "@iso:-2d@19:00",
+      "lastSeen": "@iso:-14h",
+      "missedRuns": 0,
+      "status": "open",
+      "statusAt": null,
+      "note": "",
+      "aliases": [],
+      "refs": [
+        "memory/lessons/hq-operations.md"
+      ],
+      "evidence": [
+        {
+          "text": "Most overnight rebuilds found nothing new and still took a few minutes.",
+          "source": "memory/lessons/hq-operations.md",
+          "run": "@iso:-14h",
+          "at": "@iso:-14h"
+        }
+      ],
+      "data": {
+        "proposalId": "b64dfd25725ebda8",
+        "skill": "brain-refresh",
+        "file": "skills/brain-refresh/SKILL.md",
+        "section": "Gotchas",
+        "text": "Skip the brain rebuild when no file changed",
+        "source": [
+          "memory/lessons/hq-operations.md"
+        ],
+        "recurrence": 2,
+        "sourceAt": "@iso:-1d@17:20",
+        "targets": [
+          {
+            "skill": "brain-refresh",
+            "file": "skills/brain-refresh/SKILL.md",
+            "proposalId": "b64dfd25725ebda8",
+            "status": "proposed"
+          }
+        ],
+        "skills": [
+          "brain-refresh"
+        ],
+        "assessment": {
+          "why": "Most overnight rebuilds found nothing new and still took a few minutes.",
+          "timeSaved": "daily",
+          "effort": "small",
+          "timeReason": "Estimated from 2 recurrences per month.",
+          "effortReason": "A short script or config change.",
+          "by": "claude-opus-5-5 · gotcha-assess",
+          "at": "@iso:-14h",
+          "timeLabel": "5h+/mo saved",
+          "effortLabel": "Small build"
+        },
+        "judgment": {
+          "scores": {
+            "pain": 6,
+            "frequency": 7,
+            "specificity": 7,
+            "fit": 7,
+            "durability": 7
+          },
+          "score": 67,
+          "reason": "Most overnight rebuilds found nothing new and still took a few minutes. Scored 67 on the rubric.",
+          "critique": "Needs a reliable change check first.",
+          "evidenceChecked": [
+            "memory/lessons/hq-operations.md",
+            "skills/brain-refresh/SKILL.md"
+          ],
+          "judgedAt": "@iso:-14h",
+          "by": "claude-opus-5-5 · gotcha-assess",
+          "recurrence": 2,
+          "sourceAt": "@iso:-1d@17:20"
+        }
+      }
+    },
+    {
+      "id": "lea-4de7a9b018",
+      "rank": 9,
+      "prevRank": 7,
+      "delta": -2,
+      "bestRank": 7,
+      "tier": "A",
+      "movement": "down",
+      "title": "Check sensor timestamps are UTC before merging an ingest change",
+      "summary": "/pr-review · tidepool-data",
+      "category": "pr-review · tidepool-data",
+      "reason": "A local-time timestamp shifted a week of tidepool readings by an hour. Scored 66 on the rubric.",
+      "score": 66,
+      "baseScore": 66,
+      "seenCount": 3,
+      "firstSeen": "@iso:-2d@19:00",
+      "lastSeen": "@iso:-14h",
+      "missedRuns": 0,
+      "status": "open",
+      "statusAt": null,
+      "note": "",
+      "aliases": [],
+      "refs": [
+        "memory/lessons/tidepool-data.md"
+      ],
+      "evidence": [
+        {
+          "text": "A local-time timestamp shifted a week of tidepool readings by an hour.",
+          "source": "memory/lessons/tidepool-data.md",
+          "run": "@iso:-14h",
+          "at": "@iso:-14h"
+        }
+      ],
+      "data": {
+        "proposalId": "0ba6bbced674761b",
+        "skill": "pr-review",
+        "file": "skills/pr-review/SKILL.md",
+        "section": "Gotchas",
+        "text": "Check sensor timestamps are UTC before merging an ingest change",
+        "source": [
+          "memory/lessons/tidepool-data.md"
+        ],
+        "recurrence": 1,
+        "sourceAt": "@iso:-1d@17:20",
+        "targets": [
+          {
+            "skill": "pr-review",
+            "file": "skills/pr-review/SKILL.md",
+            "proposalId": "0ba6bbced674761b",
+            "status": "proposed"
+          }
+        ],
+        "skills": [
+          "pr-review"
+        ],
+        "assessment": {
+          "why": "A local-time timestamp shifted a week of tidepool readings by an hour.",
+          "timeSaved": "monthly",
+          "effort": "approve",
+          "timeReason": "Estimated from 1 recurrence per month.",
+          "effortReason": "A one-line gotcha in the skill file.",
+          "by": "claude-opus-5-5 · gotcha-assess",
+          "at": "@iso:-14h",
+          "timeLabel": "~30m/mo saved",
+          "effortLabel": "Approve only"
+        },
+        "judgment": {
+          "scores": {
+            "pain": 7,
+            "frequency": 5,
+            "specificity": 8,
+            "fit": 7,
+            "durability": 6
+          },
+          "score": 66,
+          "reason": "A local-time timestamp shifted a week of tidepool readings by an hour. Scored 66 on the rubric.",
+          "critique": "Specific to tidepool; still worth a rule.",
+          "evidenceChecked": [
+            "memory/lessons/tidepool-data.md",
+            "skills/pr-review/SKILL.md"
+          ],
+          "judgedAt": "@iso:-14h",
+          "by": "claude-opus-5-5 · gotcha-assess",
+          "recurrence": 1,
+          "sourceAt": "@iso:-1d@17:20"
+        }
+      }
+    },
+    {
+      "id": "lea-cd14a110ae",
+      "rank": 10,
+      "prevRank": 10,
+      "delta": 0,
+      "bestRank": 10,
+      "tier": "A",
+      "movement": "same",
+      "title": "Keep standup notes to three bullets per project",
+      "summary": "/standup · hq-operations",
+      "category": "standup · hq-operations",
+      "reason": "Long standup drafts were trimmed by hand every morning. Scored 62 on the rubric.",
+      "score": 62,
+      "baseScore": 62,
+      "seenCount": 3,
+      "firstSeen": "@iso:-2d@19:00",
+      "lastSeen": "@iso:-14h",
+      "missedRuns": 0,
+      "status": "open",
+      "statusAt": null,
+      "note": "",
+      "aliases": [],
+      "refs": [
+        "memory/lessons/hq-operations.md"
+      ],
+      "evidence": [
+        {
+          "text": "Long standup drafts were trimmed by hand every morning.",
+          "source": "memory/lessons/hq-operations.md",
+          "run": "@iso:-14h",
+          "at": "@iso:-14h"
+        }
+      ],
+      "data": {
+        "proposalId": "5717b4cb7584a68e",
+        "skill": "standup",
+        "file": "skills/standup/SKILL.md",
+        "section": "Gotchas",
+        "text": "Keep standup notes to three bullets per project",
+        "source": [
+          "memory/lessons/hq-operations.md"
+        ],
+        "recurrence": 2,
+        "sourceAt": "@iso:-1d@17:20",
+        "targets": [
+          {
+            "skill": "standup",
+            "file": "skills/standup/SKILL.md",
+            "proposalId": "5717b4cb7584a68e",
+            "status": "proposed"
+          }
+        ],
+        "skills": [
+          "standup"
+        ],
+        "assessment": {
+          "why": "Long standup drafts were trimmed by hand every morning.",
+          "timeSaved": "daily",
+          "effort": "approve",
+          "timeReason": "Estimated from 2 recurrences per month.",
+          "effortReason": "A one-line gotcha in the skill file.",
+          "by": "claude-opus-5-5 · gotcha-assess",
+          "at": "@iso:-14h",
+          "timeLabel": "5h+/mo saved",
+          "effortLabel": "Approve only"
+        },
+        "judgment": {
+          "scores": {
+            "pain": 5,
+            "frequency": 7,
+            "specificity": 6,
+            "fit": 7,
+            "durability": 7
+          },
+          "score": 62,
+          "reason": "Long standup drafts were trimmed by hand every morning. Scored 62 on the rubric.",
+          "critique": "Style rule; low risk, modest gain.",
+          "evidenceChecked": [
+            "memory/lessons/hq-operations.md",
+            "skills/standup/SKILL.md"
+          ],
+          "judgedAt": "@iso:-14h",
+          "by": "claude-opus-5-5 · gotcha-assess",
+          "recurrence": 2,
+          "sourceAt": "@iso:-1d@17:20"
+        }
+      }
+    },
+    {
+      "id": "lea-44ea37ad39",
+      "rank": 11,
+      "prevRank": 13,
+      "delta": 2,
+      "bestRank": 11,
+      "tier": "B",
+      "movement": "up",
+      "title": "Ask for a screen recording when a sync bug won't reproduce",
+      "summary": "/triage · inbox",
+      "category": "triage · inbox",
+      "reason": "Two sync reports stalled for days waiting on details. Scored 57 on the rubric.",
+      "score": 57,
+      "baseScore": 57,
+      "seenCount": 3,
+      "firstSeen": "@iso:-2d@19:00",
+      "lastSeen": "@iso:-14h",
+      "missedRuns": 0,
+      "status": "open",
+      "statusAt": null,
+      "note": "",
+      "aliases": [],
+      "refs": [
+        "memory/lessons/inbox.md"
+      ],
+      "evidence": [
+        {
+          "text": "Two sync reports stalled for days waiting on details.",
+          "source": "memory/lessons/inbox.md",
+          "run": "@iso:-14h",
+          "at": "@iso:-14h"
+        }
+      ],
+      "data": {
+        "proposalId": "6437cb57d91b351c",
+        "skill": "triage",
+        "file": "skills/triage/SKILL.md",
+        "section": "Gotchas",
+        "text": "Ask for a screen recording when a sync bug won't reproduce",
+        "source": [
+          "memory/lessons/inbox.md"
+        ],
+        "recurrence": 1,
+        "sourceAt": "@iso:-1d@17:20",
+        "targets": [
+          {
+            "skill": "triage",
+            "file": "skills/triage/SKILL.md",
+            "proposalId": "6437cb57d91b351c",
+            "status": "proposed"
+          }
+        ],
+        "skills": [
+          "triage"
+        ],
+        "assessment": {
+          "why": "Two sync reports stalled for days waiting on details.",
+          "timeSaved": "monthly",
+          "effort": "approve",
+          "timeReason": "Estimated from 1 recurrence per month.",
+          "effortReason": "A one-line gotcha in the skill file.",
+          "by": "claude-opus-5-5 · gotcha-assess",
+          "at": "@iso:-14h",
+          "timeLabel": "~30m/mo saved",
+          "effortLabel": "Approve only"
+        },
+        "judgment": {
+          "scores": {
+            "pain": 6,
+            "frequency": 4,
+            "specificity": 7,
+            "fit": 6,
+            "durability": 6
+          },
+          "score": 57,
+          "reason": "Two sync reports stalled for days waiting on details. Scored 57 on the rubric.",
+          "critique": "Testers may not want to record; offer it, do not demand it.",
+          "evidenceChecked": [
+            "memory/lessons/inbox.md",
+            "skills/triage/SKILL.md"
+          ],
+          "judgedAt": "@iso:-14h",
+          "by": "claude-opus-5-5 · gotcha-assess",
+          "recurrence": 1,
+          "sourceAt": "@iso:-1d@17:20"
+        }
+      }
+    },
+    {
+      "id": "lea-5ccb946b7f",
+      "rank": 12,
+      "prevRank": 12,
+      "delta": 0,
+      "bestRank": 12,
+      "tier": "B",
+      "movement": "same",
+      "title": "Run fk doctor before tagging a fieldkit release",
+      "summary": "/ship · ci",
+      "category": "ship · ci",
+      "reason": "A release went out with a broken git version check. Scored 57 on the rubric.",
+      "score": 57,
+      "baseScore": 57,
+      "seenCount": 3,
+      "firstSeen": "@iso:-2d@19:00",
+      "lastSeen": "@iso:-14h",
+      "missedRuns": 0,
+      "status": "open",
+      "statusAt": null,
+      "note": "",
+      "aliases": [],
+      "refs": [
+        "memory/lessons/ci.md"
+      ],
+      "evidence": [
+        {
+          "text": "A release went out with a broken git version check.",
+          "source": "memory/lessons/ci.md",
+          "run": "@iso:-14h",
+          "at": "@iso:-14h"
+        }
+      ],
+      "data": {
+        "proposalId": "9c843f88c11a486d",
+        "skill": "ship",
+        "file": "skills/ship/SKILL.md",
+        "section": "Gotchas",
+        "text": "Run fk doctor before tagging a fieldkit release",
+        "source": [
+          "memory/lessons/ci.md"
+        ],
+        "recurrence": 1,
+        "sourceAt": "@iso:-1d@17:20",
+        "targets": [
+          {
+            "skill": "ship",
+            "file": "skills/ship/SKILL.md",
+            "proposalId": "9c843f88c11a486d",
+            "status": "proposed"
+          }
+        ],
+        "skills": [
+          "ship"
+        ],
+        "assessment": {
+          "why": "A release went out with a broken git version check.",
+          "timeSaved": "monthly",
+          "effort": "approve",
+          "timeReason": "Estimated from 1 recurrence per month.",
+          "effortReason": "A one-line gotcha in the skill file.",
+          "by": "claude-opus-5-5 · gotcha-assess",
+          "at": "@iso:-14h",
+          "timeLabel": "~30m/mo saved",
+          "effortLabel": "Approve only"
+        },
+        "judgment": {
+          "scores": {
+            "pain": 6,
+            "frequency": 4,
+            "specificity": 7,
+            "fit": 6,
+            "durability": 6
+          },
+          "score": 57,
+          "reason": "A release went out with a broken git version check. Scored 57 on the rubric.",
+          "critique": "Overlaps with CI; keep it short.",
+          "evidenceChecked": [
+            "memory/lessons/ci.md",
+            "skills/ship/SKILL.md"
+          ],
+          "judgedAt": "@iso:-14h",
+          "by": "claude-opus-5-5 · gotcha-assess",
+          "recurrence": 1,
+          "sourceAt": "@iso:-1d@17:20"
+        }
+      }
+    },
+    {
+      "id": "lea-ddb68f1d74",
+      "rank": 13,
+      "prevRank": 11,
+      "delta": -2,
+      "bestRank": 11,
+      "tier": "B",
+      "movement": "down",
+      "title": "Snapshot-test paper-lantern themes after a markdown bump",
+      "summary": "/dep-watch · dependencies",
+      "category": "dep-watch · dependencies",
+      "reason": "A markdown parser bump changed heading ids in two themes. Scored 54 on the rubric.",
+      "score": 54,
+      "baseScore": 54,
+      "seenCount": 3,
+      "firstSeen": "@iso:-2d@19:00",
+      "lastSeen": "@iso:-14h",
+      "missedRuns": 0,
+      "status": "open",
+      "statusAt": null,
+      "note": "",
+      "aliases": [],
+      "refs": [
+        "memory/lessons/dependencies.md"
+      ],
+      "evidence": [
+        {
+          "text": "A markdown parser bump changed heading ids in two themes.",
+          "source": "memory/lessons/dependencies.md",
+          "run": "@iso:-14h",
+          "at": "@iso:-14h"
+        }
+      ],
+      "data": {
+        "proposalId": "1c271ff82dc2e18f",
+        "skill": "dep-watch",
+        "file": "skills/dep-watch/SKILL.md",
+        "section": "Gotchas",
+        "text": "Snapshot-test paper-lantern themes after a markdown bump",
+        "source": [
+          "memory/lessons/dependencies.md"
+        ],
+        "recurrence": 1,
+        "sourceAt": "@iso:-1d@17:20",
+        "targets": [
+          {
+            "skill": "dep-watch",
+            "file": "skills/dep-watch/SKILL.md",
+            "proposalId": "1c271ff82dc2e18f",
+            "status": "proposed"
+          }
+        ],
+        "skills": [
+          "dep-watch"
+        ],
+        "assessment": {
+          "why": "A markdown parser bump changed heading ids in two themes.",
+          "timeSaved": "monthly",
+          "effort": "medium",
+          "timeReason": "Estimated from 1 recurrence per month.",
+          "effortReason": "Needs new tests first.",
+          "by": "claude-opus-5-5 · gotcha-assess",
+          "at": "@iso:-14h",
+          "timeLabel": "~30m/mo saved",
+          "effortLabel": "Medium build"
+        },
+        "judgment": {
+          "scores": {
+            "pain": 5,
+            "frequency": 4,
+            "specificity": 7,
+            "fit": 6,
+            "durability": 6
+          },
+          "score": 54,
+          "reason": "A markdown parser bump changed heading ids in two themes. Scored 54 on the rubric.",
+          "critique": "Needs snapshot tests that do not exist yet.",
+          "evidenceChecked": [
+            "memory/lessons/dependencies.md",
+            "skills/dep-watch/SKILL.md"
+          ],
+          "judgedAt": "@iso:-14h",
+          "by": "claude-opus-5-5 · gotcha-assess",
+          "recurrence": 1,
+          "sourceAt": "@iso:-1d@17:20"
+        }
+      }
+    },
+    {
+      "id": "lea-2c591cebad",
+      "rank": 14,
+      "prevRank": null,
+      "delta": null,
+      "bestRank": 14,
+      "tier": "B",
+      "movement": "new",
+      "title": "Review contrast in both themes before shipping a UI change",
+      "summary": "/design-critique · releases",
+      "category": "design-critique · releases",
+      "reason": "A dark-theme label shipped at low contrast in Orbit Notes. Scored 52 on the rubric.",
+      "score": 52,
+      "baseScore": 52,
+      "seenCount": 1,
+      "firstSeen": "@iso:-14h",
+      "lastSeen": "@iso:-14h",
+      "missedRuns": 0,
+      "status": "open",
+      "statusAt": null,
+      "note": "",
+      "aliases": [],
+      "refs": [
+        "memory/lessons/releases.md"
+      ],
+      "evidence": [
+        {
+          "text": "A dark-theme label shipped at low contrast in Orbit Notes.",
+          "source": "memory/lessons/releases.md",
+          "run": "@iso:-14h",
+          "at": "@iso:-14h"
+        }
+      ],
+      "data": {
+        "proposalId": "daaf7263b2e06b4f",
+        "skill": "design-critique",
+        "file": "skills/design-critique/SKILL.md",
+        "section": "Gotchas",
+        "text": "Review contrast in both themes before shipping a UI change",
+        "source": [
+          "memory/lessons/releases.md"
+        ],
+        "recurrence": 1,
+        "sourceAt": "@iso:-1d@17:20",
+        "targets": [
+          {
+            "skill": "design-critique",
+            "file": "skills/design-critique/SKILL.md",
+            "proposalId": "daaf7263b2e06b4f",
+            "status": "proposed"
+          }
+        ],
+        "skills": [
+          "design-critique"
+        ],
+        "assessment": {
+          "why": "A dark-theme label shipped at low contrast in Orbit Notes.",
+          "timeSaved": "rare",
+          "effort": "approve",
+          "timeReason": "Estimated from 1 recurrence per month.",
+          "effortReason": "A one-line gotcha in the skill file.",
+          "by": "claude-opus-5-5 · gotcha-assess",
+          "at": "@iso:-14h",
+          "timeLabel": "<15m/mo saved",
+          "effortLabel": "Approve only"
+        },
+        "judgment": {
+          "scores": {
+            "pain": 5,
+            "frequency": 4,
+            "specificity": 6,
+            "fit": 6,
+            "durability": 6
+          },
+          "score": 52,
+          "reason": "A dark-theme label shipped at low contrast in Orbit Notes. Scored 52 on the rubric.",
+          "critique": "Good habit; partly covered by design review.",
+          "evidenceChecked": [
+            "memory/lessons/releases.md",
+            "skills/design-critique/SKILL.md"
+          ],
+          "judgedAt": "@iso:-14h",
+          "by": "claude-opus-5-5 · gotcha-assess",
+          "recurrence": 1,
+          "sourceAt": "@iso:-1d@17:20"
+        }
+      }
+    }
+  ]
+}

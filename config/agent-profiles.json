@@ -1,0 +1,112 @@
+{
+  "version": 1,
+  "updatedAt": "2026-10-28",
+  "advisoryOnly": true,
+  "agents": [
+    {
+      "id": "codex",
+      "name": "Codex",
+      "capabilities": [
+        "local-code-edit",
+        "implementation",
+        "repository-inspection",
+        "verification"
+      ],
+      "privacyBoundary": "May work with local workspace content within the task's permissions.",
+      "costClass": "subscription-quota",
+      "launchPath": "Orca agent `codex` via `orca orchestration worker-start --agent codex`.",
+      "knownQuirks": [
+        "Orca worker reports must use a three-sentence worker_done summary and a durable report for detail."
+      ],
+      "fallbacks": [
+        "claude",
+        "kilocode"
+      ]
+    },
+    {
+      "id": "claude",
+      "name": "Claude",
+      "capabilities": [
+        "local-code-edit",
+        "implementation",
+        "repository-inspection",
+        "verification",
+        "document-analysis"
+      ],
+      "privacyBoundary": "May work with local workspace content within the task's permissions.",
+      "costClass": "subscription-quota",
+      "launchPath": "Orca agent `claude` via `orca orchestration worker-start --agent claude`.",
+      "knownQuirks": [
+        "Long PowerShell specs containing double quotes should be passed by file pointer to avoid argument parsing errors."
+      ],
+      "fallbacks": [
+        "codex",
+        "kilocode"
+      ]
+    },
+    {
+      "id": "kilocode",
+      "name": "Kilocode",
+      "capabilities": [
+        "local-code-edit",
+        "implementation",
+        "repository-inspection"
+      ],
+      "privacyBoundary": "May work with local workspace content within the task's permissions.",
+      "costClass": "local-cli",
+      "launchPath": "Headless PowerShell command `kilo run '<prompt>'`; request an output file and verify it exists.",
+      "knownQuirks": [
+        "Kilocode is not an Orca agent alias.",
+        "A long run exited with code 1 on 2026-10-28; verify the requested output and fall back when needed."
+      ],
+      "fallbacks": [
+        "codex",
+        "claude"
+      ]
+    },
+    {
+      "id": "deepseek",
+      "name": "DeepSeek",
+      "capabilities": [
+        "public-research",
+        "source-comparison",
+        "long-document-extraction",
+        "evidence-table",
+        "first-pass-synthesis"
+      ],
+      "privacyBoundary": "Public or sanitized inputs only; never send secrets, private workspace contents, unpublished code, or personal records.",
+      "costClass": "free-web-chat-when-available",
+      "launchPath": "Coordinator-driven signed-in DeepSeek Orca browser tab; not an Orca lifecycle worker.",
+      "knownQuirks": [
+        "Availability and capacity are not guaranteed.",
+        "Consequential claims and citations require independent verification.",
+        "Do not assign local edits, authenticated changes, deployments, or destructive actions."
+      ],
+      "fallbacks": [
+        "claude",
+        "codex"
+      ]
+    },
+    {
+      "id": "copilot",
+      "name": "Copilot",
+      "capabilities": [
+        "local-code-edit",
+        "implementation",
+        "repository-inspection",
+        "github-research"
+      ],
+      "privacyBoundary": "May work with local workspace content within the task's permissions.",
+      "costClass": "premium-credits",
+      "launchPath": "Copilot CLI or app, with a concrete scoped worker task.",
+      "knownQuirks": [
+        "Assign work only when credits permit and monitor credit usage.",
+        "HQ's configured runner limits shell access to `gh search`."
+      ],
+      "fallbacks": [
+        "codex",
+        "claude"
+      ]
+    }
+  ]
+}

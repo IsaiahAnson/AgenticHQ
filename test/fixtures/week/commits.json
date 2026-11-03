@@ -1,0 +1,22 @@
+[
+  {
+    "repo": "hq",
+    "commits": [
+      { "date": "2026-10-31T09:00:00+00:00", "subject": "Add week facts", "files": 3, "insertions": 120, "deletions": 4 },
+      { "date": "2026-10-30T09:00:00+00:00", "subject": "Fix radar", "files": 1, "insertions": 8, "deletions": 2 },
+      { "date": "2026-10-29T09:00:00+00:00", "subject": "Trim pulse", "files": 2, "insertions": 20, "deletions": 30 }
+    ]
+  },
+  {
+    "repo": "tools",
+    "commits": [
+      { "date": "2026-10-30T18:00:00+00:00", "subject": "Collector test", "files": 2, "insertions": 40, "deletions": 0 }
+    ]
+  },
+  {
+    "repo": "old",
+    "commits": [
+      { "date": "2026-10-02T09:00:00+00:00", "subject": "Old", "files": 1, "insertions": 5, "deletions": 5 }
+    ]
+  }
+]

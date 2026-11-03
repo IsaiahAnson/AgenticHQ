@@ -1,0 +1,16 @@
+:root {
+  --hq-ink:#d5ddff; --hq-bright:#eef1ff; --hq-dim:#7d88b3; --hq-faint:#717aa7; --hq-dot:#48507a;
+  --hq-line:rgba(140,160,255,.14); --hq-line2:rgba(160,180,255,.32);
+  --hq-blue:#7fa6ff; --hq-violet:#a37cff; --hq-cyan:#7ff0ff; --hq-amber:#ffae42; --hq-red:#ff5a4a; --hq-green:#4fd58a;
+  --hq-bg:#060d22; --glass:rgba(8,11,28,.64); --glass-hi:rgba(7,9,22,.9);
+  --r-chip:4px; --r-ctl:6px; --r-row:10px; --r-panel:16px;
+  --hq-shadow:0 6px 24px rgba(0,0,0,.35), inset 0 1px 0 rgba(180,200,255,.06);
+  --hq-font:'Segoe UI Variable','Segoe UI',system-ui,sans-serif;
+  --hq-mono:'Cascadia Mono','Cascadia Code',Consolas,monospace;
+}
+::selection { background:rgba(163,124,255,.45); }
+:focus-visible { outline:2px solid var(--hq-cyan); outline-offset:2px; }
+* { scrollbar-width:thin; scrollbar-color:#2a3160 transparent; }
+::-webkit-scrollbar { width:6px; height:6px; }
+::-webkit-scrollbar-thumb { background:#2a3160; border-radius:3px; }
+::-webkit-scrollbar-track { background:transparent; }

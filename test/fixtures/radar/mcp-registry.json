@@ -1,0 +1,5 @@
+{"servers":[
+ {"server":{"name":"io.github.acme/agent-tool","title":"Agent Tool MCP","description":"Worktree manager as an MCP server","version":"0.3.0","repository":{"url":"https://github.com/acme/agent-tool","source":"github"}},"_meta":{"io.modelcontextprotocol.registry/official":{"publishedAt":"2026-10-28T08:25:47Z","isLatest":true}}},
+ {"server":{"name":"ai.example/old","description":"old version","version":"0.1.0","websiteUrl":"https://example.ai"},"_meta":{"io.modelcontextprotocol.registry/official":{"publishedAt":"2026-10-28T08:25:47Z","isLatest":false}}},
+ {"server":{"name":"ai.example/hosted","description":"Hosted search","version":"1.0.0","websiteUrl":"https://hosted.example.ai/"},"_meta":{"io.modelcontextprotocol.registry/official":{"publishedAt":"2026-10-28T09:00:00Z","isLatest":true}}}
+],"metadata":{"count":3}}

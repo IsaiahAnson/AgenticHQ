@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' data:; connect-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; frame-src 'none'; form-action 'none'; object-src 'none'; base-uri 'none'">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<title>Build · AI Radar</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='none' stroke='%237ff0ff' stroke-width='4' stroke-linecap='round'%3E%3Ccircle cx='24' cy='24' r='18'/%3E%3Cpath d='M17 24h14M24 17v14'/%3E%3C/svg%3E">
+<script src="/assets/token.js"></script>
+<style>
+/* AI Radar build watch: one Implement build's Claude session, live. Same tokens as radar.html (hq-*) */
+:root{
+  --hq-ink:#d5ddff;--hq-bright:#eef1ff;--hq-dim:#7d88b3;--hq-faint:#717aa7;--hq-dot:#48507a;
+  --hq-line:rgba(140,160,255,.14);--hq-line2:rgba(160,180,255,.32);
+  --hq-blue:#7fa6ff;--hq-violet:#a37cff;--hq-cyan:#7ff0ff;--hq-amber:#ffae42;--hq-red:#ff5a4a;--hq-green:#4fd58a;
+  --glass:rgba(8,11,28,.64);--glass2:rgba(14,20,48,.72);--bg:#060d22;
+  --sans:'Segoe UI Variable Text','Segoe UI',system-ui,sans-serif;
+  --display:'Segoe UI Variable Display','Segoe UI Variable Text','Segoe UI',system-ui,sans-serif;
+  --mono:'Cascadia Mono',Consolas,monospace;
+  --shadow:0 6px 24px rgba(0,0,0,.35),inset 0 1px 0 rgba(180,200,255,.06);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{font-size:15px;color-scheme:dark;scrollbar-color:rgba(140,160,255,.28) transparent}
+@media (min-width:2200px){html{font-size:17px}}
+body{min-height:100vh;background:var(--bg) radial-gradient(ellipse 120% 80% at 50% -10%,rgba(60,80,170,.22),transparent 60%) fixed;color:var(--hq-ink);font:400 1rem/1.55 var(--sans);caret-color:var(--hq-cyan);-webkit-font-smoothing:antialiased}
+::selection{background:rgba(163,124,255,.45);color:#fff}
+:focus-visible{outline:2px solid var(--hq-cyan);outline-offset:2px;border-radius:6px}
+a{color:var(--hq-blue);text-decoration:none}a:hover{text-decoration:underline;text-underline-offset:3px}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+.mono{font-family:var(--mono)}
+.muted{color:var(--hq-dim)}
+.pill{display:inline-flex;align-items:center;gap:8px;height:32px;padding:0 15px;border-radius:999px;border:1px solid var(--hq-line2);background:rgba(20,28,64,.55);font:500 .7rem/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--hq-ink);transition:background .15s,border-color .15s,color .15s;white-space:nowrap}
+.pill:hover{border-color:rgba(190,205,255,.55);background:rgba(32,42,92,.7);text-decoration:none}
+.pill.primary{border-color:rgba(163,124,255,.7);background:rgba(163,124,255,.2);color:#e6dcff}
+.pill.primary:hover{background:rgba(163,124,255,.32)}
+.pill.ghost{border-color:transparent;background:none;color:var(--hq-dim)}
+.pill.ghost:hover{color:var(--hq-ink);background:rgba(127,166,255,.08)}
+.pill[aria-pressed="true"]{border-color:rgba(127,240,255,.45);color:var(--hq-cyan)}
+.pill[disabled]{opacity:.45;cursor:default;pointer-events:none}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--hq-dot);flex:none;display:inline-block}
+.dot.ok{background:var(--hq-green)}.dot.warn{background:var(--hq-amber)}.dot.bad{background:var(--hq-red)}.dot.live{background:var(--hq-cyan);animation:pulse 1.4s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.35}}
+@media (prefers-reduced-motion:reduce){.dot.live{animation:none}*{scroll-behavior:auto!important}}
+
+/* top bar */
+.bar{position:sticky;top:0;z-index:5;background:linear-gradient(rgba(6,13,34,.94),rgba(6,13,34,.86));backdrop-filter:blur(10px);border-bottom:1px solid var(--hq-line)}
+.bar .in{max-width:980px;margin:0 auto;padding:14px 28px 12px;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.back{display:inline-flex;align-items:center;gap:6px;font:.74rem/1 var(--mono);color:var(--hq-dim)}
+.back:hover{color:var(--hq-ink);text-decoration:none}
+.head{flex:1;min-width:260px}
+.head h1{font:600 1.3rem/1.25 var(--display);color:var(--hq-bright);letter-spacing:-.01em;text-wrap:balance}
+.meta{margin-top:4px;display:flex;flex-wrap:wrap;gap:4px 14px;align-items:center;font:.74rem/1.4 var(--mono);color:var(--hq-dim);font-variant-numeric:tabular-nums}
+.meta b{font-weight:400;color:var(--hq-ink)}
+.acts{display:flex;gap:8px;align-items:center}
+
+/* transcript */
+main{max-width:980px;margin:0 auto;padding:22px 28px 120px}
+.log{display:flex;flex-direction:column}
+.marker{display:flex;align-items:center;gap:12px;margin:6px 0 18px;font:.72rem/1.4 var(--mono);color:var(--hq-faint)}
+.marker::before,.marker::after{content:"";flex:1;height:1px;background:var(--hq-line)}
+.msg{display:grid;grid-template-columns:28px minmax(0,1fr);gap:12px;margin:14px 0 10px}
+.av{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:rgba(163,124,255,.16);border:1px solid rgba(163,124,255,.45);color:#d9c9ff}
+.who{font:600 .74rem/1 var(--sans);color:var(--hq-violet);margin:6px 0 6px;letter-spacing:.02em}
+.txt{font-size:.95rem;color:var(--hq-ink);max-width:76ch;white-space:pre-wrap;overflow-wrap:anywhere}
+.txt strong{color:var(--hq-bright);font-weight:600}
+.txt code{font:.84em var(--mono);background:rgba(127,166,255,.1);border-radius:4px;padding:1px 5px;color:#cfdcff}
+.txt pre,.out pre{font:.78rem/1.5 var(--mono);background:rgba(4,8,22,.7);border:1px solid var(--hq-line);border-radius:10px;padding:10px 12px;margin:8px 0;white-space:pre-wrap;overflow-wrap:anywhere;max-height:420px;overflow:auto;color:#c4cff5}
+.sub{margin-left:40px}
+.sub .who::after{content:" · subagent";color:var(--hq-dim);font-weight:400}
+
+.tool{margin:3px 0 3px 40px;border:1px solid var(--hq-line);border-radius:10px;background:rgba(10,15,38,.5);transition:border-color .15s}
+.tool:hover{border-color:var(--hq-line2)}
+.tool>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:10px;padding:7px 12px;min-height:34px}
+.tool>summary::-webkit-details-marker{display:none}
+.tool .ic{color:var(--hq-blue);flex:none;display:grid}
+.tool .nm{font:500 .74rem/1 var(--mono);color:var(--hq-bright);flex:none}
+.tool .sm{font:.74rem/1.3 var(--mono);color:var(--hq-dim);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1;min-width:0}
+.tool .st{flex:none;font:.66rem/1 var(--mono);color:var(--hq-faint);text-transform:uppercase;letter-spacing:.06em}
+.tool .st.err{color:var(--hq-red)}
+.tool .chev{flex:none;color:var(--hq-faint);transition:transform .2s}
+.tool[open] .chev{transform:rotate(90deg)}
+.tool.err{border-color:rgba(255,90,74,.35)}
+.out{padding:0 12px 10px}
+.out .full{font:.74rem/1.5 var(--mono);color:var(--hq-dim);overflow-wrap:anywhere;margin-top:4px}
+.note{margin:2px 0 2px 40px;font:.72rem/1.45 var(--mono);color:var(--hq-faint);overflow-wrap:anywhere}
+details.cmd{margin:0 0 4px}
+details.cmd summary{cursor:pointer;font:.72rem/1.4 var(--mono);color:var(--hq-faint);list-style:none}
+details.cmd summary::-webkit-details-marker{display:none}
+details.cmd summary:hover{color:var(--hq-dim)}
+details.cmd pre{font:.72rem/1.5 var(--mono);color:var(--hq-dim);white-space:pre-wrap;overflow-wrap:anywhere;margin-top:6px;padding:10px 12px;border:1px solid var(--hq-line);border-radius:10px;background:rgba(4,8,22,.6);max-height:260px;overflow:auto}
+
+.end{margin:26px 0 0;padding:18px 20px;border:1px solid var(--hq-line2);border-radius:14px;background:var(--glass2);box-shadow:var(--shadow)}
+.end.bad{border-color:rgba(255,90,74,.45)}
+.end h2{font:600 1.05rem/1.3 var(--display);color:var(--hq-bright);display:flex;align-items:center;gap:10px}
+.end .nums{margin-top:4px;font:.74rem/1.4 var(--mono);color:var(--hq-dim);font-variant-numeric:tabular-nums}
+.end .txt{margin-top:12px}
+.end .acts{margin-top:16px;flex-wrap:wrap}
+.end .hint{margin-top:10px;font-size:.8rem;color:var(--hq-dim);max-width:76ch}
+.report{margin-top:14px}
+.report pre{font:.78rem/1.55 var(--mono);white-space:pre-wrap;overflow-wrap:anywhere;color:#c9d3f7;background:rgba(4,8,22,.7);border:1px solid var(--hq-line);border-radius:10px;padding:14px 16px;max-height:60vh;overflow:auto}
+
+.wait{display:flex;align-items:center;gap:10px;padding:40px 0;color:var(--hq-dim);font-size:.92rem}
+.banner{display:flex;gap:10px;align-items:center;margin:0 0 14px;padding:10px 14px;border-radius:10px;border:1px solid rgba(255,174,66,.4);background:rgba(255,174,66,.08);color:#ffd9a3;font-size:.86rem}
+.banner[hidden]{display:none}
+
+.foot{position:fixed;left:0;right:0;bottom:0;pointer-events:none;display:flex;justify-content:center;padding:0 0 16px}
+.live{pointer-events:auto;display:inline-flex;align-items:center;gap:10px;height:32px;padding:0 14px;border-radius:999px;border:1px solid var(--hq-line2);background:rgba(10,15,38,.9);box-shadow:var(--shadow);font:.7rem/1 var(--mono);color:var(--hq-dim);font-variant-numeric:tabular-nums}
+.live button{color:var(--hq-cyan);font:.7rem/1 var(--mono);text-transform:uppercase;letter-spacing:.06em}
+.live[hidden]{display:none}
+.toast{position:fixed;right:20px;bottom:20px;max-width:420px;padding:12px 16px;border-radius:12px;border:1px solid var(--hq-line2);background:rgba(12,18,44,.96);box-shadow:var(--shadow);font-size:.86rem;opacity:0;transform:translateY(6px);transition:opacity .2s,transform .2s;pointer-events:none}
+.toast.show{opacity:1;transform:none}
+.toast.err{border-color:rgba(255,90,74,.5);color:#ffc2bb}
+@media (max-width:720px){.bar .in,main{padding-left:16px;padding-right:16px}.tool,.note{margin-left:0}.sub{margin-left:12px}.msg{grid-template-columns:22px minmax(0,1fr);gap:8px}.av{width:22px;height:22px}}
+</style>
+</head>
+<body>
+<header class="bar"><div class="in">
+  <a class="back" href="/radar" id="back"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3 5 8l5 5"/></svg>AI Radar</a>
+  <div class="head"><h1 id="title">Build</h1><div class="meta" id="meta"></div></div>
+  <div class="acts">
+    <button class="pill ghost" type="button" id="follow" aria-pressed="true" title="Keep the newest step in view">Follow</button>
+    <button class="pill primary" type="button" id="openChat" disabled>Open in Claude</button>
+  </div>
+</div></header>
+<main>
+  <div class="banner" id="banner" hidden></div>
+  <div class="log" id="log" aria-live="polite" aria-relevant="additions"><div class="wait"><span class="dot live"></span>Waiting for Claude to start the build…</div></div>
+  <div id="end"></div>
+</main>
+<div class="foot"><div class="live" id="live" hidden><span class="dot live"></span><span id="liveTxt">Live</span><button type="button" id="jump" hidden>Jump to latest</button></div></div>
+<div class="toast" id="toast" role="status"></div>
+<script>
+(() => {
+'use strict';
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const secs = s => (s == null ? '' : s < 90 ? s + 's' : Math.floor(s / 60) + 'm ' + String(s % 60).padStart(2, '0') + 's');
+const ID = (() => { const v = new URLSearchParams(location.search).get('id') || ''; return /^[a-z0-9][a-z0-9-]{0,80}$/.test(v) ? v : null; })();
+const S = { from: 0, info: null, started: Date.now(), lastAt: 0, follow: true, tools: new Map(), firstEvent: true, done: false, misses: 0, timer: null, opening: false };
+
+const ICONS = {
+  term: '<path d="M3 4.5h10v7H3z"/><path d="m5.5 7 1.5 1.25L5.5 9.5M8.5 9.5h2"/>',
+  file: '<path d="M4.5 2.5h5l2 2v9h-7z"/><path d="M9.5 2.5v2h2"/>',
+  edit: '<path d="M10.5 3 13 5.5 6.5 12H4V9.5z"/>',
+  find: '<circle cx="7" cy="7" r="3.75"/><path d="m10 10 3 3"/>',
+  web: '<circle cx="8" cy="8" r="5.25"/><path d="M2.75 8h10.5M8 2.75c1.6 1.6 1.6 8.9 0 10.5M8 2.75c-1.6 1.6-1.6 8.9 0 10.5"/>',
+  tool: '<circle cx="8" cy="8" r="2"/><path d="M8 2.5v2M8 11.5v2M2.5 8h2M11.5 8h2"/>'
+};
+const iconFor = n => (n === 'Bash' ? 'term' : n === 'Read' ? 'file' : /^(Edit|Write|MultiEdit|NotebookEdit)$/.test(n) ? 'edit' : /^(Glob|Grep)$/.test(n) ? 'find' : /^Web/.test(n) ? 'web' : 'tool');
+const svg = (k, size = 14) => `<svg width="${size}" height="${size}" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[k]}</svg>`;
+const CHEV = '<svg class="chev" width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 3 5 5-5 5"/></svg>';
+const MARK = '<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M8 2.5v11M2.5 8h11M4.1 4.1l7.8 7.8M11.9 4.1l-7.8 7.8"/></svg>';
+
+/* a light Markdown subset: fenced code, inline code, bold, headings as bold lines; everything escaped first */
+function md(text) {
+  const parts = String(text).split(/```[^\n]*\n?/);
+  return parts.map((p, i) => {
+    if (i % 2) return `<pre>${esc(p.replace(/\n$/, ''))}</pre>`;
+    return esc(p).replace(/`([^`\n]+)`/g, '<code>$1</code>').replace(/\*\*([^*\n]+)\*\*/g, '<strong>$1</strong>').replace(/^#{1,6} (.+)$/gm, '<strong>$1</strong>');
+  }).join('');
+}
+
+let toastT = null;
+function toast(msg, err) { const t = $('#toast'); t.textContent = msg; t.classList.toggle('err', !!err); t.classList.add('show'); clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove('show'), 5000); }
+async function api(path, body) {
+  const r = await fetch('/api/radar' + path, body ? { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) } : { cache: 'no-store' });
+  let data = null; try { data = await r.json(); } catch (_) { }
+  if (!r.ok) { const e = new Error((data && data.error) || `HTTP ${r.status}`); e.status = r.status; throw e; }
+  return data;
+}
+
+const nearBottom = () => innerHeight + scrollY >= document.documentElement.scrollHeight - 160;
+function append(html) {
+  const log = $('#log');
+  if (S.firstEvent) { log.innerHTML = ''; S.firstEvent = false; }
+  log.insertAdjacentHTML('beforeend', html);
+}
+function render(e) {
+  const subCls = e.sub ? ' sub' : '';
+  if (e.t === 'init') return append(`<div class="marker">Session started · ${esc(e.model)} · ${esc(e.mode || 'restricted')} · its own worktree</div>`);
+  if (e.t === 'text') return append(`<div class="msg${subCls}"><div class="av">${MARK}</div><div><div class="who">Claude</div><div class="txt">${md(e.text)}</div></div></div>`);
+  if (e.t === 'tool') {
+    append(`<details class="tool${subCls}" data-tool="${esc(e.id)}"><summary><span class="ic">${svg(iconFor(e.name))}</span><span class="nm">${esc(e.name)}</span><span class="sm" title="${esc(e.summary)}">${esc(e.summary)}</span><span class="st">running</span>${CHEV}</summary><div class="out"><div class="full">${esc(e.summary)}</div></div></details>`);
+    S.tools.set(e.id, $('#log').lastElementChild);
+    return;
+  }
+  if (e.t === 'out') {
+    const el = S.tools.get(e.id);
+    if (!el) return;
+    const st = el.querySelector('.st'); st.textContent = e.error ? 'error' : 'done'; st.classList.toggle('err', e.error);
+    el.classList.toggle('err', e.error);
+    el.querySelector('.out').insertAdjacentHTML('beforeend', e.text.trim() ? `<pre>${esc(e.text)}</pre>` : '<div class="full">(no output)</div>');
+    return;
+  }
+  if (e.t === 'note') {
+    if (/^\$ claude /.test(e.text)) return append(`<details class="cmd note"><summary>Command line and permissions (show)</summary><pre>${esc(e.text)}</pre></details>`);
+    return append(`<div class="note">${esc(e.text)}</div>`);
+  }
+  if (e.t === 'result') { S.result = e; return; }
+}
+
+function statusInfo(t) {
+  if (t.status === 'running') return ['live', 'Building'];
+  if (t.status === 'done' && t.code === 0) return ['ok', 'Finished'];
+  if (t.status === 'unknown') return ['warn', 'Stopped (HQ restarted while it ran)'];
+  return ['bad', 'Failed' + (t.code != null ? ' (exit ' + t.code + ')' : '')];
+}
+function renderHead(t) {
+  const name = (t.chatName || t.title || ID).replace(/^AI Radar · /, '');
+  $('#title').textContent = name;
+  document.title = name + ' · build';
+  const [dot, label] = statusInfo(t), r = S.result;
+  $('#meta').innerHTML = [`<span><span class="dot ${dot}"></span> <b>${esc(label)}</b></span>`, `<span>${esc(t.branch || '')}</span>`,
+    t.elapsed != null ? `<span>${esc(secs(t.elapsed))}</span>` : '', r && r.turns != null ? `<span>${r.turns} turns</span>` : '',
+    r && r.cost != null ? `<span>$${r.cost.toFixed(2)} at API rates</span>` : ''].filter(Boolean).join('');
+  const b = $('#openChat'), canChat = !!t.sessionId && t.status !== 'running';
+  b.disabled = !canChat || S.opening;
+  b.title = !t.sessionId ? 'This build ran before builds were saved as Claude chats.' : t.status === 'running' ? 'It becomes a Claude chat when the build finishes.' : 'Open this build as a chat in the Claude app';
+}
+function renderEnd(t) {
+  if (!t.done) { $('#end').innerHTML = ''; return; }
+  const r = S.result, [dot, label] = statusInfo(t), bad = dot !== 'ok';
+  const nums = [t.elapsed != null ? secs(t.elapsed) : '', r && r.turns != null ? r.turns + ' turns' : '', r && r.cost != null ? '$' + r.cost.toFixed(2) + ' at API rates (on your plan)' : ''].filter(Boolean).join(' · ');
+  $('#end').innerHTML = `<section class="end${bad ? ' bad' : ''}"><h2><span class="dot ${dot}"></span>${esc(label)}</h2>${nums ? `<div class="nums">${esc(nums)}</div>` : ''}
+    ${r && r.text ? `<div class="txt">${md(r.text)}</div>` : ''}
+    <div class="acts">${t.sessionId ? '<button class="pill primary" type="button" data-act="chat">Open in Claude</button>' : ''}${t.reportExists ? '<button class="pill" type="button" data-act="report">Read the report</button>' : ''}<a class="pill ghost" href="/radar#${esc(ID)}">Review and merge</a></div>
+    <p class="hint">${t.sessionId ? (t.chatAddedAt ? 'This build is saved in the Claude app as a chat named ' : 'Open in Claude adds this build to the Claude app as a chat named ') + `<strong>${esc(t.chatName || '')}</strong>, with every step above. Typing there continues it as a normal Claude Code session in the build's worktree, with your usual permissions.` : 'This build ran before builds were saved as Claude chats.'}</p>
+    <div class="report" id="report"></div></section>`;
+}
+
+function setLive(t) {
+  const l = $('#live');
+  if (t.done) { l.hidden = true; return; }
+  l.hidden = false;
+  const ago = S.lastAt ? Math.round((Date.now() - S.lastAt) / 1000) : null;
+  $('#liveTxt').textContent = t.status === 'running' ? (ago == null ? 'Live' : ago < 3 ? 'Live · just now' : `Live · last step ${secs(ago)} ago`) : 'Reading the rest of the log…';
+  $('#jump').hidden = S.follow;
+}
+
+async function tick() {
+  let t;
+  try { t = await api('/transcript?id=' + encodeURIComponent(ID) + '&from=' + S.from); }
+  catch (e) {
+    /* right after Start build, the decision may not be recorded yet */
+    if (e.status === 404 && Date.now() - S.started < 30000) return schedule(1500);
+    S.misses++;
+    const ban = $('#banner'); ban.hidden = false;
+    ban.textContent = e.status === 404 ? 'There is no build for this finding. It may have been discarded.' : `Lost contact with HQ (${e.message}). Retrying.`;
+    if (e.status === 404 || e.status === 400) return;
+    return schedule(Math.min(15000, 2000 * S.misses));
+  }
+  S.misses = 0; $('#banner').hidden = true;
+  const stick = S.follow && nearBottom();
+  if (t.events.length) S.lastAt = Date.now();
+  for (const e of t.events) render(e);
+  S.from = t.next; S.info = t;
+  if (t.done && S.firstEvent) append('<div class="wait">The log is empty.</div>');
+  renderHead(t); renderEnd(t); setLive(t);
+  if (S.follow && (stick || S.firstPaint !== true)) { S.firstPaint = true; scrollTo({ top: document.documentElement.scrollHeight, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' }); }
+  if (t.done) { S.done = true; return; }
+  schedule(t.next < t.size ? 50 : document.hidden ? 5000 : 1500);
+}
+function schedule(ms) { clearTimeout(S.timer); S.timer = setTimeout(tick, ms); }
+
+async function openChat() {
+  if (S.opening) return;
+  S.opening = true; document.querySelectorAll('[data-act="chat"],#openChat').forEach(b => { b.disabled = true; b.textContent = 'Opening…'; });
+  try { await api('/open-chat', { id: ID }); toast('Opened in the Claude app.'); if (S.info) S.info.chatAddedAt = S.info.chatAddedAt || new Date().toISOString(); }
+  catch (e) { toast(e.message, true); }
+  finally { S.opening = false; document.querySelectorAll('[data-act="chat"],#openChat').forEach(b => { b.textContent = 'Open in Claude'; }); if (S.info) { renderHead(S.info); renderEnd(S.info); } }
+}
+async function showReport() {
+  const box = $('#report'); if (!box) return;
+  if (box.innerHTML) { box.innerHTML = ''; return; }
+  try { const r = await api('/report?id=' + encodeURIComponent(ID)); box.innerHTML = `<pre>${esc(r.text)}</pre>`; box.scrollIntoView({ block: 'nearest' }); }
+  catch (e) { toast(e.message, true); }
+}
+
+if (!ID) { $('#log').innerHTML = '<div class="wait">This link has no build id. Open a build from AI Radar.</div>'; return; }
+$('#back').href = '/radar#' + ID;
+$('#openChat').onclick = openChat;
+$('#follow').onclick = () => { S.follow = !S.follow; $('#follow').setAttribute('aria-pressed', S.follow); if (S.follow) scrollTo({ top: document.documentElement.scrollHeight }); if (S.info) setLive(S.info); };
+$('#jump').onclick = () => { S.follow = true; $('#follow').setAttribute('aria-pressed', 'true'); scrollTo({ top: document.documentElement.scrollHeight }); if (S.info) setLive(S.info); };
+document.addEventListener('click', e => { const a = e.target.closest('[data-act]'); if (!a) return; if (a.dataset.act === 'chat') openChat(); else if (a.dataset.act === 'report') showReport(); });
+/* scrolling up to read pauses Follow; scrolling back to the bottom resumes it */
+let lastY = scrollY;
+addEventListener('scroll', () => { if (scrollY < lastY - 4 && S.follow && !nearBottom()) { S.follow = false; $('#follow').setAttribute('aria-pressed', 'false'); if (S.info) setLive(S.info); } else if (!S.follow && nearBottom() && scrollY > lastY) { S.follow = true; $('#follow').setAttribute('aria-pressed', 'true'); if (S.info) setLive(S.info); } lastY = scrollY; }, { passive: true });
+setInterval(() => { if (S.info && !S.done) setLive(S.info); }, 1000);
+document.addEventListener('visibilitychange', () => { if (!document.hidden && !S.done) schedule(50); });
+tick();
+})();
+</script>
+</body>
+</html>

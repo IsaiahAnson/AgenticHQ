@@ -1,0 +1,9 @@
+{
+  "_demo": "Demo mode settings: tools/demo.mjs lays this over os-config.json in its sandbox copy. The feeds answer from demo/fixtures/ (lib/demo.cjs); the ports here give way to --port.",
+  "port": 50310,
+  "brainPort": 50311,
+  "artifactsDir": "artifacts",
+  "allowNullOrigin": false,
+  "readers": { "claudeCode": false },
+  "email": { "enabled": false }
+}

@@ -1,0 +1,82 @@
+{
+  "source": "google-calendar",
+  "fetched": "@iso:-2m",
+  "calendars": [
+    "you@example.com",
+    "team@example.org"
+  ],
+  "events": [
+    {
+      "title": "Team standup",
+      "start": "@iso:0d@10:00",
+      "allDay": false,
+      "cal": "team@example.org",
+      "link": "https://calendar.example.com/event/standup",
+      "meet": "https://meet.example.com/standup"
+    },
+    {
+      "title": "Design review: sync banner with Priya",
+      "start": "@iso:0d@11:30",
+      "allDay": false,
+      "cal": "team@example.org",
+      "link": "https://calendar.example.com/event/sync-banner-review",
+      "meet": "https://meet.example.com/sync-banner-review"
+    },
+    {
+      "title": "1:1 with Sam",
+      "start": "@iso:0d@13:30",
+      "allDay": false,
+      "cal": "you@example.com",
+      "link": "https://calendar.example.com/event/one-on-one-sam",
+      "meet": "https://meet.example.com/one-on-one-sam"
+    },
+    {
+      "title": "Tidepool sensor data call with Mei",
+      "start": "@iso:0d@15:00",
+      "allDay": false,
+      "cal": "you@example.com",
+      "link": "https://calendar.example.com/event/tidepool-sensors",
+      "meet": "https://meet.example.com/tidepool-sensors"
+    },
+    {
+      "title": "Theme pairing with Jordan",
+      "start": "@iso:0d@16:30",
+      "allDay": false,
+      "cal": "you@example.com",
+      "link": "https://calendar.example.com/event/theme-pairing",
+      "meet": null
+    },
+    {
+      "title": "Talk rehearsal: local-first sync",
+      "start": "@iso:0d@19:00",
+      "allDay": false,
+      "cal": "you@example.com",
+      "link": "https://calendar.example.com/event/talk-rehearsal",
+      "meet": null
+    },
+    {
+      "title": "Coffee with Theo",
+      "start": "@iso:+1d@08:30",
+      "allDay": false,
+      "cal": "you@example.com",
+      "link": "https://calendar.example.com/event/coffee-theo",
+      "meet": null
+    },
+    {
+      "title": "Orbit Notes 0.15 release planning",
+      "start": "@iso:+1d@10:00",
+      "allDay": false,
+      "cal": "team@example.org",
+      "link": "https://calendar.example.com/event/release-planning-24",
+      "meet": "https://meet.example.com/release-planning-24"
+    },
+    {
+      "title": "Focus day: fieldkit docs",
+      "start": "@date:+2d",
+      "allDay": true,
+      "cal": "you@example.com",
+      "link": "https://calendar.example.com/event/focus-fieldkit-docs",
+      "meet": null
+    }
+  ]
+}

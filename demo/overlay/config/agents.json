@@ -1,0 +1,9 @@
+{
+  "_note": "Public demo: two helper agents with set skills and notes. They orbit AGENTS md on the map and link to the skills and memory they use. A remote agent that sees synced folders would use kind 'vps' and access 'synced'.",
+  "agents": [
+    { "id": "agent:codex", "name": "Codex", "kind": "helper", "color": "#7fa6ff", "sprite": "robo", "desc": "Second coding lane: PR reviews and flaky-test fixes, one worktree per task",
+      "skills": ["skills/pr-review", "skills/test-fixer"], "memory": ["memory/lessons/agents-parallel.md", "memory/lessons/ci.md"] },
+    { "id": "agent:opencode", "name": "OpenCode", "kind": "helper", "color": "#a37cff", "sprite": "robo", "desc": "Free-model lane: inbox triage, standup drafts and dependency notes",
+      "skills": ["skills/triage", "skills/standup", "skills/dep-watch"], "memory": ["memory/agent-lanes.md", "memory/lessons/inbox.md"] }
+  ]
+}

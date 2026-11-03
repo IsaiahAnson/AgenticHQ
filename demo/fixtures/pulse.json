@@ -1,0 +1,457 @@
+{
+  "fetched": "@iso:-1m",
+  "timeZone": "America/Chicago",
+  "days": [
+    "@date:-6d",
+    "@date:-5d",
+    "@date:-4d",
+    "@date:-3d",
+    "@date:-2d",
+    "@date:-1d",
+    "@date:0"
+  ],
+  "keptDays": 14,
+  "historySince": "@iso:-41d",
+  "rows": [
+    {
+      "id": "desktop-morning-brief",
+      "name": "Morning brief",
+      "kind": "desktop",
+      "cron": "30 7 * * *",
+      "dots": [
+        "ok",
+        "ok",
+        "ok",
+        "ok",
+        "ok",
+        "ok",
+        "ok"
+      ],
+      "useful": {
+        "kept": 5,
+        "total": 7,
+        "trashed": 1,
+        "opened": 6
+      },
+      "noisy": false,
+      "lastRun": {
+        "at": "@iso:0d@07:31",
+        "ok": true
+      },
+      "open": "/artifacts/morning-brief.html",
+      "retired": false,
+      "retiredInto": null,
+      "quiet": false
+    },
+    {
+      "id": "desktop-inbox-triage",
+      "name": "Inbox triage",
+      "kind": "desktop",
+      "cron": "0 9,13,17 * * *",
+      "dots": [
+        "ok",
+        "ok",
+        "ok",
+        "ok",
+        "ok",
+        "ok",
+        "ok"
+      ],
+      "useful": {
+        "kept": 12,
+        "total": 21,
+        "trashed": 3,
+        "opened": 15
+      },
+      "noisy": false,
+      "lastRun": {
+        "at": "@iso:-2h40m",
+        "ok": true
+      },
+      "open": "/artifacts/inbox-triage.html",
+      "retired": false,
+      "retiredInto": null,
+      "quiet": false
+    },
+    {
+      "id": "desktop-standup-notes",
+      "name": "Standup notes",
+      "kind": "desktop",
+      "cron": "40 9 * * 1-5",
+      "dots": [
+        "ok",
+        "ok",
+        "ok",
+        "ok",
+        "none",
+        "none",
+        "ok"
+      ],
+      "useful": {
+        "kept": 4,
+        "total": 5,
+        "trashed": 0,
+        "opened": 5
+      },
+      "noisy": false,
+      "lastRun": {
+        "at": "@iso:-1d@09:41",
+        "ok": true
+      },
+      "open": null,
+      "retired": false,
+      "retiredInto": null,
+      "quiet": false
+    },
+    {
+      "id": "desktop-dependency-watch",
+      "name": "Dependency watch",
+      "kind": "desktop",
+      "cron": "0 10 * * *",
+      "dots": [
+        "ok",
+        "ok",
+        "fail",
+        "ok",
+        "ok",
+        "ok",
+        "ok"
+      ],
+      "useful": {
+        "kept": 3,
+        "total": 6,
+        "trashed": 1,
+        "opened": 4
+      },
+      "noisy": false,
+      "lastRun": {
+        "at": "@iso:-2h10m",
+        "ok": true
+      },
+      "open": "/artifacts/dependency-watch.html",
+      "retired": false,
+      "retiredInto": null,
+      "quiet": false
+    },
+    {
+      "id": "windows-radar-sweep",
+      "name": "AI Radar sweep",
+      "kind": "windows",
+      "cron": "0 8,20 * * *",
+      "dots": [
+        "ok",
+        "ok",
+        "ok",
+        "ok",
+        "ok",
+        "ok",
+        "ok"
+      ],
+      "useful": {
+        "kept": 9,
+        "total": 13,
+        "trashed": 2,
+        "opened": 11
+      },
+      "noisy": false,
+      "lastRun": {
+        "at": "@iso:-5h4m",
+        "ok": true
+      },
+      "open": "/artifacts/ai-radar-digest.html",
+      "retired": false,
+      "retiredInto": null,
+      "quiet": false
+    },
+    {
+      "id": "desktop-release-notes-draft",
+      "name": "Release notes draft",
+      "kind": "desktop",
+      "cron": "0 15 * * 5",
+      "dots": [
+        "none",
+        "none",
+        "ok",
+        "none",
+        "none",
+        "none",
+        "none"
+      ],
+      "useful": {
+        "kept": 1,
+        "total": 1,
+        "trashed": 0,
+        "opened": 1
+      },
+      "noisy": false,
+      "lastRun": {
+        "at": "@iso:-3d@15:02",
+        "ok": true
+      },
+      "open": "/artifacts/paper-lantern-0-9-notes.html",
+      "retired": false,
+      "retiredInto": null,
+      "quiet": false
+    },
+    {
+      "id": "desktop-skill-review",
+      "name": "Skill review",
+      "kind": "desktop",
+      "cron": "0 9 * * 1",
+      "dots": [
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "ok"
+      ],
+      "useful": {
+        "kept": 1,
+        "total": 1,
+        "trashed": 0,
+        "opened": 1
+      },
+      "noisy": false,
+      "lastRun": {
+        "at": "@iso:-1d@09:03",
+        "ok": true
+      },
+      "open": "/artifacts/skill-review-proposals.html",
+      "retired": false,
+      "retiredInto": null,
+      "quiet": false
+    },
+    {
+      "id": "windows-weekly-review",
+      "name": "Weekly review",
+      "kind": "windows",
+      "cron": "0 18 * * 0",
+      "dots": [
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "ok",
+        "none"
+      ],
+      "useful": {
+        "kept": 1,
+        "total": 1,
+        "trashed": 0,
+        "opened": 1
+      },
+      "noisy": false,
+      "lastRun": {
+        "at": "@iso:-2d@18:04",
+        "ok": true
+      },
+      "open": "/artifacts/week-in-hq.html",
+      "retired": false,
+      "retiredInto": null,
+      "quiet": false
+    },
+    {
+      "id": "windows-backup-check",
+      "name": "Backup check",
+      "kind": "windows",
+      "cron": "0 23 * * *",
+      "dots": [
+        "ok",
+        "ok",
+        "ok",
+        "ok",
+        "ok",
+        "miss",
+        "none"
+      ],
+      "useful": null,
+      "noisy": false,
+      "lastRun": {
+        "at": "@iso:-2d@23:00",
+        "ok": true
+      },
+      "open": null,
+      "retired": false,
+      "retiredInto": null,
+      "quiet": false
+    },
+    {
+      "id": "windows-brain-refresh",
+      "name": "Brain refresh",
+      "kind": "windows",
+      "cron": "0 */3 * * *",
+      "dots": [
+        "ok",
+        "ok",
+        "ok",
+        "ok",
+        "ok",
+        "ok",
+        "ok"
+      ],
+      "useful": null,
+      "noisy": false,
+      "lastRun": {
+        "at": "@iso:-1h12m",
+        "ok": true
+      },
+      "open": null,
+      "retired": false,
+      "retiredInto": null,
+      "quiet": true
+    },
+    {
+      "id": "deck-release-notes",
+      "name": "/release-notes",
+      "kind": "deck",
+      "cron": null,
+      "dots": [
+        "none",
+        "none",
+        "ok",
+        "none",
+        "none",
+        "none",
+        "ok"
+      ],
+      "useful": {
+        "kept": 2,
+        "total": 2,
+        "trashed": 0,
+        "opened": 2
+      },
+      "noisy": false,
+      "lastRun": {
+        "at": "@iso:-1d@15:20",
+        "ok": true
+      },
+      "open": "/artifacts/paper-lantern-0-9-notes.html",
+      "retired": false,
+      "retiredInto": null,
+      "quiet": false
+    },
+    {
+      "id": "deck-pr-review",
+      "name": "/pr-review",
+      "kind": "deck",
+      "cron": null,
+      "dots": [
+        "ok",
+        "none",
+        "ok",
+        "ok",
+        "none",
+        "ok",
+        "ok"
+      ],
+      "useful": {
+        "kept": 5,
+        "total": 6,
+        "trashed": 1,
+        "opened": 6
+      },
+      "noisy": false,
+      "lastRun": {
+        "at": "@iso:-3h15m",
+        "ok": true
+      },
+      "open": null,
+      "retired": false,
+      "retiredInto": null,
+      "quiet": false
+    },
+    {
+      "id": "deck-triage",
+      "name": "/triage",
+      "kind": "deck",
+      "cron": null,
+      "dots": [
+        "ok",
+        "ok",
+        "none",
+        "ok",
+        "ok",
+        "none",
+        "ok"
+      ],
+      "useful": {
+        "kept": 4,
+        "total": 5,
+        "trashed": 1,
+        "opened": 5
+      },
+      "noisy": false,
+      "lastRun": {
+        "at": "@iso:-4h05m",
+        "ok": true
+      },
+      "open": "/artifacts/inbox-triage.html",
+      "retired": false,
+      "retiredInto": null,
+      "quiet": false
+    },
+    {
+      "id": "deck-design-critique",
+      "name": "/design-critique",
+      "kind": "deck",
+      "cron": null,
+      "dots": [
+        "none",
+        "none",
+        "ok",
+        "none",
+        "none",
+        "ok",
+        "none"
+      ],
+      "useful": {
+        "kept": 2,
+        "total": 2,
+        "trashed": 0,
+        "opened": 2
+      },
+      "noisy": false,
+      "lastRun": {
+        "at": "@iso:-1d@14:10",
+        "ok": true
+      },
+      "open": null,
+      "retired": false,
+      "retiredInto": null,
+      "quiet": false
+    },
+    {
+      "id": "deck-test-fixer",
+      "name": "/test-fixer",
+      "kind": "deck",
+      "cron": null,
+      "dots": [
+        "none",
+        "ok",
+        "none",
+        "none",
+        "ok",
+        "none",
+        "fail"
+      ],
+      "useful": {
+        "kept": 1,
+        "total": 2,
+        "trashed": 0,
+        "opened": 2
+      },
+      "noisy": false,
+      "lastRun": {
+        "at": "@iso:-1h25m",
+        "ok": false
+      },
+      "open": null,
+      "retired": false,
+      "retiredInto": null,
+      "quiet": false
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "ok": true,
+  "port": 50000,
+  "brainPort": 50201,
+  "engine": true,
+  "workspaceSet": true,
+  "runner": "ready",
+  "time": "@iso:0",
+  "companions": {
+    "karakeep": true,
+    "changedetection": true,
+    "ntfy": true,
+    "promptfoo": true,
+    "qmd": true,
+    "basicMemory": true,
+    "cass": true
+  },
+  "companionDetails": {
+    "karakeep": {
+      "heartbeat": "unknown"
+    },
+    "changedetection": {
+      "heartbeat": "unknown"
+    },
+    "ntfy": {
+      "heartbeat": "unknown"
+    },
+    "promptfoo": {
+      "heartbeat": "fresh",
+      "status": "fresh",
+      "stale": false,
+      "pid": 4319,
+      "startedAt": "@iso:-1d@08:02",
+      "lastBeat": "@iso:-40s",
+      "beatMs": 60000
+    },
+    "qmd": {
+      "heartbeat": "fresh",
+      "status": "fresh",
+      "stale": false,
+      "pid": 4066,
+      "startedAt": "@iso:-1d@08:02",
+      "lastBeat": "@iso:-40s",
+      "beatMs": 60000
+    },
+    "basicMemory": {
+      "heartbeat": "unknown"
+    },
+    "cass": {
+      "heartbeat": "unknown",
+      "probe": "up",
+      "checkedAt": "@ms:-1m",
+      "error": null
+    }
+  }
+}

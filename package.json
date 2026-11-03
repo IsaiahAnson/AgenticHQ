@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "start": "node server.js",
+    "demo": "node tools/demo.mjs",
+    "test": "node --test test/*.test.cjs tests/*.test.mjs"
+  },
+  "dependencies": {
+    "googleapis": "^188.0.0"
+  }
+}

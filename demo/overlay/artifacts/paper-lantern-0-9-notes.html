@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>paper-lantern 0.9 release notes (draft)</title>
+<style>
+:root{--bg:#060d22;--panel:rgba(8,11,28,.64);--ink:#d5ddff;--bright:#eef1ff;--dim:#8a95c2;--faint:#7d88b3;--line:rgba(140,160,255,.14);--line2:rgba(160,180,255,.32);--blue:#7fa6ff;--violet:#a37cff;--cyan:#7ff0ff;--amber:#ffae42;--green:#4fd58a;--sans:'Segoe UI Variable','Segoe UI',system-ui,-apple-system,sans-serif;--serif:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,serif;--mono:'Cascadia Mono','Cascadia Code',Consolas,ui-monospace,monospace}
+*{box-sizing:border-box}html{color-scheme:dark}
+body{margin:0;background-color:var(--bg);background-image:radial-gradient(900px 520px at 50% -20%,rgba(255,174,66,.08),transparent 60%);background-attachment:fixed;color:var(--ink);font:15px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+.bar{position:sticky;top:0;z-index:2;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 24px;background:rgba(7,9,22,.9);border-bottom:1px solid var(--line);font-size:13px;color:var(--dim)}
+.bar b{color:var(--amber);font:600 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;border:1px solid rgba(255,174,66,.45);border-radius:4px;padding:5px 8px;margin-right:10px}
+.layout{max-width:1060px;margin:0 auto;padding:40px 24px 72px;display:grid;grid-template-columns:minmax(0,680px) 1fr;gap:40px}
+article{font-family:var(--serif);font-size:18px;line-height:1.7;color:var(--ink)}
+.kicker{font:600 11px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--amber)}
+h1{font-family:var(--serif);font-weight:600;font-size:40px;line-height:1.12;margin:12px 0 14px;color:var(--bright);letter-spacing:-.01em}
+.dek{font-size:20px;color:var(--ink);margin:0 0 28px}
+h2{font:600 12px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin:36px 0 12px;font-family:var(--mono)}
+article ul{margin:0;padding-left:1.1em}
+article li{margin:0 0 10px;padding-left:.2em}
+article li::marker{color:var(--amber)}
+mark{background:rgba(255,174,66,.16);color:var(--bright);border-bottom:1px dashed rgba(255,174,66,.7);padding:0 2px;border-radius:2px}
+code{font:15px var(--mono);color:var(--cyan)}
+pre{font:14px/1.6 var(--mono);color:var(--ink);background:rgba(7,9,22,.9);border:1px solid var(--line);border-radius:10px;padding:14px 16px;overflow:auto}
+.thanks{border-top:1px solid var(--line);margin-top:34px;padding-top:18px;color:var(--dim);font-style:italic}
+aside{font-size:13.5px}
+.sticky{position:sticky;top:72px;display:flex;flex-direction:column;gap:12px}
+.c{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--amber);border-radius:10px;padding:12px 14px}
+.c.v{border-left-color:var(--violet)}.c.g{border-left-color:var(--green)}
+.c .who{font:600 11px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin-bottom:6px;display:block}
+.c p{margin:0;color:var(--ink)}
+.meta{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px;color:var(--dim)}
+.meta div{display:flex;justify-content:space-between;gap:10px;padding:4px 0}
+.meta span:last-child{color:var(--ink);text-align:right}
+@media (max-width:900px){.layout{grid-template-columns:1fr;gap:24px;padding:24px 16px 56px}.sticky{position:static}h1{font-size:32px}article{font-size:17px}.bar{padding:10px 16px;flex-wrap:wrap}}
+</style>
+</head>
+<body>
+<div class="bar"><span><b>Draft</b>Written by <code style="font-size:13px">/release-notes</code> at 3:06 PM from 23 merged PRs</span><span>Not published. Edit, then hand to Jordan.</span></div>
+<div class="layout">
+  <article>
+    <div class="kicker">paper-lantern 0.9.0</div>
+    <h1>A darker theme, a second feed, and builds that skip what did not change</h1>
+    <p class="dek">paper-lantern 0.9 adds dusk, a dark reading theme, writes JSON Feed next to Atom, and rebuilds a <mark>400-post site in under a second</mark>.</p>
+
+    <h2>New</h2>
+    <ul>
+      <li><strong>dusk theme.</strong> A dark reading theme with a quiet sidebar, tuned for long posts. Switch with <code>theme = "dusk"</code> in <code>lantern.toml</code>.</li>
+      <li><strong>JSON Feed.</strong> Every site now publishes <code>feed.json</code> beside <code>atom.xml</code>. Both are on by default; turn either off in config.</li>
+      <li><strong>Tags on new posts.</strong> <code>lantern new post</code> asks for tags and suggests the ones you use most.</li>
+    </ul>
+
+    <h2>Improved</h2>
+    <ul>
+      <li><strong>Incremental builds.</strong> Pages whose source, theme and data did not change are skipped. Pass <code>--no-cache</code> to force a full build, for example on a network drive.</li>
+      <li>Feed dates keep their time zone offset.</li>
+    </ul>
+
+    <h2>Fixed</h2>
+    <ul>
+      <li>Footnotes inside lists rendered twice.</li>
+      <li>Tag pages lost their sort order on Windows <mark>(already in 0.8.2; drop?)</mark>.</li>
+    </ul>
+
+    <h2>Upgrading</h2>
+<pre>npm install paper-lantern@latest
+lantern build --no-cache   # first build after upgrading</pre>
+
+    <p class="thanks">Thanks to Priya for the dusk theme review, Jordan for the docs, and Theo for the release builds.</p>
+  </article>
+
+  <aside>
+    <div class="sticky">
+      <div class="meta">
+        <div><span>Target</span><span>Next week</span></div>
+        <div><span>PRs read</span><span>23</span></div>
+        <div><span>Docs pass</span><span>Jordan, due Thursday</span></div>
+        <div><span>Ship with</span><span><code style="font-size:12.5px">/ship</code></span></div>
+      </div>
+      <div class="c"><span class="who">Check</span><p>The "under a second" number comes from the bench on Theo's runner. Confirm on a cold cache before it goes in the headline.</p></div>
+      <div class="c"><span class="who">Check</span><p>The tag-page fix shipped in 0.8.2. Keep it only if the notes cover everything since 0.8.0.</p></div>
+      <div class="c v"><span class="who">Open report</span><p>One footnote report in nested lists still cannot be reproduced. Leave it out of Fixed.</p></div>
+      <div class="c g"><span class="who">Skill gotcha applied</span><p>Grouped by New, Improved and Fixed, and left internal refactors out.</p></div>
+    </div>
+  </aside>
+</div>
+</body>
+</html>

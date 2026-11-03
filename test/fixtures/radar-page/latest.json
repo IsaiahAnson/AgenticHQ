@@ -1,0 +1,525 @@
+{
+  "runId": "20261029-1837",
+  "startedAt": "2026-10-29T22:37:19.321Z",
+  "finishedAt": "2026-10-29T22:45:01.561Z",
+  "status": "ok",
+  "lanes": {
+    "collect": {
+      "ok": true,
+      "ms": 7017
+    },
+    "deepseek": {
+      "ok": true,
+      "chat": "https://chat.deepseek.com/a/chat/s/c8d5e129-64b4-474b-9681-17230875d3df",
+      "note": "sweep: 12 suggested, 10 links answered; shortlist: 8 picked"
+    },
+    "reason": {
+      "agent": "claude",
+      "ok": true,
+      "note": "claude: 8/8 reasoned"
+    }
+  },
+  "sources": [
+    {
+      "id": "github-search",
+      "ok": true,
+      "items": 131,
+      "ms": 2418,
+      "error": null
+    },
+    {
+      "id": "github-releases",
+      "ok": true,
+      "items": 7,
+      "ms": 4966,
+      "error": null
+    },
+    {
+      "id": "hn",
+      "ok": true,
+      "items": 49,
+      "ms": 1189,
+      "error": null
+    },
+    {
+      "id": "show-hn",
+      "ok": true,
+      "items": 18,
+      "ms": 1059,
+      "error": null
+    },
+    {
+      "id": "lobsters",
+      "ok": true,
+      "items": 2,
+      "ms": 989,
+      "error": null
+    },
+    {
+      "id": "reddit",
+      "ok": true,
+      "items": 10,
+      "ms": 6734,
+      "error": null
+    },
+    {
+      "id": "mcp-registry",
+      "ok": true,
+      "items": 120,
+      "ms": 4365,
+      "error": null
+    },
+    {
+      "id": "awesome-mcp",
+      "ok": true,
+      "items": 0,
+      "ms": 1170,
+      "error": null
+    },
+    {
+      "id": "openai-news",
+      "ok": true,
+      "items": 9,
+      "ms": 1377,
+      "error": null
+    },
+    {
+      "id": "simonwillison",
+      "ok": true,
+      "items": 8,
+      "ms": 1081,
+      "error": null
+    },
+    {
+      "id": "github-changelog",
+      "ok": true,
+      "items": 10,
+      "ms": 1087,
+      "error": null
+    },
+    {
+      "id": "havoptic-gemini-cli",
+      "ok": true,
+      "items": 1,
+      "ms": 1427,
+      "error": null
+    },
+    {
+      "id": "havoptic-cursor",
+      "ok": true,
+      "items": 0,
+      "ms": 1414,
+      "error": null
+    },
+    {
+      "id": "aiticker",
+      "ok": true,
+      "items": 91,
+      "ms": 1970,
+      "error": null
+    },
+    {
+      "id": "deepseek-web",
+      "ok": true,
+      "items": 10,
+      "ms": 179268,
+      "error": null
+    }
+  ],
+  "counts": {
+    "collected": 327,
+    "new": 327,
+    "triaged": 25,
+    "reasoned": 3
+  },
+  "profileDigest": "Agentic HQ: a local-first personal agent homepage + \"Second Brain\" for one developer on Windows 11. Zero-dependency Node server (server.js on localhost) with lib/*.cjs helpers and tools/*.mjs CLIs; node --test suite; local git only. It launches and supervises coding-agent workers through a skills deck and Orca worktree orchestration, runs scheduled routines (Windows Task Scheduler + Claude Code scheduled tasks), meters each agent's usage limits, keeps an event inbox, an attention budget for ntfy phone pushes, and a ring of HTML report artifacts. Worker lanes: Claude Code, Codex CLI, Copilot CLI, OpenCode, DeepSeek web (Orca browser), Kilo. Companions: Karakeep, changedetection.io, ntfy, promptfoo, QMD, Basic Memory, CASS session search. Micro apps: RUBRIC Recos, Paper Lantern, Agent HQ, AgentViz, Tidepool, Karakeep, Change Watch, ntfy, Prompt Evals, LearnHarness. Deck cards: api-hq-review, karakeep, change-watch, weekly-dev-health, session-lessons, gotcha-proposals, orbit-notes-release, fieldkit-drift-check, time-map, microapp-finder. Routines: Session lessons, morning action brief, inbox triage, Weekly routines check, docs watch, release radar, Dessa AI voice agent: release watc, Usage budget guard (24 runs today), PC sentinel (12 runs today) (+2 more).",
+  "findings": [
+    {
+      "id": "gh-pezhik-skilltotal",
+      "key": "gh:pezhik/skilltotal",
+      "title": "SkillTotal",
+      "url": "https://github.com/pezhik/skilltotal",
+      "kind": "tool",
+      "sources": [
+        {
+          "id": "mcp-registry",
+          "url": "https://registry.modelcontextprotocol.io/v0.1/servers?search=ai.skilltotal%2Fskilltotal",
+          "signal": "MCP registry ai.skilltotal/skilltotal v0.85.1"
+        }
+      ],
+      "signals": {
+        "stars": 16,
+        "starsPerDay": 0.1,
+        "createdAt": "2026-06-07T12:56:16Z",
+        "pushedAt": "2026-10-28T20:57:58Z",
+        "license": "Apache-2.0",
+        "sourceCount": 1,
+        "commits30": 335,
+        "contributors90": 2,
+        "lastCommitAt": "2026-10-28T12:40:15Z",
+        "lastReleaseTag": "v0.85.1",
+        "lastReleaseAt": "2026-10-28T14:53:20Z",
+        "releases": 98,
+        "openIssues": 0,
+        "closedIssues": 0,
+        "archived": false,
+        "topics": [
+          "ai-agents",
+          "ai-security",
+          "devsecops",
+          "llm-security",
+          "mcp",
+          "model-context-protocol",
+          "prompt-injection",
+          "sarif",
+          "security-tools",
+          "static-analysis"
+        ],
+        "sha": "70b6f8e539aa"
+      },
+      "score": {
+        "total": 72,
+        "parts": {
+          "relevance": 28.5,
+          "maintenance": 20.5,
+          "substance": 15,
+          "momentum": 0.3,
+          "agreement": 3,
+          "license": 5
+        },
+        "multiplier": 1,
+        "flags": []
+      },
+      "verdict": "trial",
+      "confidence": "medium",
+      "summary": "SkillTotal, a static, no-LLM security scanner for npm/PyPI packages, MCP servers, agent skills and repos that reports findings with a file and line.",
+      "whatsNew": "v0.85.1 fixes a quadratic-time stall in the ST-CLIPPER rule; the ruleset and report schema are unchanged. It surfaced through the MCP registry listing.",
+      "reasoning": {
+        "fit": [
+          {
+            "area": "Skills deck and companions",
+            "files": [
+              "os-config.json",
+              "tools/hq-doctor.mjs"
+            ],
+            "why": "The owner installs third-party skills, plugins and MCP servers (QMD, Basic Memory, CASS, the radar's own finds), and HQ has no pre-install scan. It could also be run by hand on any radar 'adopt' candidate before install."
+          },
+          {
+            "area": "AI Radar",
+            "files": [
+              "tools/ai-radar.mjs",
+              "lib/radar-score.cjs"
+            ],
+            "why": "A deterministic scan result could become verified `dependencies` and risk evidence for radar items instead of 'not checked'."
+          }
+        ],
+        "benefit": "Turns the radar's unchecked supply-chain claims (install scripts, risky code) into evidence with a cited file and line, without running the code or spending LLM tokens.",
+        "cost": "free",
+        "effort": "S",
+        "risks": [
+          {
+            "kind": "supply-chain",
+            "detail": "Only 2 contributors in 90 days. A security tool with a small maintainer base is itself a trust point; pin the version and install with pipx, not the Claude plugin's auto-hook."
+          },
+          {
+            "kind": "stability",
+            "detail": "335 commits in 30 days and 98 releases mean fast churn in rules and output."
+          }
+        ],
+        "counter": "It has 2 contributors and 16 stars, and 0 issues ever filed means almost no outside validation. Its findings could be noisy enough that the owner ignores them.",
+        "overlap": "Nothing in HQ scans packages or skills. Grep of lib/tools found no scanner, only the usage-gate hook.",
+        "evidence": [
+          {
+            "claim": "Static scan; never runs code; no LLM; runs locally",
+            "checked": true,
+            "how": "README excerpt at 70b6f8e539aa"
+          },
+          {
+            "claim": "Zero runtime dependencies",
+            "checked": true,
+            "how": "README badge only; pyproject.toml not opened"
+          },
+          {
+            "claim": "Apache-2.0",
+            "checked": true,
+            "how": "signals license"
+          },
+          {
+            "claim": "Only 2 contributors and 0 issues",
+            "checked": true,
+            "how": "signals: contributors90 2, openIssues 0, closedIssues 0"
+          },
+          {
+            "claim": "HQ has no existing package or skill scanner",
+            "checked": true,
+            "how": "Grep lib/tools/config for hook/scan/ignore-scripts: matches are unrelated (usage gate, radar)"
+          }
+        ],
+        "steps": [
+          "It fills a real HQ gap: no pre-install scan of skills, MCP servers or packages.",
+          "It is local, deterministic and token-free, which suits HQ's rules.",
+          "It fails the adopt bar on maintenance: only 2 contributors.",
+          "It is cheap to falsify on a throwaway worktree.",
+          "Verdict: trial."
+        ],
+        "maintenance": "Last commit 2026-10-28; 335 commits in 30 days; 2 contributors in 90 days; 98 releases, latest v0.85.1; 0 issues (none filed).",
+        "license": "Apache-2.0: fine to use and vendor.",
+        "dependencies": "Python CLI through pipx. The README badge claims 0 runtime dependencies (pyproject.toml not opened to confirm). It is a scanner, not a service.",
+        "falsify": "Scanning 3 known-good HQ companions (e.g. the QMD and Basic Memory packages) and 1 sanitized bad sample gives high-severity false positives on the good ones, or misses the bad one."
+      },
+      "plan": [
+        "In a throwaway git worktree, install with `pipx install skilltotal==0.85.1` (user-scope, pinned, not the Claude plugin hook).",
+        "Run `skilltotal scan` on 3 known-good companions plus one sanitized bad sample, and save the reports to the scratchpad.",
+        "If the signal is good, add an optional evidence step in tools/ai-radar.mjs that shells out to skilltotal when it is on PATH, with fixture tests in new:test/radar-skilltotal.test.cjs.",
+        "Run `node --test test/`."
+      ],
+      "reasonedBy": "claude",
+      "pinned": "70b6f8e539aa",
+      "shortlistReason": "Deterministic local scanner for MCP servers, agent skills, and packages fills a security-review gap in the skills deck without LLM dependency."
+    },
+    {
+      "id": "gh-openai-codex",
+      "key": "gh:openai/codex",
+      "title": "Codex CLI v0.166.0",
+      "url": "https://github.com/openai/codex",
+      "kind": "release",
+      "sources": [
+        {
+          "id": "aiticker",
+          "url": "https://github.com/openai/codex/releases/tag/rust-v0.166.0",
+          "signal": "aiticker"
+        },
+        {
+          "id": "aiticker",
+          "url": "https://github.com/openai/codex/releases/tag/rust-v0.165.0",
+          "signal": "aiticker"
+        },
+        {
+          "id": "github-releases",
+          "url": "https://github.com/openai/codex/releases/tag/rust-v0.166.0",
+          "signal": "release rust-v0.166.0"
+        },
+        {
+          "id": "deepseek-web",
+          "url": "https://github.com/openai/codex/releases/tag/rust-v0.165.0",
+          "signal": "Memory v2 is on by default and the session picker filters across linked worktrees, matching your Orca worktree orchestration."
+        }
+      ],
+      "signals": {
+        "stars": 131569,
+        "starsPerDay": 233,
+        "createdAt": "2025-04-13T05:37:54Z",
+        "pushedAt": "2026-10-29T22:36:23Z",
+        "license": "Apache-2.0",
+        "releaseTag": "rust-v0.166.0",
+        "sourceCount": 3,
+        "commits30": 1279,
+        "contributors90": 39,
+        "lastCommitAt": "2026-10-29T22:36:06Z",
+        "lastReleaseTag": "rust-v0.166.0",
+        "lastReleaseAt": "2026-10-29T19:47:53Z",
+        "releases": 1257,
+        "openIssues": 25392,
+        "closedIssues": 12888,
+        "archived": false,
+        "topics": [],
+        "sha": "dfcb5b59942a"
+      },
+      "score": {
+        "total": 90,
+        "parts": {
+          "relevance": 23.1,
+          "maintenance": 23.7,
+          "substance": 13.5,
+          "momentum": 15,
+          "agreement": 10,
+          "license": 5
+        },
+        "multiplier": 1,
+        "flags": []
+      },
+      "verdict": "watch",
+      "confidence": "medium",
+      "summary": "Codex CLI, the OpenAI terminal coding agent that HQ runs as a worker lane and meters for usage.",
+      "whatsNew": "v0.166.0 adds keyboard transcript selection and search, the GPT-6.1 Terra model, `codex queue --resume` and `codex doctor --network-only`. It also keeps approval settings and reasoning-token accounting across resume and fork, and fixes app-server startup and shutdown races.",
+      "reasoning": {
+        "fit": [
+          {
+            "area": "Usage meters",
+            "files": [
+              "lib/usage-meters.cjs",
+              "tools/usage-check.mjs"
+            ],
+            "why": "lib/usage-meters.cjs reads ~/.codex/sessions rollout-*.jsonl and parses rate_limits through codexMeterFromText/codexMeterFromRateLimits. A change in the rollout format would break the Codex meter."
+          },
+          {
+            "area": "Health and doctor",
+            "files": [
+              "tools/hq-doctor.mjs"
+            ],
+            "why": "`codex doctor --network-only` could be called as an optional probe, but HQ does not need it today."
+          },
+          {
+            "area": "Routing",
+            "files": [
+              "tools/route-agent.mjs"
+            ],
+            "why": "Codex is scored as a profile (code 88). A new model in the catalog does not change routing."
+          }
+        ],
+        "benefit": "Keeping approval and permission settings across resume and fork, plus the app-server race fixes, make unattended Codex workers more reliable. HQ needs no code change.",
+        "cost": "usage: Codex (ChatGPT plan) tokens per worker run, unchanged",
+        "effort": "S",
+        "risks": [
+          {
+            "kind": "stability",
+            "detail": "The 'reasoning-token accounting across resume/fork' change may alter what lands in rollout JSONL, which lib/usage-meters.cjs parses."
+          }
+        ],
+        "counter": "This is a routine update to a lane HQ already runs, not a new capability. The transcript and TUI features don't touch HQ, which drives Codex headless.",
+        "overlap": "Already covered by the Codex worker lane and the Codex meter in lib/usage-meters.cjs.",
+        "evidence": [
+          {
+            "claim": "Release adds queue --resume, doctor --network-only, and keeps settings and reasoning-token accounting on resume/fork",
+            "checked": true,
+            "how": "Release-notes excerpt at rust-v0.166.0"
+          },
+          {
+            "claim": "HQ parses Codex rollout JSONL for rate limits",
+            "checked": true,
+            "how": "Grep lib/usage-meters.cjs lines 79-93, 213, 256, 307-308"
+          },
+          {
+            "claim": "The rollout rate_limits format is unchanged in 0.166.0",
+            "checked": false,
+            "how": "Not verified"
+          }
+        ],
+        "steps": [
+          "Codex is an existing lane, so the question is regressions, not adoption.",
+          "HQ depends on the rollout JSONL format for the Codex meter.",
+          "The release notes show reliability fixes for resume/fork and the app-server, all positive.",
+          "No new HQ gap is filled.",
+          "Verdict: watch, with a quick meter check after updating."
+        ],
+        "maintenance": "Last commit 2026-10-29; 1279 commits in 30 days; 39 contributors in 90 days; 1257 releases; 25k open issues.",
+        "license": "Apache-2.0: fine.",
+        "dependencies": "Standalone CLI binary (installer, npm -g or GitHub release), not imported by HQ.",
+        "falsify": "After updating, `node tools/usage-check.mjs --agent=codex --json` returns stale or unknown although a fresh Codex session exists. Then fixing the rollout parser becomes needed work."
+      },
+      "plan": [
+        "After updating Codex, run `node tools/usage-check.mjs --agent=codex --json` and check that the windows are fresh.",
+        "If parsing fails, add a 0.166 rollout fixture to the usage-meters tests and patch codexMeterFromText in lib/usage-meters.cjs.",
+        "Run `node --test test/`."
+      ],
+      "reasonedBy": "claude",
+      "pinned": "rust-v0.166.0",
+      "shortlistReason": "Codex CLI is an active worker lane; v0.166.0 changes terminal transcript/search interactions the supervisor may depend on."
+    },
+    {
+      "id": "gh-anomalyco-opencode",
+      "key": "gh:anomalyco/opencode",
+      "title": "anomalyco/opencode process-daemon-v0.4.0",
+      "url": "https://github.com/anomalyco/opencode",
+      "kind": "release",
+      "sources": [
+        {
+          "id": "github-releases",
+          "url": "https://github.com/anomalyco/opencode/releases/tag/process-daemon-v0.4.0",
+          "signal": "release process-daemon-v0.4.0"
+        }
+      ],
+      "signals": {
+        "stars": 223045,
+        "starsPerDay": 407.7,
+        "createdAt": "2025-04-30T20:08:00Z",
+        "pushedAt": "2026-10-29T22:29:21Z",
+        "license": "MIT",
+        "releaseTag": "process-daemon-v0.4.0",
+        "sourceCount": 1,
+        "commits30": 1865,
+        "contributors90": 14,
+        "lastCommitAt": "2026-10-29T22:29:19Z",
+        "lastReleaseTag": "process-daemon-v0.4.0",
+        "lastReleaseAt": "2026-10-29T22:01:55Z",
+        "releases": 889,
+        "openIssues": 2442,
+        "closedIssues": 29826,
+        "archived": false,
+        "topics": [],
+        "sha": "dc0bfc5ea469"
+      },
+      "score": {
+        "total": 82,
+        "parts": {
+          "relevance": 20.2,
+          "maintenance": 25,
+          "substance": 13.5,
+          "momentum": 15,
+          "agreement": 3,
+          "license": 5
+        },
+        "multiplier": 1,
+        "flags": []
+      },
+      "verdict": "skip",
+      "confidence": "medium",
+      "summary": "OpenCode, an open-source coding agent; the pinned tag is an internal PTY process-daemon package, @opencode/pty 0.4.0 (protocol 7).",
+      "whatsNew": "The only release note is 'opencode-pty 0.4.0 (protocol 7) from packages/process-daemon, published to npm as @opencode/pty@0.4.0'. There is no changelog of behavior.",
+      "reasoning": {
+        "fit": [
+          {
+            "area": "Usage gates",
+            "files": [
+              "lib/usage-meters.cjs",
+              "tools/usage-check.mjs"
+            ],
+            "why": "OpenCode is an unmetered lane that is always allowed (usage-meters.cjs lines 152 and 159). HQ does not touch OpenCode's PTY layer."
+          }
+        ],
+        "benefit": "None to HQ directly. It is an internal component of OpenCode that its own CLI pulls in.",
+        "cost": "free",
+        "effort": "S",
+        "risks": [
+          {
+            "kind": "stability",
+            "detail": "A protocol version bump could need matching OpenCode CLI and desktop versions, but that is OpenCode's concern, not HQ's."
+          }
+        ],
+        "counter": "HQ never talks to OpenCode's PTY daemon. Orca owns the terminals, so this package has no HQ integration point.",
+        "overlap": "Terminal and process supervision is handled by Orca (tools/orca-reap.mjs) and by HQ's own sentinel and restart guard (tools/hq-sentinel.mjs, lib/restart-guard.cjs).",
+        "evidence": [
+          {
+            "claim": "The release is only the internal PTY daemon package",
+            "checked": true,
+            "how": "Release-notes excerpt at process-daemon-v0.4.0"
+          },
+          {
+            "claim": "HQ treats OpenCode as an unmetered, always-allowed lane",
+            "checked": true,
+            "how": "Grep lib/usage-meters.cjs:152,159"
+          },
+          {
+            "claim": "HQ has no direct PTY integration with OpenCode",
+            "checked": true,
+            "how": "Grep for 'pty' in lib/tools matched files about other topics; terminals are launched through Orca"
+          }
+        ],
+        "steps": [
+          "The release note describes an internal package bump only.",
+          "HQ does not integrate with OpenCode's daemon.",
+          "Process supervision is already covered by Orca and the sentinel.",
+          "Verdict: skip."
+        ],
+        "maintenance": "Last commit 2026-10-29; 1865 commits in 30 days; 14 contributors; 889 releases.",
+        "license": "MIT: fine.",
+        "dependencies": "npm package @opencode/pty. Its dependency count and install scripts were not checked; PTY packages usually ship native binaries.",
+        "falsify": "If HQ starts launching OpenCode itself outside Orca and needs resumable PTY sessions, re-review."
+      },
+      "plan": [],
+      "reasonedBy": "claude",
+      "pinned": "process-daemon-v0.4.0",
+      "shortlistReason": "OpenCode is a worker lane; process-daemon/PTY release directly affects process supervision and resumable sessions."
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "since": "@iso:-9h",
+  "items": [
+    {
+      "kind": "outcome",
+      "severity": "warn",
+      "rank": 1,
+      "text": "desktop needs you: review the paper-lantern 0.9 notes",
+      "target": "automations",
+      "at": "@iso:-2h30m"
+    },
+    {
+      "kind": "event",
+      "severity": "warn",
+      "rank": 2,
+      "text": "Backup check missed its nightly run",
+      "target": "automations",
+      "at": "@iso:-6h"
+    },
+    {
+      "kind": "radar",
+      "severity": "good",
+      "rank": 3,
+      "text": "Radar: 3 worth trying",
+      "target": "radar",
+      "at": "@iso:-5h4m"
+    },
+    {
+      "kind": "email",
+      "severity": "info",
+      "rank": 4,
+      "text": "5 new emails",
+      "target": "email",
+      "at": "@iso:-1m"
+    }
+  ],
+  "allClear": false,
+  "counts": {
+    "bad": 1,
+    "warn": 3,
+    "good": 1,
+    "info": 1
+  }
+}

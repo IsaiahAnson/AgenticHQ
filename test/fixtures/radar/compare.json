@@ -1,0 +1,1 @@
+{"files":[{"filename":"README.md","patch":"@@ -10,6 +10,8 @@\n- [moved/entry](https://github.com/moved/entry) - moved down\n+- [acme/agent-tool](https://github.com/acme/agent-tool) [![Glama](https://glama.ai/b.svg)](https://glama.ai/x) 🐍 🏠 - Worktree manager for agents\n+- [moved/entry](https://github.com/moved/entry) - moved down\n+Plain text line without a link\n"}]}

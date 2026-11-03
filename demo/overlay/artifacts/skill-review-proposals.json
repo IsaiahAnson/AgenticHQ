@@ -1,0 +1,9 @@
+{
+  "title": "Skill review proposals",
+  "icon": "report",
+  "kind": "review",
+  "category": "other",
+  "created": "@iso:0@09:04",
+  "note": "Four proposed edits to /triage, /release-notes and /brain-refresh, each traced to last week's friction. Waiting for approval.",
+  "svg": "<rect x=\"8\" y=\"8\" width=\"32\" height=\"32\" rx=\"4\"/><path d=\"M15 24l6 6 12-13\"/>"
+}

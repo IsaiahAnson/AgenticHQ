@@ -1,0 +1,9 @@
+{
+  "title": "Dependency watch",
+  "icon": "dash",
+  "kind": "report",
+  "category": "frontend",
+  "created": "@iso:-2d@10:02",
+  "note": "9 updates across four projects: 5 safe after CI, 3 on hold, 1 major to plan, 1 low dev-only advisory.",
+  "svg": "<circle cx=\"14\" cy=\"14\" r=\"5\"/><circle cx=\"34\" cy=\"14\" r=\"5\"/><circle cx=\"24\" cy=\"36\" r=\"5\"/><path d=\"M17 18l5 13M31 18l-5 13\"/>"
+}

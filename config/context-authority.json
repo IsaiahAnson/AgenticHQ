@@ -1,0 +1,181 @@
+{
+  "topics": [
+    {
+      "id": "runner",
+      "terms": [
+        "runner",
+        "skills deck",
+        "deck card",
+        "apply all comments"
+      ],
+      "canonical": [
+        "WIRING.md",
+        "os-config.json",
+        "server.js"
+      ],
+      "live": [
+        "/api/skills",
+        "/api/health"
+      ]
+    },
+    {
+      "id": "second-brain",
+      "terms": [
+        "second brain",
+        "brain",
+        "search",
+        "index",
+        "map"
+      ],
+      "canonical": [
+        "BRAIN.md",
+        "config/workspace.json",
+        "engine/scan.js",
+        "engine/server.js"
+      ],
+      "live": [
+        "/local/boot",
+        "http://127.0.0.1:50201/api/meta"
+      ]
+    },
+    {
+      "id": "routines",
+      "terms": [
+        "routine",
+        "schedule"
+      ],
+      "canonical": [
+        "ROUTINES.md",
+        "server.js"
+      ],
+      "live": [
+        "/api/routines",
+        "Claude desktop Scheduled UI"
+      ]
+    },
+    {
+      "id": "usage",
+      "terms": [
+        "usage",
+        "meter",
+        "credit",
+        "stats"
+      ],
+      "canonical": [
+        "WIRING.md",
+        "server.js"
+      ],
+      "live": [
+        "/api/stats?fresh=1",
+        "Claude Console for API balance"
+      ]
+    },
+    {
+      "id": "ring",
+      "terms": [
+        "ring",
+        "artifact",
+        "report ball"
+      ],
+      "canonical": [
+        "RING.md",
+        "server.js"
+      ],
+      "live": [
+        "/api/artifacts"
+      ]
+    },
+    {
+      "id": "companions",
+      "terms": [
+        "companion",
+        "qmd",
+        "basic memory",
+        "cass",
+        "karakeep"
+      ],
+      "canonical": [
+        "knowledge:companions.md"
+      ],
+      "live": [
+        "/api/health"
+      ]
+    },
+    {
+      "id": "hq-workflow",
+      "terms": [
+        "agentic hq",
+        "hq handoff",
+        "agenticos"
+      ],
+      "canonical": [
+        "installed:agenticos",
+        "knowledge:agentic-hq-operations.md"
+      ],
+      "live": [
+        "/api/health"
+      ]
+    },
+    {
+      "id": "agent-workflow",
+      "terms": [
+        "hq-handoff",
+        "handoff.md",
+        "workflow guide",
+        "worker",
+        "orchestrat",
+        "deepseek",
+        "opencode",
+        "kilo",
+        "usage watcher",
+        "usage-check"
+      ],
+      "canonical": [
+        "tools/usage-check.mjs"
+      ],
+      "live": [
+        "node tools/usage-check.mjs --agent=<id>",
+        "orca status --json",
+        "orca tab list --json"
+      ]
+    },
+    {
+      "id": "failures",
+      "terms": [
+        "failure registry",
+        "failure",
+        "gotcha",
+        "known issue"
+      ],
+      "canonical": [
+        "knowledge:hq-failure-registry.md"
+      ],
+      "live": []
+    },
+    {
+      "id": "decisions",
+      "terms": [
+        "decision log",
+        "architecture decision",
+        "adr"
+      ],
+      "canonical": [
+        "knowledge:agentic-hq-decisions.md"
+      ],
+      "live": []
+    },
+    {
+      "id": "user-preferences",
+      "terms": [
+        "user preference",
+        "workflow preference",
+        "communication preference",
+        "preference"
+      ],
+      "canonical": [
+        "knowledge:user-preferences-hq.md"
+      ],
+      "live": []
+    }
+  ]
+}

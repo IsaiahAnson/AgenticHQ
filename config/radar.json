@@ -1,0 +1,292 @@
+{
+  "_note": "AI Radar settings (tools/ai-radar.mjs). Sources, scoring weights and lanes. Every source URL here was checked on 2026-10-29; Reddit JSON answers 403, so Reddit uses its public RSS. Anthropic has no news feed: its releases come through the claude-code watchlist and Havoptic.",
+  "userAgent": "AgenticHQ-AIRadar/1.0 (local personal research digest; github.com/rubric-agentic-os)",
+  "windowHours": 72,
+  "sourceTimeoutMs": 20000,
+  "limits": {
+    "triage": 25,
+    "articleSlots": 5,
+    "reason": 12,
+    "enrich": 40,
+    "perSource": 60,
+    "excerptChars": 3500,
+    "releaseChars": 1800
+  },
+  "keywords": {
+    "claude code": 4,
+    "mcp": 3,
+    "model context protocol": 3,
+    "codex": 3,
+    "copilot cli": 3,
+    "opencode": 3,
+    "orca": 2,
+    "qmd": 3,
+    "subagent": 3,
+    "sub-agent": 3,
+    "agent skills": 3,
+    "skills": 0.5,
+    "coding agent": 3,
+    "agentic": 2,
+    "orchestration": 2,
+    "orchestrator": 2,
+    "worktree": 3,
+    "multi-agent": 2,
+    "agent memory": 3,
+    "memory": 1,
+    "knowledge graph": 2,
+    "second brain": 3,
+    "session search": 3,
+    "session history": 2,
+    "usage limit": 3,
+    "rate limit": 1,
+    "token usage": 3,
+    "cost tracking": 2,
+    "observability": 2,
+    "tracing": 1,
+    "evals": 2,
+    "prompt eval": 3,
+    "promptfoo": 3,
+    "sandbox": 2,
+    "supply chain": 2,
+    "prompt injection": 2,
+    "secrets": 1,
+    "local-first": 3,
+    "self-hosted": 2,
+    "windows": 1,
+    "scheduled": 1,
+    "cron": 1,
+    "routine": 1,
+    "notification": 1,
+    "ntfy": 2,
+    "bookmark": 1,
+    "change detection": 2,
+    "browser automation": 2,
+    "cdp": 1,
+    "playwright": 1,
+    "deepseek": 2,
+    "headless": 1,
+    "cli": 0.5,
+    "terminal": 1,
+    "tui": 1,
+    "dashboard": 1,
+    "markdown": 1,
+    "rag": 1,
+    "embeddings": 1,
+    "llm": 0.5,
+    "agent": 0.5,
+    "ai": 0.25,
+    "hooks": 2,
+    "plugin": 1
+  },
+  "bonusTerms": [
+    "mcp",
+    "claude code",
+    "codex",
+    "copilot",
+    "orca",
+    "qmd"
+  ],
+  "watchDepends": [
+    "-p",
+    "--print",
+    "hooks",
+    "permission",
+    "rate_limits",
+    "rate limit",
+    "mcp",
+    "worktree",
+    "skills",
+    "subagent",
+    "exit code",
+    "breaking"
+  ],
+  "watchIgnoreTags": [
+    "mobile",
+    "android",
+    "ios",
+    "nightly",
+    "canary",
+    "insiders"
+  ],
+  "weights": {
+    "relevance": 30,
+    "maintenance": 25,
+    "substance": 15,
+    "momentum": 15,
+    "agreement": 10,
+    "license": 5
+  },
+  "liveness": {
+    "noCommitDays": 90,
+    "noCommitFactor": 0.35,
+    "noReleaseDays": 180,
+    "noReleaseFactor": 0.6
+  },
+  "trustedPublishers": [
+    "openai.com",
+    "github.blog",
+    "anthropic.com",
+    "simonwillison.net",
+    "havoptic.com",
+    "modelcontextprotocol.io"
+  ],
+  "seen": {
+    "starJumpFactor": 2,
+    "starJumpMin": 500
+  },
+  "aliases": {
+    "gh:anthropics/claude-code": {
+      "names": [
+        "Claude Code"
+      ],
+      "urls": [
+        "https://code.claude.com/docs/en/changelog"
+      ]
+    },
+    "gh:openai/codex": {
+      "names": [
+        "Codex"
+      ],
+      "urls": []
+    },
+    "gh:github/copilot-cli": {
+      "names": [
+        "Copilot CLI"
+      ],
+      "urls": []
+    },
+    "gh:anomalyco/opencode": {
+      "names": [
+        "OpenCode"
+      ],
+      "urls": []
+    },
+    "gh:tobi/qmd": {
+      "names": [
+        "QMD"
+      ],
+      "urls": []
+    }
+  },
+  "github": {
+    "minStars": 20,
+    "queries": [
+      "topic:mcp created:>={since} stars:>={minStars}",
+      "topic:claude-code created:>={since} stars:>={minStars}",
+      "topic:ai-agents created:>={since} stars:>={minStars}",
+      "topic:coding-agent created:>={since} stars:>={minStars}",
+      "claude code in:name,description created:>={since} stars:>={minStars}",
+      "topic:llm pushed:>={since} created:>={since30} stars:>=100"
+    ],
+    "watchlist": [
+      "anthropics/claude-code",
+      "openai/codex",
+      "github/copilot-cli",
+      "anomalyco/opencode",
+      "tobi/qmd",
+      "basicmachines-co/basic-memory",
+      "promptfoo/promptfoo",
+      "karakeep-app/karakeep",
+      "binwiederhier/ntfy",
+      "dgtlmoon/changedetection.io",
+      "Dicklesworthstone/coding_agent_session_search",
+      "stablyai/orca"
+    ]
+  },
+  "hn": {
+    "queries": [
+      "claude",
+      "codex",
+      "mcp",
+      "agent",
+      "llm",
+      "copilot",
+      "anthropic",
+      "openai",
+      "deepseek"
+    ],
+    "minPoints": 30,
+    "showQueries": [
+      "agent",
+      "mcp",
+      "llm",
+      "claude",
+      "ai"
+    ],
+    "showMinPoints": 8
+  },
+  "lobsters": {
+    "tags": [
+      "ai",
+      "vibecoding"
+    ],
+    "minScore": 5
+  },
+  "reddit": {
+    "subs": [
+      "ClaudeAI",
+      "LocalLLaMA",
+      "ChatGPTCoding"
+    ],
+    "perSub": 10
+  },
+  "mcpRegistry": {
+    "url": "https://registry.modelcontextprotocol.io/v0.1/servers",
+    "maxPages": 4
+  },
+  "awesome": {
+    "repo": "punkpeye/awesome-mcp-servers"
+  },
+  "feeds": [
+    {
+      "id": "openai-news",
+      "url": "https://openai.com/news/rss.xml",
+      "kind": "article"
+    },
+    {
+      "id": "simonwillison",
+      "url": "https://simonwillison.net/atom/everything/",
+      "kind": "article"
+    },
+    {
+      "id": "github-changelog",
+      "url": "https://github.blog/changelog/feed/",
+      "kind": "release"
+    },
+    {
+      "id": "havoptic-gemini-cli",
+      "url": "https://www.havoptic.com/feeds/gemini-cli.xml",
+      "kind": "release"
+    },
+    {
+      "id": "havoptic-cursor",
+      "url": "https://www.havoptic.com/feeds/cursor.xml",
+      "kind": "release"
+    },
+    {
+      "id": "aiticker",
+      "url": "https://ai-ide-news.github.io/feed.xml",
+      "kind": "release"
+    }
+  ],
+  "deepseek": {
+    "script": "",
+    "sweepTimeoutSec": 480,
+    "shortlistTimeoutSec": 300,
+    "reasonTimeoutSec": 900
+  },
+  "lanes": {
+    "order": [
+      "claude",
+      "codex"
+    ],
+    "claude": {
+      "model": "opus",
+      "effort": "high",
+      "timeoutMs": 1320000
+    },
+    "codex": {
+      "timeoutMs": 1200000
+    }
+  }
+}

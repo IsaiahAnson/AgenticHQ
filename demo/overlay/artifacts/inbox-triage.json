@@ -1,0 +1,9 @@
+{
+  "title": "Inbox triage",
+  "icon": "mail",
+  "kind": "run",
+  "category": "writing",
+  "created": "@iso:-1d@17:03",
+  "note": "14 new: talk accepted and a beta report need you, 3 reply drafts waiting (never sent), the rest rolled up or archived.",
+  "svg": "<rect x=\"6\" y=\"12\" width=\"36\" height=\"24\" rx=\"3\"/><path d=\"M6 14l18 12 18-12\"/>"
+}

@@ -1,0 +1,464 @@
+{
+  "fetched": "@iso:-1m",
+  "timeZone": "America/Chicago",
+  "week": {
+    "added": 6,
+    "updated": 3,
+    "superseded": 1,
+    "runs": 7,
+    "filesTouched": [
+      "ci.md",
+      "sync-engine.md",
+      "agents-parallel.md",
+      "dependencies.md",
+      "inbox.md",
+      "releases.md"
+    ],
+    "total": 42
+  },
+  "newest": [
+    {
+      "topic": "ci",
+      "title": "Pin Node 22 in CI to match local; a newer runner broke three test runs",
+      "verified": "@date:-1d"
+    },
+    {
+      "topic": "sync-engine",
+      "title": "Run the migration dry-run before touching the sync schema",
+      "verified": "@date:-1d"
+    },
+    {
+      "topic": "inbox",
+      "title": "Label beta crash reports before drafting a reply",
+      "verified": "@date:-2d"
+    }
+  ],
+  "pending": [
+    {
+      "id": "91794d93ee3ae627",
+      "standingsId": "lea-d391c70ab5",
+      "skill": "ship",
+      "ids": [
+        "91794d93ee3ae627"
+      ],
+      "skills": [
+        "ship"
+      ],
+      "text": "Run the migration dry-run before touching the sync schema",
+      "topic": "sync-engine",
+      "recurrence": 3,
+      "proposedAt": "@iso:-14h",
+      "assessment": {
+        "why": "A schema change without the dry-run broke offline edits twice; the rule catches it first.",
+        "timeSaved": "weekly",
+        "effort": "approve",
+        "timeReason": "Estimated from 3 recurrences per month.",
+        "effortReason": "A one-line gotcha in the skill file.",
+        "by": "claude-opus-5-5 · gotcha-assess",
+        "at": "@iso:-14h",
+        "timeLabel": "~2h/mo saved",
+        "effortLabel": "Approve only"
+      },
+      "rank": 1,
+      "tier": "S",
+      "movement": "same",
+      "score": 84,
+      "reason": "A schema change without the dry-run broke offline edits twice; the rule catches it first. Scored 84 on the rubric."
+    },
+    {
+      "id": "e53181f56e7b5b89",
+      "standingsId": "lea-30086681d9",
+      "skill": "test-fixer",
+      "ids": [
+        "e53181f56e7b5b89"
+      ],
+      "skills": [
+        "test-fixer"
+      ],
+      "text": "Pin Node 22 in CI to match local",
+      "topic": "ci",
+      "recurrence": 3,
+      "proposedAt": "@iso:-14h",
+      "assessment": {
+        "why": "CI ran a newer Node than local and three test runs failed for no code reason.",
+        "timeSaved": "weekly",
+        "effort": "small",
+        "timeReason": "Estimated from 3 recurrences per month.",
+        "effortReason": "A short script or config change.",
+        "by": "claude-opus-5-5 · gotcha-assess",
+        "at": "@iso:-14h",
+        "timeLabel": "~2h/mo saved",
+        "effortLabel": "Small build"
+      },
+      "rank": 2,
+      "tier": "S",
+      "movement": "up",
+      "score": 83,
+      "reason": "CI ran a newer Node than local and three test runs failed for no code reason. Scored 83 on the rubric."
+    },
+    {
+      "id": "dac006fb94413636",
+      "standingsId": "lea-0e00131fd2",
+      "skill": "test-fixer",
+      "ids": [
+        "dac006fb94413636",
+        "af0bcbbadda91eff"
+      ],
+      "skills": [
+        "test-fixer",
+        "pr-review"
+      ],
+      "text": "Quarantine a test that fails twice in a row and file an issue",
+      "topic": "ci",
+      "recurrence": 4,
+      "proposedAt": "@iso:-14h",
+      "assessment": {
+        "why": "Agents kept retrying the same flaky ingest test instead of moving on.",
+        "timeSaved": "weekly",
+        "effort": "approve",
+        "timeReason": "Estimated from 4 recurrences per month.",
+        "effortReason": "A one-line gotcha in the skill file.",
+        "by": "claude-opus-5-5 · gotcha-assess",
+        "at": "@iso:-14h",
+        "timeLabel": "~2h/mo saved",
+        "effortLabel": "Approve only"
+      },
+      "rank": 3,
+      "tier": "S",
+      "movement": "new",
+      "score": 79,
+      "reason": "Agents kept retrying the same flaky ingest test instead of moving on. Scored 79 on the rubric."
+    },
+    {
+      "id": "92affff49ecf8b98",
+      "standingsId": "lea-2992532ba7",
+      "skill": "ship",
+      "ids": [
+        "92affff49ecf8b98"
+      ],
+      "skills": [
+        "ship"
+      ],
+      "text": "Give each parallel worker its own git worktree",
+      "topic": "agents-parallel",
+      "recurrence": 2,
+      "proposedAt": "@iso:-14h",
+      "assessment": {
+        "why": "Two workers edited one checkout and one lost its changes.",
+        "timeSaved": "monthly",
+        "effort": "approve",
+        "timeReason": "Estimated from 2 recurrences per month.",
+        "effortReason": "A one-line gotcha in the skill file.",
+        "by": "claude-opus-5-5 · gotcha-assess",
+        "at": "@iso:-14h",
+        "timeLabel": "~30m/mo saved",
+        "effortLabel": "Approve only"
+      },
+      "rank": 4,
+      "tier": "A",
+      "movement": "same",
+      "score": 76.5,
+      "reason": "Two workers edited one checkout and one lost its changes. Scored 76.5 on the rubric."
+    },
+    {
+      "id": "fb556fef9871764e",
+      "standingsId": "lea-87310b6792",
+      "skill": "dep-watch",
+      "ids": [
+        "fb556fef9871764e"
+      ],
+      "skills": [
+        "dep-watch"
+      ],
+      "text": "Check the lockfile diff before merging a dependency bump",
+      "topic": "dependencies",
+      "recurrence": 2,
+      "proposedAt": "@iso:-14h",
+      "assessment": {
+        "why": "A minor bump pulled in a new transitive package nobody reviewed.",
+        "timeSaved": "weekly",
+        "effort": "approve",
+        "timeReason": "Estimated from 2 recurrences per month.",
+        "effortReason": "A one-line gotcha in the skill file.",
+        "by": "claude-opus-5-5 · gotcha-assess",
+        "at": "@iso:-14h",
+        "timeLabel": "~2h/mo saved",
+        "effortLabel": "Approve only"
+      },
+      "rank": 5,
+      "tier": "A",
+      "movement": "down",
+      "score": 74.5,
+      "reason": "A minor bump pulled in a new transitive package nobody reviewed. Scored 74.5 on the rubric."
+    },
+    {
+      "id": "bcc9adaca46a2f5d",
+      "standingsId": "lea-e532999dbc",
+      "skill": "triage",
+      "ids": [
+        "bcc9adaca46a2f5d"
+      ],
+      "skills": [
+        "triage"
+      ],
+      "text": "Label beta crash reports before drafting a reply",
+      "topic": "inbox",
+      "recurrence": 3,
+      "proposedAt": "@iso:-14h",
+      "assessment": {
+        "why": "Crash reports got generic replies when they were not labelled first.",
+        "timeSaved": "daily",
+        "effort": "approve",
+        "timeReason": "Estimated from 3 recurrences per month.",
+        "effortReason": "A one-line gotcha in the skill file.",
+        "by": "claude-opus-5-5 · gotcha-assess",
+        "at": "@iso:-14h",
+        "timeLabel": "5h+/mo saved",
+        "effortLabel": "Approve only"
+      },
+      "rank": 6,
+      "tier": "A",
+      "movement": "up",
+      "score": 72.5,
+      "reason": "Crash reports got generic replies when they were not labelled first. Scored 72.5 on the rubric."
+    },
+    {
+      "id": "b6a6664cdf521acb",
+      "standingsId": "lea-80e5838bf2",
+      "skill": "release-notes",
+      "ids": [
+        "b6a6664cdf521acb"
+      ],
+      "skills": [
+        "release-notes"
+      ],
+      "text": "Build release notes from PR titles, not commit messages",
+      "topic": "releases",
+      "recurrence": 2,
+      "proposedAt": "@iso:-14h",
+      "assessment": {
+        "why": "Commit messages made the 2.3 notes noisy and hard to read.",
+        "timeSaved": "monthly",
+        "effort": "small",
+        "timeReason": "Estimated from 2 recurrences per month.",
+        "effortReason": "A short script or config change.",
+        "by": "claude-opus-5-5 · gotcha-assess",
+        "at": "@iso:-14h",
+        "timeLabel": "~30m/mo saved",
+        "effortLabel": "Small build"
+      },
+      "rank": 7,
+      "tier": "A",
+      "movement": "new",
+      "score": 68,
+      "reason": "Commit messages made the 2.3 notes noisy and hard to read. Scored 68 on the rubric."
+    },
+    {
+      "id": "b64dfd25725ebda8",
+      "standingsId": "lea-a3b938f289",
+      "skill": "brain-refresh",
+      "ids": [
+        "b64dfd25725ebda8"
+      ],
+      "skills": [
+        "brain-refresh"
+      ],
+      "text": "Skip the brain rebuild when no file changed",
+      "topic": "hq-operations",
+      "recurrence": 2,
+      "proposedAt": "@iso:-14h",
+      "assessment": {
+        "why": "Most overnight rebuilds found nothing new and still took a few minutes.",
+        "timeSaved": "daily",
+        "effort": "small",
+        "timeReason": "Estimated from 2 recurrences per month.",
+        "effortReason": "A short script or config change.",
+        "by": "claude-opus-5-5 · gotcha-assess",
+        "at": "@iso:-14h",
+        "timeLabel": "5h+/mo saved",
+        "effortLabel": "Small build"
+      },
+      "rank": 8,
+      "tier": "A",
+      "movement": "same",
+      "score": 67,
+      "reason": "Most overnight rebuilds found nothing new and still took a few minutes. Scored 67 on the rubric."
+    }
+  ],
+  "standings": {
+    "board": "learned",
+    "updatedAt": "@iso:-14h",
+    "lastRunId": "@iso:-14h",
+    "runs": [
+      {
+        "id": "@iso:-14h",
+        "at": "@iso:-14h",
+        "candidates": 11,
+        "added": 3,
+        "merged": 5,
+        "report": "skill-review-proposals.html"
+      },
+      {
+        "id": "@iso:-1d@19:00",
+        "at": "@iso:-1d@19:00",
+        "candidates": 9,
+        "added": 2,
+        "merged": 4,
+        "report": "skill-review-proposals.html"
+      },
+      {
+        "id": "@iso:-2d@19:00",
+        "at": "@iso:-2d@19:00",
+        "candidates": 12,
+        "added": 4,
+        "merged": 6,
+        "report": "skill-review-proposals.html"
+      }
+    ],
+    "counts": {
+      "open": 14,
+      "approved": 2,
+      "done": 5,
+      "trashed": 3,
+      "total": 24
+    },
+    "tiers": [
+      {
+        "tier": "S",
+        "count": 3
+      },
+      {
+        "tier": "A",
+        "count": 7
+      },
+      {
+        "tier": "B",
+        "count": 4
+      },
+      {
+        "tier": "C",
+        "count": 0
+      },
+      {
+        "tier": "D",
+        "count": 0
+      }
+    ],
+    "total": 14,
+    "items": [
+      {
+        "id": "lea-d391c70ab5",
+        "rank": 1,
+        "tier": "S",
+        "movement": "same",
+        "score": 84,
+        "title": "Run the migration dry-run before touching the sync schema",
+        "category": "ship · sync-engine",
+        "reason": "A schema change without the dry-run broke offline edits twice; the rule catches it first. Scored 84 on the rubric."
+      },
+      {
+        "id": "lea-30086681d9",
+        "rank": 2,
+        "tier": "S",
+        "movement": "up",
+        "score": 83,
+        "title": "Pin Node 22 in CI to match local",
+        "category": "test-fixer · ci",
+        "reason": "CI ran a newer Node than local and three test runs failed for no code reason. Scored 83 on the rubric."
+      },
+      {
+        "id": "lea-0e00131fd2",
+        "rank": 3,
+        "tier": "S",
+        "movement": "new",
+        "score": 79,
+        "title": "Quarantine a test that fails twice in a row and file an issue",
+        "category": "test-fixer · ci",
+        "reason": "Agents kept retrying the same flaky ingest test instead of moving on. Scored 79 on the rubric."
+      },
+      {
+        "id": "lea-2992532ba7",
+        "rank": 4,
+        "tier": "A",
+        "movement": "same",
+        "score": 76.5,
+        "title": "Give each parallel worker its own git worktree",
+        "category": "ship · agents-parallel",
+        "reason": "Two workers edited one checkout and one lost its changes. Scored 76.5 on the rubric."
+      },
+      {
+        "id": "lea-87310b6792",
+        "rank": 5,
+        "tier": "A",
+        "movement": "down",
+        "score": 74.5,
+        "title": "Check the lockfile diff before merging a dependency bump",
+        "category": "dep-watch · dependencies",
+        "reason": "A minor bump pulled in a new transitive package nobody reviewed. Scored 74.5 on the rubric."
+      },
+      {
+        "id": "lea-e532999dbc",
+        "rank": 6,
+        "tier": "A",
+        "movement": "up",
+        "score": 72.5,
+        "title": "Label beta crash reports before drafting a reply",
+        "category": "triage · inbox",
+        "reason": "Crash reports got generic replies when they were not labelled first. Scored 72.5 on the rubric."
+      },
+      {
+        "id": "lea-80e5838bf2",
+        "rank": 7,
+        "tier": "A",
+        "movement": "new",
+        "score": 68,
+        "title": "Build release notes from PR titles, not commit messages",
+        "category": "release-notes · releases",
+        "reason": "Commit messages made the 2.3 notes noisy and hard to read. Scored 68 on the rubric."
+      },
+      {
+        "id": "lea-a3b938f289",
+        "rank": 8,
+        "tier": "A",
+        "movement": "same",
+        "score": 67,
+        "title": "Skip the brain rebuild when no file changed",
+        "category": "brain-refresh · hq-operations",
+        "reason": "Most overnight rebuilds found nothing new and still took a few minutes. Scored 67 on the rubric."
+      },
+      {
+        "id": "lea-4de7a9b018",
+        "rank": 9,
+        "tier": "A",
+        "movement": "down",
+        "score": 66,
+        "title": "Check sensor timestamps are UTC before merging an ingest change",
+        "category": "pr-review · tidepool-data",
+        "reason": "A local-time timestamp shifted a week of tidepool readings by an hour. Scored 66 on the rubric."
+      },
+      {
+        "id": "lea-cd14a110ae",
+        "rank": 10,
+        "tier": "A",
+        "movement": "same",
+        "score": 62,
+        "title": "Keep standup notes to three bullets per project",
+        "category": "standup · hq-operations",
+        "reason": "Long standup drafts were trimmed by hand every morning. Scored 62 on the rubric."
+      }
+    ]
+  },
+  "openTotal": 14,
+  "standingsError": null,
+  "approved": {
+    "allTime": 23,
+    "thisWeek": 2,
+    "dismissed": 9
+  },
+  "lastProposalRun": "@iso:-14h",
+  "nextProposals": {
+    "day": "@date:+1d",
+    "time": "19:00",
+    "cron": "0 19 * * *"
+  }
+}

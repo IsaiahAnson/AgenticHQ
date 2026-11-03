@@ -1,0 +1,1321 @@
+{
+  "generated": "@iso:-2m",
+  "timezone": "America/Chicago",
+  "needsSetup": false,
+  "sources": [
+    {
+      "key": "desktop",
+      "label": "Claude Code"
+    },
+    {
+      "key": "server",
+      "label": "HQ server"
+    }
+  ],
+  "counts": {
+    "desktop": 6,
+    "server": 4
+  },
+  "routines": [
+    {
+      "id": "rt:task-morning-brief",
+      "t": "07:30",
+      "d": "daily",
+      "src": "desktop",
+      "n": "Morning brief",
+      "desc": "One page before the day starts: calendar, inbox and what ran overnight",
+      "pulse": {
+        "strip": [
+          {
+            "day": "@date:-6d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-5d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-4d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-3d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-2d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-1d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:0",
+            "status": "ok"
+          }
+        ],
+        "kept": 5,
+        "opened": 6,
+        "trashed": 1,
+        "total": 7,
+        "noisy": false,
+        "lastRun": {
+          "at": "@iso:0d@07:31",
+          "ok": true
+        },
+        "open": "/artifacts/morning-brief.html"
+      },
+      "missed": 0,
+      "lastRunAt": "@iso:0d@07:31",
+      "lastResult": null,
+      "status": "ok"
+    },
+    {
+      "id": "rt:radar-sweep",
+      "t": "08:00",
+      "d": "daily",
+      "src": "server",
+      "n": "AI Radar sweep",
+      "desc": "AI Radar: finds new AI tools and scores each one against this setup",
+      "pulse": {
+        "strip": [
+          {
+            "day": "@date:-6d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-5d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-4d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-3d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-2d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-1d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:0",
+            "status": "ok"
+          }
+        ],
+        "kept": 9,
+        "opened": 11,
+        "trashed": 2,
+        "total": 13,
+        "noisy": false,
+        "lastRun": {
+          "at": "@iso:-5h4m",
+          "ok": true
+        },
+        "open": "/artifacts/ai-radar-digest.html"
+      },
+      "missed": 0,
+      "lastRunAt": "@iso:-5h4m",
+      "lastResult": null,
+      "status": "ok"
+    },
+    {
+      "id": "rt:task-inbox-triage",
+      "t": "09:00",
+      "d": "daily",
+      "src": "desktop",
+      "n": "Inbox triage",
+      "desc": "Labels new mail and drafts replies for review. Never sends",
+      "pulse": {
+        "strip": [
+          {
+            "day": "@date:-6d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-5d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-4d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-3d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-2d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-1d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:0",
+            "status": "ok"
+          }
+        ],
+        "kept": 12,
+        "opened": 15,
+        "trashed": 3,
+        "total": 21,
+        "noisy": false,
+        "lastRun": {
+          "at": "@iso:-2h40m",
+          "ok": true
+        },
+        "open": "/artifacts/inbox-triage.html"
+      },
+      "missed": 0,
+      "lastRunAt": "@iso:-2h40m",
+      "lastResult": null,
+      "status": "ok"
+    },
+    {
+      "id": "rt:task-skill-review",
+      "t": "09:00",
+      "d": "mon",
+      "src": "desktop",
+      "n": "Skill review",
+      "desc": "Proposes fixes to skills from last week's friction, for approval",
+      "pulse": {
+        "strip": [
+          {
+            "day": "@date:-6d",
+            "status": "none"
+          },
+          {
+            "day": "@date:-5d",
+            "status": "none"
+          },
+          {
+            "day": "@date:-4d",
+            "status": "none"
+          },
+          {
+            "day": "@date:-3d",
+            "status": "none"
+          },
+          {
+            "day": "@date:-2d",
+            "status": "none"
+          },
+          {
+            "day": "@date:-1d",
+            "status": "none"
+          },
+          {
+            "day": "@date:0",
+            "status": "ok"
+          }
+        ],
+        "kept": 1,
+        "opened": 1,
+        "trashed": 0,
+        "total": 1,
+        "noisy": false,
+        "lastRun": {
+          "at": "@iso:-1d@09:03",
+          "ok": true
+        },
+        "open": "/artifacts/skill-review-proposals.html"
+      },
+      "missed": 0,
+      "lastRunAt": "@iso:-1d@09:03",
+      "lastResult": null,
+      "status": "ok"
+    },
+    {
+      "id": "rt:task-standup-notes",
+      "t": "09:40",
+      "d": "mon,tue,wed,thu,fri",
+      "src": "desktop",
+      "n": "Standup notes",
+      "desc": "Drafts the standup from yesterday's commits and merged PRs",
+      "pulse": {
+        "strip": [
+          {
+            "day": "@date:-6d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-5d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-4d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-3d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-2d",
+            "status": "none"
+          },
+          {
+            "day": "@date:-1d",
+            "status": "none"
+          },
+          {
+            "day": "@date:0",
+            "status": "ok"
+          }
+        ],
+        "kept": 4,
+        "opened": 5,
+        "trashed": 0,
+        "total": 5,
+        "noisy": false,
+        "lastRun": {
+          "at": "@iso:-1d@09:41",
+          "ok": true
+        },
+        "open": null
+      },
+      "missed": 0,
+      "lastRunAt": "@iso:-1d@09:41",
+      "lastResult": null,
+      "status": "ok"
+    },
+    {
+      "id": "rt:task-dependency-watch",
+      "t": "10:00",
+      "d": "daily",
+      "src": "desktop",
+      "n": "Dependency watch",
+      "desc": "Checks the four code projects' dependencies for updates and advisories",
+      "pulse": {
+        "strip": [
+          {
+            "day": "@date:-6d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-5d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-4d",
+            "status": "fail"
+          },
+          {
+            "day": "@date:-3d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-2d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-1d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:0",
+            "status": "ok"
+          }
+        ],
+        "kept": 3,
+        "opened": 4,
+        "trashed": 1,
+        "total": 6,
+        "noisy": false,
+        "lastRun": {
+          "at": "@iso:-2h10m",
+          "ok": true
+        },
+        "open": "/artifacts/dependency-watch.html"
+      },
+      "missed": 0,
+      "lastRunAt": "@iso:-2h10m",
+      "lastResult": null,
+      "status": "ok"
+    },
+    {
+      "id": "rt:task-inbox-triage",
+      "t": "13:00",
+      "d": "daily",
+      "src": "desktop",
+      "n": "Inbox triage",
+      "desc": "Labels new mail and drafts replies for review. Never sends",
+      "pulse": {
+        "strip": [
+          {
+            "day": "@date:-6d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-5d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-4d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-3d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-2d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-1d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:0",
+            "status": "ok"
+          }
+        ],
+        "kept": 12,
+        "opened": 15,
+        "trashed": 3,
+        "total": 21,
+        "noisy": false,
+        "lastRun": {
+          "at": "@iso:-2h40m",
+          "ok": true
+        },
+        "open": "/artifacts/inbox-triage.html"
+      },
+      "missed": 0,
+      "lastRunAt": "@iso:-2h40m",
+      "lastResult": null,
+      "status": "ok"
+    },
+    {
+      "id": "rt:task-release-notes-draft",
+      "t": "15:00",
+      "d": "fri",
+      "src": "desktop",
+      "n": "Release notes draft",
+      "desc": "Drafts release notes from the week's merged PRs",
+      "pulse": {
+        "strip": [
+          {
+            "day": "@date:-6d",
+            "status": "none"
+          },
+          {
+            "day": "@date:-5d",
+            "status": "none"
+          },
+          {
+            "day": "@date:-4d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-3d",
+            "status": "none"
+          },
+          {
+            "day": "@date:-2d",
+            "status": "none"
+          },
+          {
+            "day": "@date:-1d",
+            "status": "none"
+          },
+          {
+            "day": "@date:0",
+            "status": "none"
+          }
+        ],
+        "kept": 1,
+        "opened": 1,
+        "trashed": 0,
+        "total": 1,
+        "noisy": false,
+        "lastRun": {
+          "at": "@iso:-3d@15:02",
+          "ok": true
+        },
+        "open": "/artifacts/paper-lantern-0-9-notes.html"
+      },
+      "missed": 0,
+      "lastRunAt": "@iso:-3d@15:02",
+      "lastResult": null,
+      "status": "ok"
+    },
+    {
+      "id": "rt:task-inbox-triage",
+      "t": "17:00",
+      "d": "daily",
+      "src": "desktop",
+      "n": "Inbox triage",
+      "desc": "Labels new mail and drafts replies for review. Never sends",
+      "pulse": {
+        "strip": [
+          {
+            "day": "@date:-6d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-5d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-4d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-3d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-2d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-1d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:0",
+            "status": "ok"
+          }
+        ],
+        "kept": 12,
+        "opened": 15,
+        "trashed": 3,
+        "total": 21,
+        "noisy": false,
+        "lastRun": {
+          "at": "@iso:-2h40m",
+          "ok": true
+        },
+        "open": "/artifacts/inbox-triage.html"
+      },
+      "missed": 0,
+      "lastRunAt": "@iso:-2h40m",
+      "lastResult": null,
+      "status": "ok"
+    },
+    {
+      "id": "rt:weekly-review",
+      "t": "18:00",
+      "d": "sun",
+      "src": "server",
+      "n": "Weekly review",
+      "desc": "The week in HQ: runs, lessons, ring pages and next week's focus",
+      "pulse": {
+        "strip": [
+          {
+            "day": "@date:-6d",
+            "status": "none"
+          },
+          {
+            "day": "@date:-5d",
+            "status": "none"
+          },
+          {
+            "day": "@date:-4d",
+            "status": "none"
+          },
+          {
+            "day": "@date:-3d",
+            "status": "none"
+          },
+          {
+            "day": "@date:-2d",
+            "status": "none"
+          },
+          {
+            "day": "@date:-1d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:0",
+            "status": "none"
+          }
+        ],
+        "kept": 1,
+        "opened": 1,
+        "trashed": 0,
+        "total": 1,
+        "noisy": false,
+        "lastRun": {
+          "at": "@iso:-2d@18:04",
+          "ok": true
+        },
+        "open": "/artifacts/week-in-hq.html"
+      },
+      "missed": 0,
+      "lastRunAt": "@iso:-2d@18:04",
+      "lastResult": null,
+      "status": "ok"
+    },
+    {
+      "id": "rt:radar-sweep",
+      "t": "20:00",
+      "d": "daily",
+      "src": "server",
+      "n": "AI Radar sweep",
+      "desc": "AI Radar: finds new AI tools and scores each one against this setup",
+      "pulse": {
+        "strip": [
+          {
+            "day": "@date:-6d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-5d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-4d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-3d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-2d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-1d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:0",
+            "status": "ok"
+          }
+        ],
+        "kept": 9,
+        "opened": 11,
+        "trashed": 2,
+        "total": 13,
+        "noisy": false,
+        "lastRun": {
+          "at": "@iso:-5h4m",
+          "ok": true
+        },
+        "open": "/artifacts/ai-radar-digest.html"
+      },
+      "missed": 0,
+      "lastRunAt": "@iso:-5h4m",
+      "lastResult": null,
+      "status": "ok"
+    },
+    {
+      "id": "rt:brain-refresh",
+      "t": "21:00",
+      "d": "daily",
+      "src": "server",
+      "n": "Brain refresh (8 runs today)",
+      "desc": "Rebuilds the Second Brain map and the home orb",
+      "pulse": {
+        "strip": [
+          {
+            "day": "@date:-6d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-5d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-4d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-3d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-2d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-1d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:0",
+            "status": "ok"
+          }
+        ],
+        "kept": null,
+        "opened": null,
+        "trashed": null,
+        "total": null,
+        "noisy": false,
+        "lastRun": {
+          "at": "@iso:-1h12m",
+          "ok": true
+        },
+        "open": null
+      },
+      "missed": 0,
+      "lastRunAt": "@iso:-1h12m",
+      "lastResult": null,
+      "status": "ok",
+      "bg": true,
+      "runs": 8
+    },
+    {
+      "id": "rt:backup-check",
+      "t": "23:00",
+      "d": "daily",
+      "src": "server",
+      "n": "Backup check",
+      "desc": "Verifies every project repo has a fresh backup",
+      "pulse": {
+        "strip": [
+          {
+            "day": "@date:-6d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-5d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-4d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-3d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-2d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-1d",
+            "status": "miss"
+          },
+          {
+            "day": "@date:0",
+            "status": "none"
+          }
+        ],
+        "kept": null,
+        "opened": null,
+        "trashed": null,
+        "total": null,
+        "noisy": false,
+        "lastRun": {
+          "at": "@iso:-2d@23:00",
+          "ok": true
+        },
+        "open": null
+      },
+      "missed": 1,
+      "lastRunAt": "@iso:-2d@23:00",
+      "lastResult": null,
+      "status": "missed"
+    }
+  ],
+  "models": {
+    "rt:task-morning-brief": "claude-opus-5-5",
+    "rt:task-inbox-triage": "claude-opus-5-5",
+    "rt:task-standup-notes": "claude-opus-5-5",
+    "rt:task-dependency-watch": "claude-opus-5-5",
+    "rt:task-release-notes-draft": "claude-opus-5-5",
+    "rt:task-skill-review": "claude-opus-5-5"
+  },
+  "missed": [
+    {
+      "key": "routine-missed:windows:backup-check",
+      "ok": false,
+      "id": "backup-check",
+      "name": "Backup check",
+      "source": "windows",
+      "missed": 1,
+      "lastRunAt": "@iso:-2d@23:00",
+      "lastExpected": "@iso:-1d@23:00",
+      "lastResult": 0
+    }
+  ],
+  "switches": [
+    {
+      "task": "dependency-watch",
+      "name": "Dependency watch",
+      "on": true,
+      "when": "0 10 * * *",
+      "model": "claude-opus-5-5",
+      "missed": 0,
+      "lastRunAt": "@iso:-2h10m",
+      "lastResult": true,
+      "status": "ok",
+      "pulse": {
+        "strip": [
+          {
+            "day": "@date:-6d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-5d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-4d",
+            "status": "fail"
+          },
+          {
+            "day": "@date:-3d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-2d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-1d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:0",
+            "status": "ok"
+          }
+        ],
+        "kept": null,
+        "opened": null,
+        "trashed": null,
+        "total": null,
+        "noisy": false,
+        "lastRun": {
+          "at": "@iso:-2h10m",
+          "ok": true
+        },
+        "open": null
+      }
+    },
+    {
+      "task": "inbox-triage",
+      "name": "Inbox triage",
+      "on": true,
+      "when": "0 9,13,17 * * *",
+      "model": "claude-opus-5-5",
+      "missed": 0,
+      "lastRunAt": "@iso:-2h40m",
+      "lastResult": true,
+      "status": "ok",
+      "pulse": {
+        "strip": [
+          {
+            "day": "@date:-6d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-5d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-4d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-3d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-2d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-1d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:0",
+            "status": "ok"
+          }
+        ],
+        "kept": null,
+        "opened": null,
+        "trashed": null,
+        "total": null,
+        "noisy": false,
+        "lastRun": {
+          "at": "@iso:-2h40m",
+          "ok": true
+        },
+        "open": null
+      }
+    },
+    {
+      "task": "morning-brief",
+      "name": "Morning brief",
+      "on": true,
+      "when": "30 7 * * *",
+      "model": "claude-opus-5-5",
+      "missed": 0,
+      "lastRunAt": "@iso:0d@07:31",
+      "lastResult": true,
+      "status": "ok",
+      "pulse": {
+        "strip": [
+          {
+            "day": "@date:-6d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-5d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-4d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-3d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-2d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-1d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:0",
+            "status": "ok"
+          }
+        ],
+        "kept": null,
+        "opened": null,
+        "trashed": null,
+        "total": null,
+        "noisy": false,
+        "lastRun": {
+          "at": "@iso:0d@07:31",
+          "ok": true
+        },
+        "open": null
+      }
+    },
+    {
+      "task": "release-notes-draft",
+      "name": "Release notes draft",
+      "on": true,
+      "when": "0 15 * * 5",
+      "model": "claude-opus-5-5",
+      "missed": 0,
+      "lastRunAt": "@iso:-3d@15:02",
+      "lastResult": true,
+      "status": "ok",
+      "pulse": {
+        "strip": [
+          {
+            "day": "@date:-6d",
+            "status": "none"
+          },
+          {
+            "day": "@date:-5d",
+            "status": "none"
+          },
+          {
+            "day": "@date:-4d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-3d",
+            "status": "none"
+          },
+          {
+            "day": "@date:-2d",
+            "status": "none"
+          },
+          {
+            "day": "@date:-1d",
+            "status": "none"
+          },
+          {
+            "day": "@date:0",
+            "status": "none"
+          }
+        ],
+        "kept": null,
+        "opened": null,
+        "trashed": null,
+        "total": null,
+        "noisy": false,
+        "lastRun": {
+          "at": "@iso:-3d@15:02",
+          "ok": true
+        },
+        "open": null
+      }
+    },
+    {
+      "task": "skill-review",
+      "name": "Skill review",
+      "on": true,
+      "when": "0 9 * * 1",
+      "model": "claude-opus-5-5",
+      "missed": 0,
+      "lastRunAt": "@iso:-1d@09:03",
+      "lastResult": true,
+      "status": "ok",
+      "pulse": {
+        "strip": [
+          {
+            "day": "@date:-6d",
+            "status": "none"
+          },
+          {
+            "day": "@date:-5d",
+            "status": "none"
+          },
+          {
+            "day": "@date:-4d",
+            "status": "none"
+          },
+          {
+            "day": "@date:-3d",
+            "status": "none"
+          },
+          {
+            "day": "@date:-2d",
+            "status": "none"
+          },
+          {
+            "day": "@date:-1d",
+            "status": "none"
+          },
+          {
+            "day": "@date:0",
+            "status": "ok"
+          }
+        ],
+        "kept": null,
+        "opened": null,
+        "trashed": null,
+        "total": null,
+        "noisy": false,
+        "lastRun": {
+          "at": "@iso:-1d@09:03",
+          "ok": true
+        },
+        "open": null
+      }
+    },
+    {
+      "task": "standup-notes",
+      "name": "Standup notes",
+      "on": true,
+      "when": "40 9 * * 1-5",
+      "model": "claude-opus-5-5",
+      "missed": 0,
+      "lastRunAt": "@iso:-1d@09:41",
+      "lastResult": true,
+      "status": "ok",
+      "pulse": {
+        "strip": [
+          {
+            "day": "@date:-6d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-5d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-4d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-3d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-2d",
+            "status": "none"
+          },
+          {
+            "day": "@date:-1d",
+            "status": "none"
+          },
+          {
+            "day": "@date:0",
+            "status": "ok"
+          }
+        ],
+        "kept": null,
+        "opened": null,
+        "trashed": null,
+        "total": null,
+        "noisy": false,
+        "lastRun": {
+          "at": "@iso:-1d@09:41",
+          "ok": true
+        },
+        "open": null
+      }
+    }
+  ],
+  "heartbeat": {
+    "total": 6,
+    "ok": 6,
+    "level": "green",
+    "stale": false,
+    "at": "@iso:-12m",
+    "failing": []
+  },
+  "pulseOthers": [
+    {
+      "id": "deck-release-notes",
+      "name": "/release-notes",
+      "kind": "deck",
+      "pulse": {
+        "strip": [
+          {
+            "day": "@date:-6d",
+            "status": "none"
+          },
+          {
+            "day": "@date:-5d",
+            "status": "none"
+          },
+          {
+            "day": "@date:-4d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-3d",
+            "status": "none"
+          },
+          {
+            "day": "@date:-2d",
+            "status": "none"
+          },
+          {
+            "day": "@date:-1d",
+            "status": "none"
+          },
+          {
+            "day": "@date:0",
+            "status": "ok"
+          }
+        ],
+        "kept": 2,
+        "opened": 2,
+        "trashed": 0,
+        "total": 2,
+        "noisy": false,
+        "lastRun": {
+          "at": "@iso:-1d@15:20",
+          "ok": true
+        },
+        "open": "/artifacts/paper-lantern-0-9-notes.html"
+      }
+    },
+    {
+      "id": "deck-pr-review",
+      "name": "/pr-review",
+      "kind": "deck",
+      "pulse": {
+        "strip": [
+          {
+            "day": "@date:-6d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-5d",
+            "status": "none"
+          },
+          {
+            "day": "@date:-4d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-3d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-2d",
+            "status": "none"
+          },
+          {
+            "day": "@date:-1d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:0",
+            "status": "ok"
+          }
+        ],
+        "kept": 5,
+        "opened": 6,
+        "trashed": 1,
+        "total": 6,
+        "noisy": false,
+        "lastRun": {
+          "at": "@iso:-3h15m",
+          "ok": true
+        },
+        "open": null
+      }
+    },
+    {
+      "id": "deck-triage",
+      "name": "/triage",
+      "kind": "deck",
+      "pulse": {
+        "strip": [
+          {
+            "day": "@date:-6d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-5d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-4d",
+            "status": "none"
+          },
+          {
+            "day": "@date:-3d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-2d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-1d",
+            "status": "none"
+          },
+          {
+            "day": "@date:0",
+            "status": "ok"
+          }
+        ],
+        "kept": 4,
+        "opened": 5,
+        "trashed": 1,
+        "total": 5,
+        "noisy": false,
+        "lastRun": {
+          "at": "@iso:-4h05m",
+          "ok": true
+        },
+        "open": "/artifacts/inbox-triage.html"
+      }
+    },
+    {
+      "id": "deck-design-critique",
+      "name": "/design-critique",
+      "kind": "deck",
+      "pulse": {
+        "strip": [
+          {
+            "day": "@date:-6d",
+            "status": "none"
+          },
+          {
+            "day": "@date:-5d",
+            "status": "none"
+          },
+          {
+            "day": "@date:-4d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-3d",
+            "status": "none"
+          },
+          {
+            "day": "@date:-2d",
+            "status": "none"
+          },
+          {
+            "day": "@date:-1d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:0",
+            "status": "none"
+          }
+        ],
+        "kept": 2,
+        "opened": 2,
+        "trashed": 0,
+        "total": 2,
+        "noisy": false,
+        "lastRun": {
+          "at": "@iso:-1d@14:10",
+          "ok": true
+        },
+        "open": null
+      }
+    },
+    {
+      "id": "deck-test-fixer",
+      "name": "/test-fixer",
+      "kind": "deck",
+      "pulse": {
+        "strip": [
+          {
+            "day": "@date:-6d",
+            "status": "none"
+          },
+          {
+            "day": "@date:-5d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-4d",
+            "status": "none"
+          },
+          {
+            "day": "@date:-3d",
+            "status": "none"
+          },
+          {
+            "day": "@date:-2d",
+            "status": "ok"
+          },
+          {
+            "day": "@date:-1d",
+            "status": "none"
+          },
+          {
+            "day": "@date:0",
+            "status": "fail"
+          }
+        ],
+        "kept": 1,
+        "opened": 2,
+        "trashed": 0,
+        "total": 2,
+        "noisy": false,
+        "lastRun": {
+          "at": "@iso:-1h25m",
+          "ok": false
+        },
+        "open": null
+      }
+    }
+  ],
+  "pulseDays": [
+    "@date:-6d",
+    "@date:-5d",
+    "@date:-4d",
+    "@date:-3d",
+    "@date:-2d",
+    "@date:-1d",
+    "@date:0"
+  ],
+  "keptDays": 14
+}

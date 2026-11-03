@@ -1,0 +1,16 @@
+{
+  "_note": "Public demo: the connections the demo developer's agents can reach (BRAIN.md step 3). Ids with a built-in brand mark draw it; the rest get a line icon.",
+  "apps": [
+    { "id": "app:gh", "label": "GitHub CLI", "kind": "cli", "command": "gh", "access": "local", "status": "live", "desc": "repos, pull requests, issues and CI runs", "links": ["projects/orbit-notes/.github", "projects/paper-lantern/CHANGELOG.md"] },
+    { "id": "app:gmail-connector", "label": "Mail", "kind": "mcp", "access": "cloud", "status": "live", "desc": "inbox search, labels and reply drafts (never sends)", "links": ["notes/now.md"] },
+    { "id": "app:gcal", "label": "Calendar", "kind": "mcp", "access": "cloud", "status": "live", "desc": "events, free/busy and meeting prep", "links": ["notes/meetings/2026-10-30-design-review-sync-status.md"] },
+    { "id": "app:vercel", "label": "Vercel CLI", "kind": "cli", "command": "vercel", "access": "local", "status": "live", "desc": "paper-lantern docs site preview deploys", "links": ["projects/paper-lantern/themes"] },
+    { "id": "app:tailscale", "label": "Tailscale", "kind": "cli", "command": "tailscale", "access": "local", "status": "live", "desc": "reaches the tidepool sensor box on the pier", "links": ["projects/tidepool/tidepool"] },
+    { "id": "app:playwright", "label": "Playwright MCP", "kind": "mcp", "mcp": "playwright", "access": "local", "status": "live", "desc": "browser checks for the orbit-notes web build", "links": ["projects/orbit-notes/tests"] },
+    { "id": "app:codex", "label": "Codex CLI", "kind": "cli", "command": "codex", "access": "local", "status": "live", "desc": "second coding lane: reviews and test fixes" },
+    { "id": "app:copilot", "label": "Copilot CLI", "kind": "cli", "command": "copilot", "access": "local", "status": "live", "desc": "small fixes and PR summaries" },
+    { "id": "app:opencode", "label": "OpenCode", "kind": "cli", "command": "opencode", "access": "local", "status": "live", "desc": "free-model lane for triage and first drafts" },
+    { "id": "app:claude-api", "label": "Claude API", "kind": "api", "access": "cloud", "status": "live", "desc": "HQ-tracked calls: radar scoring and the weekly review" },
+    { "id": "app:deepseek-web", "label": "DeepSeek web", "kind": "app", "access": "cloud", "status": "live", "desc": "browser chat lane for public questions only" }
+  ]
+}

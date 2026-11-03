@@ -1,0 +1,9 @@
+{
+  "title": "AI Radar digest",
+  "icon": "chart",
+  "kind": "digest",
+  "category": "infographic",
+  "created": "@iso:-4d@20:12",
+  "note": "Evening sweep: six demo-world tools scored for fit; tracelight is worth a one-week trial.",
+  "svg": "<circle cx=\"24\" cy=\"24\" r=\"17\"/><circle cx=\"24\" cy=\"24\" r=\"9\"/><path d=\"M24 24l12-9\"/>"
+}

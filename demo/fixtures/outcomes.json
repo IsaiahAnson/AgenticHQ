@@ -1,0 +1,100 @@
+{
+  "generatedAt": "@iso:-1m",
+  "outcomes": [
+    {
+      "sourceId": "desktop:release-notes-draft:c5da2bef28bb",
+      "source": "desktop",
+      "agent": null,
+      "model": null,
+      "taskType": "release-notes-draft",
+      "status": "needs-action",
+      "startedAt": null,
+      "endedAt": "@iso:-2h30m",
+      "durationMs": null,
+      "reportRef": null,
+      "next": "review the paper-lantern 0.9 notes",
+      "key": "outcome:73c862946c37cd0d"
+    },
+    {
+      "sourceId": "desktop:dependency-watch:5caa365d0d61",
+      "source": "desktop",
+      "agent": null,
+      "model": null,
+      "taskType": "dependency-watch",
+      "status": "succeeded",
+      "startedAt": null,
+      "endedAt": "@iso:-2h10m",
+      "durationMs": null,
+      "reportRef": null,
+      "next": "Two minor bumps ready; one lockfile diff to read",
+      "key": "outcome:8731c48d31009c59"
+    },
+    {
+      "sourceId": "desktop:inbox-triage:f09acb21b069",
+      "source": "desktop",
+      "agent": null,
+      "model": null,
+      "taskType": "inbox-triage",
+      "status": "succeeded",
+      "startedAt": null,
+      "endedAt": "@iso:-2h40m",
+      "durationMs": null,
+      "reportRef": null,
+      "next": "1 reply drafted, 3 flagged",
+      "key": "outcome:80d694b86ccdf814"
+    },
+    {
+      "sourceId": "hq:radar-sweep:44751219089c",
+      "source": "hq",
+      "agent": null,
+      "model": null,
+      "taskType": "radar-sweep",
+      "status": "succeeded",
+      "startedAt": null,
+      "endedAt": "@iso:-5h4m",
+      "durationMs": null,
+      "reportRef": null,
+      "next": "3 tools worth trying",
+      "key": "outcome:6494c74a505777b0"
+    },
+    {
+      "sourceId": "desktop:morning-brief:dc31dc3175bc",
+      "source": "desktop",
+      "agent": null,
+      "model": null,
+      "taskType": "morning-brief",
+      "status": "succeeded",
+      "startedAt": null,
+      "endedAt": "@iso:0d@07:31",
+      "durationMs": null,
+      "reportRef": null,
+      "next": "Brief is on the ring",
+      "key": "outcome:c04926721612457f"
+    },
+    {
+      "sourceId": "desktop:standup-notes:3db00d4c9011",
+      "source": "desktop",
+      "agent": null,
+      "model": null,
+      "taskType": "standup-notes",
+      "status": "succeeded",
+      "startedAt": null,
+      "endedAt": "@iso:-1d@09:41",
+      "durationMs": null,
+      "reportRef": null,
+      "next": "Standup drafted from 6 commits",
+      "key": "outcome:284cff8c7857c1ef"
+    }
+  ],
+  "sources": {
+    "hq": {
+      "available": true,
+      "outcomeFeedSkipped": 0
+    },
+    "orca": {
+      "available": false,
+      "cachedAt": null,
+      "warning": null
+    }
+  }
+}

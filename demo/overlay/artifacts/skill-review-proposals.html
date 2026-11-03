@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Skill review proposals</title>
+<style>
+:root{--bg:#060d22;--panel:rgba(8,11,28,.64);--ink:#d5ddff;--bright:#eef1ff;--dim:#8a95c2;--faint:#7d88b3;--line:rgba(140,160,255,.14);--line2:rgba(160,180,255,.32);--blue:#7fa6ff;--violet:#a37cff;--cyan:#7ff0ff;--amber:#ffae42;--red:#ff5a4a;--green:#4fd58a;--sans:'Segoe UI Variable','Segoe UI',system-ui,-apple-system,sans-serif;--mono:'Cascadia Mono','Cascadia Code',Consolas,ui-monospace,monospace}
+*{box-sizing:border-box}html{color-scheme:dark}
+body{margin:0;background-color:var(--bg);background-image:radial-gradient(900px 480px at 0% -10%,rgba(163,124,255,.12),transparent 60%);background-attachment:fixed;color:var(--ink);font:15px/1.55 var(--sans);-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:40px 24px 72px}
+.eyebrow{font:600 11px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--violet)}
+h1{font-size:32px;line-height:1.15;margin:10px 0 6px;color:var(--bright);font-weight:650;letter-spacing:-.015em}
+.sub{color:var(--dim);margin:0 0 8px;max-width:68ch}
+.rule{display:inline-flex;gap:8px;align-items:center;font-size:13px;color:var(--ink);background:rgba(163,124,255,.08);border:1px solid rgba(163,124,255,.3);border-radius:999px;padding:6px 12px;margin:10px 0 26px}
+.rule::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--violet)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;margin-bottom:14px;overflow:hidden}
+.ch{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 20px;border-bottom:1px solid var(--line)}
+.skill{font:650 16px var(--mono);color:var(--cyan)}
+.title{font-weight:600;color:var(--bright);margin-top:2px}
+.conf{font:600 10.5px/1 var(--mono);letter-spacing:.07em;text-transform:uppercase;padding:5px 8px;border-radius:4px;border:1px solid var(--line2);white-space:nowrap}
+.hi{color:var(--green);border-color:rgba(79,213,138,.5)}.md{color:var(--amber);border-color:rgba(255,174,66,.5)}.lo{color:var(--faint)}
+.body{padding:16px 20px;display:grid;gap:12px}
+.why{color:var(--dim);font-size:13.5px;margin:0}
+.why b{color:var(--ink);font-weight:600}
+.diff{font:13px/1.65 var(--mono);background:rgba(7,9,22,.9);border:1px solid var(--line);border-radius:10px;padding:10px 0;overflow-x:auto}
+.diff div{padding:0 14px;white-space:pre}
+.diff .f{color:var(--faint)}
+.diff .a{background:rgba(79,213,138,.09);color:#b9f3d1}
+.diff .r{background:rgba(255,90,74,.09);color:#ffc2bb}
+.acts{display:flex;gap:8px;justify-content:flex-end;padding:0 20px 16px}
+.btn{font:600 11.5px/1 var(--mono);letter-spacing:.1em;padding:9px 14px;border-radius:6px;border:1px solid var(--line2);color:var(--ink);background:rgba(140,160,255,.06)}
+.btn.ok{color:#06210f;background:var(--green);border-color:var(--green)}
+.btn.no{color:var(--red);border-color:rgba(255,90,74,.5);background:transparent}
+.tally{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:22px}
+.t{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:14px 18px}
+.t b{display:block;font:650 26px/1.1 var(--sans);color:var(--bright)}
+.t span{color:var(--dim);font-size:13px}
+footer{margin-top:28px;color:var(--faint);font-size:12.5px;border-top:1px solid var(--line);padding-top:14px}
+@media (max-width:640px){.tally{grid-template-columns:1fr}.ch{flex-direction:column;align-items:flex-start}.wrap{padding:24px 16px 56px}h1{font-size:27px}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <div class="eyebrow">Skill review</div>
+  <h1>Four proposed skill edits</h1>
+  <p class="sub">Written 9:04 AM. Read from last week's lessons, routine retries and session notes. Each edit names the friction that caused it.</p>
+  <div class="rule">Nothing is changed until you approve it. Approve or trash each one in chat.</div>
+
+  <section class="tally">
+    <div class="t"><b>4</b><span>edits proposed</span></div>
+    <div class="t"><b>3</b><span>skills touched</span></div>
+    <div class="t"><b>2</b><span>lessons not yet in any skill</span></div>
+  </section>
+
+  <article class="card">
+    <div class="ch"><div><div class="skill">/triage</div><div class="title">Route newsletters to the weekly digest</div></div><span class="conf hi">High confidence</span></div>
+    <div class="body">
+      <p class="why"><b>Friction:</b> last week's inbox lesson says newsletters crowded the inbox summary. The skill still puts them in the summary under <b>read</b>.</p>
+<div class="diff"><div class="f">skills/triage/SKILL.md</div><div class="f">@@ Steps @@</div><div class="r">- 3. Label each: act, reply, read (newsletters, digests), archive.</div><div class="a">+ 3. Label each: act, reply, read, archive.</div><div class="a">+    Newsletters skip the summary and wait for the Sunday digest.</div><div>  4. For reply, write a short draft in my voice. Never send.</div></div>
+    </div>
+    <div class="acts"><span class="btn no">TRASH</span><span class="btn ok">APPROVE</span></div>
+  </article>
+
+  <article class="card">
+    <div class="ch"><div><div class="skill">/release-notes</div><div class="title">Drop fixes that already shipped in a patch release</div></div><span class="conf hi">High confidence</span></div>
+    <div class="body">
+      <p class="why"><b>Friction:</b> Friday's paper-lantern 0.9 draft listed the tag-page fix that went out in 0.8.2. It was caught by a margin check, not by the skill.</p>
+<div class="diff"><div class="f">skills/release-notes/SKILL.md</div><div class="f">@@ Gotchas @@</div><div class="a">+ - 2026-10-30: a fix from 0.8.2 showed up again in the 0.9 notes.</div><div class="a">+   Compare against CHANGELOG entries since the last minor, not the last tag.</div></div>
+    </div>
+    <div class="acts"><span class="btn no">TRASH</span><span class="btn ok">APPROVE</span></div>
+  </article>
+
+  <article class="card">
+    <div class="ch"><div><div class="skill">/brain-refresh</div><div class="title">Retry once before reporting a timeout</div></div><span class="conf md">Medium confidence</span></div>
+    <div class="body">
+      <p class="why"><b>Friction:</b> Wednesday's 3:00 AM run timed out during the scan and passed on retry. The morning brief flagged it as a failure.</p>
+<div class="diff"><div class="f">skills/brain-refresh/SKILL.md</div><div class="f">@@ Steps @@</div><div>  2. Run the brain refresh to rebuild the snapshot, skills list and orb.</div><div class="a">+ 3. If the scan times out, wait one minute and run it once more.</div><div class="a">+    Report only a second failure, with the slowest folder named.</div><div class="r">- 3. Open the map and check the department counts look right.</div><div class="a">+ 4. Open the map and check the department counts look right.</div></div>
+    </div>
+    <div class="acts"><span class="btn no">TRASH</span><span class="btn ok">APPROVE</span></div>
+  </article>
+
+  <article class="card">
+    <div class="ch"><div><div class="skill">/triage</div><div class="title">Collapse notifications per repository, then per day</div></div><span class="conf lo">Low confidence</span></div>
+    <div class="body">
+      <p class="why"><b>Friction:</b> one session note says the per-repository roll-up still showed nine lines on release day. Only one example so far.</p>
+<div class="diff"><div class="f">skills/triage/SKILL.md</div><div class="f">@@ Gotchas @@</div><div class="r">- - 2026-10-24: ... Collapse notifications per repository.</div><div class="a">+ - 2026-10-24: ... Collapse notifications per repository;</div><div class="a">+   on release days, per repository and day.</div></div>
+    </div>
+    <div class="acts"><span class="btn no">TRASH</span><span class="btn ok">APPROVE</span></div>
+  </article>
+
+  <footer>Weekly on Mondays at 9:00 AM. Sources: <span style="font-family:var(--mono)">memory/lessons/</span>, routine logs, skill Gotchas sections. Approved edits are written by you or a session you start, never by this routine.</footer>
+</main>
+</body>
+</html>

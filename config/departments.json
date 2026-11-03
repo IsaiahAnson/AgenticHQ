@@ -1,0 +1,95 @@
+{
+  "_note": "Example areas (BRAIN.md step 2). First match wins: projectPrefixes (folders in Projects), then pathRules, else default.",
+  "departments": [
+    {
+      "key": "work",
+      "label": "Work",
+      "color": "#00e676",
+      "icon": "people"
+    },
+    {
+      "key": "creative",
+      "label": "Creative",
+      "color": "#ff4fa3",
+      "icon": "visual"
+    },
+    {
+      "key": "dev",
+      "label": "Dev projects",
+      "color": "#18c5d9",
+      "icon": "build"
+    },
+    {
+      "key": "games",
+      "label": "Games",
+      "color": "#ff3d3d",
+      "icon": "pulse"
+    },
+    {
+      "key": "admin",
+      "label": "Admin",
+      "color": "#b0bec5",
+      "icon": "doc"
+    },
+    {
+      "key": "agent",
+      "label": "Agent setup",
+      "color": "#c0ca33",
+      "icon": "api"
+    }
+  ],
+  "layers": [
+    {
+      "key": "A",
+      "label": "Applications",
+      "color": "#3f8fd4",
+      "shape": "hex",
+      "blurb": "MCP servers, CLIs and APIs your agent can reach"
+    },
+    {
+      "key": "R",
+      "label": "Routines",
+      "color": "#d99a1f",
+      "shape": "ringdot",
+      "blurb": "Scheduled automations that run without being asked"
+    },
+    {
+      "key": "M",
+      "label": "Memory",
+      "color": "#9a66e0",
+      "shape": "chip",
+      "blurb": "Every file of context, clustered by department"
+    },
+    {
+      "key": "S",
+      "label": "Skills",
+      "color": "#ff6b1a",
+      "shape": "diamond",
+      "blurb": "Capabilities your agent can run on demand"
+    }
+  ],
+  "projectPrefixes": {
+    "agent-": "agent",
+    "mcp-": "agent"
+  },
+  "pathRules": [
+    {
+      "prefix": "Projects/knowledge",
+      "dept": "agent"
+    },
+    {
+      "prefix": ".claude/scheduled-tasks/",
+      "dept": "admin"
+    },
+    {
+      "prefix": ".claude",
+      "dept": "agent"
+    },
+    {
+      "prefix": ".codex",
+      "dept": "agent"
+    }
+  ],
+  "memoryKeywords": [],
+  "default": "dev"
+}

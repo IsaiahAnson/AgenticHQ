@@ -1,0 +1,36 @@
+{
+  "week": {
+    "approved": 2,
+    "recurred": 0,
+    "holding": 5,
+    "runs": 46,
+    "succeeded": 44,
+    "failed": 2
+  },
+  "items": [
+    {
+      "kind": "holding",
+      "tone": "good",
+      "text": "test-fixer: the Node 22 pin held all week",
+      "target": "learned"
+    },
+    {
+      "kind": "retire",
+      "tone": "warn",
+      "text": "Inbox triage: kept 12 of 21. Retire it?",
+      "target": "automations"
+    },
+    {
+      "kind": "radar",
+      "tone": "warn",
+      "text": "mcp-lens: build done. Merge or discard",
+      "target": "radar"
+    },
+    {
+      "kind": "holding",
+      "tone": "good",
+      "text": "ship: the worktree rule held for two weeks",
+      "target": "learned"
+    }
+  ]
+}

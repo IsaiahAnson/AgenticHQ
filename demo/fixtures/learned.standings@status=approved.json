@@ -1,0 +1,239 @@
+{
+  "board": "learned",
+  "updatedAt": "@iso:-14h",
+  "lastRunId": "@iso:-14h",
+  "runs": [
+    {
+      "id": "@iso:-14h",
+      "at": "@iso:-14h",
+      "candidates": 11,
+      "added": 3,
+      "merged": 5,
+      "report": "skill-review-proposals.html"
+    },
+    {
+      "id": "@iso:-1d@19:00",
+      "at": "@iso:-1d@19:00",
+      "candidates": 9,
+      "added": 2,
+      "merged": 4,
+      "report": "skill-review-proposals.html"
+    },
+    {
+      "id": "@iso:-2d@19:00",
+      "at": "@iso:-2d@19:00",
+      "candidates": 12,
+      "added": 4,
+      "merged": 6,
+      "report": "skill-review-proposals.html"
+    }
+  ],
+  "counts": {
+    "open": 14,
+    "approved": 2,
+    "done": 5,
+    "trashed": 3,
+    "total": 24
+  },
+  "tiers": [
+    {
+      "tier": "S",
+      "count": 3
+    },
+    {
+      "tier": "A",
+      "count": 7
+    },
+    {
+      "tier": "B",
+      "count": 4
+    },
+    {
+      "tier": "C",
+      "count": 0
+    },
+    {
+      "tier": "D",
+      "count": 0
+    }
+  ],
+  "total": 2,
+  "items": [
+    {
+      "id": "lea-b4d45c99a9",
+      "rank": null,
+      "prevRank": null,
+      "delta": null,
+      "bestRank": 2,
+      "tier": null,
+      "movement": null,
+      "title": "Close stale draft PRs every Friday",
+      "summary": "/pr-review · releases",
+      "category": "pr-review · releases",
+      "reason": "Came up in two sessions. Scored 61 on the rubric.",
+      "score": 61,
+      "baseScore": 61,
+      "seenCount": 3,
+      "firstSeen": "@iso:-16d",
+      "lastSeen": "@iso:-15d",
+      "missedRuns": 0,
+      "status": "approved",
+      "statusAt": "@iso:-2d@10:15",
+      "note": "",
+      "aliases": [],
+      "refs": [
+        "memory/lessons/releases.md"
+      ],
+      "evidence": [
+        {
+          "text": "Close stale draft PRs every Friday came up in two sessions last month.",
+          "source": "memory/lessons/releases.md",
+          "run": "@iso:-15d",
+          "at": "@iso:-15d"
+        }
+      ],
+      "data": {
+        "proposalId": "77cb7cdf2d230391",
+        "skill": "pr-review",
+        "file": "skills/pr-review/SKILL.md",
+        "section": "Gotchas",
+        "text": "Close stale draft PRs every Friday",
+        "source": [
+          "memory/lessons/releases.md"
+        ],
+        "recurrence": 1,
+        "sourceAt": "@iso:-1d@17:20",
+        "targets": [
+          {
+            "skill": "pr-review",
+            "file": "skills/pr-review/SKILL.md",
+            "proposalId": "77cb7cdf2d230391",
+            "status": "applied"
+          }
+        ],
+        "skills": [
+          "pr-review"
+        ],
+        "assessment": {
+          "why": "Close stale draft PRs every Friday came up in two sessions last month.",
+          "timeSaved": "monthly",
+          "effort": "approve",
+          "timeReason": "Estimated from 1 recurrence per month.",
+          "effortReason": "A one-line gotcha in the skill file.",
+          "by": "claude-opus-5-5 · gotcha-assess",
+          "at": "@iso:-15d",
+          "timeLabel": "~30m/mo saved",
+          "effortLabel": "Approve only"
+        },
+        "judgment": {
+          "scores": {
+            "pain": 6,
+            "frequency": 5,
+            "specificity": 7,
+            "fit": 7,
+            "durability": 6
+          },
+          "score": 61,
+          "reason": "Came up in two sessions. Scored 61 on the rubric.",
+          "critique": "Reviewed and settled.",
+          "evidenceChecked": [
+            "memory/lessons/releases.md",
+            "skills/pr-review/SKILL.md"
+          ],
+          "judgedAt": "@iso:-14h",
+          "by": "claude-opus-5-5 · gotcha-assess",
+          "recurrence": 1,
+          "sourceAt": "@iso:-1d@17:20"
+        }
+      }
+    },
+    {
+      "id": "lea-06fc7b9a25",
+      "rank": null,
+      "prevRank": null,
+      "delta": null,
+      "bestRank": 4,
+      "tier": null,
+      "movement": null,
+      "title": "Retry a failed network call once in fk sync",
+      "summary": "/ship · sync-engine",
+      "category": "ship · sync-engine",
+      "reason": "Came up in two sessions. Scored 58 on the rubric.",
+      "score": 58,
+      "baseScore": 58,
+      "seenCount": 3,
+      "firstSeen": "@iso:-16d",
+      "lastSeen": "@iso:-15d",
+      "missedRuns": 0,
+      "status": "approved",
+      "statusAt": "@iso:-4d@16:40",
+      "note": "",
+      "aliases": [],
+      "refs": [
+        "memory/lessons/sync-engine.md"
+      ],
+      "evidence": [
+        {
+          "text": "Retry a failed network call once in fk sync came up in two sessions last month.",
+          "source": "memory/lessons/sync-engine.md",
+          "run": "@iso:-15d",
+          "at": "@iso:-15d"
+        }
+      ],
+      "data": {
+        "proposalId": "99936ca39ee2ef1c",
+        "skill": "ship",
+        "file": "skills/ship/SKILL.md",
+        "section": "Gotchas",
+        "text": "Retry a failed network call once in fk sync",
+        "source": [
+          "memory/lessons/sync-engine.md"
+        ],
+        "recurrence": 1,
+        "sourceAt": "@iso:-1d@17:20",
+        "targets": [
+          {
+            "skill": "ship",
+            "file": "skills/ship/SKILL.md",
+            "proposalId": "99936ca39ee2ef1c",
+            "status": "applied"
+          }
+        ],
+        "skills": [
+          "ship"
+        ],
+        "assessment": {
+          "why": "Retry a failed network call once in fk sync came up in two sessions last month.",
+          "timeSaved": "monthly",
+          "effort": "approve",
+          "timeReason": "Estimated from 1 recurrence per month.",
+          "effortReason": "A one-line gotcha in the skill file.",
+          "by": "claude-opus-5-5 · gotcha-assess",
+          "at": "@iso:-15d",
+          "timeLabel": "~30m/mo saved",
+          "effortLabel": "Approve only"
+        },
+        "judgment": {
+          "scores": {
+            "pain": 5,
+            "frequency": 5,
+            "specificity": 7,
+            "fit": 7,
+            "durability": 6
+          },
+          "score": 58,
+          "reason": "Came up in two sessions. Scored 58 on the rubric.",
+          "critique": "Reviewed and settled.",
+          "evidenceChecked": [
+            "memory/lessons/sync-engine.md",
+            "skills/ship/SKILL.md"
+          ],
+          "judgedAt": "@iso:-14h",
+          "by": "claude-opus-5-5 · gotcha-assess",
+          "recurrence": 1,
+          "sourceAt": "@iso:-1d@17:20"
+        }
+      }
+    }
+  ]
+}

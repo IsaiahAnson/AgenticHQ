@@ -1,0 +1,121 @@
+{
+  "available": true,
+  "date": "@date:-1d",
+  "lastAt": "@iso:-1d@18:40",
+  "notePath": "voice/latest-session.md",
+  "decisions": [
+    "Ship the sync conflict banner before the 0.15 release.",
+    "Tidepool gap-fill uses linear interpolation, two hours at most.",
+    "Paper Lantern 0.9 ships the JSON Feed; RSS follows in 0.10."
+  ],
+  "openItemCount": 5,
+  "queue": [
+    {
+      "name": "orbit-notes-sync-banner",
+      "path": "specs/orbit-notes-sync-banner.md",
+      "status": "building",
+      "commit": null,
+      "agent": "claude",
+      "startedAt": "@iso:-38m"
+    },
+    {
+      "name": "paper-lantern-rss-feed",
+      "path": "specs/paper-lantern-rss-feed.md",
+      "status": "drafted",
+      "commit": null,
+      "agent": null,
+      "startedAt": null
+    },
+    {
+      "name": "tidepool-gap-fill",
+      "path": "specs/tidepool-gap-fill.md",
+      "status": "drafted",
+      "commit": null,
+      "agent": null,
+      "startedAt": null
+    }
+  ],
+  "queueHead": {
+    "name": "orbit-notes-sync-banner",
+    "status": "building"
+  },
+  "building": {
+    "name": "orbit-notes-sync-banner",
+    "agent": "claude",
+    "runningMs": 2280000
+  },
+  "openInferred": [
+    {
+      "id": "inf-00d85df2",
+      "text": "Decide whether the sync banner offers an undo",
+      "date": "@date:-1d",
+      "session": 14,
+      "inferred": true,
+      "specPath": null,
+      "status": "open",
+      "commit": null
+    },
+    {
+      "id": "inf-22a94843",
+      "text": "Pick a retention window for raw tidepool readings",
+      "date": "@date:-1d",
+      "session": 14,
+      "inferred": true,
+      "specPath": null,
+      "status": "open",
+      "commit": null
+    },
+    {
+      "id": "inf-572f0198",
+      "text": "Add a dark theme preview to paper-lantern",
+      "date": "@date:-1d",
+      "session": 14,
+      "inferred": true,
+      "specPath": null,
+      "status": "open",
+      "commit": null
+    },
+    {
+      "id": "inf-d363d8e5",
+      "text": "Write the fk snap docs page",
+      "date": "@date:-1d",
+      "session": 14,
+      "inferred": true,
+      "specPath": null,
+      "status": "open",
+      "commit": null
+    },
+    {
+      "id": "inf-070a7085",
+      "text": "Ask Jordan which theme tokens are public",
+      "date": "@date:-1d",
+      "session": 14,
+      "inferred": true,
+      "specPath": null,
+      "status": "open",
+      "commit": null
+    }
+  ],
+  "questions": [
+    {
+      "date": "@date:-1d",
+      "session": 14,
+      "text": "Should the 0.15 release wait for the sync banner, or ship without it?"
+    },
+    {
+      "date": "@date:-1d",
+      "session": 14,
+      "text": "Keep the tidepool dashboard public, or put it behind a login?"
+    }
+  ],
+  "needsCallCount": 2,
+  "built": [
+    {
+      "name": "paper-lantern-json-feed",
+      "path": "specs/paper-lantern-json-feed.md",
+      "commit": "8bd9d4c3d8190ad0177dee57cfec5700d6ddd00c",
+      "at": "@iso:-1d@16:05",
+      "reportUrl": "/artifacts/paper-lantern-0-9-notes.html"
+    }
+  ]
+}

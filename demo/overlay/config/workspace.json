@@ -1,0 +1,21 @@
+{
+  "_note": "Public demo: a fictional developer's workspace that ships with the kit (demo/workspace). The root is relative to the kit folder. demo/workspace-gen.mjs pads it with extra project files before the first scan.",
+  "root": "demo/workspace",
+  "routerDoc": "AGENTS.md",
+  "instructionDocs": ["AGENTS.md", "CLAUDE.md"],
+  "skillDirs": ["skills"],
+  "memoryDir": "memory",
+  "memoryIndex": "MEMORY.md",
+  "projectsDir": "projects",
+  "includeRoots": [],
+  "skipPaths": [],
+  "sharedPrefixes": ["projects/", "notes/", "memory/", "skills/"],
+  "visibleRoots": [
+    "projects", "projects/orbit-notes", "projects/tidepool", "projects/paper-lantern", "projects/fieldkit", "projects/agent-playbook",
+    "notes", "notes/meetings", "notes/ideas", "memory", "memory/lessons", "skills", "ops"
+  ],
+  "routing": {
+    "AGENTS.md": ["goal", "goals", "rule", "rules", "workspace", "folder", "folders", "map", "projects", "lanes"]
+  },
+  "maxFiles": 500000
+}

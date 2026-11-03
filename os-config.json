@@ -1,0 +1,189 @@
+{
+  "_about": "Agentic HQ settings. Paths are relative to this folder unless absolute. Deck cards pick a runner with \"agent\"; \"model\" and \"effort\" index the lists below. See USAGE.md and WIRING.md.",
+  "port": 50000,
+  "brainPort": 50201,
+  "artifactsDir": "artifacts",
+  "places": {
+    "_about": "Folders outside HQ, relative to this folder unless absolute (lib/places.cjs). companions: the companion tools (bin/, knowledge/, logs/, data/). workbench: agent handoffs (handoffs/specs, handoffs/reports). orcaWorktree: where orca commands run.",
+    "companions": "../companions",
+    "workbench": "../workbench",
+    "orcaWorktree": "../workbench"
+  },
+  "backup": {
+    "_about": "tools/repo-backup.ps1 writes Git bundles to \"root\" (an absolute folder; a second drive is best) and tools/hq-doctor.mjs checks them. \"repos\" lists folder names next to HQ. Without them: ~/AgenticHQ-backups and this HQ folder only."
+  },
+  "allowNullOrigin": false,
+  "outcomePush": [
+    "failed"
+  ],
+  "attention": {
+    "dailyPushes": 3,
+    "timeZone": "America/New_York",
+    "topic": "agentic-hq",
+    "dismissBase": "http://localhost:50000"
+  },
+  "models": [
+    "HAIKU",
+    "SONNET",
+    "OPUS",
+    "FABLE"
+  ],
+  "modelColors": [
+    "#2aa88a",
+    "#3f8fd4",
+    "#9a66e0",
+    "#ff6b1a"
+  ],
+  "efforts": [
+    "LOW",
+    "MEDIUM",
+    "HIGH",
+    "XHIGH",
+    "MAX"
+  ],
+  "skills": [
+    {
+      "id": "api-hq-review",
+      "agent": "claude-api",
+      "icon": "chart",
+      "model": 2,
+      "effort": 1,
+      "prompt": "Review the attached Agentic HQ facts: health, companions, micro apps, agent usage meters, the last 24 hours of deck and Orca runs, routines, ring artifacts, and this PC's disk, memory and leaked test browsers. The local checks are computed by code; confirm and rank them, and add anything else the facts clearly show. Lead with a one-line verdict, then the issues that need action, each with its evidence and one concrete fix. If everything is healthy, say so. Do not infer private activity or suggest paid upgrades."
+    },
+    {
+      "id": "weekly-dev-health",
+      "agent": "claude",
+      "icon": "chart",
+      "model": 2,
+      "effort": 1,
+      "prompt": "Weekly dev health. Do these two checks, then write ONE short markdown report with a section per check.\n1. Recap: for each git repository directly inside the parent folder of this one with commits in the last 7 days, give the repo name and a one-line summary of what changed.\n2. Dependencies: for each of those repositories that has a package.json, run npm outdated (no install). Table: repo, outdated count, major-version jumps.\nRead only: do not install, edit, commit or update anything, and ask no questions. End with exactly one line: Best maintenance action: <one thing>."
+    },
+    {
+      "id": "time-map",
+      "agent": "claude",
+      "icon": "chart",
+      "model": 2,
+      "effort": 1,
+      "prompt": "Run node tools/time-map.mjs --days=28 exactly once. It is zero-token and rebuilds the Time Map ring page (artifacts/time-map.html) from redacted session digests. Do not edit any file and do not read raw transcripts. Report its one-line summary and the top 3 entries of its Skills worth building section from data/time-map.json. Ask no questions. End with exactly one line: Next action: <the top skill worth building>."
+    },
+    {
+      "id": "gh-inbox",
+      "agent": "copilot",
+      "icon": "mail",
+      "model": 2,
+      "effort": 1,
+      "prompt": "Use the gh command line tool, not the GitHub search API: run gh search prs with author set to me and state open, then gh search issues with assignee set to me and state open. Reply as a short markdown list with links. Read only, do not change anything."
+    },
+    {
+      "id": "deps-check",
+      "agent": "codex",
+      "icon": "bolt",
+      "model": 2,
+      "effort": 1,
+      "prompt": "For each git repository directly inside this folder that has a package.json, run npm outdated (no install). Reply as a short markdown table: repo, how many packages are outdated, and any major-version jumps. Read only: do not install, edit, commit or update anything."
+    },
+    {
+      "id": "skill-review",
+      "agent": "claude",
+      "icon": "broom",
+      "model": 2,
+      "effort": 1,
+      "prompt": "Review the skills in ~/.claude/skills: for each one, check that its steps still match the files and commands it names, and list stale steps, missing gotchas and skills that overlap. Read only: do not edit any skill. Reply as a short markdown list, most urgent first."
+    }
+  ],
+  "agentPlans": {
+    "claude": "Max 5x"
+  },
+  "runner": {
+    "command": "claude -p --model {model} --effort {effort}",
+    "modelValues": [],
+    "effortValues": []
+  },
+  "runners": {
+    "claude": {
+      "command": "claude -p --model {model} --effort {effort}",
+      "modelValues": [],
+      "effortValues": []
+    },
+    "codex": {
+      "command": "codex exec --skip-git-repo-check -",
+      "cwd": ".."
+    },
+    "claude-api": {
+      "command": "node tools/claude-api-task.mjs --hq-context"
+    },
+    "copilot": {
+      "command": "copilot -s --no-ask-user --allow-tool \"shell(gh search)\" -p \"{prompt}\"",
+      "cwd": ".."
+    }
+  },
+  "microApps": [
+    {
+      "id": "ai-radar",
+      "name": "AI Radar",
+      "desc": "New AI tools and repos, ranked for this setup",
+      "url": "http://localhost:50000/radar",
+      "port": 50000,
+      "icon": "radar"
+    },
+    {
+      "id": "karakeep",
+      "name": "Karakeep",
+      "desc": "Bookmarks + read-later, auto-tagged",
+      "url": "http://localhost:50110",
+      "port": 50110,
+      "icon": "bookmark"
+    },
+    {
+      "id": "changedetection",
+      "name": "Change Watch",
+      "desc": "Website change alerts",
+      "url": "http://localhost:50111",
+      "port": 50111,
+      "icon": "eye"
+    },
+    {
+      "id": "ntfy",
+      "name": "ntfy",
+      "desc": "Push notifications for routines + watches",
+      "url": "http://localhost:50112",
+      "port": 50112,
+      "icon": "bell"
+    },
+    {
+      "id": "promptfoo",
+      "name": "Prompt Evals",
+      "desc": "promptfoo eval results viewer",
+      "url": "http://localhost:50113",
+      "port": 50113,
+      "icon": "flask"
+    }
+  ],
+  "clocks": [
+    {
+      "label": "USA ET",
+      "tz": "America/New_York"
+    },
+    {
+      "label": "USA PT",
+      "tz": "America/Los_Angeles"
+    },
+    {
+      "label": "UTC",
+      "tz": "UTC"
+    }
+  ],
+  "readers": {
+    "claudeCode": "auto"
+  },
+  "email": {
+    "_about": "Read-only Gmail summary: see USAGE.md (Email widget). Off until you point googleDir at a folder holding your own credentials.json and token.json.",
+    "enabled": false,
+    "command": "gws",
+    "googleDir": ""
+  },
+  "partnerHints": "\b(partnerships?|sponsorw*|collabs?|licen[cs]e)\b",
+  "leadHints": "\b(inquiry|proposal|quote|demo request|next steps|introduction)\b",
+  "personalFrom": "@(gmail|googlemail|yahoo|outlook|hotmail|icloud|proton)\\.",
+  "hintSkipFrom": "github.com"
+}

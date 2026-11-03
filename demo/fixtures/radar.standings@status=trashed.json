@@ -1,0 +1,262 @@
+{
+  "board": "radar",
+  "updatedAt": "@iso:-5h4m",
+  "lastRunId": "sweep-118",
+  "runs": [
+    {
+      "id": "sweep-118",
+      "at": "@iso:-5h4m",
+      "candidates": 8,
+      "added": 2,
+      "merged": 6
+    },
+    {
+      "id": "sweep-117",
+      "at": "@iso:-17h5m",
+      "candidates": 7,
+      "added": 1,
+      "merged": 6
+    },
+    {
+      "id": "sweep-116",
+      "at": "@iso:-1d5h3m",
+      "candidates": 8,
+      "added": 1,
+      "merged": 7
+    },
+    {
+      "id": "sweep-115",
+      "at": "@iso:-1d17h4m",
+      "candidates": 7,
+      "added": 0,
+      "merged": 7
+    },
+    {
+      "id": "sweep-114",
+      "at": "@iso:-2d5h5m",
+      "candidates": 8,
+      "added": 2,
+      "merged": 5
+    },
+    {
+      "id": "sweep-113",
+      "at": "@iso:-2d17h3m",
+      "candidates": 7,
+      "added": 3,
+      "merged": 4
+    }
+  ],
+  "counts": {
+    "open": 8,
+    "approved": 1,
+    "done": 1,
+    "trashed": 2,
+    "total": 12
+  },
+  "tiers": [
+    {
+      "tier": "S",
+      "count": 3
+    },
+    {
+      "tier": "A",
+      "count": 5
+    },
+    {
+      "tier": "B",
+      "count": 0
+    },
+    {
+      "tier": "C",
+      "count": 0
+    },
+    {
+      "tier": "D",
+      "count": 0
+    }
+  ],
+  "total": 2,
+  "items": [
+    {
+      "id": "rad-ba3eacb75f",
+      "rank": null,
+      "prevRank": null,
+      "delta": null,
+      "bestRank": 3,
+      "tier": null,
+      "movement": null,
+      "title": "contextor: packs a repo into one context file",
+      "summary": "Walks a repo, drops generated files and writes one ranked context file for an agent prompt.",
+      "category": "tool",
+      "reason": "watch at 52: Smaller prompts for one-shot questions about tidepool",
+      "score": 52,
+      "baseScore": 52,
+      "seenCount": 3,
+      "firstSeen": "@iso:-1d5h3m",
+      "lastSeen": "@iso:-5h4m",
+      "missedRuns": 0,
+      "status": "trashed",
+      "statusAt": "@iso:-3h10m",
+      "note": "Overlaps QMD search",
+      "aliases": [],
+      "refs": [
+        "https://example.org/tools/contextor"
+      ],
+      "evidence": [
+        {
+          "text": "Walks a repo, drops generated files and writes one ranked context file for an agent prompt.",
+          "source": "https://example.org/tools/contextor",
+          "run": "sweep-118",
+          "at": "@iso:-5h4m"
+        }
+      ],
+      "data": {
+        "id": "contextor",
+        "key": "url:example.org/tools/contextor",
+        "url": "https://example.org/tools/contextor",
+        "verdict": "watch",
+        "confidence": "medium",
+        "flags": [],
+        "plan": [
+          "Install contextor v0.9.1 in a scratch worktree.",
+          "Point it at tidepool/README.md.",
+          "Run it on one real task and note the result.",
+          "Write a short report for the ring."
+        ],
+        "reasoning": "Smaller prompts for one-shot questions about tidepool.",
+        "reasonedBy": "claude",
+        "pinned": "v0.9.1",
+        "critique": {
+          "key": "url:example.org/tools/contextor",
+          "delta": 0,
+          "verdict": "keep",
+          "critique": "Agents read files on demand; a packed file goes stale fast.",
+          "reason": "Fits the current setup.",
+          "base": 52
+        },
+        "sources": [
+          {
+            "id": "package-index",
+            "url": "https://example.org/package-index/contextor",
+            "signal": "mentioned in 3 threads"
+          },
+          {
+            "id": "link-board",
+            "url": "https://example.org/link-board/contextor",
+            "signal": "mentioned in 3 threads"
+          }
+        ],
+        "runId": "sweep-118",
+        "effort": "S",
+        "risks": [
+          {
+            "kind": "stability",
+            "detail": "Output order changes between versions."
+          }
+        ],
+        "signals": {
+          "stars": 2374,
+          "starsPerDay": 10.2,
+          "createdAt": "@iso:-210d",
+          "pushedAt": "@iso:-1d",
+          "license": "MIT",
+          "sourceCount": 2,
+          "commits30": 33,
+          "contributors90": 5,
+          "lastCommitAt": "@iso:-1d",
+          "releases": 10,
+          "openIssues": 20,
+          "closedIssues": 119,
+          "archived": false,
+          "topics": [],
+          "sha": "c286611f44e8",
+          "releaseTag": "v0.9.1",
+          "lastReleaseTag": "v0.9.1",
+          "lastReleaseAt": "@iso:-2d"
+        }
+      }
+    },
+    {
+      "id": "rad-508c78accf",
+      "rank": null,
+      "prevRank": null,
+      "delta": null,
+      "bestRank": 4,
+      "tier": null,
+      "movement": null,
+      "title": "tokentrail: per-prompt usage charts",
+      "summary": "Charts tokens per prompt from agent logs.",
+      "category": "tool",
+      "reason": "skip at 28: Charts tokens per prompt from agent logs",
+      "score": 28,
+      "baseScore": 28,
+      "seenCount": 3,
+      "firstSeen": "@iso:-1d5h3m",
+      "lastSeen": "@iso:-1d5h3m",
+      "missedRuns": 2,
+      "status": "trashed",
+      "statusAt": "@iso:-2d@21:15",
+      "note": "Not needed",
+      "aliases": [],
+      "refs": [
+        "https://example.org/tools/tokentrail"
+      ],
+      "evidence": [
+        {
+          "text": "Charts tokens per prompt from agent logs.",
+          "source": "https://example.org/tools/tokentrail",
+          "run": "sweep-116",
+          "at": "@iso:-1d5h3m"
+        }
+      ],
+      "data": {
+        "id": "tokentrail",
+        "key": "url:example.org/tools/tokentrail",
+        "url": "https://example.org/tools/tokentrail",
+        "verdict": "skip",
+        "confidence": "low",
+        "flags": [],
+        "plan": [
+          "Try it on one repo.",
+          "Write a short report."
+        ],
+        "reasoning": "Charts tokens per prompt from agent logs.",
+        "reasonedBy": "claude",
+        "pinned": "v0.2.0",
+        "critique": {
+          "key": "url:example.org/tools/tokentrail",
+          "delta": 0,
+          "verdict": "keep",
+          "critique": "Useful, but early.",
+          "reason": "Fits the current setup.",
+          "base": 28
+        },
+        "sources": [
+          {
+            "id": "tool-directory",
+            "url": "https://example.org/tool-directory/tokentrail",
+            "signal": "listed this month"
+          }
+        ],
+        "runId": "sweep-116",
+        "effort": "S",
+        "risks": [
+          {
+            "kind": "stability",
+            "detail": "Early project; expect breaking changes."
+          }
+        ]
+      }
+    }
+  ],
+  "thisScan": [
+    "rad-e1dc9f2955",
+    "rad-6ae7604f17",
+    "rad-41bda89e46",
+    "rad-6f49822f3a",
+    "rad-a11020a1be",
+    "rad-b9c97caa58",
+    "rad-06e0f9c2dd",
+    "rad-ba3eacb75f"
+  ]
+}

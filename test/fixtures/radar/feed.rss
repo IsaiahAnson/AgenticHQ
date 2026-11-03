@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"><channel><title>Changelog</title>
+<item><title>Copilot CLI adds hooks</title><link>https://github.blog/changelog/2026-10-28-copilot-cli-hooks</link><pubDate>Wed, 28 Oct 2026 18:00:00 GMT</pubDate><description><![CDATA[<p>Copilot CLI now supports <b>hooks</b> &amp; plugins.</p>]]></description></item>
+<item><title>Fx v0.0.16</title><link>https://github.com/vercel-labs/fx/releases/tag/v0.0.16</link><pubDate>Thu, 29 Oct 2026 21:29:25 GMT</pubDate><description>fx uses fewer tokens</description></item>
+<item><title>Ancient</title><link>https://github.blog/changelog/2020-01-01-ancient</link><pubDate>Wed, 01 Jan 2020 00:00:00 GMT</pubDate><description>old</description></item>
+</channel></rss>

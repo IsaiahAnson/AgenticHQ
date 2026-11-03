@@ -1,0 +1,7 @@
+{"ts":"2026-10-30T12:00:00.000Z","routine":"week-in-hq","status":"healthy"}
+{"ts":"2026-10-30T13:00:00.000Z","routine":"email-triage","status":"needs-action"}
+{"ts":"2026-10-29T13:00:00.000Z","routine":"email-triage","status":"needs-action"}
+{"ts":"2026-10-28T13:00:00.000Z","routine":"deps-check","status":"needs-action"}
+not json at all
+
+{"ts":"2026-10-01T13:00:00.000Z","routine":"weekly-dev-health","status":"needs-action"}

@@ -1,0 +1,292 @@
+{
+  "source": "local",
+  "fetched": "@iso:-1m",
+  "meters": [
+    {
+      "id": "claude",
+      "name": "Claude",
+      "family": "opus",
+      "windows": [
+        {
+          "label": "5h",
+          "used": 46,
+          "resetsAt": "@ms:+2h14m",
+          "estimated": false
+        },
+        {
+          "label": "week",
+          "used": 61,
+          "resetsAt": "@ms:+3d6h",
+          "estimated": false
+        }
+      ],
+      "t": "@ms:-4m",
+      "idleSince": false,
+      "plan": "Max",
+      "stale": false,
+      "fromLogs": true,
+      "note": "",
+      "apiOrg": false,
+      "orgAvailable": false
+    },
+    {
+      "id": "codex",
+      "name": "Codex",
+      "family": "gpt",
+      "windows": [
+        {
+          "label": "week",
+          "used": 81,
+          "resetsAt": "@ms:+2d3h",
+          "estimated": false
+        }
+      ],
+      "t": "@ms:-6m",
+      "idleSince": false,
+      "plan": "Plus",
+      "stale": false,
+      "fromLogs": false,
+      "note": "",
+      "apiOrg": false,
+      "orgAvailable": false
+    },
+    {
+      "id": "copilot",
+      "name": "Copilot",
+      "family": "copilot",
+      "windows": [
+        {
+          "label": "premium",
+          "used": 34,
+          "resetsAt": "@ms:+17d",
+          "estimated": false
+        }
+      ],
+      "t": "@ms:-22m",
+      "idleSince": false,
+      "plan": "Pro",
+      "stale": false,
+      "fromLogs": false,
+      "note": "",
+      "apiOrg": false,
+      "orgAvailable": false
+    },
+    {
+      "id": "claude-api",
+      "name": "Claude API Org",
+      "family": "opus",
+      "windows": [],
+      "t": "@ms:-1m",
+      "idleSince": false,
+      "plan": "Console",
+      "stale": false,
+      "fromLogs": false,
+      "note": "Org usage report unavailable (no admin key) · 41 HQ API calls this month · 486200 tokens recorded locally",
+      "apiOrg": true,
+      "orgAvailable": false
+    }
+  ],
+  "live": [
+    {
+      "title": "Sync conflict banner for offline edits",
+      "model": "claude-opus-5-5",
+      "agent": "claude",
+      "status": "working",
+      "where": "~/code/orbit-notes",
+      "automated": false,
+      "entrypoint": "claude",
+      "project": "orbit-notes",
+      "startedAt": "@ms:-38m",
+      "lastActive": "@ms:-1m"
+    },
+    {
+      "title": "fk doctor: check Node and git versions",
+      "model": "claude-opus-5-5",
+      "agent": "claude",
+      "status": "waiting",
+      "where": "~/code/fieldkit",
+      "automated": false,
+      "entrypoint": "claude",
+      "project": "fieldkit",
+      "startedAt": "@ms:-1h12m",
+      "lastActive": "@ms:-9m"
+    },
+    {
+      "title": "Fix flaky ingest test in tidepool",
+      "model": "gpt-6",
+      "agent": "codex",
+      "status": "working",
+      "where": "~/code/tidepool",
+      "automated": false,
+      "entrypoint": "codex",
+      "project": "tidepool",
+      "startedAt": "@ms:-21m",
+      "lastActive": "@ms:-2m"
+    },
+    {
+      "title": "Morning brief",
+      "model": "claude-opus-5-5",
+      "agent": "claude",
+      "status": "idle",
+      "where": "~/code/agent-playbook",
+      "automated": true,
+      "entrypoint": "sdk",
+      "project": "agent-playbook",
+      "startedAt": "@ms:-5h40m",
+      "lastActive": "@ms:-5h31m"
+    }
+  ],
+  "forecast": {
+    "generatedAt": "@iso:-1m",
+    "meters": [
+      {
+        "agent": "claude",
+        "label": "5h",
+        "used": 46,
+        "resetsAt": "@ms:+2h14m",
+        "ratePerHour": 9.4,
+        "projectedAtReset": 67,
+        "hitAt": null,
+        "verdict": "ok",
+        "text": "Claude 5h: 46% used, on pace for 67%",
+        "spark": [
+          4,
+          5.1,
+          6.5,
+          8,
+          9.6,
+          11.3,
+          13,
+          14.7,
+          16.5,
+          18.3,
+          20.1,
+          22,
+          23.9,
+          25.8,
+          27.7,
+          29.7,
+          31.7,
+          33.7,
+          35.7,
+          37.7,
+          39.8,
+          41.8,
+          43.9,
+          46
+        ]
+      },
+      {
+        "agent": "claude",
+        "label": "week",
+        "used": 61,
+        "resetsAt": "@ms:+3d6h",
+        "ratePerHour": 0.4,
+        "projectedAtReset": 78,
+        "hitAt": null,
+        "verdict": "ok",
+        "text": "Claude week: 61% used, on pace for 78%",
+        "spark": [
+          38,
+          38.6,
+          39.4,
+          40.2,
+          41.1,
+          42,
+          42.9,
+          43.9,
+          44.8,
+          45.8,
+          46.8,
+          47.8,
+          48.9,
+          49.9,
+          51,
+          52.1,
+          53.2,
+          54.2,
+          55.4,
+          56.5,
+          57.6,
+          58.7,
+          59.9,
+          61
+        ]
+      },
+      {
+        "agent": "codex",
+        "label": "week",
+        "used": 81,
+        "resetsAt": "@ms:+2d3h",
+        "ratePerHour": 0.24,
+        "projectedAtReset": 93,
+        "hitAt": null,
+        "verdict": "tight",
+        "text": "Codex week: 81% used, on pace for 93%",
+        "spark": [
+          55,
+          55.7,
+          56.6,
+          57.5,
+          58.5,
+          59.5,
+          60.5,
+          61.6,
+          62.7,
+          63.8,
+          65,
+          66.1,
+          67.3,
+          68.5,
+          69.7,
+          70.9,
+          72.1,
+          73.4,
+          74.6,
+          75.9,
+          77.1,
+          78.4,
+          79.7,
+          81
+        ]
+      },
+      {
+        "agent": "copilot",
+        "label": "premium",
+        "used": 34,
+        "resetsAt": "@ms:+17d",
+        "ratePerHour": 0.05,
+        "projectedAtReset": 55,
+        "hitAt": null,
+        "verdict": "ok",
+        "text": "Copilot premium: 34% used, on pace for 55%",
+        "spark": [
+          12,
+          12.6,
+          13.3,
+          14.1,
+          14.9,
+          15.8,
+          16.7,
+          17.6,
+          18.5,
+          19.5,
+          20.4,
+          21.4,
+          22.4,
+          23.4,
+          24.4,
+          25.5,
+          26.5,
+          27.5,
+          28.6,
+          29.7,
+          30.7,
+          31.8,
+          32.9,
+          34
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "id": "mcp-lens",
+  "file": "reports/radar-mcp-lens.md",
+  "text": "# mcp-lens build report\n\nAdded an `mcp:inspect` script to orbit-notes that starts mcp-lens against the local MCP server.\n\n## What changed\n- `orbit-notes/package.json`: new dev dependency, pinned to 1.4.2, and the `mcp:inspect` script.\n- `tools/mcp-lens.json`: saved replay set for the three note tools.\n- `orbit-notes/mcp/README.md`: how to replay a call and read the diff.\n\n## Checked\n- Replayed `notes.search` and `notes.create`; results matched the agent logs.\n- No network access needed; runs over stdio.\n\n## Next\nMerge if the README reads well. Nothing else depends on it."
+}

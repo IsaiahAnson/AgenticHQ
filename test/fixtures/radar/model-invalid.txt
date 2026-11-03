@@ -1,0 +1,9 @@
+Here is my review:
+```json
+{"findings": [
+ {"key": "gh:acme/agent-tool", "verdict": "maybe", "confidence": "medium", "summary": "A CLI.", "whatsNew": "",
+  "reasoning": {"fit": [{"area": "Orca", "files": ["lib/does-not-exist.cjs"], "why": "x"}], "benefit": "b", "cost": "free", "effort": "M", "risks": [],
+   "overlap": "o", "maintenance": "m", "license": "MIT", "dependencies": "d", "falsify": "f",
+   "evidence": [{"claim": "c", "checked": true, "how": "h"}], "steps": ["a", "b"]}, "plan": ["1", "2", "3"]}
+]}
+```

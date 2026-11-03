@@ -1,0 +1,174 @@
+{
+  "version": 1,
+  "cases": [
+    {
+      "id": "agent-workflow-authority",
+      "task": "How should HQ-HANDOFF.md be improved; which worker and usage watcher rules are current?",
+      "requiredTopics": [
+        "agent-workflow"
+      ],
+      "requiredSources": [],
+      "forbiddenSources": [],
+      "canonicalFirst": false,
+      "shouldMatch": true
+    },
+    {
+      "id": "runner-canonical",
+      "task": "How does Agentic HQ run a Skills Deck card?",
+      "requiredTopics": [
+        "runner"
+      ],
+      "requiredSources": [
+        "[\\\\/]os-config\\.json$"
+      ],
+      "forbiddenSources": [],
+      "canonicalFirst": true,
+      "shouldMatch": true
+    },
+    {
+      "id": "second-brain-content-search",
+      "task": "Where does the Second Brain search file contents?",
+      "requiredTopics": [
+        "second-brain"
+      ],
+      "requiredSources": [
+        "[\\\\/](engine[\\\\/]content-search\\.cjs|BRAIN\\.md)$"
+      ],
+      "forbiddenSources": [],
+      "canonicalFirst": false,
+      "shouldMatch": true
+    },
+    {
+      "id": "routines-guide",
+      "task": "How do HQ routines get switched on?",
+      "requiredTopics": [
+        "routines"
+      ],
+      "requiredSources": [
+        "[\\\\/]ROUTINES\\.md$"
+      ],
+      "forbiddenSources": [],
+      "canonicalFirst": false,
+      "shouldMatch": true
+    },
+    {
+      "id": "usage-guide",
+      "task": "Where does Agentic HQ get usage meters?",
+      "requiredTopics": [
+        "usage"
+      ],
+      "requiredSources": [
+        "[\\\\/]WIRING\\.md$"
+      ],
+      "forbiddenSources": [],
+      "canonicalFirst": false,
+      "shouldMatch": true
+    },
+    {
+      "id": "failure-registry-freshness",
+      "task": "What is the Agentic HQ failure registry for known failures and gotchas?",
+      "requiredTopics": [
+        "failures"
+      ],
+      "requiredSources": [
+        "[\\\\/]hq-failure-registry\\.md$"
+      ],
+      "forbiddenSources": [],
+      "canonicalFirst": true,
+      "freshness": {
+        "source": "[\\\\/]hq-failure-registry\\.md$",
+        "basis": "knowledge-note-verified",
+        "verdict": "current",
+        "maxAgeDays": 30
+      },
+      "shouldMatch": true
+    },
+    {
+      "id": "decision-log",
+      "task": "What does the Agentic HQ architecture decision log say about ADR decisions?",
+      "requiredTopics": [
+        "decisions"
+      ],
+      "requiredSources": [
+        "[\\\\/]agentic-hq-decisions\\.md$"
+      ],
+      "forbiddenSources": [],
+      "canonicalFirst": true,
+      "shouldMatch": true
+    },
+    {
+      "id": "user-preferences",
+      "task": "What confirmed user preferences govern Agentic HQ workflow and communication?",
+      "requiredTopics": [
+        "user-preferences"
+      ],
+      "requiredSources": [
+        "[\\\\/]user-preferences-hq\\.md$"
+      ],
+      "forbiddenSources": [],
+      "canonicalFirst": true,
+      "shouldMatch": true
+    },
+    {
+      "id": "secret-exclusion",
+      "task": "How does the Second Brain search files while excluding secrets and credentials?",
+      "requiredTopics": [
+        "second-brain"
+      ],
+      "requiredSources": [
+        "[\\\\/]engine[\\\\/]scan\\.js$"
+      ],
+      "forbiddenSources": [
+        "(^|[\\\\/])\\.env($|[.\\\\/])",
+        "secret[^\\\\/]*\\.json$",
+        "credentials?[^\\\\/]*\\.(json|ya?ml|txt)$"
+      ],
+      "canonicalFirst": false,
+      "shouldMatch": true
+    },
+    {
+      "id": "tight-budget-canonical",
+      "task": "How does Agentic HQ run a Skills Deck card with its runner configuration?",
+      "requiredTopics": [
+        "runner"
+      ],
+      "requiredSources": [
+        "[\\\\/]os-config\\.json$"
+      ],
+      "forbiddenSources": [],
+      "canonicalFirst": true,
+      "maxTokens": 1200,
+      "shouldDropSource": true,
+      "shouldMatch": true
+    },
+    {
+      "id": "negative-recipe",
+      "task": "How should I bake a sourdough loaf?",
+      "requiredTopics": [],
+      "requiredSources": [],
+      "forbiddenSources": [],
+      "canonicalFirst": false,
+      "shouldMatch": false
+    },
+    {
+      "id": "negative-weather",
+      "task": "What will the weather be in Boston tomorrow?",
+      "requiredTopics": [],
+      "requiredSources": [],
+      "forbiddenSources": [],
+      "canonicalFirst": false,
+      "shouldMatch": false
+    },
+    {
+      "id": "ambiguous-draft",
+      "task": "Should this draft be sent now or revised first?",
+      "requiredTopics": [],
+      "requiredSources": [],
+      "forbiddenSources": [
+        "[\\\\/]user-preferences-hq\\.md$"
+      ],
+      "canonicalFirst": false,
+      "shouldMatch": false
+    }
+  ]
+}

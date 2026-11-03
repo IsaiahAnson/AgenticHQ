@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Morning brief</title>
+<style>
+:root{--bg:#060d22;--panel:rgba(8,11,28,.64);--panel-hi:rgba(7,9,22,.9);--ink:#d5ddff;--bright:#eef1ff;--dim:#8a95c2;--faint:#7d88b3;--line:rgba(140,160,255,.14);--line2:rgba(160,180,255,.32);--blue:#7fa6ff;--violet:#a37cff;--cyan:#7ff0ff;--amber:#ffae42;--red:#ff5a4a;--green:#4fd58a;--sans:'Segoe UI Variable','Segoe UI',system-ui,-apple-system,sans-serif;--mono:'Cascadia Mono','Cascadia Code',Consolas,ui-monospace,monospace}
+*{box-sizing:border-box}html{color-scheme:dark}
+body{margin:0;background-color:var(--bg);background-image:radial-gradient(1100px 520px at 85% -10%,rgba(127,166,255,.13),transparent 60%),radial-gradient(800px 420px at -10% 110%,rgba(163,124,255,.10),transparent 60%);background-attachment:fixed;color:var(--ink);font:15px/1.55 var(--sans);-webkit-font-smoothing:antialiased}
+.wrap{max-width:980px;margin:0 auto;padding:40px 24px 72px}
+.top{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;border-bottom:1px solid var(--line);padding-bottom:20px;margin-bottom:24px}
+.eyebrow{font:600 11px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--cyan)}
+h1{font-size:32px;line-height:1.15;margin:10px 0 0;color:var(--bright);font-weight:650;letter-spacing:-.015em}
+h2{font:600 12px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin:34px 0 12px}
+.meta{color:var(--dim);font-size:13px;text-align:right;white-space:nowrap}
+.lede{font-size:17px;color:var(--ink);max-width:62ch;margin:0}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px 18px}
+.stat b{display:block;font:650 30px/1.1 var(--sans);color:var(--bright);letter-spacing:-.02em}
+.stat span{color:var(--dim);font-size:13px}
+.list{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:4px 18px}
+.item{display:flex;gap:14px;align-items:baseline;padding:12px 0;border-top:1px solid var(--line)}
+.item:first-child{border-top:0}
+.time{font:600 13px/1.4 var(--mono);color:var(--blue);min-width:76px}
+.item p{margin:0}.item small{display:block;color:var(--dim);font-size:13px;margin-top:2px}
+.chip{display:inline-block;font:600 10.5px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;padding:4px 7px;border-radius:4px;border:1px solid var(--line2);color:var(--ink);white-space:nowrap}
+.ok{color:var(--green);border-color:rgba(79,213,138,.45)}.warn{color:var(--amber);border-color:rgba(255,174,66,.45)}.bad{color:var(--red);border-color:rgba(255,90,74,.45)}.info{color:var(--blue);border-color:rgba(127,166,255,.45)}
+.two{display:grid;gap:12px;grid-template-columns:1.2fr 1fr}
+ol.focus{margin:0;padding:0;list-style:none;counter-reset:f}
+ol.focus li{counter-increment:f;display:flex;gap:14px;padding:12px 0;border-top:1px solid var(--line)}
+ol.focus li:first-child{border-top:0}
+ol.focus li::before{content:counter(f);font:650 18px/1.2 var(--mono);color:var(--violet);min-width:20px}
+code{font:13px var(--mono);color:var(--cyan)}
+footer{margin-top:40px;color:var(--faint);font-size:12.5px;border-top:1px solid var(--line);padding-top:14px}
+@media (max-width:700px){.two{grid-template-columns:1fr}.top{flex-direction:column;align-items:flex-start}.meta{text-align:left}h1{font-size:26px}.wrap{padding:24px 16px 56px}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <header class="top">
+    <div>
+      <div class="eyebrow">Morning brief</div>
+      <h1>Today at a glance</h1>
+    </div>
+    <div class="meta">Written 7:31 AM by the morning-brief routine<br>Read time about 2 minutes</div>
+  </header>
+
+  <p class="lede">A calm start. Everything ran overnight, two messages need you, and the paper-lantern 0.9 notes are waiting for your edit.</p>
+
+  <h2>At a glance</h2>
+  <section class="grid">
+    <div class="card stat"><b>2</b><span>messages that need you today</span></div>
+    <div class="card stat"><b>3</b><span>reply drafts waiting, none sent</span></div>
+    <div class="card stat"><b>8 / 8</b><span>overnight routine runs finished</span></div>
+    <div class="card stat"><b>6 / 6</b><span>tidepool stations reporting</span></div>
+  </section>
+
+  <div class="two">
+    <section>
+      <h2>Today</h2>
+      <div class="list">
+        <div class="item"><span class="time">9:40 AM</span><p>Standup notes draft<small>OpenCode lane, from Friday to Sunday's commits</small></p></div>
+        <div class="item"><span class="time">10:00 AM</span><p>Dependency watch<small>Daily scan of the four code projects</small></p></div>
+        <div class="item"><span class="time">1:00 PM</span><p>Focus block: schema v7 dry-run diff<small>Read the summary before Sam's review tomorrow</small></p></div>
+        <div class="item"><span class="time">4:30 PM</span><p>Docs check-in with Jordan<small>paper-lantern 0.9 docs pass, due Thursday</small></p></div>
+      </div>
+    </section>
+    <section>
+      <h2>Needs you</h2>
+      <div class="list">
+        <div class="item"><span class="chip warn">Act</span><p>Conference talk accepted<small>Speaker details form is due Friday. Outline lives in notes/drafts.</small></p></div>
+        <div class="item"><span class="chip warn">Act</span><p>Mei: beta tester report<small>Two testers still see pinned notes reorder after a full resync on 0.14.0.</small></p></div>
+        <div class="item"><span class="chip info">Edit</span><p>paper-lantern 0.9 release notes<small>Drafted Friday at 3:06 PM; on the ring.</small></p></div>
+      </div>
+    </section>
+  </div>
+
+  <h2>Overnight</h2>
+  <div class="list">
+    <div class="item"><span class="time">8:00 PM</span><p>AI Radar sweep <span class="chip ok">ok</span><small>6 tools looked at, 1 worth a trial</small></p></div>
+    <div class="item"><span class="time">11:06 PM</span><p>Backup check <span class="chip ok">ok</span><small>Workspace and tidepool database copied and verified</small></p></div>
+    <div class="item"><span class="time">12:00 AM</span><p>Second Brain refresh <span class="chip ok">ok</span><small>Also at 3:00 AM and 6:00 AM; 4 new files mapped</small></p></div>
+    <div class="item"><span class="time">6:40 AM</span><p>tidepool st-05 battery <span class="chip warn">watch</span><small>3.58 V and drifting down about 0.02 V a day; swap within two weeks</small></p></div>
+  </div>
+
+  <h2>Three things for today</h2>
+  <div class="card">
+    <ol class="focus">
+      <li><span>Reproduce the pinned-order report on a 0.14.0 store, then confirm the 0.14.2 beta fixes it.</span></li>
+      <li><span>Edit the 0.9 release notes so Jordan can start the docs pass.</span></li>
+      <li><span>Fill in the speaker form before it slips to Friday.</span></li>
+    </ol>
+  </div>
+
+  <footer>Sources: Sunday's 5:00 PM inbox triage, routine logs, <code>notes/now.md</code>, tidepool station health. Drafts are never sent by a routine.</footer>
+</main>
+</body>
+</html>

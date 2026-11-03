@@ -1,0 +1,10 @@
+{
+  "sync-engine": ["test-fixer", "pr-review"],
+  "ci": ["ship", "test-fixer"],
+  "dependencies": ["dep-watch", "pr-review"],
+  "agents-parallel": ["ship"],
+  "releases": ["release-notes", "ship"],
+  "inbox": ["triage"],
+  "tidepool-data": [],
+  "hq-operations": ["brain-refresh", "weekly-review"]
+}

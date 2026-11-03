@@ -1,0 +1,875 @@
+{
+  "runId": "sweep-114",
+  "startedAt": "@iso:-2d5h12m",
+  "finishedAt": "@iso:-2d5h5m",
+  "status": "ok",
+  "lanes": {
+    "collect": {
+      "ok": true,
+      "ms": 37600
+    },
+    "deepseek": {
+      "ok": true,
+      "chat": "https://chat.example.com/radar-shortlist",
+      "note": "shortlisted 11 of 39"
+    },
+    "reason": {
+      "agent": "claude",
+      "ok": true,
+      "note": "6 findings reasoned"
+    }
+  },
+  "sources": [
+    {
+      "id": "release-feed",
+      "ok": true,
+      "items": 6,
+      "ms": 988,
+      "error": null
+    },
+    {
+      "id": "dev-forum",
+      "ok": true,
+      "items": 7,
+      "ms": 1419,
+      "error": null
+    },
+    {
+      "id": "code-search",
+      "ok": true,
+      "items": 2,
+      "ms": 1850,
+      "error": null
+    },
+    {
+      "id": "newsletter",
+      "ok": true,
+      "items": 3,
+      "ms": 2281,
+      "error": null
+    },
+    {
+      "id": "mcp-registry",
+      "ok": true,
+      "items": 4,
+      "ms": 2712,
+      "error": null
+    },
+    {
+      "id": "package-index",
+      "ok": true,
+      "items": 5,
+      "ms": 3143,
+      "error": null
+    },
+    {
+      "id": "changelog-watch",
+      "ok": true,
+      "items": 6,
+      "ms": 3574,
+      "error": null
+    },
+    {
+      "id": "blog-roll",
+      "ok": true,
+      "items": 7,
+      "ms": 805,
+      "error": null
+    },
+    {
+      "id": "podcast-notes",
+      "ok": true,
+      "items": 2,
+      "ms": 1236,
+      "error": null
+    },
+    {
+      "id": "paper-feed",
+      "ok": true,
+      "items": 3,
+      "ms": 1667,
+      "error": null
+    },
+    {
+      "id": "issue-tracker",
+      "ok": true,
+      "items": 4,
+      "ms": 2098,
+      "error": null
+    },
+    {
+      "id": "link-board",
+      "ok": true,
+      "items": 5,
+      "ms": 2529,
+      "error": null
+    },
+    {
+      "id": "tool-directory",
+      "ok": true,
+      "items": 6,
+      "ms": 2960,
+      "error": null
+    },
+    {
+      "id": "team-picks",
+      "ok": true,
+      "items": 7,
+      "ms": 3391,
+      "error": null
+    },
+    {
+      "id": "watched-list",
+      "ok": true,
+      "items": 2,
+      "ms": 622,
+      "error": null
+    }
+  ],
+  "counts": {
+    "collected": 39,
+    "new": 15,
+    "triaged": 11,
+    "reasoned": 6
+  },
+  "profileDigest": "Independent developer. Projects: orbit-notes (TypeScript, React, sync engine), tidepool (Python, DuckDB), paper-lantern (Node, Markdown), fieldkit (Node CLI), agent-playbook. Agents: Claude, Codex, Copilot, DeepSeek web, OpenCode. Wants local-first tools with small setup.",
+  "watched": [
+    {
+      "key": "url:example.org/tools/tracelight",
+      "title": "tracelight releases",
+      "tag": "release",
+      "note": "v0.8.0 adds JSONL import",
+      "url": "https://example.org/tools/tracelight"
+    }
+  ],
+  "suppressed": [],
+  "findings": [
+    {
+      "id": "tracelight",
+      "key": "url:example.org/tools/tracelight",
+      "title": "tracelight: a trace viewer for agent runs",
+      "url": "https://example.org/tools/tracelight",
+      "kind": "tool",
+      "sources": [
+        {
+          "id": "release-feed",
+          "url": "https://example.org/release-feed/tracelight",
+          "signal": "mentioned in 3 threads"
+        },
+        {
+          "id": "newsletter",
+          "url": "https://example.org/newsletter/tracelight",
+          "signal": "mentioned in 3 threads"
+        }
+      ],
+      "signals": {
+        "stars": 4323,
+        "starsPerDay": 17,
+        "createdAt": "@iso:-210d",
+        "pushedAt": "@iso:-1d",
+        "license": "MIT",
+        "sourceCount": 2,
+        "commits30": 39,
+        "contributors90": 7,
+        "lastCommitAt": "@iso:-1d",
+        "releases": 8,
+        "openIssues": 19,
+        "closedIssues": 137,
+        "archived": false,
+        "topics": [],
+        "sha": "bab25328cf87",
+        "releaseTag": "v0.8.0",
+        "lastReleaseTag": "v0.8.0",
+        "lastReleaseAt": "@iso:-5d"
+      },
+      "score": {
+        "total": 73,
+        "parts": {
+          "relevance": 25,
+          "maintenance": 19,
+          "substance": 12,
+          "momentum": 7,
+          "agreement": 5,
+          "license": 5,
+          "feedback": 0
+        },
+        "multiplier": 1,
+        "flags": []
+      },
+      "verdict": "trial",
+      "confidence": "high",
+      "flags": [],
+      "summary": "Turns agent transcripts into a timeline of steps, tool calls and waits, with a flame view for slow runs.",
+      "whatsNew": "Adds import for plain JSONL transcripts.",
+      "reasoning": {
+        "fit": [
+          {
+            "area": "Run analysis",
+            "files": [
+              "lib/bench.cjs",
+              "new:tools/trace-export.mjs"
+            ],
+            "why": "Find where long /ship runs stall."
+          }
+        ],
+        "benefit": "Find where long /ship runs stall.",
+        "cost": "Half a day to export transcripts in its format.",
+        "effort": "M",
+        "risks": [
+          {
+            "kind": "privacy",
+            "detail": "Transcripts can hold file paths; keep the viewer local."
+          }
+        ],
+        "counter": "Most slow runs are already obvious from the run log.",
+        "overlap": "Agent Monitor covers live sessions; tracelight covers finished ones.",
+        "evidence": [
+          {
+            "claim": "Turns agent transcripts into a timeline of steps, tool calls and waits, with a flame view for slow runs",
+            "checked": true,
+            "how": "Read the README and the latest release notes",
+            "quote": "Adds import for plain JSONL transcripts.",
+            "unverified": false
+          },
+          {
+            "claim": "Maintained in the last month",
+            "checked": true,
+            "how": "Looked at the commit history",
+            "quote": "39 commits in 30 days",
+            "unverified": false
+          },
+          {
+            "claim": "It would not help this setup",
+            "checked": true,
+            "how": "Compared with the tools HQ already runs",
+            "quote": "Agent Monitor covers live sessions; tracelight covers finished ones.",
+            "kind": "falsify",
+            "holds": false,
+            "unverified": false
+          }
+        ],
+        "steps": [
+          "Read what tracelight does and how it runs.",
+          "Compared it with what HQ already has: agent monitor covers live sessions; tracelight covers finished ones.",
+          "Weighed find where long /ship runs stall against the setup time."
+        ],
+        "maintenance": "39 commits in 30 days, 7 contributors.",
+        "license": "MIT, fine for local use.",
+        "dependencies": "Node 20 or newer; no native modules.",
+        "falsify": "If it adds nothing over the tools HQ already runs after a week of use."
+      },
+      "plan": [
+        "Install tracelight v0.8.0 in a scratch worktree.",
+        "Point it at lib/bench.cjs.",
+        "Run it on one real task and note the result.",
+        "Write a short report for the ring."
+      ],
+      "reasonedBy": "claude",
+      "pinned": "v0.8.0",
+      "shortlistReason": "Shortlisted for run analysis: find where long /ship runs stall."
+    },
+    {
+      "id": "promptsmith",
+      "key": "url:example.org/tools/promptsmith",
+      "title": "promptsmith: prompt test runner with snapshot diffs",
+      "url": "https://example.org/tools/promptsmith",
+      "kind": "tool",
+      "sources": [
+        {
+          "id": "code-search",
+          "url": "https://example.org/code-search/promptsmith",
+          "signal": "mentioned in 3 threads"
+        },
+        {
+          "id": "package-index",
+          "url": "https://example.org/package-index/promptsmith",
+          "signal": "mentioned in 3 threads"
+        }
+      ],
+      "signals": {
+        "stars": 3695,
+        "starsPerDay": 15.3,
+        "createdAt": "@iso:-210d",
+        "pushedAt": "@iso:-1d",
+        "license": "MIT",
+        "sourceCount": 2,
+        "commits30": 38,
+        "contributors90": 7,
+        "lastCommitAt": "@iso:-1d",
+        "releases": 7,
+        "openIssues": 18,
+        "closedIssues": 134,
+        "archived": false,
+        "topics": [],
+        "sha": "2cd973b5cd19",
+        "releaseTag": "v2.1.0",
+        "lastReleaseTag": "v2.1.0",
+        "lastReleaseAt": "@iso:-4d"
+      },
+      "score": {
+        "total": 68,
+        "parts": {
+          "relevance": 24,
+          "maintenance": 18,
+          "substance": 11,
+          "momentum": 6,
+          "agreement": 4,
+          "license": 5,
+          "feedback": 0
+        },
+        "multiplier": 1,
+        "flags": []
+      },
+      "verdict": "trial",
+      "confidence": "medium",
+      "flags": [],
+      "summary": "Runs a prompt against fixed inputs and shows a diff when the output changes. Snapshots live next to the prompt.",
+      "whatsNew": "New watch mode reruns on file save.",
+      "reasoning": {
+        "fit": [
+          {
+            "area": "Skill tests",
+            "files": [
+              "agent-playbook/skills/triage/SKILL.md",
+              "new:evals/promptsmith.yaml"
+            ],
+            "why": "Catch skill prompt regressions before a release."
+          }
+        ],
+        "benefit": "Catch skill prompt regressions before a release.",
+        "cost": "A few hours to port two promptfoo suites.",
+        "effort": "M",
+        "risks": [
+          {
+            "kind": "lock-in",
+            "detail": "Its snapshot format is custom; moving away means rewriting suites."
+          }
+        ],
+        "counter": "promptfoo already runs the skill suites; two runners may drift.",
+        "overlap": "Overlaps promptfoo for basic cases; adds readable diffs.",
+        "evidence": [
+          {
+            "claim": "Runs a prompt against fixed inputs and shows a diff when the output changes",
+            "checked": true,
+            "how": "Read the README and the latest release notes",
+            "quote": "New watch mode reruns on file save.",
+            "unverified": false
+          },
+          {
+            "claim": "Maintained in the last month",
+            "checked": true,
+            "how": "Looked at the commit history",
+            "quote": "38 commits in 30 days",
+            "unverified": false
+          },
+          {
+            "claim": "It would not help this setup",
+            "checked": true,
+            "how": "Compared with the tools HQ already runs",
+            "quote": "Overlaps promptfoo for basic cases; adds readable diffs.",
+            "kind": "falsify",
+            "holds": false,
+            "unverified": false
+          }
+        ],
+        "steps": [
+          "Read what promptsmith does and how it runs.",
+          "Compared it with what HQ already has: overlaps promptfoo for basic cases; adds readable diffs.",
+          "Weighed catch skill prompt regressions before a release against the setup time."
+        ],
+        "maintenance": "38 commits in 30 days, 7 contributors.",
+        "license": "MIT, fine for local use.",
+        "dependencies": "Node 20 or newer; no native modules.",
+        "falsify": "If it adds nothing over the tools HQ already runs after a week of use."
+      },
+      "plan": [
+        "Install promptsmith v2.1.0 in a scratch worktree.",
+        "Point it at agent-playbook/skills/triage/SKILL.md.",
+        "Run it on one real task and note the result.",
+        "Write a short report for the ring."
+      ],
+      "reasonedBy": "claude",
+      "pinned": "v2.1.0",
+      "shortlistReason": "Shortlisted for skill tests: catch skill prompt regressions before a release."
+    },
+    {
+      "id": "patchwise",
+      "key": "url:example.org/tools/patchwise",
+      "title": "patchwise: a review bot for risky diffs",
+      "url": "https://example.org/tools/patchwise",
+      "kind": "repo",
+      "sources": [
+        {
+          "id": "dev-forum",
+          "url": "https://example.org/dev-forum/patchwise",
+          "signal": "mentioned in 3 threads"
+        }
+      ],
+      "signals": {
+        "stars": 2033,
+        "starsPerDay": 11.9,
+        "createdAt": "@iso:-210d",
+        "pushedAt": "@iso:-1d",
+        "license": "MIT",
+        "sourceCount": 1,
+        "commits30": 36,
+        "contributors90": 6,
+        "lastCommitAt": "@iso:-1d",
+        "releases": 10,
+        "openIssues": 13,
+        "closedIssues": 128,
+        "archived": false,
+        "topics": [],
+        "sha": "efab6c5d092e",
+        "releaseTag": "v0.5.3",
+        "lastReleaseTag": "v0.5.3",
+        "lastReleaseAt": "@iso:-2d"
+      },
+      "score": {
+        "total": 55,
+        "parts": {
+          "relevance": 19,
+          "maintenance": 16,
+          "substance": 9,
+          "momentum": 4,
+          "agreement": 2,
+          "license": 5,
+          "feedback": 0
+        },
+        "multiplier": 1,
+        "flags": []
+      },
+      "verdict": "watch",
+      "confidence": "medium",
+      "flags": [],
+      "summary": "Comments on PRs that touch migrations, auth or lockfiles, with a short risk note for each.",
+      "whatsNew": "Adds a lockfile rule set.",
+      "reasoning": {
+        "fit": [
+          {
+            "area": "PR review",
+            "files": [
+              "agent-playbook/skills/pr-review/SKILL.md"
+            ],
+            "why": "A second look on dependency bumps."
+          }
+        ],
+        "benefit": "A second look on dependency bumps.",
+        "cost": "An hour to set up on one repo.",
+        "effort": "S",
+        "risks": [
+          {
+            "kind": "secrets",
+            "detail": "Needs a token with PR comment rights."
+          }
+        ],
+        "counter": "/pr-review already flags most of these.",
+        "overlap": "Strong overlap with /pr-review.",
+        "evidence": [
+          {
+            "claim": "Comments on PRs that touch migrations, auth or lockfiles, with a short risk note for each",
+            "checked": true,
+            "how": "Read the README and the latest release notes",
+            "quote": "Adds a lockfile rule set.",
+            "unverified": false
+          },
+          {
+            "claim": "Maintained in the last month",
+            "checked": true,
+            "how": "Looked at the commit history",
+            "quote": "36 commits in 30 days",
+            "unverified": false
+          },
+          {
+            "claim": "It would not help this setup",
+            "checked": true,
+            "how": "Compared with the tools HQ already runs",
+            "quote": "Strong overlap with /pr-review.",
+            "kind": "falsify",
+            "holds": false,
+            "unverified": false
+          }
+        ],
+        "steps": [
+          "Read what patchwise does and how it runs.",
+          "Compared it with what HQ already has: strong overlap with /pr-review.",
+          "Weighed a second look on dependency bumps against the setup time."
+        ],
+        "maintenance": "36 commits in 30 days, 6 contributors.",
+        "license": "MIT, fine for local use.",
+        "dependencies": "Node 20 or newer; no native modules.",
+        "falsify": "If it adds nothing over the tools HQ already runs after a week of use."
+      },
+      "plan": [
+        "Install patchwise v0.5.3 in a scratch worktree.",
+        "Point it at agent-playbook/skills/pr-review/SKILL.md.",
+        "Run it on one real task and note the result.",
+        "Write a short report for the ring."
+      ],
+      "reasonedBy": "claude",
+      "pinned": "v0.5.3",
+      "shortlistReason": "Shortlisted for pr review: a second look on dependency bumps."
+    },
+    {
+      "id": "quietlog",
+      "key": "url:example.org/tools/quietlog",
+      "title": "quietlog: summarizes noisy CI logs",
+      "url": "https://example.org/tools/quietlog",
+      "kind": "tool",
+      "sources": [
+        {
+          "id": "blog-roll",
+          "url": "https://example.org/blog-roll/quietlog",
+          "signal": "mentioned in 3 threads"
+        }
+      ],
+      "signals": {
+        "stars": 3029,
+        "starsPerDay": 8.5,
+        "createdAt": "@iso:-210d",
+        "pushedAt": "@iso:-1d",
+        "license": "MIT",
+        "sourceCount": 1,
+        "commits30": 32,
+        "contributors90": 5,
+        "lastCommitAt": "@iso:-1d",
+        "releases": 9,
+        "openIssues": 18,
+        "closedIssues": 116,
+        "archived": false,
+        "topics": [],
+        "sha": "e69e729cc577",
+        "releaseTag": "v0.1.0",
+        "lastReleaseTag": "v0.1.0",
+        "lastReleaseAt": "@iso:-10d"
+      },
+      "score": {
+        "total": 44,
+        "parts": {
+          "relevance": 15,
+          "maintenance": 12,
+          "substance": 8,
+          "momentum": 2,
+          "agreement": 2,
+          "license": 5,
+          "feedback": 0
+        },
+        "multiplier": 1,
+        "flags": []
+      },
+      "verdict": "watch",
+      "confidence": "low",
+      "flags": [
+        "unverified-evidence"
+      ],
+      "summary": "Reads a CI log and keeps only the lines that explain a failure, with a one-paragraph summary.",
+      "whatsNew": "First tagged release.",
+      "reasoning": {
+        "fit": [
+          {
+            "area": "CI",
+            "files": [
+              "new:ci/quietlog.yml"
+            ],
+            "why": "Shorter failure reports from /test-fixer."
+          }
+        ],
+        "benefit": "Shorter failure reports from /test-fixer.",
+        "cost": "An hour to add to the CI job.",
+        "effort": "S",
+        "risks": [
+          {
+            "kind": "supply-chain",
+            "detail": "Single maintainer; pin the version."
+          }
+        ],
+        "counter": "CI logs here are short already.",
+        "overlap": "Little overlap.",
+        "evidence": [
+          {
+            "claim": "Reads a CI log and keeps only the lines that explain a failure, with a one-paragraph summary",
+            "checked": true,
+            "how": "Read the README and the latest release notes",
+            "quote": "First tagged release.",
+            "unverified": false
+          },
+          {
+            "claim": "Maintained in the last month",
+            "checked": true,
+            "how": "Looked at the commit history",
+            "quote": "32 commits in 30 days",
+            "unverified": false
+          },
+          {
+            "claim": "It would not help this setup",
+            "checked": true,
+            "how": "Compared with the tools HQ already runs",
+            "quote": "Little overlap.",
+            "kind": "falsify",
+            "holds": false,
+            "unverified": true
+          }
+        ],
+        "steps": [
+          "Read what quietlog does and how it runs.",
+          "Compared it with what HQ already has: little overlap.",
+          "Weighed shorter failure reports from /test-fixer against the setup time."
+        ],
+        "maintenance": "32 commits in 30 days, 5 contributors.",
+        "license": "MIT, fine for local use.",
+        "dependencies": "Node 20 or newer; no native modules.",
+        "falsify": "If it adds nothing over the tools HQ already runs after a week of use."
+      },
+      "plan": [
+        "Install quietlog v0.1.0 in a scratch worktree.",
+        "Point it at ci/quietlog.yml.",
+        "Run it on one real task and note the result.",
+        "Write a short report for the ring."
+      ],
+      "reasonedBy": "claude",
+      "pinned": "v0.1.0",
+      "shortlistReason": "Shortlisted for ci: shorter failure reports from /test-fixer."
+    },
+    {
+      "id": "worktree-pilot",
+      "key": "url:example.org/tools/worktree-pilot",
+      "title": "Worktree-per-agent: a write-up on parallel agents",
+      "url": "https://example.org/tools/worktree-pilot",
+      "kind": "technique",
+      "sources": [
+        {
+          "id": "newsletter",
+          "url": "https://example.org/newsletter/worktree-pilot",
+          "signal": "mentioned in 3 threads"
+        },
+        {
+          "id": "podcast-notes",
+          "url": "https://example.org/podcast-notes/worktree-pilot",
+          "signal": "mentioned in 3 threads"
+        }
+      ],
+      "signals": {
+        "stars": 4317,
+        "starsPerDay": 8.5,
+        "createdAt": "@iso:-210d",
+        "pushedAt": "@iso:-1d",
+        "license": "MIT",
+        "sourceCount": 2,
+        "commits30": 30,
+        "contributors90": 5,
+        "lastCommitAt": "@iso:-1d",
+        "releases": 9,
+        "openIssues": 19,
+        "closedIssues": 110,
+        "archived": false,
+        "topics": [],
+        "sha": "e1f5787371b1",
+        "releaseTag": "rev 3",
+        "lastReleaseTag": "rev 3",
+        "lastReleaseAt": "@iso:-10d"
+      },
+      "score": {
+        "total": 41,
+        "parts": {
+          "relevance": 16,
+          "maintenance": 10,
+          "substance": 8,
+          "momentum": 2,
+          "agreement": 2,
+          "license": 3,
+          "feedback": 0
+        },
+        "multiplier": 1,
+        "flags": []
+      },
+      "verdict": "watch",
+      "confidence": "medium",
+      "flags": [],
+      "summary": "A practical guide to giving each parallel agent its own worktree, with cleanup scripts.",
+      "whatsNew": "Updated with merge-queue tips.",
+      "reasoning": {
+        "fit": [
+          {
+            "area": "Parallel agents",
+            "files": [
+              "agent-playbook/notes/parallel.md"
+            ],
+            "why": "Matches a lesson HQ already learned; good reference for agent-playbook."
+          }
+        ],
+        "benefit": "Matches a lesson HQ already learned; good reference for agent-playbook.",
+        "cost": "Reading time only.",
+        "effort": "S",
+        "risks": [
+          {
+            "kind": "stability",
+            "detail": "Scripts assume a Unix shell."
+          }
+        ],
+        "counter": "HQ already does this; the gain is documentation.",
+        "overlap": "Full overlap with the agents-parallel lesson.",
+        "evidence": [
+          {
+            "claim": "A practical guide to giving each parallel agent its own worktree, with cleanup scripts",
+            "checked": true,
+            "how": "Read the README and the latest release notes",
+            "quote": "Updated with merge-queue tips.",
+            "unverified": false
+          },
+          {
+            "claim": "Maintained in the last month",
+            "checked": true,
+            "how": "Looked at the commit history",
+            "quote": "30 commits in 30 days",
+            "unverified": false
+          },
+          {
+            "claim": "It would not help this setup",
+            "checked": true,
+            "how": "Compared with the tools HQ already runs",
+            "quote": "Full overlap with the agents-parallel lesson.",
+            "kind": "falsify",
+            "holds": false,
+            "unverified": false
+          }
+        ],
+        "steps": [
+          "Read what worktree-pilot does and how it runs.",
+          "Compared it with what HQ already has: full overlap with the agents-parallel lesson.",
+          "Weighed matches a lesson hq already learned; good reference for agent-playbook against the setup time."
+        ],
+        "maintenance": "30 commits in 30 days, 5 contributors.",
+        "license": "MIT, fine for local use.",
+        "dependencies": "Node 20 or newer; no native modules.",
+        "falsify": "If it adds nothing over the tools HQ already runs after a week of use."
+      },
+      "plan": [
+        "Install worktree-pilot rev 3 in a scratch worktree.",
+        "Point it at agent-playbook/notes/parallel.md.",
+        "Run it on one real task and note the result.",
+        "Write a short report for the ring."
+      ],
+      "reasonedBy": "claude",
+      "pinned": "rev 3",
+      "shortlistReason": "Shortlisted for parallel agents: matches a lesson hq already learned; good reference for agent-playbook."
+    },
+    {
+      "id": "skillcheck",
+      "key": "url:example.org/tools/skillcheck",
+      "title": "skillcheck 0.3: lints agent skill files",
+      "url": "https://example.org/tools/skillcheck",
+      "kind": "release",
+      "sources": [
+        {
+          "id": "tool-directory",
+          "url": "https://example.org/tool-directory/skillcheck",
+          "signal": "mentioned in 3 threads"
+        }
+      ],
+      "signals": {
+        "stars": 1461,
+        "starsPerDay": 6.8,
+        "createdAt": "@iso:-210d",
+        "pushedAt": "@iso:-1d",
+        "license": "MIT",
+        "sourceCount": 1,
+        "commits30": 28,
+        "contributors90": 4,
+        "lastCommitAt": "@iso:-1d",
+        "releases": 6,
+        "openIssues": 13,
+        "closedIssues": 104,
+        "archived": false,
+        "topics": [],
+        "sha": "e41fea8a67b8",
+        "releaseTag": "v0.3.0",
+        "lastReleaseTag": "v0.3.0",
+        "lastReleaseAt": "@iso:-7d"
+      },
+      "score": {
+        "total": 28,
+        "parts": {
+          "relevance": 10,
+          "maintenance": 8,
+          "substance": 5,
+          "momentum": 1,
+          "agreement": 1,
+          "license": 3,
+          "feedback": 0
+        },
+        "multiplier": 1,
+        "flags": []
+      },
+      "verdict": "skip",
+      "confidence": "low",
+      "flags": [],
+      "summary": "Checks skill files for missing sections and long descriptions.",
+      "whatsNew": "0.3 adds a rule for trigger phrases.",
+      "reasoning": {
+        "fit": [
+          {
+            "area": "Skills",
+            "files": [
+              "agent-playbook/skills/"
+            ],
+            "why": "Keeps skill files tidy."
+          }
+        ],
+        "benefit": "Keeps skill files tidy.",
+        "cost": "Minutes to run once.",
+        "effort": "S",
+        "risks": [
+          {
+            "kind": "stability",
+            "detail": "Rules are opinionated and change often."
+          }
+        ],
+        "counter": "The weekly skill review already catches these.",
+        "overlap": "Overlaps /skill-review.",
+        "evidence": [
+          {
+            "claim": "Checks skill files for missing sections and long descriptions",
+            "checked": true,
+            "how": "Read the README and the latest release notes",
+            "quote": "0.3 adds a rule for trigger phrases.",
+            "unverified": false
+          },
+          {
+            "claim": "Maintained in the last month",
+            "checked": true,
+            "how": "Looked at the commit history",
+            "quote": "28 commits in 30 days",
+            "unverified": false
+          },
+          {
+            "claim": "It would not help this setup",
+            "checked": true,
+            "how": "Compared with the tools HQ already runs",
+            "quote": "Overlaps /skill-review.",
+            "kind": "falsify",
+            "holds": false,
+            "unverified": false
+          }
+        ],
+        "steps": [
+          "Read what skillcheck does and how it runs.",
+          "Compared it with what HQ already has: overlaps /skill-review.",
+          "Weighed keeps skill files tidy against the setup time."
+        ],
+        "maintenance": "28 commits in 30 days, 4 contributors.",
+        "license": "MIT, fine for local use.",
+        "dependencies": "Node 20 or newer; no native modules.",
+        "falsify": "If it adds nothing over the tools HQ already runs after a week of use."
+      },
+      "plan": [
+        "Install skillcheck v0.3.0 in a scratch worktree.",
+        "Point it at agent-playbook/skills/.",
+        "Run it on one real task and note the result.",
+        "Write a short report for the ring."
+      ],
+      "reasonedBy": "claude",
+      "pinned": "v0.3.0",
+      "shortlistReason": "Shortlisted for skills: keeps skill files tidy."
+    }
+  ]
+}

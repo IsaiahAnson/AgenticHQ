@@ -1,0 +1,20 @@
+{
+  "_note": "Public demo routines (ROUTINES.md). Cron rows use the 5-field cron format in the viewer's own time zone (timezone left blank on purpose).",
+  "timezone": "",
+  "sources": [
+    { "key": "desktop", "label": "Claude Code" },
+    { "key": "server", "label": "HQ server" }
+  ],
+  "routines": [
+    { "id": "morning-brief", "name": "Morning brief", "source": "desktop", "cron": "30 7 * * *", "desc": "One page before the day starts: calendar, inbox and what ran overnight" },
+    { "id": "inbox-triage", "name": "Inbox triage", "source": "desktop", "cron": "0 9,13,17 * * *", "desc": "Labels new mail and drafts replies for review. Never sends" },
+    { "id": "standup-notes", "name": "Standup notes", "source": "desktop", "cron": "40 9 * * 1-5", "desc": "Drafts the standup from yesterday's commits and merged PRs" },
+    { "id": "dependency-watch", "name": "Dependency watch", "source": "desktop", "cron": "0 10 * * *", "desc": "Checks the four code projects' dependencies for updates and advisories" },
+    { "id": "radar-sweep", "name": "AI Radar sweep", "source": "server", "cron": "0 8,20 * * *", "desc": "AI Radar: finds new AI tools and scores each one against this setup" },
+    { "id": "release-notes-draft", "name": "Release notes draft", "source": "desktop", "cron": "0 15 * * 5", "desc": "Drafts release notes from the week's merged PRs" },
+    { "id": "skill-review", "name": "Skill review", "source": "desktop", "cron": "0 9 * * 1", "desc": "Proposes fixes to skills from last week's friction, for approval" },
+    { "id": "weekly-review", "name": "Weekly review", "source": "server", "cron": "0 18 * * 0", "desc": "The week in HQ: runs, lessons, ring pages and next week's focus" },
+    { "id": "backup-check", "name": "Backup check", "source": "server", "cron": "0 23 * * *", "desc": "Verifies every project repo has a fresh backup" },
+    { "id": "brain-refresh", "name": "Brain refresh", "source": "server", "cron": "0 */3 * * *", "desc": "Rebuilds the Second Brain map and the home orb" }
+  ]
+}

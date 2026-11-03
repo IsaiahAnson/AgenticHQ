@@ -1,0 +1,190 @@
+{
+  "fetched": "@iso:-1m",
+  "lastRefresh": "@iso:-1m",
+  "timeZone": "America/Chicago",
+  "orca": {
+    "running": true,
+    "note": null
+  },
+  "meters": [
+    {
+      "id": "claude",
+      "name": "Claude",
+      "plan": "Max",
+      "windows": [
+        {
+          "label": "5h",
+          "usedPct": 46,
+          "resetsAt": "@ms:+2h14m",
+          "estimated": false,
+          "rolledOver": false
+        },
+        {
+          "label": "week",
+          "usedPct": 61,
+          "resetsAt": "@ms:+3d6h",
+          "estimated": false,
+          "rolledOver": false
+        }
+      ]
+    },
+    {
+      "id": "codex",
+      "name": "Codex",
+      "plan": "Plus",
+      "windows": [
+        {
+          "label": "week",
+          "usedPct": 81,
+          "resetsAt": "@ms:+2d3h",
+          "estimated": false,
+          "rolledOver": false
+        }
+      ]
+    },
+    {
+      "id": "copilot",
+      "name": "Copilot",
+      "plan": "Pro",
+      "windows": [
+        {
+          "label": "premium",
+          "usedPct": 34,
+          "resetsAt": "@ms:+17d",
+          "estimated": false,
+          "rolledOver": false
+        }
+      ]
+    }
+  ],
+  "claudeApi": null,
+  "lanes": [
+    {
+      "id": "codex",
+      "name": "Codex",
+      "now": [
+        {
+          "worker": "codex",
+          "source": "local",
+          "title": "Fix flaky ingest test in tidepool",
+          "startedAt": "@ms:-21m",
+          "status": "working",
+          "minutes": 21
+        }
+      ],
+      "capacity": {
+        "window": "week",
+        "used": 81,
+        "resetsAt": "@ms:+2d3h",
+        "stale": false,
+        "state": "low",
+        "text": "low (81%)"
+      },
+      "avail": null,
+      "state": "busy",
+      "open": null
+    },
+    {
+      "id": "claude",
+      "name": "Claude",
+      "now": [
+        {
+          "worker": "claude",
+          "source": "orca",
+          "title": "orbit-notes-sync-banner",
+          "startedAt": "@ms:-38m",
+          "terminal": "term-2",
+          "where": "orbit-notes",
+          "minutes": 38
+        },
+        {
+          "worker": "claude",
+          "source": "local",
+          "title": "fk doctor: check Node and git versions",
+          "startedAt": "@ms:-1h12m",
+          "status": "waiting",
+          "minutes": 72
+        }
+      ],
+      "capacity": {
+        "window": "week",
+        "used": 61,
+        "resetsAt": "@ms:+3d6h",
+        "stale": false,
+        "state": "free",
+        "text": "free"
+      },
+      "avail": null,
+      "state": "busy",
+      "open": null
+    },
+    {
+      "id": "copilot",
+      "name": "Copilot",
+      "now": [],
+      "capacity": {
+        "window": "premium",
+        "used": 34,
+        "resetsAt": "@ms:+17d",
+        "stale": false,
+        "state": "free",
+        "text": "free"
+      },
+      "avail": null,
+      "state": "idle",
+      "open": null
+    },
+    {
+      "id": "deepseek",
+      "name": "DeepSeek web",
+      "now": [],
+      "capacity": {
+        "state": "none",
+        "text": "no meter"
+      },
+      "avail": {
+        "available": true,
+        "text": "1 chat tab open"
+      },
+      "state": "idle",
+      "open": null
+    },
+    {
+      "id": "opencode",
+      "name": "OpenCode",
+      "now": [],
+      "capacity": {
+        "state": "none",
+        "text": "no meter"
+      },
+      "avail": {
+        "available": true,
+        "text": "last run ok 2h ago"
+      },
+      "state": "idle",
+      "open": null
+    }
+  ],
+  "stop": [],
+  "next": {
+    "head": {
+      "name": "orbit-notes-sync-banner",
+      "status": "building"
+    },
+    "item": {
+      "name": "orbit-notes-sync-banner",
+      "status": "building",
+      "worker": "claude",
+      "path": "specs/orbit-notes-sync-banner.md"
+    },
+    "text": "orbit-notes-sync-banner building on Claude · 38m"
+  },
+  "orcaKeeps": {
+    "count": 0,
+    "items": []
+  },
+  "start": {
+    "available": false,
+    "reason": "already building"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "title": "paper-lantern 0.9 release notes (draft)",
+  "icon": "doc",
+  "kind": "draft",
+  "category": "writing",
+  "created": "@iso:-3d@15:06",
+  "note": "Draft from 23 merged PRs: dusk theme, JSON Feed, incremental builds. Two checks flagged before the docs pass.",
+  "svg": "<rect x=\"12\" y=\"6\" width=\"24\" height=\"36\" rx=\"3\"/><line x1=\"17\" y1=\"16\" x2=\"31\" y2=\"16\"/><line x1=\"17\" y1=\"23\" x2=\"31\" y2=\"23\"/><line x1=\"17\" y1=\"30\" x2=\"26\" y2=\"30\"/>"
+}

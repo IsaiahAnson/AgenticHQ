@@ -1,0 +1,74 @@
+{
+  "fetched": "@iso:-3m",
+  "total": 21,
+  "unread": 6,
+  "labels": {
+    "partnerships": "COLLABS",
+    "leads": "OSS"
+  },
+  "drafts": [
+    {
+      "subject": "Re: Sync conflict when two devices edit offline",
+      "from": "Beta tester (Mei)",
+      "why": "Asks for the sync log and a repro; the fix lands in 0.14.2",
+      "created": "@iso:-35m",
+      "link": "https://mail.example.com/drafts/sync-conflict"
+    },
+    {
+      "subject": "Re: Any plans for Markdown export?",
+      "from": "Beta tester",
+      "why": "Markdown export is planned for 0.15, after the sync schema change",
+      "created": "@iso:-1d@17:03",
+      "link": "https://mail.example.com/drafts/markdown-export"
+    },
+    {
+      "subject": "Re: Can we reuse your JSON Feed writer?",
+      "from": "Static site tool maintainer",
+      "why": "Yes, same license; points at src/feed.js",
+      "created": "@iso:-1d@17:02",
+      "link": "https://mail.example.com/drafts/json-feed-writer"
+    },
+    {
+      "subject": "Re: Design review follow-up: sync status icons",
+      "from": "Priya",
+      "why": "Confirms Wednesday 2:30 PM and brings the 0.14.2 badge screenshots",
+      "created": "@iso:-1d@17:01",
+      "link": "https://mail.example.com/drafts/design-review"
+    }
+  ],
+  "flagged": [
+    {
+      "id": "c0e8bfe53ed1038e",
+      "subject": "Your talk \"Local-first sync, honestly\" was accepted",
+      "from": "DevConf Program",
+      "unread": true,
+      "ts": "@ms:-3h20m",
+      "snippet": "Congrats! Please confirm your slot and send a slide outline.",
+      "kind": "partnerships"
+    },
+    {
+      "id": "37bd036356fb3b74",
+      "subject": "Design review: settings panel v2",
+      "from": "Priya",
+      "unread": true,
+      "ts": "@ms:-1h45m",
+      "snippet": "Moved the review to today. Mockups attached, comments welcome.",
+      "kind": "partnerships"
+    },
+    {
+      "id": "9d6def0663f8bfb0",
+      "subject": "Question about the paper-lantern theme API",
+      "from": "Theo",
+      "unread": false,
+      "ts": "@ms:-6h10m",
+      "snippet": "Is the theme hook stable enough to build on before 1.0?",
+      "kind": "leads"
+    }
+  ],
+  "mix": {
+    "partnerships": 3,
+    "leads": 4,
+    "personal": 5,
+    "other": 9
+  }
+}

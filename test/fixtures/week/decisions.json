@@ -1,0 +1,8 @@
+{
+  "items": {
+    "node:test": { "decision": "implement", "at": "2026-10-30T09:00:00.000Z" },
+    "biome": { "decision": "later", "at": "2026-10-30T09:30:00.000Z" },
+    "ruff": { "decision": "dismiss", "at": "2026-10-29T10:00:00.000Z" },
+    "old-fad": { "decision": "dismiss", "at": "2026-10-02T10:00:00.000Z" }
+  }
+}

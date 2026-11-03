@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agent Monitor</title>
+<style>
+:root{--bg:#060d22;--panel:rgba(8,11,28,.64);--ink:#d5ddff;--bright:#eef1ff;--dim:#8a95c2;--faint:#7d88b3;--line:rgba(140,160,255,.14);--line2:rgba(160,180,255,.32);--blue:#7fa6ff;--violet:#a37cff;--cyan:#7ff0ff;--amber:#ffae42;--red:#ff5a4a;--green:#4fd58a;--sans:'Segoe UI Variable','Segoe UI',system-ui,-apple-system,sans-serif;--mono:'Cascadia Mono','Cascadia Code',Consolas,ui-monospace,monospace}
+*{box-sizing:border-box}html{color-scheme:dark}
+body{margin:0;background-color:var(--bg);background-image:radial-gradient(1000px 500px at 50% -20%,rgba(127,166,255,.12),transparent 60%);background-attachment:fixed;color:var(--ink);font:14.5px/1.5 var(--sans);-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding:32px 24px 64px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:22px}
+h1{font-size:26px;margin:0;color:var(--bright);font-weight:650;letter-spacing:-.01em;display:flex;align-items:center;gap:12px}
+h1 .live{width:10px;height:10px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px rgba(79,213,138,.18)}
+.snap{font:600 12px var(--mono);color:var(--dim);border:1px solid var(--line2);border-radius:999px;padding:7px 12px;white-space:nowrap}
+.strip{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px}
+.m{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px;display:flex;justify-content:space-between;align-items:baseline}
+.m span{color:var(--dim);font-size:12.5px}.m b{font:650 22px var(--mono);color:var(--bright)}
+.lanes{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.lane{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px 18px;display:flex;flex-direction:column;gap:10px;min-height:196px}
+.lane.run{border-color:rgba(127,240,255,.35)}
+.lh{display:flex;justify-content:space-between;align-items:center}
+.ln{font-weight:650;color:var(--bright);font-size:16px}
+.st{font:600 10.5px/1 var(--mono);letter-spacing:.07em;text-transform:uppercase;display:inline-flex;align-items:center;gap:6px}
+.st::before{content:"";width:8px;height:8px;border-radius:50%;background:currentColor}
+.st.run{color:var(--cyan)}.st.idle{color:var(--faint)}.st.wait{color:var(--amber)}.st.pause{color:var(--violet)}
+.task{color:var(--ink)}
+.kv{display:grid;grid-template-columns:76px 1fr;gap:3px 10px;font-size:12.5px;color:var(--dim)}
+.kv b{font:600 10.5px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--faint);padding-top:2px}
+.kv code{font:12px var(--mono);color:var(--cyan)}
+.prog{height:6px;border-radius:3px;background:rgba(140,160,255,.12);overflow:hidden;margin-top:auto}
+.prog div{height:100%;background:linear-gradient(90deg,var(--blue),var(--cyan));border-radius:3px}
+.below{display:grid;grid-template-columns:1.6fr 1fr;gap:12px;margin-top:16px}
+.box{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px 18px}
+.box h2{font:600 11.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin:0 0 10px}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+td{padding:9px 6px;border-top:1px solid var(--line)}
+tr:first-child td{border-top:0}
+td.t{font:600 12px var(--mono);color:var(--dim);white-space:nowrap;width:78px}
+td.l{color:var(--blue);white-space:nowrap;width:104px}
+td.r{text-align:right;white-space:nowrap}
+.ok{color:var(--green);font:600 11px var(--mono)}.re{color:var(--amber);font:600 11px var(--mono)}
+ol.q{margin:0;padding:0;list-style:none;counter-reset:q}
+ol.q li{counter-increment:q;display:flex;gap:10px;padding:9px 0;border-top:1px solid var(--line)}
+ol.q li:first-child{border-top:0}
+ol.q li::before{content:counter(q);font:600 12px var(--mono);color:var(--violet);min-width:14px}
+ol.q small{display:block;color:var(--dim);font-size:12px}
+footer{margin-top:24px;color:var(--faint);font-size:12px}
+@media (max-width:980px){.lanes{grid-template-columns:repeat(2,1fr)}.below{grid-template-columns:1fr}.strip{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:620px){.lanes{grid-template-columns:1fr}.top{flex-direction:column;align-items:flex-start}.wrap{padding:24px 16px 56px}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <header class="top">
+    <h1><span class="live"></span>Agent Monitor</h1>
+    <span class="snap">Snapshot 8:55 AM</span>
+  </header>
+
+  <section class="strip">
+    <div class="m"><span>Working now</span><b>2</b></div>
+    <div class="m"><span>Queued</span><b>3</b></div>
+    <div class="m"><span>Finished today</span><b>5</b></div>
+    <div class="m"><span>Waiting on you</span><b>1</b></div>
+  </section>
+
+  <section class="lanes">
+    <article class="lane run">
+      <div class="lh"><span class="ln">Claude</span><span class="st run">Working</span></div>
+      <div class="task">Reproduce the pinned-order report on a 0.14.0 store</div>
+      <div class="kv"><b>Where</b><span><code>orbit-notes</code> main checkout</span><b>Started</b><span>8:41 AM</span><b>Skill</b><span><code>/triage</code> then <code>/test-fixer</code></span></div>
+      <div class="prog"><div style="width:40%"></div></div>
+    </article>
+    <article class="lane run">
+      <div class="lh"><span class="ln">Codex</span><span class="st run">Working</span></div>
+      <div class="task">Second review pass on schema v7 per-note log split</div>
+      <div class="kv"><b>Where</b><span>worktree <code>orbit-notes-review</code></span><b>Started</b><span>8:12 AM</span><b>Hand-off</b><span>Due before Sam's 10:00 AM review Tuesday</span></div>
+      <div class="prog"><div style="width:70%"></div></div>
+    </article>
+    <article class="lane">
+      <div class="lh"><span class="ln">OpenCode</span><span class="st wait">Queued</span></div>
+      <div class="task">Standup notes, Friday to Sunday</div>
+      <div class="kv"><b>Starts</b><span>9:40 AM</span><b>Model</b><span>Free model lane</span><b>Last run</b><span>Friday 9:40 AM, finished</span></div>
+      <div class="prog"><div style="width:0"></div></div>
+    </article>
+    <article class="lane">
+      <div class="lh"><span class="ln">Copilot</span><span class="st idle">Idle</span></div>
+      <div class="task">No task. Picks up small edits inside the editor.</div>
+      <div class="kv"><b>Last task</b><span>fieldkit help text, Friday 4:20 PM</span><b>Today</b><span>0 sessions</span></div>
+      <div class="prog"><div style="width:0"></div></div>
+    </article>
+    <article class="lane">
+      <div class="lh"><span class="ln">Claude API</span><span class="st idle">Between runs</span></div>
+      <div class="task">Routine calls tracked by HQ</div>
+      <div class="kv"><b>Today</b><span>2 calls: radar scores at 8:00 AM</span><b>Next</b><span>AI Radar sweep, 8:00 PM</span></div>
+      <div class="prog"><div style="width:0"></div></div>
+    </article>
+    <article class="lane">
+      <div class="lh"><span class="ln">DeepSeek web</span><span class="st pause">Needs you</span></div>
+      <div class="task">Draft tests for <code style="font:12.5px var(--mono);color:var(--cyan)">fk doctor</code> clock-drift check</div>
+      <div class="kv"><b>Why</b><span>Browser lane: open the tab and paste the brief</span><b>Brief</b><span>Ready since Sunday 6:10 PM</span></div>
+      <div class="prog"><div style="width:0"></div></div>
+    </article>
+  </section>
+
+  <section class="below">
+    <div class="box">
+      <h2>Recent runs</h2>
+      <table>
+        <tr><td class="t">8:00 AM</td><td class="l">HQ server</td><td>AI Radar sweep, two tools scored</td><td class="r"><span class="ok">DONE</span></td></tr>
+        <tr><td class="t">7:31 AM</td><td class="l">Claude</td><td>Morning brief written to the ring</td><td class="r"><span class="ok">DONE</span></td></tr>
+        <tr><td class="t">6:00 AM</td><td class="l">HQ server</td><td>Brain refresh, 4 new files mapped</td><td class="r"><span class="ok">DONE</span></td></tr>
+        <tr><td class="t">6:04 PM</td><td class="l">Claude API</td><td>Sunday: weekly review, Week in HQ page</td><td class="r"><span class="ok">DONE</span></td></tr>
+        <tr><td class="t">5:03 PM</td><td class="l">Claude</td><td>Sunday: inbox triage, 3 drafts left for review</td><td class="r"><span class="ok">DONE</span></td></tr>
+        <tr><td class="t">3:00 AM</td><td class="l">HQ server</td><td>Wednesday: brain refresh timed out once</td><td class="r"><span class="re">RETRIED</span></td></tr>
+      </table>
+    </div>
+    <div class="box">
+      <h2>Queue</h2>
+      <ol class="q">
+        <li><span>Skill review<small>Claude, 9:00 AM</small></span></li>
+        <li><span>Standup notes<small>OpenCode, 9:40 AM</small></span></li>
+        <li><span>Dependency watch<small>Claude, 10:00 AM</small></span></li>
+      </ol>
+    </div>
+  </section>
+
+  <footer>Each parallel worker gets its own git worktree. Static snapshot written by the monitor routine; open HQ for live status.</footer>
+</main>
+</body>
+</html>

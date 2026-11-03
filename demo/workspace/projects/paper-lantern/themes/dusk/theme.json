@@ -1,0 +1,15 @@
+{
+  "name": "dusk",
+  "version": "0.9.0",
+  "colors": {
+    "background": "#14161f",
+    "text": "#d9dce8",
+    "muted": "#8a90a8",
+    "accent": "#f2b46d"
+  },
+  "fonts": {
+    "body": "Georgia, serif",
+    "ui": "system-ui, sans-serif"
+  },
+  "partials": ["header", "footer", "sidebar"]
+}

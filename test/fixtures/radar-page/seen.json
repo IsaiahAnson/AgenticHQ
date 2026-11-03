@@ -1,0 +1,20 @@
+{
+  "gh:pezhik/skilltotal": {
+    "firstSeen": "2026-10-29T22:45:01.561Z",
+    "lastSeen": "2026-10-29T22:45:01.561Z",
+    "lastVersion": null,
+    "lastStars": 16
+  },
+  "gh:openai/codex": {
+    "firstSeen": "2026-10-29T22:45:01.561Z",
+    "lastSeen": "2026-10-29T22:45:01.561Z",
+    "lastVersion": "rust-v0.166.0",
+    "lastStars": 131569
+  },
+  "gh:anomalyco/opencode": {
+    "firstSeen": "2026-10-29T22:45:01.561Z",
+    "lastSeen": "2026-10-29T22:45:01.561Z",
+    "lastVersion": "process-daemon-v0.4.0",
+    "lastStars": 223045
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "_note": "Example setup. Root is your home folder, given relative to the HQ folder (\"../..\" fits an HQ cloned into ~/Projects/<name>; an absolute path works too); includeRoots limits the walk to the folders listed, and skipPaths is never walked. Edit both for your machine, and keep private folders (finance, HR, health, cloud-sync folders) out of includeRoots.",
+  "root": "../..",
+  "routerDoc": ".claude/CLAUDE.md",
+  "instructionDocs": [
+    ".claude/CLAUDE.md"
+  ],
+  "skillDirs": [
+    ".claude/skills",
+    ".codex/skills"
+  ],
+  "memoryDir": "Projects/companions/knowledge",
+  "memoryIndex": "MEMORY.md",
+  "projectsDir": "Projects",
+  "includeRoots": [
+    ".claude/CLAUDE.md",
+    ".claude/skills",
+    ".claude/scheduled-tasks",
+    ".claude/agents",
+    ".codex/skills",
+    "Projects"
+  ],
+  "skipPaths": [
+    "Projects/companions/data"
+  ],
+  "sharedPrefixes": [],
+  "visibleRoots": [
+    ".claude/skills",
+    "Projects"
+  ],
+  "contextBudget": {
+    "maxTokens": 8000
+  },
+  "routing": {},
+  "maxFiles": 500000
+}

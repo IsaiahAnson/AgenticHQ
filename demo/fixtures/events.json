@@ -1,0 +1,44 @@
+{
+  "events": [
+    {
+      "ts": "@iso:-3h50m",
+      "id": "3d839e7e-3257-48a2-a74d-a10851adf933",
+      "type": "usage.high",
+      "source": "usage-forecast",
+      "severity": "warn",
+      "key": "usage.high:codex:week",
+      "summary": "Codex week at 81%",
+      "ref": null,
+      "data": {
+        "agent": "codex",
+        "used": 81
+      }
+    },
+    {
+      "ts": "@iso:-6h",
+      "id": "adb937e1-1c97-43be-a3fc-e0e53a36e1b1",
+      "type": "routine.missed",
+      "source": "routine-watch",
+      "severity": "warn",
+      "key": "routine.missed:backup-check",
+      "summary": "Backup check missed its nightly run",
+      "ref": null,
+      "data": {
+        "routine": "backup-check"
+      }
+    },
+    {
+      "ts": "@iso:-8h20m",
+      "id": "eaf0c21a-7feb-4f08-a2fc-7888cce9daa7",
+      "type": "companion.up",
+      "source": "companion-health",
+      "severity": "info",
+      "key": "companion.up:qmd",
+      "summary": "qmd is available",
+      "ref": null,
+      "data": {
+        "companion": "qmd"
+      }
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+/* Second Brain motion layer (2026-10-28). Loaded after minimal.css.
+   The file viewer slides with transform instead of animating `right`, its content follows the drawer
+   in, and the tooltip eases. Reduced motion keeps only short fades. */
+#brain-viewer { right:16px !important; visibility:hidden; transform:translateX(calc(100% + 40px));
+  transition:transform .18s cubic-bezier(.4,0,1,1), visibility 0s linear .18s !important; }
+#brain-viewer.open { visibility:visible; transform:none;
+  transition:transform .26s cubic-bezier(.2,0,0,1), visibility 0s !important; }
+#brain-viewer.open > * { animation:bvIn .22s cubic-bezier(.2,0,0,1) .08s both; }
+@keyframes bvIn { from { opacity:0; transform:translateX(10px); } }
+#brain-tip { transition:opacity .14s cubic-bezier(.2,0,0,1); }
+#timeline-legend button { transition:opacity .12s cubic-bezier(.2,0,0,1), border-color .12s cubic-bezier(.2,0,0,1); }
+@media (prefers-reduced-motion:reduce) {
+  #brain-viewer, #brain-viewer.open { transform:none; transition:opacity .12s linear, visibility 0s !important; opacity:0; }
+  #brain-viewer.open { opacity:1; }
+  #brain-viewer.open > * { animation:none; }
+  .sp-pulse { animation:none; opacity:.85; }
+}

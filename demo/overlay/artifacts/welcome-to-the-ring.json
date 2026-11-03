@@ -1,0 +1,9 @@
+{
+  "title": "Welcome to the ring",
+  "icon": "doc",
+  "kind": "guide",
+  "category": "infographic",
+  "created": "@iso:-6d@10:15",
+  "note": "What lands on the ring, how a page and its sidecar fit together, and the house rules for ring pages.",
+  "svg": "<circle cx=\"24\" cy=\"24\" r=\"18\"/><circle cx=\"24\" cy=\"24\" r=\"10\"/><circle cx=\"24\" cy=\"6\" r=\"3\"/>"
+}

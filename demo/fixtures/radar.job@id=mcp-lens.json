@@ -1,0 +1,51 @@
+{
+  "id": "mcp-lens",
+  "branch": "radar/mcp-lens",
+  "worktree": "radar-worktrees/mcp-lens",
+  "report": "reports/radar-mcp-lens.md",
+  "spec": "specs/radar-mcp-lens.md",
+  "reportExists": true,
+  "job": "radar-implement-12d3637a",
+  "status": "done",
+  "code": 0,
+  "elapsed": 1140,
+  "logName": null,
+  "tail": "",
+  "commits": [
+    {
+      "sha": "f30b796",
+      "subject": "Add mcp-lens dev script for the orbit-notes MCP server"
+    },
+    {
+      "sha": "b8517cc",
+      "subject": "Document mcp-lens replay in the MCP README"
+    },
+    {
+      "sha": "00f6703",
+      "subject": "Pin mcp-lens 1.4.2"
+    }
+  ],
+  "diffStat": " orbit-notes/mcp/README.md   | 24 ++++++++++++++\n orbit-notes/package.json    |  3 +-\n tools/mcp-lens.json         | 12 +++++++\n 3 files changed, 38 insertions(+), 1 deletion(-)",
+  "files": [
+    "orbit-notes/mcp/README.md",
+    "orbit-notes/package.json",
+    "tools/mcp-lens.json"
+  ],
+  "newDeps": [
+    {
+      "file": "orbit-notes/package.json",
+      "name": "mcp-lens",
+      "version": "1.4.2",
+      "group": "devDependencies",
+      "pinned": true
+    }
+  ],
+  "merged": null,
+  "cleanedUp": null,
+  "worktreeExists": true,
+  "sessionId": "c8f3e59e-9d41-4df8-a56e-9f858e7576fe",
+  "chatAddedAt": "@iso:-4h21m",
+  "head": "b7a073d84627d39de2c1e6aa8b36d40ae7fc6784",
+  "restartNeeded": false,
+  "canMerge": true
+}

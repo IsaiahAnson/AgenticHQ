@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Radar digest</title>
+<style>
+:root{--bg:#060d22;--panel:rgba(8,11,28,.64);--ink:#d5ddff;--bright:#eef1ff;--dim:#8a95c2;--faint:#7d88b3;--line:rgba(140,160,255,.14);--line2:rgba(160,180,255,.32);--blue:#7fa6ff;--violet:#a37cff;--cyan:#7ff0ff;--amber:#ffae42;--red:#ff5a4a;--green:#4fd58a;--sans:'Segoe UI Variable','Segoe UI',system-ui,-apple-system,sans-serif;--mono:'Cascadia Mono','Cascadia Code',Consolas,ui-monospace,monospace}
+*{box-sizing:border-box}html{color-scheme:dark}
+body{margin:0;background-color:var(--bg);background-image:radial-gradient(700px 700px at 50% -30%,rgba(127,240,255,.10),transparent 65%),radial-gradient(800px 400px at 100% 100%,rgba(163,124,255,.08),transparent 60%);background-attachment:fixed;color:var(--ink);font:15px/1.55 var(--sans);-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding:40px 24px 72px}
+.eyebrow{font:600 11px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--cyan)}
+h1{font-size:32px;line-height:1.15;margin:10px 0 6px;color:var(--bright);font-weight:650;letter-spacing:-.015em}
+.sub{color:var(--dim);margin:0 0 22px;max-width:70ch}
+.legend{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.v{font:600 10.5px/1 var(--mono);letter-spacing:.07em;text-transform:uppercase;padding:5px 8px;border-radius:4px;border:1px solid var(--line2);white-space:nowrap}
+.trial{color:var(--green);border-color:rgba(79,213,138,.5)}.watch{color:var(--blue);border-color:rgba(127,166,255,.5)}.covered{color:var(--violet);border-color:rgba(163,124,255,.5)}.skip{color:var(--faint)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:12px}
+.card.top{border-color:rgba(79,213,138,.45);box-shadow:0 0 0 1px rgba(79,213,138,.12) inset}
+.row{display:flex;align-items:center;gap:14px}
+.ring{--p:50;width:54px;height:54px;border-radius:50%;flex:none;display:grid;place-items:center;background:conic-gradient(var(--c,var(--blue)) calc(var(--p)*1%),rgba(140,160,255,.12) 0)}
+.ring span{width:42px;height:42px;border-radius:50%;background:#0a1028;display:grid;place-items:center;font:650 15px var(--mono);color:var(--bright)}
+.name{font:650 17px var(--mono);color:var(--bright)}
+.what{color:var(--dim);font-size:13px}
+.card p{margin:0;font-size:14px}
+.fit{display:grid;grid-template-columns:auto 1fr;gap:4px 10px;font-size:12.5px;color:var(--dim);border-top:1px solid var(--line);padding-top:10px;margin-top:auto}
+.fit b{font:600 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--faint)}
+.side{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}
+.box{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px 20px}
+.box h2{font:600 12px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin:0 0 12px}
+.box ol{margin:0;padding-left:1.2em}.box li{margin-bottom:6px}
+code{font:13px var(--mono);color:var(--cyan)}
+footer{margin-top:32px;color:var(--faint);font-size:12.5px;border-top:1px solid var(--line);padding-top:14px}
+@media (max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}.side{grid-template-columns:1fr}}
+@media (max-width:600px){.grid{grid-template-columns:1fr}.wrap{padding:24px 16px 56px}h1{font-size:27px}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <div class="eyebrow">AI Radar</div>
+  <h1>Six tools, one worth a trial</h1>
+  <p class="sub">From the 8:00 PM sweep, written 8:12 PM. Each tool is scored for fit with this setup: local-first, works with the lanes in use, and does something the current skills do not already cover. All six tools are part of the demo world.</p>
+
+  <div class="legend"><span class="v trial">Trial</span><span class="v watch">Watch</span><span class="v covered">Already covered</span><span class="v skip">Skip</span></div>
+
+  <section class="grid">
+    <article class="card top">
+      <div class="row"><div class="ring" style="--p:82;--c:var(--green)"><span>8.2</span></div><div><div class="name">tracelight</div><div class="what">Local viewer for agent run traces</div></div></div>
+      <span class="v trial" style="align-self:flex-start">Trial</span>
+      <p>Opens a run as a timeline of tool calls and file edits. Would replace grepping hand-off notes in agent-playbook runs.</p>
+      <div class="fit"><b>Fit</b><span>Runs offline, reads plain JSON logs</span><b>Try</b><span>Replay last week's schema v7 review pass</span></div>
+    </article>
+    <article class="card">
+      <div class="row"><div class="ring" style="--p:71"><span>7.1</span></div><div><div class="name">mcp-lens</div><div class="what">Inspector for MCP tool calls</div></div></div>
+      <span class="v watch" style="align-self:flex-start">Watch</span>
+      <p>Shows each tool call with its arguments and timing. Useful when a companion server misbehaves.</p>
+      <div class="fit"><b>Gap</b><span>No way yet to hide secrets in captures</span><b>Recheck</b><span>Next sweep after its next release</span></div>
+    </article>
+    <article class="card">
+      <div class="row"><div class="ring" style="--p:63"><span>6.3</span></div><div><div class="name">quietlog</div><div class="what">CI log summarizer</div></div></div>
+      <span class="v watch" style="align-self:flex-start">Watch</span>
+      <p>Folds long CI logs into the first failing step and the lines around it. Could shorten flaky-test triage.</p>
+      <div class="fit"><b>Gap</b><span>Needs a hosted model; no local option</span><b>Related</b><span><code>/test-fixer</code></span></div>
+    </article>
+    <article class="card">
+      <div class="row"><div class="ring" style="--p:58"><span>5.8</span></div><div><div class="name">patchwise</div><div class="what">Suggests smaller splits for big diffs</div></div></div>
+      <span class="v watch" style="align-self:flex-start">Watch</span>
+      <p>Reads a branch and proposes how to cut it into reviewable PRs. Overlaps the first step of <code>/pr-review</code>.</p>
+      <div class="fit"><b>Gap</b><span>Splits by folder, not by intent</span><b>Recheck</b><span>In two weeks</span></div>
+    </article>
+    <article class="card">
+      <div class="row"><div class="ring" style="--p:49;--c:var(--violet)"><span>4.9</span></div><div><div class="name">promptsmith</div><div class="what">Versioned prompt library with evals</div></div></div>
+      <span class="v covered" style="align-self:flex-start">Already covered</span>
+      <p>Keeps prompts in files with test cases. promptfoo and <code>agent-playbook/evals</code> already do this here.</p>
+      <div class="fit"><b>Keep</b><span>Its idea of tagging prompts by lane</span></div>
+    </article>
+    <article class="card">
+      <div class="row"><div class="ring" style="--p:36;--c:var(--faint)"><span>3.6</span></div><div><div class="name">contextor</div><div class="what">Packs a repo into one prompt</div></div></div>
+      <span class="v skip" style="align-self:flex-start">Skip</span>
+      <p>Bundles a whole repo into a single file for a model. The AGENTS.md router and QMD search give the same answer with less to read.</p>
+      <div class="fit"><b>Why</b><span>Large prompts, stale the moment code changes</span></div>
+    </article>
+  </section>
+
+  <section class="side">
+    <div class="box">
+      <h2>How the score works</h2>
+      <ol>
+        <li>Local-first and works offline: up to 3 points.</li>
+        <li>Fills a gap no skill or companion covers: up to 4.</li>
+        <li>Low upkeep: plain files, no new account: up to 3.</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h2>Next step</h2>
+      <p style="margin:0 0 8px">Trial tracelight for one week in a separate worktree. Write a lesson either way.</p>
+      <p style="margin:0;color:var(--dim)">Nothing was installed. Trials start only after you approve them.</p>
+    </div>
+  </section>
+
+  <footer>Sweeps run at 8:00 AM and 8:00 PM. Scores come from the radar rubric in HQ settings.</footer>
+</main>
+</body>
+</html>

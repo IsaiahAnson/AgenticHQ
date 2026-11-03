@@ -1,0 +1,102 @@
+{
+  "id": "mcp-lens",
+  "title": "mcp-lens: an inspector for MCP servers",
+  "branch": "radar/mcp-lens",
+  "status": "done",
+  "code": 0,
+  "elapsed": 1140,
+  "sessionId": "c8f3e59e-9d41-4df8-a56e-9f858e7576fe",
+  "chatName": "AI Radar · mcp-lens: an inspector for MCP servers",
+  "chatAddedAt": "@iso:-4h21m",
+  "reportExists": true,
+  "events": [
+    {
+      "t": "init",
+      "model": "claude-opus-5-5",
+      "mode": "default",
+      "sessionId": "c8f3e59e-9d41-4df8-a56e-9f858e7576fe"
+    },
+    {
+      "t": "text",
+      "text": "Reading the spec and the orbit-notes MCP server before changing anything.",
+      "sub": false
+    },
+    {
+      "t": "tool",
+      "id": "tu1",
+      "name": "Read",
+      "summary": "orbit-notes/mcp/server.ts",
+      "sub": false
+    },
+    {
+      "t": "out",
+      "id": "tu1",
+      "text": "Three tools: notes.search, notes.create, notes.link.",
+      "error": false,
+      "sub": false
+    },
+    {
+      "t": "tool",
+      "id": "tu2",
+      "name": "Bash",
+      "summary": "npm install --save-dev mcp-lens@1.4.2",
+      "sub": false
+    },
+    {
+      "t": "out",
+      "id": "tu2",
+      "text": "added 4 packages",
+      "error": false,
+      "sub": false
+    },
+    {
+      "t": "text",
+      "text": "Adding an mcp:inspect script and a saved replay set.",
+      "sub": false
+    },
+    {
+      "t": "tool",
+      "id": "tu3",
+      "name": "Edit",
+      "summary": "orbit-notes/package.json",
+      "sub": false
+    },
+    {
+      "t": "out",
+      "id": "tu3",
+      "text": "Updated scripts.",
+      "error": false,
+      "sub": false
+    },
+    {
+      "t": "tool",
+      "id": "tu4",
+      "name": "Bash",
+      "summary": "npm run mcp:inspect -- --replay tools/mcp-lens.json",
+      "sub": false
+    },
+    {
+      "t": "out",
+      "id": "tu4",
+      "text": "3 calls replayed, 0 differences.",
+      "error": false,
+      "sub": false
+    },
+    {
+      "t": "note",
+      "text": "Report written to the outbox."
+    },
+    {
+      "t": "result",
+      "ok": true,
+      "subtype": "success",
+      "text": "Build done: script, replay set and README. Ready to review.",
+      "ms": 1140000,
+      "turns": 18,
+      "cost": null
+    }
+  ],
+  "next": 4096,
+  "size": 4096,
+  "done": true
+}

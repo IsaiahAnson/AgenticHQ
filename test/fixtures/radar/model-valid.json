@@ -1,0 +1,25 @@
+{"findings": [
+ {"key": "gh:acme/agent-tool", "verdict": "trial", "confidence": "medium",
+  "summary": "A CLI that runs Claude Code subagents in isolated git worktrees.",
+  "whatsNew": "First public release; 540 stars in two days.", "pinned": "v0.3.0",
+  "reasoning": {
+   "fit": [{"area": "Orca workers", "files": ["lib/orca-reap.cjs", "new:lib/worktree-pool.cjs"], "why": "Could replace manual worktree cleanup."}],
+   "benefit": "Fewer leaked worktrees.", "cost": "free", "effort": "M",
+   "risks": [{"kind": "supply-chain", "detail": "New npm package with 40 deps."}],
+   "counter": "Orca already manages worktrees; this duplicates it.", "overlap": "lib/orca-reap.cjs archives Orca worktrees.",
+   "maintenance": "12 commits in 30 days; 2 contributors.", "license": "MIT: fine to vendor.", "dependencies": "40 deps, no install scripts.",
+   "falsify": "If Orca ships worktree pooling, skip.",
+   "evidence": [{"claim": "Supports Claude Code", "checked": true, "how": "README excerpt at v0.3.0"}],
+   "steps": ["Read the README.", "Compared with lib/orca-reap.cjs.", "Overlap is large; trial only."]},
+  "plan": ["Create a worktree.", "Pin acme/agent-tool@0.3.0 with --ignore-scripts.", "Wire it into tools/orca-reap.mjs behind a flag."]},
+ {"key": "url:https://blog.example.org/context-packing", "verdict": "watch", "confidence": "high",
+  "summary": "A write-up on packing repo context for coding agents.", "whatsNew": "",
+  "reasoning": {
+   "fit": [{"area": "Context retrieval", "files": ["lib/context-pack.cjs"], "why": "Same problem space."}],
+   "benefit": "Ideas for ranking.", "cost": "free", "effort": "S", "risks": [],
+   "counter": "HQ's packer already ranks by authority.", "overlap": "lib/context-pack.cjs",
+   "maintenance": "n/a (article)", "license": "n/a (article)", "dependencies": "n/a", "falsify": "If it shows a measured win on a similar repo, trial it.",
+   "evidence": [{"claim": "Describes ranking by recency", "checked": false, "how": "not opened"}],
+   "steps": ["Skimmed the excerpt.", "HQ already covers it."]},
+  "plan": []}
+]}

@@ -1,0 +1,9 @@
+{
+  "title": "Week in HQ",
+  "icon": "chart",
+  "kind": "report",
+  "category": "infographic",
+  "created": "@iso:-1d@18:04",
+  "note": "Last seven days: 118 of 120 routine runs clean, 11 PRs merged, 5 lessons added, 0.14.2 beta out.",
+  "svg": "<rect x=\"8\" y=\"26\" width=\"7\" height=\"14\"/><rect x=\"20\" y=\"16\" width=\"7\" height=\"24\"/><rect x=\"32\" y=\"8\" width=\"7\" height=\"32\"/>"
+}

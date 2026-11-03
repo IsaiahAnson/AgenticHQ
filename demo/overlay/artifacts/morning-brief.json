@@ -1,0 +1,9 @@
+{
+  "title": "Morning brief",
+  "icon": "mail",
+  "kind": "report",
+  "category": "infographic",
+  "created": "@iso:0@07:31",
+  "note": "Monday: two messages need you, 0.9 notes await an edit, every overnight routine finished.",
+  "svg": "<circle cx=\"24\" cy=\"28\" r=\"8\"/><path d=\"M8 38h32\"/><path d=\"M24 10v6M12 16l4 4M36 16l-4 4\"/>"
+}

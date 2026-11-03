@@ -1,0 +1,25 @@
+{
+  "_about": "Public demo: the Automations ring in the Second Brain. refresh/sources/automations.cjs reads scheduled tasks and Claude hooks live. The demo lists no scheduled tasks; hooks show up only if the demo home folder has a .claude/settings.json whose hook commands contain one of the 'match' words. The desktop routines below always move to this ring. 'learns' = it rewrites skills, knowledge, memory or agent instructions. Paths in 'writes' and 'watchedRoots' are relative to the kit folder.",
+  "windowsTasks": {
+    "prefixes": [],
+    "extra": [],
+    "jobs": {}
+  },
+  "desktopRoutines": {
+    "backup-check": { "desc": "Nightly: checks that every project repo has a fresh backup and that last week's restore test passed. Reports only, never deletes.", "learns": false, "audits": true, "writes": ["demo/workspace/ops/backups/"] },
+    "brain-refresh": { "desc": "Every 3 hours: rebuilds the Second Brain map, the skills list and the home orb. No model calls.", "learns": false, "writes": ["brain/", "data/", "assets/home-orb-mini.js"] },
+    "skill-review": { "desc": "Mondays: reads the week's skill gotchas and lessons and proposes skill edits for approval. Never edits a skill on its own.", "learns": true, "writes": ["demo/workspace/skills/", "demo/workspace/memory/lessons/"] }
+  },
+  "hooks": {
+    "match": ["lesson-capture", "skill-gotcha-check", "ring-publish"],
+    "jobs": {
+      "lesson-capture": { "desc": "After a session ends: offers a one-line lesson for memory/lessons when a fix took more than one try.", "learns": true, "writes": ["demo/workspace/memory/lessons/"] },
+      "skill-gotcha-check": { "desc": "At session start: shows the gotchas of the skills the task is likely to use.", "learns": false, "writes": [] },
+      "ring-publish": { "desc": "After an HTML page is written: adds it to the HQ ring with a sidecar.", "learns": false, "writes": ["artifacts/"] }
+    }
+  },
+  "watchedRoots": [
+    "demo/workspace/skills/", "demo/workspace/memory/", "demo/workspace/AGENTS.md", "demo/workspace/CLAUDE.md",
+    "os-config.json", "config/"
+  ]
+}

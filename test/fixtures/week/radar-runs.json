@@ -1,0 +1,21 @@
+[
+  {
+    "generatedAt": "2026-10-30T08:00:00.000Z",
+    "findings": [
+      { "verdict": "adopt", "title": "Use node:test" },
+      { "verdict": "trial", "title": "Try Biome" },
+      { "verdict": "skip", "title": "Some fad" }
+    ]
+  },
+  {
+    "generatedAt": "2026-10-29T08:00:00.000Z",
+    "findings": [
+      { "verdict": "watch", "title": "Watch X" },
+      { "verdict": "trial", "title": "Try Ruff" }
+    ]
+  },
+  {
+    "generatedAt": "2026-10-01T08:00:00.000Z",
+    "findings": [{ "verdict": "adopt", "title": "Old thing" }]
+  }
+]

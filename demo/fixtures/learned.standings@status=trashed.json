@@ -1,0 +1,327 @@
+{
+  "board": "learned",
+  "updatedAt": "@iso:-14h",
+  "lastRunId": "@iso:-14h",
+  "runs": [
+    {
+      "id": "@iso:-14h",
+      "at": "@iso:-14h",
+      "candidates": 11,
+      "added": 3,
+      "merged": 5,
+      "report": "skill-review-proposals.html"
+    },
+    {
+      "id": "@iso:-1d@19:00",
+      "at": "@iso:-1d@19:00",
+      "candidates": 9,
+      "added": 2,
+      "merged": 4,
+      "report": "skill-review-proposals.html"
+    },
+    {
+      "id": "@iso:-2d@19:00",
+      "at": "@iso:-2d@19:00",
+      "candidates": 12,
+      "added": 4,
+      "merged": 6,
+      "report": "skill-review-proposals.html"
+    }
+  ],
+  "counts": {
+    "open": 14,
+    "approved": 2,
+    "done": 5,
+    "trashed": 3,
+    "total": 24
+  },
+  "tiers": [
+    {
+      "tier": "S",
+      "count": 3
+    },
+    {
+      "tier": "A",
+      "count": 7
+    },
+    {
+      "tier": "B",
+      "count": 4
+    },
+    {
+      "tier": "C",
+      "count": 0
+    },
+    {
+      "tier": "D",
+      "count": 0
+    }
+  ],
+  "total": 3,
+  "items": [
+    {
+      "id": "lea-8560fdc3c0",
+      "rank": null,
+      "prevRank": null,
+      "delta": null,
+      "bestRank": 16,
+      "tier": null,
+      "movement": null,
+      "title": "Use the largest model for every triage pass",
+      "summary": "/triage · inbox",
+      "category": "triage · inbox",
+      "reason": "Came up in two sessions. Scored 58 on the rubric.",
+      "score": 58,
+      "baseScore": 58,
+      "seenCount": 3,
+      "firstSeen": "@iso:-16d",
+      "lastSeen": "@iso:-15d",
+      "missedRuns": 0,
+      "status": "trashed",
+      "statusAt": "@iso:-3d@09:10",
+      "note": "",
+      "aliases": [],
+      "refs": [
+        "memory/lessons/inbox.md"
+      ],
+      "evidence": [
+        {
+          "text": "Use the largest model for every triage pass came up in two sessions last month.",
+          "source": "memory/lessons/inbox.md",
+          "run": "@iso:-15d",
+          "at": "@iso:-15d"
+        }
+      ],
+      "data": {
+        "proposalId": "23fede2b69a6e03d",
+        "skill": "triage",
+        "file": "skills/triage/SKILL.md",
+        "section": "Gotchas",
+        "text": "Use the largest model for every triage pass",
+        "source": [
+          "memory/lessons/inbox.md"
+        ],
+        "recurrence": 1,
+        "sourceAt": "@iso:-1d@17:20",
+        "targets": [
+          {
+            "skill": "triage",
+            "file": "skills/triage/SKILL.md",
+            "proposalId": "23fede2b69a6e03d",
+            "status": "rejected"
+          }
+        ],
+        "skills": [
+          "triage"
+        ],
+        "assessment": {
+          "why": "Use the largest model for every triage pass came up in two sessions last month.",
+          "timeSaved": "monthly",
+          "effort": "approve",
+          "timeReason": "Estimated from 1 recurrence per month.",
+          "effortReason": "A one-line gotcha in the skill file.",
+          "by": "claude-opus-5-5 · gotcha-assess",
+          "at": "@iso:-15d",
+          "timeLabel": "~30m/mo saved",
+          "effortLabel": "Approve only"
+        },
+        "judgment": {
+          "scores": {
+            "pain": 5,
+            "frequency": 5,
+            "specificity": 7,
+            "fit": 7,
+            "durability": 6
+          },
+          "score": 58,
+          "reason": "Came up in two sessions. Scored 58 on the rubric.",
+          "critique": "Reviewed and settled.",
+          "evidenceChecked": [
+            "memory/lessons/inbox.md",
+            "skills/triage/SKILL.md"
+          ],
+          "judgedAt": "@iso:-14h",
+          "by": "claude-opus-5-5 · gotcha-assess",
+          "recurrence": 1,
+          "sourceAt": "@iso:-1d@17:20"
+        }
+      }
+    },
+    {
+      "id": "lea-69c4a2f3d7",
+      "rank": null,
+      "prevRank": null,
+      "delta": null,
+      "bestRank": 18,
+      "tier": null,
+      "movement": null,
+      "title": "Rebuild the brain every hour",
+      "summary": "/brain-refresh · hq-operations",
+      "category": "brain-refresh · hq-operations",
+      "reason": "Came up in two sessions. Scored 55 on the rubric.",
+      "score": 55,
+      "baseScore": 55,
+      "seenCount": 3,
+      "firstSeen": "@iso:-16d",
+      "lastSeen": "@iso:-15d",
+      "missedRuns": 0,
+      "status": "trashed",
+      "statusAt": "@iso:-5d@20:00",
+      "note": "",
+      "aliases": [],
+      "refs": [
+        "memory/lessons/hq-operations.md"
+      ],
+      "evidence": [
+        {
+          "text": "Rebuild the brain every hour came up in two sessions last month.",
+          "source": "memory/lessons/hq-operations.md",
+          "run": "@iso:-15d",
+          "at": "@iso:-15d"
+        }
+      ],
+      "data": {
+        "proposalId": "ab37fdd6362512e8",
+        "skill": "brain-refresh",
+        "file": "skills/brain-refresh/SKILL.md",
+        "section": "Gotchas",
+        "text": "Rebuild the brain every hour",
+        "source": [
+          "memory/lessons/hq-operations.md"
+        ],
+        "recurrence": 1,
+        "sourceAt": "@iso:-1d@17:20",
+        "targets": [
+          {
+            "skill": "brain-refresh",
+            "file": "skills/brain-refresh/SKILL.md",
+            "proposalId": "ab37fdd6362512e8",
+            "status": "rejected"
+          }
+        ],
+        "skills": [
+          "brain-refresh"
+        ],
+        "assessment": {
+          "why": "Rebuild the brain every hour came up in two sessions last month.",
+          "timeSaved": "monthly",
+          "effort": "approve",
+          "timeReason": "Estimated from 1 recurrence per month.",
+          "effortReason": "A one-line gotcha in the skill file.",
+          "by": "claude-opus-5-5 · gotcha-assess",
+          "at": "@iso:-15d",
+          "timeLabel": "~30m/mo saved",
+          "effortLabel": "Approve only"
+        },
+        "judgment": {
+          "scores": {
+            "pain": 4,
+            "frequency": 5,
+            "specificity": 7,
+            "fit": 7,
+            "durability": 6
+          },
+          "score": 55,
+          "reason": "Came up in two sessions. Scored 55 on the rubric.",
+          "critique": "Reviewed and settled.",
+          "evidenceChecked": [
+            "memory/lessons/hq-operations.md",
+            "skills/brain-refresh/SKILL.md"
+          ],
+          "judgedAt": "@iso:-14h",
+          "by": "claude-opus-5-5 · gotcha-assess",
+          "recurrence": 1,
+          "sourceAt": "@iso:-1d@17:20"
+        }
+      }
+    },
+    {
+      "id": "lea-5883edabf0",
+      "rank": null,
+      "prevRank": null,
+      "delta": null,
+      "bestRank": 20,
+      "tier": null,
+      "movement": null,
+      "title": "Send standup notes without review",
+      "summary": "/standup · hq-operations",
+      "category": "standup · hq-operations",
+      "reason": "Came up in two sessions. Scored 61 on the rubric.",
+      "score": 61,
+      "baseScore": 61,
+      "seenCount": 3,
+      "firstSeen": "@iso:-16d",
+      "lastSeen": "@iso:-15d",
+      "missedRuns": 0,
+      "status": "trashed",
+      "statusAt": "@iso:-7d@09:45",
+      "note": "",
+      "aliases": [],
+      "refs": [
+        "memory/lessons/hq-operations.md"
+      ],
+      "evidence": [
+        {
+          "text": "Send standup notes without review came up in two sessions last month.",
+          "source": "memory/lessons/hq-operations.md",
+          "run": "@iso:-15d",
+          "at": "@iso:-15d"
+        }
+      ],
+      "data": {
+        "proposalId": "54324315c22e1115",
+        "skill": "standup",
+        "file": "skills/standup/SKILL.md",
+        "section": "Gotchas",
+        "text": "Send standup notes without review",
+        "source": [
+          "memory/lessons/hq-operations.md"
+        ],
+        "recurrence": 1,
+        "sourceAt": "@iso:-1d@17:20",
+        "targets": [
+          {
+            "skill": "standup",
+            "file": "skills/standup/SKILL.md",
+            "proposalId": "54324315c22e1115",
+            "status": "rejected"
+          }
+        ],
+        "skills": [
+          "standup"
+        ],
+        "assessment": {
+          "why": "Send standup notes without review came up in two sessions last month.",
+          "timeSaved": "monthly",
+          "effort": "approve",
+          "timeReason": "Estimated from 1 recurrence per month.",
+          "effortReason": "A one-line gotcha in the skill file.",
+          "by": "claude-opus-5-5 · gotcha-assess",
+          "at": "@iso:-15d",
+          "timeLabel": "~30m/mo saved",
+          "effortLabel": "Approve only"
+        },
+        "judgment": {
+          "scores": {
+            "pain": 6,
+            "frequency": 5,
+            "specificity": 7,
+            "fit": 7,
+            "durability": 6
+          },
+          "score": 61,
+          "reason": "Came up in two sessions. Scored 61 on the rubric.",
+          "critique": "Reviewed and settled.",
+          "evidenceChecked": [
+            "memory/lessons/hq-operations.md",
+            "skills/standup/SKILL.md"
+          ],
+          "judgedAt": "@iso:-14h",
+          "by": "claude-opus-5-5 · gotcha-assess",
+          "recurrence": 1,
+          "sourceAt": "@iso:-1d@17:20"
+        }
+      }
+    }
+  ]
+}

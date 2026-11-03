@@ -1,0 +1,343 @@
+{
+  "skills": [
+    {
+      "id": "release-notes",
+      "agent": "claude",
+      "icon": "doc",
+      "model": 2,
+      "effort": 1,
+      "prompt": "Draft release notes for the current project from PRs merged since the last tag. Group by feature, fix and docs. Use PR titles, link each PR, and keep each line under 90 characters. Save the draft to the ring; don't publish.",
+      "context": true
+    },
+    {
+      "id": "triage",
+      "agent": "claude",
+      "icon": "mail",
+      "model": 2,
+      "effort": 1,
+      "prompt": "Go through new issues and beta-tester mail. Label each one (bug, question, idea), find duplicates, and draft a short reply for anything that needs one. Never send; leave drafts for review.",
+      "context": true
+    },
+    {
+      "id": "pr-review",
+      "agent": "claude",
+      "icon": "eye",
+      "model": 2,
+      "effort": 2,
+      "prompt": "Review the open PR on this branch. Check tests, risky diffs, naming and docs. Leave a short summary with blocking issues first, then nits. Note anything that needs a follow-up issue.",
+      "context": true
+    },
+    {
+      "id": "dep-watch",
+      "agent": "codex",
+      "icon": "box",
+      "model": 2,
+      "effort": 1,
+      "prompt": "Check orbit-notes, tidepool, paper-lantern and fieldkit for outdated dependencies and advisories. Read each lockfile diff, flag new transitive packages, and list safe bumps first.",
+      "context": true
+    },
+    {
+      "id": "weekly-review",
+      "agent": "claude",
+      "icon": "chart",
+      "model": 2,
+      "effort": 1,
+      "prompt": "Write the week in HQ: routine runs, failures, lessons added, ring pages, radar picks. End with three focus items for next week. Keep it to one screen.",
+      "context": true
+    },
+    {
+      "id": "test-fixer",
+      "agent": "claude",
+      "icon": "flask",
+      "model": 2,
+      "effort": 2,
+      "prompt": "Find the failing or flaky test named in the prompt. Reproduce it, fix the cause rather than the symptom, and quarantine it with an issue if it fails twice for reasons outside the code.",
+      "context": true
+    },
+    {
+      "id": "design-critique",
+      "agent": "claude",
+      "icon": "pen",
+      "model": 2,
+      "effort": 1,
+      "prompt": "Critique the screen or screenshot given: hierarchy, spacing, contrast in both themes, empty states and copy. Rank the five fixes that matter most and show where each one goes.",
+      "context": true
+    },
+    {
+      "id": "standup",
+      "agent": "claude",
+      "icon": "clock",
+      "model": 2,
+      "effort": 1,
+      "prompt": "Draft today's standup from yesterday's commits and merged PRs across the four projects. Three bullets per project at most: done, doing, blocked.",
+      "context": true
+    },
+    {
+      "id": "brain-refresh",
+      "agent": "claude",
+      "icon": "brain",
+      "model": 2,
+      "effort": 1,
+      "prompt": "Rebuild the Second Brain map from the workspace folder. Skip the rebuild when no file changed since the last run, and report what moved.",
+      "context": true
+    },
+    {
+      "id": "ship",
+      "agent": "claude",
+      "icon": "send",
+      "model": 2,
+      "effort": 2,
+      "prompt": "Take the spec named in the prompt from plan to merged branch: own worktree, tests first, small commits, and a short report on the ring. Stop and ask before any migration.",
+      "context": true
+    }
+  ],
+  "models": [
+    "HAIKU",
+    "SONNET",
+    "OPUS",
+    "FABLE"
+  ],
+  "modelColors": [
+    "#2aa88a",
+    "#3f8fd4",
+    "#9a66e0",
+    "#e8a33d"
+  ],
+  "efforts": [
+    "LOW",
+    "MEDIUM",
+    "HIGH",
+    "XHIGH",
+    "MAX"
+  ],
+  "runs": [
+    {
+      "id": "test-fixer",
+      "at": "@iso:-1h25m",
+      "agent": "claude",
+      "model": "opus",
+      "effort": "high",
+      "seconds": 312,
+      "exit": 1,
+      "report": null,
+      "context": {
+        "included": true,
+        "chars": 2112,
+        "sourcePaths": [],
+        "hash": null
+      }
+    },
+    {
+      "id": "pr-review",
+      "at": "@iso:-3h15m",
+      "agent": "claude",
+      "model": "opus",
+      "effort": "high",
+      "seconds": 188,
+      "exit": 0,
+      "report": null,
+      "context": {
+        "included": true,
+        "chars": 1988,
+        "sourcePaths": [],
+        "hash": null
+      }
+    },
+    {
+      "id": "triage",
+      "at": "@iso:-4h05m",
+      "agent": "claude",
+      "model": "opus",
+      "effort": "medium",
+      "seconds": 96,
+      "exit": 0,
+      "report": "inbox-triage.html",
+      "context": {
+        "included": true,
+        "chars": 1896,
+        "sourcePaths": [],
+        "hash": null
+      }
+    },
+    {
+      "id": "dep-watch",
+      "at": "@iso:-5h30m",
+      "agent": "codex",
+      "model": "gpt-6",
+      "effort": "medium",
+      "seconds": 141,
+      "exit": 0,
+      "report": "dependency-watch.html",
+      "context": {
+        "included": true,
+        "chars": 1941,
+        "sourcePaths": [],
+        "hash": null
+      }
+    },
+    {
+      "id": "standup",
+      "at": "@iso:0d@09:41",
+      "agent": "claude",
+      "model": "opus",
+      "effort": "medium",
+      "seconds": 58,
+      "exit": 0,
+      "report": null,
+      "context": {
+        "included": true,
+        "chars": 1858,
+        "sourcePaths": [],
+        "hash": null
+      }
+    },
+    {
+      "id": "brain-refresh",
+      "at": "@iso:-1h12m",
+      "agent": "claude",
+      "model": "opus",
+      "effort": "medium",
+      "seconds": 44,
+      "exit": 0,
+      "report": null,
+      "context": {
+        "included": true,
+        "chars": 1844,
+        "sourcePaths": [],
+        "hash": null
+      }
+    },
+    {
+      "id": "release-notes",
+      "at": "@iso:-1d@15:20",
+      "agent": "claude",
+      "model": "opus",
+      "effort": "medium",
+      "seconds": 133,
+      "exit": 0,
+      "report": "paper-lantern-0-9-notes.html",
+      "context": {
+        "included": true,
+        "chars": 1933,
+        "sourcePaths": [],
+        "hash": null
+      }
+    },
+    {
+      "id": "design-critique",
+      "at": "@iso:-1d@14:10",
+      "agent": "claude",
+      "model": "opus",
+      "effort": "medium",
+      "seconds": 205,
+      "exit": 0,
+      "report": null,
+      "context": {
+        "included": true,
+        "chars": 2005,
+        "sourcePaths": [],
+        "hash": null
+      }
+    },
+    {
+      "id": "ship",
+      "at": "@iso:-1d@16:05",
+      "agent": "claude",
+      "model": "opus",
+      "effort": "high",
+      "seconds": 1460,
+      "exit": 0,
+      "report": "paper-lantern-0-9-notes.html",
+      "context": {
+        "included": true,
+        "chars": 2360,
+        "sourcePaths": [],
+        "hash": null
+      }
+    },
+    {
+      "id": "triage",
+      "at": "@iso:-1d@13:02",
+      "agent": "claude",
+      "model": "opus",
+      "effort": "medium",
+      "seconds": 88,
+      "exit": 0,
+      "report": "inbox-triage.html",
+      "context": {
+        "included": true,
+        "chars": 1888,
+        "sourcePaths": [],
+        "hash": null
+      }
+    },
+    {
+      "id": "pr-review",
+      "at": "@iso:-2d@11:40",
+      "agent": "claude",
+      "model": "opus",
+      "effort": "high",
+      "seconds": 174,
+      "exit": 0,
+      "report": null,
+      "context": {
+        "included": true,
+        "chars": 1974,
+        "sourcePaths": [],
+        "hash": null
+      }
+    },
+    {
+      "id": "test-fixer",
+      "at": "@iso:-2d@10:15",
+      "agent": "claude",
+      "model": "opus",
+      "effort": "high",
+      "seconds": 420,
+      "exit": 0,
+      "report": null,
+      "context": {
+        "included": true,
+        "chars": 2220,
+        "sourcePaths": [],
+        "hash": null
+      }
+    },
+    {
+      "id": "weekly-review",
+      "at": "@iso:-2d@18:04",
+      "agent": "claude",
+      "model": "opus",
+      "effort": "medium",
+      "seconds": 162,
+      "exit": 0,
+      "report": "week-in-hq.html",
+      "context": {
+        "included": true,
+        "chars": 1962,
+        "sourcePaths": [],
+        "hash": null
+      }
+    }
+  ],
+  "agentModels": {
+    "codex": "gpt-6",
+    "copilot": "",
+    "claude-api": "claude-opus-5-5"
+  },
+  "runner": "ready",
+  "clocks": [
+    {
+      "label": "LISBON",
+      "tz": "Europe/Lisbon"
+    },
+    {
+      "label": "TOKYO",
+      "tz": "Asia/Tokyo"
+    },
+    {
+      "label": "UTC",
+      "tz": "UTC"
+    }
+  ]
+}

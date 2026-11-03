@@ -1,0 +1,76 @@
+{
+  "_about": "The Automations ring in the Second Brain: hidden agentic, automation and self-learning jobs. refresh/sources/automations.cjs reads Windows scheduled tasks and Claude hooks live; this file only says which ones belong and what each one writes. \"learns\" = it rewrites skills, knowledge, memory or agent instructions. Paths in \"writes\" are relative to this folder unless absolute.",
+  "windowsTasks": {
+    "prefixes": [
+      "Agentic HQ "
+    ],
+    "extra": [],
+    "jobs": {
+      "Agentic HQ Boot Check": {
+        "desc": "After sign-in: checks Agentic HQ, the Brain engine and native companions, and starts what's missing.",
+        "writes": [
+          "os-runs/sentinel.jsonl"
+        ]
+      },
+      "Agentic HQ PC Sentinel": {
+        "desc": "Every 2h: disk space, leaked headless browsers, RAM and page file.",
+        "writes": [
+          "os-runs/sentinel.jsonl"
+        ]
+      },
+      "Agentic HQ Usage Guard": {
+        "desc": "Hourly: usage meter history and projected burn-out before reset.",
+        "writes": [
+          "os-runs/usage-history.jsonl"
+        ]
+      },
+      "Agentic HQ Repeat Check": {
+        "desc": "Daily 9 AM: checks Learned and AI Radar for repeated items. Exact repeats push an alert; look-alikes go to the 8 PM digest.",
+        "writes": [
+          "os-runs/ranked-dupes.jsonl"
+        ]
+      },
+      "Agentic HQ Gotcha Proposals": {
+        "desc": "Turns lessons and the failure registry into proposed skill Gotcha patches for you to approve.",
+        "learns": true,
+        "writes": [
+          "data/gotcha-proposals.json"
+        ]
+      },
+      "Agentic HQ Weekly Dev Health": {
+        "desc": "Weekly: repo and dependency health across projects, plus the lesson-to-Gotcha review.",
+        "learns": true,
+        "writes": [
+          "artifacts/"
+        ]
+      },
+      "Agentic HQ Second Brain Refresh": {
+        "desc": "Rebuilds the Second Brain map and snapshots.",
+        "writes": [
+          "data/",
+          "brain/"
+        ]
+      }
+    }
+  },
+  "desktopRoutines": {},
+  "hooks": {
+    "match": [
+      "agentic-hq",
+      "agent-checkpoint"
+    ],
+    "jobs": {
+      "usage-check": {
+        "desc": "After edits and agent launches: warns when the 5h window is low and a handoff is due."
+      },
+      "agent-checkpoint": {
+        "desc": "Saves a resume point before compaction and shows it on session start.",
+        "learns": true
+      }
+    }
+  },
+  "watchedRoots": [
+    "os-config.json",
+    "config/"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "_note": "Public demo: six areas of the demo workspace (BRAIN.md step 2). First match wins: projectPrefixes (folders in projects/), then memoryKeywords (files in memory/), then pathRules, else default.",
+  "departments": [
+    { "key": "product", "label": "Product", "color": "#ff4fa3", "icon": "people" },
+    { "key": "engineering", "label": "Engineering", "color": "#18c5d9", "icon": "build" },
+    { "key": "data", "label": "Data", "color": "#00e676", "icon": "data" },
+    { "key": "writing", "label": "Writing", "color": "#ff3d3d", "icon": "pen" },
+    { "key": "agents", "label": "Agents", "color": "#c0ca33", "icon": "api" },
+    { "key": "ops", "label": "Ops", "color": "#b0bec5", "icon": "pulse" }
+  ],
+  "layers": [
+    { "key": "A", "label": "Applications", "color": "#3f8fd4", "shape": "hex", "blurb": "MCP servers, CLIs and APIs your agent can reach" },
+    { "key": "X", "label": "Automations", "color": "#2fc7b0", "shape": "ringdot", "blurb": "Hidden agentic jobs: scheduled tasks, hooks and self-learning loops" },
+    { "key": "R", "label": "Routines", "color": "#d99a1f", "shape": "ringdot", "blurb": "Scheduled automations that run without being asked" },
+    { "key": "M", "label": "Memory", "color": "#9a66e0", "shape": "chip", "blurb": "Every file of context, clustered by department" },
+    { "key": "S", "label": "Skills", "color": "#ff6b1a", "shape": "diamond", "blurb": "Capabilities your agent can run on demand" }
+  ],
+  "projectPrefixes": {
+    "tidepool": "data",
+    "fieldkit": "ops",
+    "agent-": "agents"
+  },
+  "memoryKeywords": [
+    { "match": ["tidepool", "duckdb", "sensor"], "dept": "data" },
+    { "match": ["release", "feed"], "dept": "writing" }
+  ],
+  "pathRules": [
+    { "prefix": "projects/orbit-notes/docs", "dept": "product" },
+    { "prefix": "projects/orbit-notes/design", "dept": "product" },
+    { "prefix": "projects/paper-lantern/content", "dept": "writing" },
+    { "prefix": "projects/paper-lantern/docs", "dept": "writing" },
+    { "prefix": "notes/meetings", "dept": "product" },
+    { "prefix": "notes/ideas", "dept": "product" },
+    { "prefix": "notes", "dept": "writing" },
+    { "prefix": "memory", "dept": "agents" },
+    { "prefix": "skills/release-notes", "dept": "writing" },
+    { "prefix": "skills/design-critique", "dept": "product" },
+    { "prefix": "skills/dep-watch", "dept": "ops" },
+    { "prefix": "skills/brain-refresh", "dept": "ops" },
+    { "prefix": "skills", "dept": "agents" },
+    { "prefix": "ops", "dept": "ops" },
+    { "prefix": "AGENTS.md", "dept": "agents" },
+    { "prefix": "CLAUDE.md", "dept": "agents" }
+  ],
+  "default": "engineering"
+}

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><script src="/assets/token.js"></script>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; connect-src 'self'; form-action 'none'; object-src 'none'; base-uri 'none'">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Confirm review run · Agentic HQ</title><link rel="icon" href="/assets/hq-mark.svg">
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 18px 20px; background: #1b1916; color: #ece6d8; font: 13px/1.45 "Segoe UI", system-ui, sans-serif; }
+  h1 { margin: 0 0 4px; font-size: 16px; font-weight: 600; }
+  .sub { margin: 0 0 12px; color: #b3aa98; font-size: 12px; }
+  .sub code { color: #d9c08a; }
+  ol { margin: 0 0 12px; padding: 0 0 0 20px; max-height: 52vh; overflow-y: auto; }
+  li { padding: 6px 0; border-bottom: 1px solid #2c2822; white-space: pre-wrap; word-break: break-word; }
+  li q { display: block; color: #d9c08a; font-style: italic; }
+  .acts { display: flex; gap: 8px; }
+  button { flex: 1; padding: 9px 10px; border-radius: 7px; border: 1px solid #3a352d; background: #24211c; color: #ece6d8; font: 600 13px "Segoe UI", sans-serif; cursor: pointer; }
+  button.go { background: #c9a45c; border-color: #c9a45c; color: #1b1916; }
+  button:disabled { opacity: .45; cursor: default; }
+  button:focus-visible { outline: 2px solid #c9a45c; outline-offset: 1px; }
+  .status { margin-top: 12px; color: #b3aa98; white-space: pre-wrap; max-height: 30vh; overflow-y: auto; }
+  .status.err { color: #f08a7e; }
+</style></head>
+<body>
+  <h1 id="h">Waiting for the Review bar…</h1>
+  <p class="sub" id="sub">This window runs a ring page's comments or Save format through HQ, only after you press Run.</p>
+  <ol id="list" hidden></ol>
+  <div class="acts"><button type="button" class="go" id="run" disabled>Run</button><button type="button" id="cancel">Cancel</button></div>
+  <div class="status" id="status" aria-live="polite"></div>
+  <script src="/assets/review-confirm.js"></script>
+</body></html>

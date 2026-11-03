@@ -1,0 +1,8 @@
+{
+  "ok": true,
+  "from": "2026-10-24T12:00:00.000Z",
+  "to": "2026-10-31T12:00:00.000Z",
+  "totalHours": 12.5,
+  "byCategory": { "music": 1.5, "code": 8, "browser": 2.5, "other": 0.5 },
+  "topApps": [{ "app": "Cursor", "hours": 8, "category": "code" }]
+}

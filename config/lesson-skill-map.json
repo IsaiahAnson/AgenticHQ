@@ -1,0 +1,8 @@
+{
+  "hq-operations": [
+    "agenticos"
+  ],
+  "orchestration-workers": [],
+  "ci": [],
+  "dependencies": []
+}

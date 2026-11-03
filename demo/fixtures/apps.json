@@ -1,0 +1,76 @@
+{
+  "apps": [
+    {
+      "id": "orbit-notes",
+      "name": "Orbit Notes",
+      "desc": "Local-first notes, web build on :5173",
+      "icon": "pen",
+      "builtIn": false,
+      "live": true
+    },
+    {
+      "id": "tidepool",
+      "name": "Tidepool Dashboard",
+      "desc": "Coastal sensor charts on :8501",
+      "icon": "chart",
+      "builtIn": false,
+      "live": true
+    },
+    {
+      "id": "paper-lantern",
+      "name": "Paper Lantern Preview",
+      "desc": "Blog preview server on :4000",
+      "icon": "doc",
+      "builtIn": false,
+      "live": false
+    },
+    {
+      "id": "agentviz",
+      "name": "Agent Monitor",
+      "desc": "Live view of agent sessions",
+      "icon": "monitor",
+      "builtIn": true,
+      "live": true
+    },
+    {
+      "id": "agent-hq",
+      "name": "AI Radar",
+      "desc": "New AI tools scored against this setup",
+      "icon": "radar",
+      "builtIn": true,
+      "live": true
+    },
+    {
+      "id": "karakeep",
+      "name": "Karakeep",
+      "desc": "Bookmarks and read-later",
+      "icon": "bookmark",
+      "builtIn": false,
+      "live": true
+    },
+    {
+      "id": "changedetection",
+      "name": "Change Watch",
+      "desc": "Watches docs and changelogs for edits",
+      "icon": "eye",
+      "builtIn": false,
+      "live": true
+    },
+    {
+      "id": "ntfy",
+      "name": "ntfy",
+      "desc": "Push alerts to your phone",
+      "icon": "bell",
+      "builtIn": false,
+      "live": true
+    },
+    {
+      "id": "promptfoo",
+      "name": "Prompt Evals",
+      "desc": "promptfoo test suites for skills",
+      "icon": "flask",
+      "builtIn": false,
+      "live": true
+    }
+  ]
+}

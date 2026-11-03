@@ -1,0 +1,7 @@
+[
+  { "agent": "codex", "source": "orca", "status": "succeeded", "startedAt": "2026-10-30T09:00:00.000Z", "endedAt": "2026-10-30T10:00:00.000Z", "durationMs": 3600000 },
+  { "agent": "codex", "source": "orca", "status": "failed", "startedAt": "2026-10-30T11:00:00.000Z", "endedAt": "2026-10-30T11:30:00.000Z", "durationMs": 1800000 },
+  { "agent": "claude", "source": "hq", "status": "succeeded", "startedAt": "2026-10-29T08:00:00.000Z", "endedAt": "2026-10-29T08:15:00.000Z", "durationMs": 900000 },
+  { "agent": "gemini", "source": "hq", "status": "needs-action", "startedAt": "2026-10-28T08:00:00.000Z", "endedAt": "2026-10-28T08:10:00.000Z", "durationMs": 600000 },
+  { "agent": "codex", "source": "orca", "status": "succeeded", "startedAt": "2026-10-01T08:00:00.000Z", "endedAt": "2026-10-01T09:00:00.000Z", "durationMs": 3600000 }
+]

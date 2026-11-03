@@ -1,0 +1,56 @@
+.hs { color:var(--hq-ink, #d5ddff); min-width:0; }
+.hs-bar { display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin-bottom:12px; }
+.hs-q { flex:1 1 190px; min-width:0; padding:7px 9px; color:inherit; background:rgba(10,13,32,.55); border:1px solid var(--hq-line, rgba(140,160,255,.14)); border-radius:6px; font:inherit; }
+.hs-q::placeholder { color:var(--hq-dim, #7d88b3); }
+.hs-filter, .hs-acts { display:flex; flex-wrap:wrap; gap:5px; }
+.hs button, .hs-rest summary { color:var(--hq-dim, #7d88b3); background:rgba(10,13,32,.55); border:1px solid var(--hq-line, rgba(140,160,255,.14)); border-radius:6px; padding:5px 8px; font:inherit; font-size:12px; cursor:pointer; }
+.hs button:hover, .hs-rest summary:hover { background:rgba(120,150,255,.14); color:var(--hq-ink, #d5ddff); }
+.hs button:focus-visible, .hs-q:focus-visible, .hs-row:focus-visible, .hs-rest summary:focus-visible { outline:2px solid var(--hq-cyan, #7ff0ff); outline-offset:2px; }
+.hs button:disabled { opacity:.55; cursor:wait; }
+.hs button.on { color:var(--hq-ink, #d5ddff); border-color:var(--hq-blue, #7fa6ff); }
+.hs button.arm { color:var(--hq-amber, #ffae42); border-color:var(--hq-amber, #ffae42); }
+.hs-run { color:var(--hq-dim, #7d88b3); font-size:12px; }
+.hs-tiers { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:10px; }
+.hs-tc, .hs-tier, .hs-st { border:1px solid currentColor; border-radius:6px; padding:2px 6px; font-size:12px; }
+.hs-t-S { color:var(--hq-violet, #a37cff); }
+.hs-t-A { color:var(--hq-blue, #7fa6ff); }
+.hs-t-B { color:var(--hq-cyan, #7ff0ff); }
+.hs-t-C { color:var(--hq-dim, #7d88b3); }
+.hs-t-D { color:var(--hq-faint, #717aa7); }
+.hs-list { display:grid; gap:6px; margin:0; padding:0; list-style:none; }
+.hs-row { display:grid; grid-template-columns:42px 38px 48px minmax(0, 1fr) auto auto; align-items:start; gap:8px; min-width:0; padding:10px; color:var(--hq-ink, #d5ddff); border:1px solid var(--hq-line, rgba(140,160,255,.14)); border-radius:10px; }
+.hs-row:hover { background:rgba(30,40,90,.55); }
+.hs-rank, .hs-meta, .hs-mv, .hs-tc { font-family:'Cascadia Mono', Consolas, monospace; font-variant-numeric:tabular-nums; }
+.hs-rank { color:var(--hq-dim, #7d88b3); }
+.hs-row.hs-t-S .hs-tier { color:var(--hq-violet, #a37cff); }
+.hs-row.hs-t-A .hs-tier { color:var(--hq-blue, #7fa6ff); }
+.hs-row.hs-t-B .hs-tier { color:var(--hq-cyan, #7ff0ff); }
+.hs-row.hs-t-C .hs-tier { color:var(--hq-dim, #7d88b3); }
+.hs-row.hs-t-D .hs-tier { color:var(--hq-faint, #717aa7); }
+.hs-st { grid-column:1 / 3; color:var(--hq-dim, #7d88b3); justify-self:start; }
+.hs-mv { font-size:12px; white-space:nowrap; }
+.hs-mv-new { color:var(--hq-cyan, #7ff0ff); background:rgba(127,240,255,.1); border-radius:999px; padding:2px 5px; }
+.hs-mv-up { color:var(--hq-green, #4fd58a); }
+.hs-mv-down { color:var(--hq-amber, #ffae42); }
+.hs-mv-same { color:var(--hq-dim, #7d88b3); }
+.hs-mv-back { color:var(--hq-blue, #7fa6ff); }
+.hs-main { display:grid; gap:4px; min-width:0; overflow-wrap:anywhere; }
+.hs-title { line-height:1.35; }
+.hs-reason, .hs-meta { color:var(--hq-dim, #7d88b3); font-size:12px; line-height:1.4; }
+.hs-detail { grid-column:4 / -1; min-width:0; overflow-wrap:anywhere; color:var(--hq-dim, #7d88b3); font-size:13px; line-height:1.5; }
+.hs-detail[hidden] { display:none; }
+.hs-detail p { margin:4px 0 8px; }
+.hs-ev { padding-left:20px; }
+.hs-ev span { color:var(--hq-faint, #717aa7); }
+.hs-rest { margin-top:8px; }
+.hs-rest summary { display:inline-block; margin-bottom:8px; }
+.hs-empty { color:var(--hq-dim, #7d88b3); padding:14px 0; }
+@media (max-width:700px) {
+  .hs-row { grid-template-columns:38px 36px 44px minmax(0, 1fr); }
+  .hs-acts { grid-column:4; }
+  .hs-more { grid-column:4; justify-self:start; }
+  .hs-detail { grid-column:4; }
+}
+.hs-score { display:grid; grid-template-columns:minmax(95px, 1fr) minmax(70px, 2fr) 2em; gap:8px; align-items:center; max-width:440px; font-size:12px; }
+.hs-score i { height:6px; border-radius:3px; background:linear-gradient(to right, var(--hq-blue, #7fa6ff) var(--p), var(--hq-line, rgba(140,160,255,.14)) var(--p)); }
+.hs-score b { color:var(--hq-ink, #d5ddff); text-align:right; font-variant-numeric:tabular-nums; }

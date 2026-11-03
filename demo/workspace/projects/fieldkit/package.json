@@ -1,0 +1,19 @@
+{
+  "name": "fieldkit",
+  "version": "1.4.0",
+  "description": "fk: sync, snap and doctor",
+  "type": "module",
+  "bin": {
+    "fk": "bin/fk.js"
+  },
+  "scripts": {
+    "test": "node --test test/"
+  },
+  "dependencies": {
+    "commander": "^14.0.0",
+    "picocolors": "^1.1.1"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

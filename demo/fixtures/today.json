@@ -1,0 +1,29 @@
+{
+  "next": [
+    {
+      "routine": "inbox-triage",
+      "text": "Review the reply draft to Mei's sync crash report",
+      "ts": "@iso:-35m"
+    },
+    {
+      "routine": "dependency-watch",
+      "text": "Check the lockfile diff on the paper-lantern markdown bump",
+      "ts": "@iso:-2h10m"
+    },
+    {
+      "routine": "standup-notes",
+      "text": "Ask Sam to confirm the Orbit Notes 0.15 date",
+      "ts": "@iso:-4h40m"
+    },
+    {
+      "routine": "morning-brief",
+      "text": "Prep notes for Priya's design review",
+      "ts": "@iso:-6h50m"
+    },
+    {
+      "routine": "radar-sweep",
+      "text": "Try mcp-lens on the orbit-notes MCP server",
+      "ts": "@iso:-7h20m"
+    }
+  ]
+}

@@ -1,0 +1,190 @@
+{
+  "board": "radar",
+  "updatedAt": "@iso:-5h4m",
+  "lastRunId": "sweep-118",
+  "runs": [
+    {
+      "id": "sweep-118",
+      "at": "@iso:-5h4m",
+      "candidates": 8,
+      "added": 2,
+      "merged": 6
+    },
+    {
+      "id": "sweep-117",
+      "at": "@iso:-17h5m",
+      "candidates": 7,
+      "added": 1,
+      "merged": 6
+    },
+    {
+      "id": "sweep-116",
+      "at": "@iso:-1d5h3m",
+      "candidates": 8,
+      "added": 1,
+      "merged": 7
+    },
+    {
+      "id": "sweep-115",
+      "at": "@iso:-1d17h4m",
+      "candidates": 7,
+      "added": 0,
+      "merged": 7
+    },
+    {
+      "id": "sweep-114",
+      "at": "@iso:-2d5h5m",
+      "candidates": 8,
+      "added": 2,
+      "merged": 5
+    },
+    {
+      "id": "sweep-113",
+      "at": "@iso:-2d17h3m",
+      "candidates": 7,
+      "added": 3,
+      "merged": 4
+    }
+  ],
+  "counts": {
+    "open": 8,
+    "approved": 1,
+    "done": 1,
+    "trashed": 2,
+    "total": 12
+  },
+  "tiers": [
+    {
+      "tier": "S",
+      "count": 3
+    },
+    {
+      "tier": "A",
+      "count": 5
+    },
+    {
+      "tier": "B",
+      "count": 0
+    },
+    {
+      "tier": "C",
+      "count": 0
+    },
+    {
+      "tier": "D",
+      "count": 0
+    }
+  ],
+  "total": 1,
+  "items": [
+    {
+      "id": "rad-06e0f9c2dd",
+      "rank": null,
+      "prevRank": null,
+      "delta": null,
+      "bestRank": 1,
+      "tier": null,
+      "movement": null,
+      "title": "mcp-lens: an inspector for MCP servers",
+      "summary": "Opens any MCP server, lists its tools and replays calls with a diff of the results. Works over stdio and HTTP.",
+      "category": "tool",
+      "reason": "adopt at 82: Debug the orbit-notes MCP server without a full agent session",
+      "score": 82,
+      "baseScore": 82,
+      "seenCount": 3,
+      "firstSeen": "@iso:-1d5h3m",
+      "lastSeen": "@iso:-5h4m",
+      "missedRuns": 0,
+      "status": "approved",
+      "statusAt": "@iso:-4h40m",
+      "note": "Build ready to review",
+      "aliases": [],
+      "refs": [
+        "https://example.org/tools/mcp-lens"
+      ],
+      "evidence": [
+        {
+          "text": "Opens any MCP server, lists its tools and replays calls with a diff of the results. Works over stdio and HTTP.",
+          "source": "https://example.org/tools/mcp-lens",
+          "run": "sweep-118",
+          "at": "@iso:-5h4m"
+        }
+      ],
+      "data": {
+        "id": "mcp-lens",
+        "key": "url:example.org/tools/mcp-lens",
+        "url": "https://example.org/tools/mcp-lens",
+        "verdict": "adopt",
+        "confidence": "high",
+        "flags": [],
+        "plan": [
+          "Install mcp-lens v1.4.2 in a scratch worktree.",
+          "Point it at orbit-notes/mcp/server.ts.",
+          "Run it on one real task and note the result.",
+          "Write a short report for the ring."
+        ],
+        "reasoning": "Debug the orbit-notes MCP server without a full agent session.",
+        "reasonedBy": "claude",
+        "pinned": "v1.4.2",
+        "critique": {
+          "key": "url:example.org/tools/mcp-lens",
+          "delta": 0,
+          "verdict": "keep",
+          "critique": "The agent logs already show tool calls; a second viewer could be noise.",
+          "reason": "Fits the current setup.",
+          "base": 82
+        },
+        "sources": [
+          {
+            "id": "mcp-registry",
+            "url": "https://example.org/mcp-registry/mcp-lens",
+            "signal": "listed this week"
+          },
+          {
+            "id": "dev-forum",
+            "url": "https://example.org/dev-forum/mcp-lens",
+            "signal": "mentioned in 3 threads"
+          }
+        ],
+        "runId": "sweep-118",
+        "effort": "S",
+        "risks": [
+          {
+            "kind": "stability",
+            "detail": "Young project; the replay format may change before 2.0."
+          }
+        ],
+        "signals": {
+          "stars": 1784,
+          "starsPerDay": 17,
+          "createdAt": "@iso:-210d",
+          "pushedAt": "@iso:-1d",
+          "license": "MIT",
+          "sourceCount": 2,
+          "commits30": 40,
+          "contributors90": 7,
+          "lastCommitAt": "@iso:-1d",
+          "releases": 9,
+          "openIssues": 12,
+          "closedIssues": 140,
+          "archived": false,
+          "topics": [],
+          "sha": "942885d101dd",
+          "releaseTag": "v1.4.2",
+          "lastReleaseTag": "v1.4.2",
+          "lastReleaseAt": "@iso:-6d"
+        }
+      }
+    }
+  ],
+  "thisScan": [
+    "rad-e1dc9f2955",
+    "rad-6ae7604f17",
+    "rad-41bda89e46",
+    "rad-6f49822f3a",
+    "rad-a11020a1be",
+    "rad-b9c97caa58",
+    "rad-06e0f9c2dd",
+    "rad-ba3eacb75f"
+  ]
+}

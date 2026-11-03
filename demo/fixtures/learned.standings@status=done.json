@@ -1,0 +1,503 @@
+{
+  "board": "learned",
+  "updatedAt": "@iso:-14h",
+  "lastRunId": "@iso:-14h",
+  "runs": [
+    {
+      "id": "@iso:-14h",
+      "at": "@iso:-14h",
+      "candidates": 11,
+      "added": 3,
+      "merged": 5,
+      "report": "skill-review-proposals.html"
+    },
+    {
+      "id": "@iso:-1d@19:00",
+      "at": "@iso:-1d@19:00",
+      "candidates": 9,
+      "added": 2,
+      "merged": 4,
+      "report": "skill-review-proposals.html"
+    },
+    {
+      "id": "@iso:-2d@19:00",
+      "at": "@iso:-2d@19:00",
+      "candidates": 12,
+      "added": 4,
+      "merged": 6,
+      "report": "skill-review-proposals.html"
+    }
+  ],
+  "counts": {
+    "open": 14,
+    "approved": 2,
+    "done": 5,
+    "trashed": 3,
+    "total": 24
+  },
+  "tiers": [
+    {
+      "tier": "S",
+      "count": 3
+    },
+    {
+      "tier": "A",
+      "count": 7
+    },
+    {
+      "tier": "B",
+      "count": 4
+    },
+    {
+      "tier": "C",
+      "count": 0
+    },
+    {
+      "tier": "D",
+      "count": 0
+    }
+  ],
+  "total": 5,
+  "items": [
+    {
+      "id": "lea-3e93d47ba8",
+      "rank": null,
+      "prevRank": null,
+      "delta": null,
+      "bestRank": 6,
+      "tier": null,
+      "movement": null,
+      "title": "Cache Python wheels in tidepool CI",
+      "summary": "/test-fixer · ci",
+      "category": "test-fixer · ci",
+      "reason": "Came up in two sessions. Scored 55 on the rubric.",
+      "score": 55,
+      "baseScore": 55,
+      "seenCount": 3,
+      "firstSeen": "@iso:-16d",
+      "lastSeen": "@iso:-15d",
+      "missedRuns": 0,
+      "status": "done",
+      "statusAt": "@iso:-6d@11:00",
+      "note": "",
+      "aliases": [],
+      "refs": [
+        "memory/lessons/ci.md"
+      ],
+      "evidence": [
+        {
+          "text": "Cache Python wheels in tidepool CI came up in two sessions last month.",
+          "source": "memory/lessons/ci.md",
+          "run": "@iso:-15d",
+          "at": "@iso:-15d"
+        }
+      ],
+      "data": {
+        "proposalId": "c630e84ba6c217c8",
+        "skill": "test-fixer",
+        "file": "skills/test-fixer/SKILL.md",
+        "section": "Gotchas",
+        "text": "Cache Python wheels in tidepool CI",
+        "source": [
+          "memory/lessons/ci.md"
+        ],
+        "recurrence": 1,
+        "sourceAt": "@iso:-1d@17:20",
+        "targets": [
+          {
+            "skill": "test-fixer",
+            "file": "skills/test-fixer/SKILL.md",
+            "proposalId": "c630e84ba6c217c8",
+            "status": "applied"
+          }
+        ],
+        "skills": [
+          "test-fixer"
+        ],
+        "assessment": {
+          "why": "Cache Python wheels in tidepool CI came up in two sessions last month.",
+          "timeSaved": "monthly",
+          "effort": "approve",
+          "timeReason": "Estimated from 1 recurrence per month.",
+          "effortReason": "A one-line gotcha in the skill file.",
+          "by": "claude-opus-5-5 · gotcha-assess",
+          "at": "@iso:-15d",
+          "timeLabel": "~30m/mo saved",
+          "effortLabel": "Approve only"
+        },
+        "judgment": {
+          "scores": {
+            "pain": 4,
+            "frequency": 5,
+            "specificity": 7,
+            "fit": 7,
+            "durability": 6
+          },
+          "score": 55,
+          "reason": "Came up in two sessions. Scored 55 on the rubric.",
+          "critique": "Reviewed and settled.",
+          "evidenceChecked": [
+            "memory/lessons/ci.md",
+            "skills/test-fixer/SKILL.md"
+          ],
+          "judgedAt": "@iso:-14h",
+          "by": "claude-opus-5-5 · gotcha-assess",
+          "recurrence": 1,
+          "sourceAt": "@iso:-1d@17:20"
+        }
+      }
+    },
+    {
+      "id": "lea-bc9d767254",
+      "rank": null,
+      "prevRank": null,
+      "delta": null,
+      "bestRank": 8,
+      "tier": null,
+      "movement": null,
+      "title": "Write the spec before starting a multi-file change",
+      "summary": "/ship · agents-parallel",
+      "category": "ship · agents-parallel",
+      "reason": "Came up in two sessions. Scored 61 on the rubric.",
+      "score": 61,
+      "baseScore": 61,
+      "seenCount": 3,
+      "firstSeen": "@iso:-16d",
+      "lastSeen": "@iso:-15d",
+      "missedRuns": 0,
+      "status": "done",
+      "statusAt": "@iso:-8d@09:30",
+      "note": "",
+      "aliases": [],
+      "refs": [
+        "memory/lessons/agents-parallel.md"
+      ],
+      "evidence": [
+        {
+          "text": "Write the spec before starting a multi-file change came up in two sessions last month.",
+          "source": "memory/lessons/agents-parallel.md",
+          "run": "@iso:-15d",
+          "at": "@iso:-15d"
+        }
+      ],
+      "data": {
+        "proposalId": "4995cbaad83f9fa2",
+        "skill": "ship",
+        "file": "skills/ship/SKILL.md",
+        "section": "Gotchas",
+        "text": "Write the spec before starting a multi-file change",
+        "source": [
+          "memory/lessons/agents-parallel.md"
+        ],
+        "recurrence": 1,
+        "sourceAt": "@iso:-1d@17:20",
+        "targets": [
+          {
+            "skill": "ship",
+            "file": "skills/ship/SKILL.md",
+            "proposalId": "4995cbaad83f9fa2",
+            "status": "applied"
+          }
+        ],
+        "skills": [
+          "ship"
+        ],
+        "assessment": {
+          "why": "Write the spec before starting a multi-file change came up in two sessions last month.",
+          "timeSaved": "monthly",
+          "effort": "approve",
+          "timeReason": "Estimated from 1 recurrence per month.",
+          "effortReason": "A one-line gotcha in the skill file.",
+          "by": "claude-opus-5-5 · gotcha-assess",
+          "at": "@iso:-15d",
+          "timeLabel": "~30m/mo saved",
+          "effortLabel": "Approve only"
+        },
+        "judgment": {
+          "scores": {
+            "pain": 6,
+            "frequency": 5,
+            "specificity": 7,
+            "fit": 7,
+            "durability": 6
+          },
+          "score": 61,
+          "reason": "Came up in two sessions. Scored 61 on the rubric.",
+          "critique": "Reviewed and settled.",
+          "evidenceChecked": [
+            "memory/lessons/agents-parallel.md",
+            "skills/ship/SKILL.md"
+          ],
+          "judgedAt": "@iso:-14h",
+          "by": "claude-opus-5-5 · gotcha-assess",
+          "recurrence": 1,
+          "sourceAt": "@iso:-1d@17:20"
+        }
+      }
+    },
+    {
+      "id": "lea-8e83ba6062",
+      "rank": null,
+      "prevRank": null,
+      "delta": null,
+      "bestRank": 10,
+      "tier": null,
+      "movement": null,
+      "title": "Keep one reply draft per email thread",
+      "summary": "/triage · inbox",
+      "category": "triage · inbox",
+      "reason": "Came up in two sessions. Scored 58 on the rubric.",
+      "score": 58,
+      "baseScore": 58,
+      "seenCount": 3,
+      "firstSeen": "@iso:-16d",
+      "lastSeen": "@iso:-15d",
+      "missedRuns": 0,
+      "status": "done",
+      "statusAt": "@iso:-9d@13:20",
+      "note": "",
+      "aliases": [],
+      "refs": [
+        "memory/lessons/inbox.md"
+      ],
+      "evidence": [
+        {
+          "text": "Keep one reply draft per email thread came up in two sessions last month.",
+          "source": "memory/lessons/inbox.md",
+          "run": "@iso:-15d",
+          "at": "@iso:-15d"
+        }
+      ],
+      "data": {
+        "proposalId": "a14a684bff652dc4",
+        "skill": "triage",
+        "file": "skills/triage/SKILL.md",
+        "section": "Gotchas",
+        "text": "Keep one reply draft per email thread",
+        "source": [
+          "memory/lessons/inbox.md"
+        ],
+        "recurrence": 1,
+        "sourceAt": "@iso:-1d@17:20",
+        "targets": [
+          {
+            "skill": "triage",
+            "file": "skills/triage/SKILL.md",
+            "proposalId": "a14a684bff652dc4",
+            "status": "applied"
+          }
+        ],
+        "skills": [
+          "triage"
+        ],
+        "assessment": {
+          "why": "Keep one reply draft per email thread came up in two sessions last month.",
+          "timeSaved": "monthly",
+          "effort": "approve",
+          "timeReason": "Estimated from 1 recurrence per month.",
+          "effortReason": "A one-line gotcha in the skill file.",
+          "by": "claude-opus-5-5 · gotcha-assess",
+          "at": "@iso:-15d",
+          "timeLabel": "~30m/mo saved",
+          "effortLabel": "Approve only"
+        },
+        "judgment": {
+          "scores": {
+            "pain": 5,
+            "frequency": 5,
+            "specificity": 7,
+            "fit": 7,
+            "durability": 6
+          },
+          "score": 58,
+          "reason": "Came up in two sessions. Scored 58 on the rubric.",
+          "critique": "Reviewed and settled.",
+          "evidenceChecked": [
+            "memory/lessons/inbox.md",
+            "skills/triage/SKILL.md"
+          ],
+          "judgedAt": "@iso:-14h",
+          "by": "claude-opus-5-5 · gotcha-assess",
+          "recurrence": 1,
+          "sourceAt": "@iso:-1d@17:20"
+        }
+      }
+    },
+    {
+      "id": "lea-8a3edc9fe6",
+      "rank": null,
+      "prevRank": null,
+      "delta": null,
+      "bestRank": 12,
+      "tier": null,
+      "movement": null,
+      "title": "Tag releases from main only",
+      "summary": "/release-notes · releases",
+      "category": "release-notes · releases",
+      "reason": "Came up in two sessions. Scored 55 on the rubric.",
+      "score": 55,
+      "baseScore": 55,
+      "seenCount": 3,
+      "firstSeen": "@iso:-16d",
+      "lastSeen": "@iso:-15d",
+      "missedRuns": 0,
+      "status": "done",
+      "statusAt": "@iso:-12d@15:05",
+      "note": "",
+      "aliases": [],
+      "refs": [
+        "memory/lessons/releases.md"
+      ],
+      "evidence": [
+        {
+          "text": "Tag releases from main only came up in two sessions last month.",
+          "source": "memory/lessons/releases.md",
+          "run": "@iso:-15d",
+          "at": "@iso:-15d"
+        }
+      ],
+      "data": {
+        "proposalId": "c40d0281decafb51",
+        "skill": "release-notes",
+        "file": "skills/release-notes/SKILL.md",
+        "section": "Gotchas",
+        "text": "Tag releases from main only",
+        "source": [
+          "memory/lessons/releases.md"
+        ],
+        "recurrence": 1,
+        "sourceAt": "@iso:-1d@17:20",
+        "targets": [
+          {
+            "skill": "release-notes",
+            "file": "skills/release-notes/SKILL.md",
+            "proposalId": "c40d0281decafb51",
+            "status": "applied"
+          }
+        ],
+        "skills": [
+          "release-notes"
+        ],
+        "assessment": {
+          "why": "Tag releases from main only came up in two sessions last month.",
+          "timeSaved": "monthly",
+          "effort": "approve",
+          "timeReason": "Estimated from 1 recurrence per month.",
+          "effortReason": "A one-line gotcha in the skill file.",
+          "by": "claude-opus-5-5 · gotcha-assess",
+          "at": "@iso:-15d",
+          "timeLabel": "~30m/mo saved",
+          "effortLabel": "Approve only"
+        },
+        "judgment": {
+          "scores": {
+            "pain": 4,
+            "frequency": 5,
+            "specificity": 7,
+            "fit": 7,
+            "durability": 6
+          },
+          "score": 55,
+          "reason": "Came up in two sessions. Scored 55 on the rubric.",
+          "critique": "Reviewed and settled.",
+          "evidenceChecked": [
+            "memory/lessons/releases.md",
+            "skills/release-notes/SKILL.md"
+          ],
+          "judgedAt": "@iso:-14h",
+          "by": "claude-opus-5-5 · gotcha-assess",
+          "recurrence": 1,
+          "sourceAt": "@iso:-1d@17:20"
+        }
+      }
+    },
+    {
+      "id": "lea-6cae681372",
+      "rank": null,
+      "prevRank": null,
+      "delta": null,
+      "bestRank": 14,
+      "tier": null,
+      "movement": null,
+      "title": "File each lesson under one topic file",
+      "summary": "/weekly-review · hq-operations",
+      "category": "weekly-review · hq-operations",
+      "reason": "Came up in two sessions. Scored 61 on the rubric.",
+      "score": 61,
+      "baseScore": 61,
+      "seenCount": 3,
+      "firstSeen": "@iso:-16d",
+      "lastSeen": "@iso:-15d",
+      "missedRuns": 0,
+      "status": "done",
+      "statusAt": "@iso:-13d@18:30",
+      "note": "",
+      "aliases": [],
+      "refs": [
+        "memory/lessons/hq-operations.md"
+      ],
+      "evidence": [
+        {
+          "text": "File each lesson under one topic file came up in two sessions last month.",
+          "source": "memory/lessons/hq-operations.md",
+          "run": "@iso:-15d",
+          "at": "@iso:-15d"
+        }
+      ],
+      "data": {
+        "proposalId": "a351379abf23786d",
+        "skill": "weekly-review",
+        "file": "skills/weekly-review/SKILL.md",
+        "section": "Gotchas",
+        "text": "File each lesson under one topic file",
+        "source": [
+          "memory/lessons/hq-operations.md"
+        ],
+        "recurrence": 1,
+        "sourceAt": "@iso:-1d@17:20",
+        "targets": [
+          {
+            "skill": "weekly-review",
+            "file": "skills/weekly-review/SKILL.md",
+            "proposalId": "a351379abf23786d",
+            "status": "applied"
+          }
+        ],
+        "skills": [
+          "weekly-review"
+        ],
+        "assessment": {
+          "why": "File each lesson under one topic file came up in two sessions last month.",
+          "timeSaved": "monthly",
+          "effort": "approve",
+          "timeReason": "Estimated from 1 recurrence per month.",
+          "effortReason": "A one-line gotcha in the skill file.",
+          "by": "claude-opus-5-5 · gotcha-assess",
+          "at": "@iso:-15d",
+          "timeLabel": "~30m/mo saved",
+          "effortLabel": "Approve only"
+        },
+        "judgment": {
+          "scores": {
+            "pain": 6,
+            "frequency": 5,
+            "specificity": 7,
+            "fit": 7,
+            "durability": 6
+          },
+          "score": 61,
+          "reason": "Came up in two sessions. Scored 61 on the rubric.",
+          "critique": "Reviewed and settled.",
+          "evidenceChecked": [
+            "memory/lessons/hq-operations.md",
+            "skills/weekly-review/SKILL.md"
+          ],
+          "judgedAt": "@iso:-14h",
+          "by": "claude-opus-5-5 · gotcha-assess",
+          "recurrence": 1,
+          "sourceAt": "@iso:-1d@17:20"
+        }
+      }
+    }
+  ]
+}

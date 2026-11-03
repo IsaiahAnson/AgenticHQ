@@ -1,0 +1,7 @@
+{
+  "_note": "Public demo. Set who can reach a folder: { \"prefix\": \"notes/private/\", \"access\": \"local\" }. Access is local (this computer only), remote (a remote agent only) or both. notes/ syncs, but the journal and backup logs stay on this computer.",
+  "overrides": [
+    { "prefix": "notes/journal/", "access": "local" },
+    { "prefix": "ops/backups/", "access": "local" }
+  ]
+}
