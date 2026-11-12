@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 178" width="880" height="178" role="img" aria-labelledby="t d">
+  <title id="t">How Agentic HQ fits in</title>
+  <desc id="d">Four steps. Agents work: Claude Code, Codex, Copilot CLI or the Claude API. HQ reads along: Session logs, schedules and a map of your workspace. One page shows it: What your agents run, what they built and what they learned. You decide: Approve skill fixes, run deck cards, review ring pages.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif; }
+    .mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace; }
+    .card { fill: #ffffff; stroke: #d0d7de; }
+    .name { fill: #1f2328; } .role { fill: #424a53; } .meta { fill: #59636e; }
+    .g { fill: none; stroke-width: 3.2; stroke-linecap: round; stroke-linejoin: round; }
+    .k0 .g { stroke: #6f42d9; } .k0 .gf { fill: #6f42d9; }
+    .k1 .g { stroke: #2f63d6; } .k1 .gf { fill: #2f63d6; }
+    .k2 .g { stroke: #0b7f93; } .k2 .gf { fill: #0b7f93; }
+    .k3 .g { stroke: #b35900; } .k3 .gf { fill: #b35900; }
+    .ar { fill: none; stroke: #59636e; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; opacity: 0.8; }
+    .pop { animation: pop 0.55s ease-out both; }
+    .p2 { animation-delay: 0.12s; } .p3 { animation-delay: 0.24s; } .p4 { animation-delay: 0.36s; }
+    .ar { animation: ar 3.2s ease-in-out 1s infinite both; }
+    .a2 { animation-delay: 1.5s; } .a3 { animation-delay: 2s; }
+    @keyframes pop { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes ar { 0%, 100% { opacity: 0.3; } 25% { opacity: 1; } }
+    @media (prefers-reduced-motion: reduce) { .pop, .ar { animation: none; } }
+  </style>
+  <defs>
+    <linearGradient id="f0" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6f42d9" stop-opacity="0.15"/><stop offset="1" stop-color="#6f42d9" stop-opacity="0.04"/></linearGradient>
+    <linearGradient id="f1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2f63d6" stop-opacity="0.15"/><stop offset="1" stop-color="#2f63d6" stop-opacity="0.04"/></linearGradient>
+    <linearGradient id="f2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b7f93" stop-opacity="0.15"/><stop offset="1" stop-color="#0b7f93" stop-opacity="0.04"/></linearGradient>
+    <linearGradient id="f3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b35900" stop-opacity="0.15"/><stop offset="1" stop-color="#b35900" stop-opacity="0.04"/></linearGradient>
+  </defs>
+  <g class="pop p1 k0"><rect class="card" x="0.5" y="9.5" width="195" height="159" rx="14"/><rect x="16.5" y="25.5" width="44" height="44" rx="11" fill="url(#f0)" stroke="#6f42d9" stroke-opacity="0.5" stroke-width="1.6"/><g transform="translate(38.5 47.5) scale(0.6)"><rect class="g" x="-21" y="-15" width="42" height="30" rx="5"/><path class="g" d="M-12 -6 l7 6 l-7 6"/><path class="g" d="M1 7 h11"/></g><text class="mono meta" x="179.5" y="43.5" font-size="13" font-weight="600" text-anchor="end">01</text><text class="name" x="16.5" y="97.5" font-size="16.5" font-weight="600">Agents work</text><text class="role" x="16.5" y="118.5" font-size="12.6">Claude Code, Codex,</text><text class="role" x="16.5" y="135.5" font-size="12.6">Copilot CLI or the</text><text class="role" x="16.5" y="152.5" font-size="12.6">Claude API.</text></g>
+  <path class="ar" d="M204.5 89 H219.5 M213.5 83 l6 6 l-6 6"/>
+  <g class="pop p2 k1"><rect class="card" x="228.5" y="9.5" width="195" height="159" rx="14"/><rect x="244.5" y="25.5" width="44" height="44" rx="11" fill="url(#f1)" stroke="#2f63d6" stroke-opacity="0.5" stroke-width="1.6"/><g transform="translate(266.5 47.5) scale(0.6)"><circle class="g" cx="-3.5" cy="-3.5" r="12.5"/><path class="g" d="M6 6 l11.5 11.5"/></g><text class="mono meta" x="407.5" y="43.5" font-size="13" font-weight="600" text-anchor="end">02</text><text class="name" x="244.5" y="97.5" font-size="16.5" font-weight="600">HQ reads along</text><text class="role" x="244.5" y="118.5" font-size="12.6">Session logs, schedules</text><text class="role" x="244.5" y="135.5" font-size="12.6">and a map of your</text><text class="role" x="244.5" y="152.5" font-size="12.6">workspace.</text></g>
+  <path class="ar a2" d="M432.5 89 H447.5 M441.5 83 l6 6 l-6 6"/>
+  <g class="pop p3 k2"><rect class="card" x="456.5" y="9.5" width="195" height="159" rx="14"/><rect x="472.5" y="25.5" width="44" height="44" rx="11" fill="url(#f2)" stroke="#0b7f93" stroke-opacity="0.5" stroke-width="1.6"/><g transform="translate(494.5 47.5) scale(0.6)"><circle class="g" cx="0" cy="0" r="7"/><ellipse class="g" cx="0" cy="0" rx="20" ry="8" transform="rotate(-24 0 0)"/><circle class="gf" cx="17" cy="-8" r="3"/></g><text class="mono meta" x="635.5" y="43.5" font-size="13" font-weight="600" text-anchor="end">03</text><text class="name" x="472.5" y="97.5" font-size="16.5" font-weight="600">One page shows it</text><text class="role" x="472.5" y="118.5" font-size="12.6">What your agents run,</text><text class="role" x="472.5" y="135.5" font-size="12.6">what they built and</text><text class="role" x="472.5" y="152.5" font-size="12.6">what they learned.</text></g>
+  <path class="ar a3" d="M660.5 89 H675.5 M669.5 83 l6 6 l-6 6"/>
+  <g class="pop p4 k3"><rect class="card" x="684.5" y="9.5" width="195" height="159" rx="14"/><rect x="700.5" y="25.5" width="44" height="44" rx="11" fill="url(#f3)" stroke="#b35900" stroke-opacity="0.5" stroke-width="1.6"/><g transform="translate(722.5 47.5) scale(0.6)"><circle class="g" cx="0" cy="0" r="17"/><path class="g" d="M-7.5 0.5 l5 5 l10 -11"/></g><text class="mono meta" x="863.5" y="43.5" font-size="13" font-weight="600" text-anchor="end">04</text><text class="name" x="700.5" y="97.5" font-size="16.5" font-weight="600">You decide</text><text class="role" x="700.5" y="118.5" font-size="12.6">Approve skill fixes, run</text><text class="role" x="700.5" y="135.5" font-size="12.6">deck cards, review ring</text><text class="role" x="700.5" y="152.5" font-size="12.6">pages.</text></g>
+</svg>

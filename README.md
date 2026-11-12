@@ -1,6 +1,6 @@
-# Agentic HQ
-
-![Agentic HQ homepage on demo data: widgets around a ring of agent-built pages, with the Second Brain orb in the middle](docs/screenshots/home.webp)
+<p align="center">
+  <picture><source media="(prefers-color-scheme: dark)" srcset="docs/art/banner-dark.svg"><img src="docs/art/banner-light.svg" width="100%" alt="Agentic HQ, a local mission control for AI coding agents. The banner shows the ring of agent-built pages around the Second Brain orb, with four of the homepage widgets beside it."></picture>
+</p>
 
 **A local mission control for AI coding agents.** One page on `localhost` shows what your agents are running, what they built, what they learned and what is waiting on you, with a Second Brain map of your whole workspace in the middle.
 
@@ -8,7 +8,11 @@ It works with Claude Code, Codex, GitHub Copilot CLI and the Claude API, runs on
 
 Plain Node.js server, no framework and no build step · vanilla HTML, CSS and JS · three.js and d3 bundled · MIT
 
-## Try the demo
+![Agentic HQ homepage on demo data: widgets around a ring of agent-built pages, with the Second Brain orb in the middle](docs/screenshots/home.webp)
+
+<img src="docs/art/divider.svg" width="100%" height="8" alt="">
+
+## <picture><source media="(prefers-color-scheme: dark)" srcset="docs/art/icon-demo-dark.svg"><img src="docs/art/icon-demo-light.svg" width="30" height="30" align="absmiddle" alt=""></picture> Try the demo
 
 ```bash
 npm run demo
@@ -18,27 +22,31 @@ Then open http://localhost:50170.
 
 The demo copies the kit into a temporary sandbox and fills it with a made-up team: projects, inbox, calendar, routines, lessons and a month of agent usage. The server runs in demo mode: the feeds answer from `demo/fixtures/`, every action is refused, and your own files, agent logs and accounts are never read. Every screenshot below comes from it.
 
-## What it does
+## <picture><source media="(prefers-color-scheme: dark)" srcset="docs/art/icon-what-dark.svg"><img src="docs/art/icon-what-light.svg" width="30" height="30" align="absmiddle" alt=""></picture> What it does
 
-### Needs you
+<p align="center">
+  <picture><source media="(prefers-color-scheme: dark)" srcset="docs/art/flow-dark.svg"><img src="docs/art/flow-light.svg" width="100%" alt="Four steps. Agents work: Claude Code, Codex, Copilot CLI or the Claude API. HQ reads along: session logs, schedules and a map of your workspace. One page shows it: what your agents run, what they built and what they learned. You decide: approve skill fixes, run deck cards, review ring pages."></picture>
+</p>
+
+### <picture><source media="(prefers-color-scheme: dark)" srcset="docs/art/icon-needs-dark.svg"><img src="docs/art/icon-needs-light.svg" width="24" height="24" align="absmiddle" alt=""></picture> Needs you
 
 ![Needs you: skill fixes to approve, voice questions, email and missed routines](docs/screenshots/needs-you.webp)
 
 One queue for everything that waits on a person: lessons your agents want to add to a skill, questions left open in voice sessions, email drafts, and routines that missed a fire or failed. Approving a skill fix writes it into that skill's `SKILL.md` as a Gotcha, so the agent stops repeating the mistake.
 
-### What HQ learned
+### <picture><source media="(prefers-color-scheme: dark)" srcset="docs/art/icon-learned-dark.svg"><img src="docs/art/icon-learned-light.svg" width="24" height="24" align="absmiddle" alt=""></picture> What HQ learned
 
 ![What HQ Learned: lessons added this week, receipts, newest lessons, approval record and standings](docs/screenshots/learned.webp)
 
 Lessons captured from agent runs are kept in permanent standings and re-ranked each evening. Receipts show whether last week's fixes held, and the approval record shows how many proposals you kept.
 
-### Skills deck
+### <picture><source media="(prefers-color-scheme: dark)" srcset="docs/art/icon-deck-dark.svg"><img src="docs/art/icon-deck-light.svg" width="24" height="24" align="absmiddle" alt=""></picture> Skills deck
 
 ![Skills Deck: one card per skill, each with its agent, model and effort](docs/screenshots/skills-deck.webp)
 
 One card per skill. Each card picks its agent (Claude Code, Codex, Copilot or the Claude API), model and effort, and runs only when you click it. Runs log to `os-runs/` and come back as pages on the ring.
 
-### Routines and automations
+### <picture><source media="(prefers-color-scheme: dark)" srcset="docs/art/icon-routines-dark.svg"><img src="docs/art/icon-routines-light.svg" width="24" height="24" align="absmiddle" alt=""></picture> Routines and automations
 
 | | |
 |---|---|
@@ -46,19 +54,19 @@ One card per skill. Each card picks its agent (Claude Code, Codex, Copilot or th
 
 Every scheduled fire today, its last 7 days and its on/off switch, from Claude desktop scheduled tasks, Windows Task Scheduler and any schedule you import. A watchdog (`tools/hq-sentinel.mjs`, no model calls) keeps HQ and its companion tools up, warns on low disk space, memory and agent usage burn rate, and flags missed fires. Weekly Git bundle backups, with a monthly restore test, are checked by `tools/hq-doctor.mjs`.
 
-### Find anything
+### <picture><source media="(prefers-color-scheme: dark)" srcset="docs/art/icon-find-dark.svg"><img src="docs/art/icon-find-light.svg" width="24" height="24" align="absmiddle" alt=""></picture> Find anything
 
 ![Find: one search box over apps, skills, routines, ring pages and workspace files](docs/screenshots/find.webp)
 
 Press `Ctrl+K` or `/` anywhere. One box searches your apps, skills, routines, ring pages and every file in the Second Brain.
 
-### The artifact ring
+### <picture><source media="(prefers-color-scheme: dark)" srcset="docs/art/icon-ring-dark.svg"><img src="docs/art/icon-ring-light.svg" width="24" height="24" align="absmiddle" alt=""></picture> The artifact ring
 
 ![A ring page opened over the dimmed homepage](docs/screenshots/ring-card.webp)
 
 Every HTML page your agents build (reports, dashboards, run summaries) becomes a ball on the ring. Pages open in a sandboxed frame that cannot call HQ's API. A review bar lets you leave comments and have an agent apply them.
 
-### Second Brain
+### <picture><source media="(prefers-color-scheme: dark)" srcset="docs/art/icon-brain-dark.svg"><img src="docs/art/icon-brain-light.svg" width="24" height="24" align="absmiddle" alt=""></picture> Second Brain
 
 | | |
 |---|---|
@@ -73,7 +81,7 @@ The Second Brain maps your workspace (file names, sizes and dates, plus the link
 
 **AI Radar** collects public sources (Hacker News, GitHub releases, RSS feeds) twice a day, scores what is new against your own setup, and keeps permanent standings. Implement builds a candidate on its own branch in a separate worktree; Merge runs the tests first and only merges that exact commit.
 
-### More widgets
+### <picture><source media="(prefers-color-scheme: dark)" srcset="docs/art/icon-widgets-dark.svg"><img src="docs/art/icon-widgets-light.svg" width="24" height="24" align="absmiddle" alt=""></picture> More widgets
 
 | | |
 |---|---|
@@ -82,7 +90,9 @@ The Second Brain maps your workspace (file names, sizes and dates, plus the link
 
 The homepage also has Calendar (Google, read-only), Email (Gmail counts, drafts waiting and flagged mail, read-only), and Agent Usage: Claude, Codex and Copilot meters with pace and reset times. Each widget can move to a dock page, and widgets you have not connected yet show a quiet "not wired yet" note.
 
-## Run it on your own workspace
+<img src="docs/art/divider.svg" width="100%" height="8" alt="">
+
+## <picture><source media="(prefers-color-scheme: dark)" srcset="docs/art/icon-run-dark.svg"><img src="docs/art/icon-run-light.svg" width="30" height="30" align="absmiddle" alt=""></picture> Run it on your own workspace
 
 1. Install [Node.js](https://nodejs.org) 18 or newer.
 2. Clone or download this repo.
@@ -126,7 +136,7 @@ You are setting this up for your user, inside their workspace. Respect what you 
 
 The routine installer and backup helpers use PowerShell and Task Scheduler, so they are Windows-only. The server and the Second Brain are plain Node.
 
-## The guides
+## <picture><source media="(prefers-color-scheme: dark)" srcset="docs/art/icon-guides-dark.svg"><img src="docs/art/icon-guides-light.svg" width="30" height="30" align="absmiddle" alt=""></picture> The guides
 
 | Part | Guide | What it covers |
 |---|---|---|
@@ -138,7 +148,7 @@ The routine installer and backup helpers use PowerShell and Task Scheduler, so t
 | Artifact ring | [RING.md](RING.md) | Teaching your agent to put every build on the ring |
 | Look and feel | [REDESIGN.md](REDESIGN.md) | Reskinning the whole OS from one token block |
 
-## Folder map
+## <picture><source media="(prefers-color-scheme: dark)" srcset="docs/art/icon-folders-dark.svg"><img src="docs/art/icon-folders-light.svg" width="30" height="30" align="absmiddle" alt=""></picture> Folder map
 
 ```
 agentic-hq/
@@ -163,7 +173,7 @@ agentic-hq/
 
 HQ writes to `data/`, `os-runs/`, `artifacts/` and the generated Second Brain files. Ring pages in `artifacts/` are served sandboxed.
 
-## Security model
+## <picture><source media="(prefers-color-scheme: dark)" srcset="docs/art/icon-security-dark.svg"><img src="docs/art/icon-security-light.svg" width="30" height="30" align="absmiddle" alt=""></picture> Security model
 
 - Both servers (HQ and the Second Brain engine) listen on `127.0.0.1` only, so nothing on your network can reach them.
 - Both refuse any request whose Host header is not `localhost` or `127.0.0.1`, which stops DNS-rebinding pages.
@@ -178,7 +188,7 @@ HQ writes to `data/`, `os-runs/`, `artifacts/` and the generated Second Brain fi
 - The server makes no outside calls of its own. Outside calls happen only in the parts you switch on: the calendar and email tools (Google), AI Radar (public feeds, then one reasoning call through your agent's command-line tool), the `claude-api` runner (with your own key), and whatever agent a runner starts.
 - What it reads: your workspace (names, sizes, dates and markdown links), `config/` and `snapshots/`, and, if `"readers.claudeCode"` is on, Claude Code's scheduled tasks and session logs (to count runs, tokens and tool calls; only command names and local port numbers are kept, never full commands or message text). It stores no credentials of its own.
 
-## Tests
+## <picture><source media="(prefers-color-scheme: dark)" srcset="docs/art/icon-tests-dark.svg"><img src="docs/art/icon-tests-light.svg" width="30" height="30" align="absmiddle" alt=""></picture> Tests
 
 ```bash
 npm test
@@ -186,6 +196,6 @@ npm test
 
 Runs the `node --test` suites in `test/` and `tests/`.
 
-## License
+## <picture><source media="(prefers-color-scheme: dark)" srcset="docs/art/icon-license-dark.svg"><img src="docs/art/icon-license-light.svg" width="30" height="30" align="absmiddle" alt=""></picture> License
 
 MIT. Agentic HQ grew out of an MIT-licensed starter kit; its original copyright and permission notice stay in [LICENSE](LICENSE), as the license requires. Bundled third-party files (three.js, d3) keep their own licenses, listed there too.
