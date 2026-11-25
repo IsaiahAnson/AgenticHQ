@@ -10,7 +10,8 @@ if (task.length < 3) { console.error('Usage: node tools/hq-context.mjs "task to 
 try {
   const port = Number(process.env.HQ_PORT || process.env.PORT) || 50000;
   const headers = { 'content-type': 'application/json' };
-  if (process.env.RUBRIC_TOKEN) headers['x-rubric-token'] = process.env.RUBRIC_TOKEN;
+  const token = process.env.HQ_TOKEN || process.env.RUBRIC_TOKEN;
+  if (token) headers['x-rubric-token'] = token;
   const response = await fetch(`http://127.0.0.1:${port}/api/context`, {
     method: 'POST', headers, body: JSON.stringify({ task, ai, agent }), signal: AbortSignal.timeout(ai ? 90000 : 60000)
   });

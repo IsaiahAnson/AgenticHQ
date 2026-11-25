@@ -88,7 +88,8 @@ const BRAIN_PORT = Number(process.env.BRAIN_PORT) || Number(CFG.brainPort) || 50
 const ARTIFACTS = path.resolve(KIT, CFG.artifactsDir || 'artifacts');
 const SNAP = path.join(KIT, 'snapshots'), DATA = path.join(KIT, 'data'), RUNDIR = path.join(KIT, 'os-runs');
 for (const d of [ARTIFACTS, SNAP, DATA, RUNDIR]) fs.mkdirSync(d, { recursive: true });
-const TOKEN = String(process.env.RUBRIC_TOKEN || '').trim();
+/* HQ_TOKEN is the documented name; RUBRIC_TOKEN still works */
+const TOKEN = String(process.env.HQ_TOKEN || process.env.RUBRIC_TOKEN || '').trim();
 const BODY_MAX = 1024 * 1024;
 let AGENT_PROFILES = {}; try { AGENT_PROFILES = JSON.parse(fs.readFileSync(path.join(KIT, 'config', 'agent-profiles.json'), 'utf8')); } catch { }
 function emitEvent(event, options) {
@@ -146,7 +147,7 @@ function readBody(req) {
   });
 }
 const isJson = req => /^application\/json\b/i.test(String(req.headers['content-type'] || ''));
-const tokenOk = req => !TOKEN || req.headers['x-rubric-token'] === TOKEN;
+const tokenOk = req => !TOKEN || (req.headers['x-hq-token'] || req.headers['x-rubric-token']) === TOKEN;
 function sendJson(res, obj, code = 200, extra = {}) {
   res.writeHead(code, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store', 'X-Content-Type-Options': 'nosniff', ...extra });
   res.end(JSON.stringify(obj));
@@ -157,6 +158,8 @@ function inside(root, p) {
   const abs = path.resolve(root, String(p));
   return abs === root || abs.startsWith(root + path.sep) ? abs : null;
 }
+/* a decoded URL path with a "." or ".." segment (for example from an encoded slash, ..%2f) is refused */
+const dotSegment = rel => String(rel).split(/[\\/]/).some(s => s === '.' || s === '..');
 
 /* ---------------------------- the Second Brain engine ----------------------------
    Started as a child process on brainPort, restarted if it stops. If something already
@@ -936,10 +939,11 @@ const PUBLIC_FILES = new Set(['index.html', 'os.html', 'copy.css', 'copy.js', 's
 const PUBLIC_DIRS = ['assets', 'brain', 'views'];
 function publicFile(p2) {
   let rel; try { rel = decodeURIComponent(p2).replace(/^\/+/, ''); } catch (_) { return null; }
-  if (!rel || rel.includes('\0') || rel.includes('\\')) return null;
+  if (!rel || rel.includes('\0') || rel.includes('\\') || rel.includes('%') || dotSegment(rel)) return null;
   const top = rel.split('/')[0];
   if (!PUBLIC_FILES.has(rel) && !(PUBLIC_DIRS.includes(top) && rel.includes('/'))) return null;
-  const abs = inside(KIT, rel);
+  /* a file in assets/, brain/ or views/ must resolve inside that folder, not just inside the HQ folder */
+  const abs = PUBLIC_FILES.has(rel) ? inside(KIT, rel) : inside(path.join(KIT, top), rel.slice(top.length + 1));
   try { return abs && fs.statSync(abs).isFile() ? abs : null; } catch (_) { return null; }
 }
 function serveFile(req, res, file, extraHead = {}) {
@@ -968,7 +972,7 @@ const server = http.createServer(async (req, res) => {
   try {
     if (!LOCAL_HOST.test(String(req.headers.host || ''))) return sendJson(res, { error: 'local requests only' }, 403);
     if (req.method === 'OPTIONS') { res.writeHead(405); return res.end(); }   /* no preflight is ever granted */
-    if ((p2.startsWith('/api/') || p2.startsWith('/local/')) && !tokenOk(req)) return sendJson(res, { error: 'missing or wrong x-rubric-token' }, 401, p2 === '/api/apply-comments' || p2 === '/api/run-status' ? localCors(req) : {});
+    if ((p2.startsWith('/api/') || p2.startsWith('/local/')) && !tokenOk(req)) return sendJson(res, { error: 'missing or wrong x-hq-token' }, 401, p2 === '/api/apply-comments' || p2 === '/api/run-status' ? localCors(req) : {});
     if (post && (!originOk(req) || (req.headers.origin === 'null' && !NULL_OK.has(p2)))) return sendJson(res, { error: 'only pages on this computer can do that' }, 403);
     if (DEMO && await DEMO.handle(req, res, { p2, u, post })) return;   /* demo mode: fixtures answer, nothing is written */
 
@@ -1029,7 +1033,8 @@ const server = http.createServer(async (req, res) => {
     }
     if (p2 === '/api/ring-nonce' && !post) return sendJson(res, { ring: RING_NONCE });
     if (p2 === '/api/run-status') {
-      const cors = localCors(req), job = JOBS.get(String(u.searchParams.get('job') || ''));
+      /* other local ports only start apply-comments runs, so only those runs answer them; deck runs stay same-origin */
+      const job = JOBS.get(String(u.searchParams.get('job') || '')), cors = job && job.id !== 'apply-comments' ? {} : localCors(req);
       if (!job) return sendJson(res, { error: 'unknown job' }, 404, cors);
       return sendJson(res, { status: job.status, code: job.code, report: job.report, result: job.quiet && job.result ? job.result.slice(-3000) : undefined,
         elapsed: Math.round(((job.ended || Date.now()) - job.started) / 1000), tail: logTail(job.logFile, 700).split('\n').slice(-6).join('\n') }, 200, cors);
@@ -1277,7 +1282,7 @@ const server = http.createServer(async (req, res) => {
     if (p2 === '/radar/watch') return serveFile(req, res, path.join(KIT, 'radar-watch.html'));   /* one build's live transcript (?id=<finding>) */
     if (p2.startsWith('/artifacts/')) {
       let rel; try { rel = decodeURIComponent(p2.slice('/artifacts/'.length)); } catch (_) { rel = null; }
-      const f = rel && !rel.startsWith('_trash') ? inside(ARTIFACTS, rel) : null;
+      const f = rel && !rel.toLowerCase().startsWith('_trash') && !dotSegment(rel) ? inside(ARTIFACTS, rel) : null;
       const page = f && req.method === 'GET' && /^[^/\\]+\.html?$/i.test(rel) && fs.existsSync(f);
       if (page) recordOpen(rel);
       const reviewed = page ? withReviewBar(fs.readFileSync(f, 'utf8')) : null;
@@ -1299,6 +1304,7 @@ server.on('error', e => {
 server.listen(PORT, '127.0.0.1', () => {
   console.log(`Agentic HQ  ->  http://localhost:${PORT}`);
   console.log(`artifacts (the ring)  ->  ${ARTIFACTS}`);
+  console.log('  Shared secret (HQ_TOKEN): ' + (TOKEN ? 'on, /api and /local requests need the x-hq-token header' : 'off'));
   if (!workspaceRoot()) console.log('  No workspace set yet. Put your workspace path in config/workspace.json ("root"), then press the refresh icon in the Second Brain.');
   startEngine();
   if (needsFirstRefresh()) { console.log('  Building your Second Brain for the first time...'); refreshBrain().then(r => console.log('  Second Brain ' + (r.ok ? 'ready' : 'refresh failed at ' + (r.steps.find(s => !s.ok) || {}).step) + ' (' + Math.round(r.ms / 1000) + ' s)')); }

@@ -1,4 +1,4 @@
-﻿# Local backup repo for the Agentic OS. Never push it anywhere.
+﻿# Agentic HQ: generated and private files
 node_modules/
 # Google sign-ins and keys
 .google-*.json

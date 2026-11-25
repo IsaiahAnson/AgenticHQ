@@ -68,7 +68,7 @@ for (const item of cases) {
     if (item.maxTokens != null) options.maxTokens = item.maxTokens;
     if (direct) pack = await buildContextPack(options);
     else {
-      const headers = process.env.RUBRIC_TOKEN ? { 'x-rubric-token': process.env.RUBRIC_TOKEN } : {};
+      const token = process.env.HQ_TOKEN || process.env.RUBRIC_TOKEN, headers = token ? { 'x-rubric-token': token } : {};
       const response = await fetch(`${base}/api/context?q=${encodeURIComponent(item.task)}`, { headers, signal: AbortSignal.timeout(60000) });
       const livePack = await response.json(); ok = response.ok;
       // The public endpoint intentionally uses the configured production budget. Exercise it

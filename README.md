@@ -94,7 +94,7 @@ The homepage also has Calendar (Google, read-only), Email (Gmail counts, drafts 
 
 ## <picture><source media="(prefers-color-scheme: dark)" srcset="docs/art/icon-run-dark.svg"><img src="docs/art/icon-run-light.svg" width="30" height="30" align="absmiddle" alt=""></picture> Run it on your own workspace
 
-1. Install [Node.js](https://nodejs.org) 18 or newer.
+1. Install [Node.js](https://nodejs.org) 22 or newer.
 2. Clone or download this repo.
 3. Run `node server.js` in the folder. That one command starts everything, the Second Brain engine included.
 4. Open http://localhost:50000. A short tour runs on your first visit.
@@ -111,7 +111,7 @@ The kit is built to be installed by your agent. Tell it:
 
 You are setting this up for your user, inside their workspace. Respect what you find: map it, never reorganise it. Do these in order.
 
-1. **Check Node.** `node --version` must be 18 or newer. If not, tell your user how to install it and stop.
+1. **Check Node.** `node --version` must be 22 or newer. If not, tell your user how to install it and stop.
 2. **Check the ports.** HQ uses port 50000 and the Second Brain engine 50201 by default. If something already answers on either, leave it alone and set `"port"` or `"brainPort"` in `os-config.json` to a free port.
 3. **Point the OS at the workspace.** Fill `config/workspace.json`: `root`, `routerDoc`, `instructionDocs`, `skillDirs`, `memoryDir`, `projectsDir`, `visibleRoots` and `sharedPrefixes`. [BRAIN.md](BRAIN.md) step 1 explains each field.
 4. **Write the departments.** These are the coloured slices of the 3D globe. Write 3 to 6 in `config/departments.json` from what you know about your user. [BRAIN.md](BRAIN.md) step 2.
@@ -180,12 +180,12 @@ HQ writes to `data/`, `os-runs/`, `artifacts/` and the generated Second Brain fi
 - Every action (POST) must come from a page on this computer: Origin `localhost` or `127.0.0.1`, or no Origin at all (a command-line tool). Anything else gets 403, including Origin `null`, which a file page or a sandboxed frame sends.
 - JSON actions also need `Content-Type: application/json`, which another website cannot send without a preflight, and no preflight is ever granted. Request bodies over 1 MB are refused.
 - Ring pages are served with a `sandbox` Content Security Policy without `allow-same-origin`, so a page an agent wrote cannot call HQ's API or read its storage. Its review bar goes through a confirm popup that checks a nonce.
-- Optional shared secret: start HQ with `HQ_TOKEN` set and every `/api/*` and `/local/*` request then needs a matching `x-hq-token` header.
+- Optional shared secret: start HQ with `HQ_TOKEN` set and every `/api/*` and `/local/*` request then needs a matching `x-hq-token` header. The older names `RUBRIC_TOKEN` and `x-rubric-token` still work. HQ prints at startup whether the secret is on, never its value. The bundled watchdog (`tools/hq-sentinel.mjs`) and doctor (`tools/hq-doctor.mjs`) do not send the header yet, so they stop working while the secret is on.
 - Only the page files are served: the shell and homepage, `radar.html`, `widgets.html`, `assets/`, `brain/` and `views/`. `config/`, `snapshots/`, `engine/`, `refresh/`, `os-runs/`, `os-config.json` and the rest of `data/` (two page data files aside) are never served, and every path must resolve inside its folder.
 - The file viewer reads text files inside your workspace root only, under 500 KB, and never a file whose name looks like a secret (`.env`, keys, tokens, credentials).
 - Deck cards run when you click them, or when a routine you installed starts one, through the command template you set per runner. Prompts go on standard input, or as a short command-line argument limited to letters, numbers, spaces and `_ . / \ : , ( ) -`. Model and effort must come from the allowed lists.
 - `/api/open` opens web links, or files inside your workspace, this folder or the ring. It never opens program files and uses no shell.
-- The server makes no outside calls of its own. Outside calls happen only in the parts you switch on: the calendar and email tools (Google), AI Radar (public feeds, then one reasoning call through your agent's command-line tool), the `claude-api` runner (with your own key), and whatever agent a runner starts.
+- Outside calls happen only in the parts you switch on: the calendar and email tools (Google), AI Radar (public feeds, then one reasoning call through your agent's command-line tool), the `claude-api` runner (with your own key), and whatever agent a runner starts. Two calls come from the server itself: with `ANTHROPIC_ADMIN_KEY` set, the usage meters read Anthropic's organization cost report (a read-only request, repeated every few minutes while HQ runs; see [WIRING.md](WIRING.md)), and with `ANTHROPIC_API_KEY` set, a context request that asks for an AI summary (`node tools/hq-context.mjs --ai`) makes one Claude API call.
 - What it reads: your workspace (names, sizes, dates and markdown links), `config/` and `snapshots/`, and, if `"readers.claudeCode"` is on, Claude Code's scheduled tasks and session logs (to count runs, tokens and tool calls; only command names and local port numbers are kept, never full commands or message text). It stores no credentials of its own.
 
 ## <picture><source media="(prefers-color-scheme: dark)" srcset="docs/art/icon-tests-dark.svg"><img src="docs/art/icon-tests-light.svg" width="30" height="30" align="absmiddle" alt=""></picture> Tests
@@ -194,8 +194,8 @@ HQ writes to `data/`, `os-runs/`, `artifacts/` and the generated Second Brain fi
 npm test
 ```
 
-Runs the `node --test` suites in `test/` and `tests/`.
+Runs the `node --test` suites in `test/` and `tests/`. It needs Node 22 or newer: `node --test` expands the file patterns itself only from Node 21, and the Windows shell does not expand them.
 
 ## <picture><source media="(prefers-color-scheme: dark)" srcset="docs/art/icon-license-dark.svg"><img src="docs/art/icon-license-light.svg" width="30" height="30" align="absmiddle" alt=""></picture> License
 
-MIT. Agentic HQ grew out of an MIT-licensed starter kit; its original copyright and permission notice stay in [LICENSE](LICENSE), as the license requires. Bundled third-party files (three.js, d3) keep their own licenses, listed there too.
+MIT. Agentic HQ grew out of the RUBRIC Agentic OS starter kit by Jay E of [RoboNuggets](https://robonuggets.com), which is also MIT-licensed. Its original copyright and permission notice stay in [LICENSE](LICENSE), as the license requires. Bundled third-party files (three.js, d3, marked, thinking-orbs and two fonts) keep their own licenses, listed in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).

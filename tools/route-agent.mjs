@@ -37,7 +37,8 @@ function classifyTask(task) {
 
 async function fetchJson(endpoint) {
   const headers = {};
-  if (process.env.RUBRIC_TOKEN) headers['x-rubric-token'] = process.env.RUBRIC_TOKEN;
+  const token = process.env.HQ_TOKEN || process.env.RUBRIC_TOKEN;
+  if (token) headers['x-rubric-token'] = token;
   try {
     const response = await fetch(`${HQ_URL}${endpoint}`, {
       headers,

@@ -51,7 +51,7 @@ function machine() {
 
 async function hqContext() {
   const base = `http://127.0.0.1:${Number(process.env.HQ_PORT || process.env.PORT) || 50000}`;
-  const headers = process.env.RUBRIC_TOKEN ? { 'x-rubric-token': process.env.RUBRIC_TOKEN } : {};
+  const token = process.env.HQ_TOKEN || process.env.RUBRIC_TOKEN, headers = token ? { 'x-rubric-token': token } : {};
   const names = ['health', 'stats', 'outcomes', 'routines', 'artifacts', 'apps', 'skills'];
   const got = await Promise.allSettled(names.map(async n => {
     const res = await fetch(`${base}/api/${n}`, { headers, signal: AbortSignal.timeout(10000) });

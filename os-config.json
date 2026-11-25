@@ -182,8 +182,8 @@
     "command": "gws",
     "googleDir": ""
   },
-  "partnerHints": "\b(partnerships?|sponsorw*|collabs?|licen[cs]e)\b",
-  "leadHints": "\b(inquiry|proposal|quote|demo request|next steps|introduction)\b",
+  "partnerHints": "\\b(partnerships?|sponsor\\w*|collabs?|licen[cs]e)\\b",
+  "leadHints": "\\b(inquiry|proposal|quote|demo request|next steps|introduction)\\b",
   "personalFrom": "@(gmail|googlemail|yahoo|outlook|hotmail|icloud|proton)\\.",
   "hintSkipFrom": "github.com"
 }
